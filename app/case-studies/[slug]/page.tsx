@@ -1,6 +1,6 @@
 import { t } from '@/lib/i18n'
 import { getLang } from '@/lib/i18n-server'
-import cases, { getCase } from '@/data/cases'
+import { getCase } from '@/data/cases'
 import type { Metadata } from 'next'
 import BreadcrumbJSONLD from '@/components/BreadcrumbJSONLD'
 import Image from 'next/image'
@@ -25,9 +25,6 @@ export async function generateMetadata({ params }: { params: { slug: string } })
 
 export default async function CasePage({ params }: { params: { slug: string } }) {
   const lang = getLang()
-  const allCases = cases.filter(c => c.lang === lang)
-  const currentIndex = allCases.findIndex(c => c.slug === params.slug)
-  const nextCase = allCases[(currentIndex + 1) % allCases.length]
   const data = getCase(lang, params.slug)
   
   if (!data) {
@@ -177,10 +174,7 @@ export default async function CasePage({ params }: { params: { slug: string } })
       </div>
 
       <div className="mt-16 pt-8 border-t border-white/10 grid grid-cols-2 md:grid-cols-4 gap-4 text-sm">
-          <Link href={`/case-studies/${nextCase.slug}`} className="group p-4 bg-white/5 border border-white/10 hover:border-cyan-500 transition">
-              <div className="text-gray-500 mb-1">{t(lang, 'next_case')}</div>
-              <div className="text-white group-hover:text-cyan-400 font-medium truncate">{nextCase.title}</div>
-          </Link>
+          
           <Link href="/case-studies" className="group p-4 bg-white/5 border border-white/10 hover:border-cyan-500 transition">
               <div className="text-gray-500 mb-1">{t(lang, 'back_to_cases')}</div>
               <div className="text-white group-hover:text-cyan-400 font-medium">{t(lang, 'nav_cases')}</div>
