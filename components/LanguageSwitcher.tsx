@@ -9,12 +9,8 @@ export default function LanguageSwitcher() {
   }, [])
   const toggle = () => {
     const to = lang === 'zh-Hant' ? 'en' : 'zh-Hant'
-    const u = new URL(window.location.href)
-    u.pathname = u.pathname // keep path
-    u.searchParams.set('to', to)
-    fetch(`/api/lang?to=${encodeURIComponent(to)}&return=${encodeURIComponent(u.pathname + u.search)}`).then(() => {
-      setTimeout(() => window.location.reload(), 100)
-    })
+    document.cookie = `lang=${to}; path=/; max-age=31536000; samesite=lax`
+    window.location.reload()
   }
   return (
     <button onClick={toggle} className="text-white/80 hover:text-white" aria-label="language switch">

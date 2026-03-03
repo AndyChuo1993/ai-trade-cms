@@ -4,7 +4,7 @@ import Image from 'next/image'
 export default function B2BHero() {
   const lang = getLang()
   return (
-    <section className="mx-auto max-w-7xl px-6 py-16 md:py-24 relative">
+    <section className="mx-auto max-w-7xl px-6 py-16 md:py-24">
       <div className="grid md:grid-cols-2 gap-10 items-center">
         <div>
           <h1 className="text-5xl md:text-7xl font-bold leading-tight text-white drop-shadow-2xl">
@@ -26,20 +26,19 @@ export default function B2BHero() {
             </a>
           </div>
         </div>
-        <div className="relative hidden md:block">
-          <div className="rounded-none border-l border-t border-cyan-500/30 p-4 relative">
-             <div className="absolute top-0 right-0 w-20 h-20 border-r border-t border-white/20"></div>
-             <div className="absolute bottom-0 left-0 w-20 h-20 border-l border-b border-white/20"></div>
+        <div className="relative hidden md:block h-[360px]">
+          <div className="rounded-none border-l border-t border-cyan-500/30 p-4 relative h-full w-full">
+             <div className="absolute top-0 right-0 w-20 h-20 border-r border-t border-white/20 z-20"></div>
+             <div className="absolute bottom-0 left-0 w-20 h-20 border-l border-b border-white/20 z-20"></div>
             <Image
               src="https://images.unsplash.com/photo-1556157382-97eda2d62296?q=80&w=1600&auto=format&fit=crop"
               alt="SunGene AI Platform UI"
-              width={1600}
-              height={360}
-              className="w-full h-[360px] object-cover opacity-90 transition duration-700"
+              fill
+              className="object-cover opacity-90 transition duration-700"
               priority
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-[#0B1C2D]/90 via-[#0B1C2D]/40 to-transparent pointer-events-none" />
-            <div className="absolute inset-0 bg-cyan-500/10 pointer-events-none mix-blend-overlay" />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#0B1C2D]/90 via-[#0B1C2D]/40 to-transparent pointer-events-none z-10" />
+            <div className="absolute inset-0 bg-cyan-500/10 pointer-events-none mix-blend-overlay z-10" />
           </div>
         </div>
       </div>

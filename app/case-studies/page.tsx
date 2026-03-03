@@ -38,15 +38,17 @@ export default async function CaseStudiesPage() {
   return (
     <main className="mx-auto max-w-7xl px-6 py-24 min-h-screen">
       <div className="relative w-full h-[320px] md:h-[400px] rounded-none overflow-hidden border border-white/10 mb-16 transition duration-700">
-        <Image 
+        <div className="absolute inset-0 z-0">
+          <Image 
             src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=1600&auto=format&fit=crop" 
             alt="Case Studies" 
             fill
             className="object-cover opacity-80" 
             priority 
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#0B1C2D] to-transparent opacity-90" />
-        <div className="absolute bottom-0 left-0 p-8 md:p-12">
+          />
+        </div>
+        <div className="absolute inset-0 bg-gradient-to-t from-[#0B1C2D] to-transparent opacity-90 z-10" />
+        <div className="absolute bottom-0 left-0 p-8 md:p-12 z-20">
             <h1 className="text-4xl md:text-6xl font-bold text-white drop-shadow-2xl">{t(lang, 'cases_title')}</h1>
             <p className="mt-4 text-xl text-cyan-400 font-light">{t(lang, 'cases_subtitle')}</p>
         </div>
