@@ -31,7 +31,7 @@ export default function B2BHero() {
              <div className="absolute top-0 right-0 w-20 h-20 border-r border-t border-white/20 z-20"></div>
              <div className="absolute bottom-0 left-0 w-20 h-20 border-l border-b border-white/20 z-20"></div>
             <Image
-              src="https://images.unsplash.com/photo-1556157382-97eda2d62296?q=80&w=1600&auto=format&fit=crop"
+              src="/banner/banner1.png"
               alt="SunGene AI Platform UI"
               fill
               className="object-cover opacity-90 transition duration-700"

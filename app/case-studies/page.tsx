@@ -40,7 +40,7 @@ export default async function CaseStudiesPage() {
       <div className="relative w-full h-[320px] md:h-[400px] rounded-none overflow-hidden border border-white/10 mb-16 transition duration-700">
         <div className="absolute inset-0 z-0">
           <Image 
-            src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=1600&auto=format&fit=crop" 
+            src="/banner/banner2.png" 
             alt="Case Studies" 
             fill
             className="object-cover opacity-80" 
