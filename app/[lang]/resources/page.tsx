@@ -11,7 +11,7 @@ export async function generateMetadata({ params }: { params: { lang: Lang } }) {
   }
 }
 
-export default async function Page({ 
+export default function Page({ 
   params, 
   searchParams 
 }: { 
@@ -19,7 +19,7 @@ export default async function Page({
   searchParams: { category?: string } 
 }) {
   const lang = params.lang
-  const allArticles = await getArticles(lang)
+  const allArticles = getArticles(lang)
 
   // 1. Get unique categories and their counts
   const categoryCounts = allArticles.reduce((acc, article) => {

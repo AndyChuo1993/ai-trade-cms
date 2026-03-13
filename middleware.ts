@@ -7,24 +7,8 @@ const defaultLocale = 'zh'
 
 export function middleware(request: NextRequest) {
   const pathname = request.nextUrl.pathname
-  
-  // 1. Admin Protection
-  if (pathname.startsWith('/management')) {
-    // Allow login page access without cookie
-    if (pathname === '/management/login') {
-        return NextResponse.next()
-    }
-    
-    const cookie = request.cookies.get("admin")
-    if (cookie?.value !== 'true') {
-      const url = request.nextUrl.clone()
-      url.pathname = '/management/login'
-      return NextResponse.redirect(url)
-    }
-    return NextResponse.next()
-  }
 
-  // 2. Locale Logic
+  // Locale Logic
   // Check if there is any supported locale in the pathname
   const pathnameIsMissingLocale = locales.every(
     (locale) => !pathname.startsWith(`/${locale}/`) && pathname !== `/${locale}`

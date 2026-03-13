@@ -1,7 +1,6 @@
 import { Lang } from '@/lib/i18n'
 import fs from 'node:fs'
 import path from 'node:path'
-import { appendArticles, isSheetsConfigured, listArticles, type ArticleRow } from '@/lib/googleSheets'
 
 export type Article = {
   id: string
@@ -13,43 +12,15 @@ export type Article = {
   sections?: { heading: string; content: string[] }[]
 }
 
-type CacheEntry = {
-  ts: number
-  rows: ArticleRow[]
-}
-
-function getCache(): CacheEntry | null {
-  const g = globalThis as any
-  return g.__sungene_articles_cache || null
-}
-
-function setCache(entry: CacheEntry) {
-  const g = globalThis as any
-  g.__sungene_articles_cache = entry
-}
-
-async function readAllArticleRows(): Promise<ArticleRow[]> {
-  if (isSheetsConfigured()) {
-    const cached = getCache()
-    if (cached && Date.now() - cached.ts < 60_000) return cached.rows
-    const rows = await listArticles()
-    if (!rows.length) {
-      const seed = readFromLocalFile()
-      if (seed.length) {
-        try {
-          await appendArticles(seed)
-          setCache({ ts: Date.now(), rows: seed })
-          return seed
-        } catch {
-          // Ignore seed errors and fall through
-        }
-      }
-    }
-    setCache({ ts: Date.now(), rows })
-    return rows
-  }
-
-  return readFromLocalFile()
+type ArticleRow = {
+  id: string
+  lang: 'zh' | 'en'
+  title: string
+  category: string
+  date: string
+  image: string
+  content: string[]
+  sections?: { heading: string; content: string[] }[]
 }
 
 function readFromLocalFile(): ArticleRow[] {
@@ -64,8 +35,8 @@ function readFromLocalFile(): ArticleRow[] {
   }
 }
 
-export async function getArticles(lang: Lang): Promise<Article[]> {
-  const rows = await readAllArticleRows()
+export function getArticles(lang: Lang): Article[] {
+  const rows = readFromLocalFile()
   return rows
     .filter(r => r.lang === lang)
     .map(r => ({
@@ -80,8 +51,8 @@ export async function getArticles(lang: Lang): Promise<Article[]> {
     .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
 }
 
-export async function getArticle(lang: Lang, id: string): Promise<Article | undefined> {
-  const rows = await readAllArticleRows()
+export function getArticle(lang: Lang, id: string): Article | undefined {
+  const rows = readFromLocalFile()
   const r = rows.find(x => x.lang === lang && x.id === id)
   if (!r) return undefined
   return {
