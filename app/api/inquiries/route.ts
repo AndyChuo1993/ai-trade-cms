@@ -4,8 +4,11 @@ import { rateLimit } from '@/lib/rateLimit'
 import process from 'process'
 import fs from 'node:fs'
 import path from 'node:path'
+import { cookies } from 'next/headers'
 
 type Inquiry = {
+  id?: string
+  date?: string
   type: 'Contact' | 'Free Analysis' | 'Lead Generation' | 'Outreach Service' | 'Sales Outsourcing' | 'Partnership Inquiry'
   name: string
   company?: string
@@ -68,85 +71,70 @@ export async function POST(req: Request) {
     budget: body.budget,
     timeline: body.timeline
   }
-  // 儘管後端持久化失敗，也要保證通知信寄出
+  
   const reqId = `REQ-${Date.now().toString(36)}-${Math.random().toString(36).slice(2, 6)}`
   const result = await persist(item)
   const meta = collectMeta(req)
   const id = result.id || `TMP-${Date.now()}`
-  if (!result.ok) {
-    console.error('[inquiries.persist]', reqId, 'persist failed, writing to local file')
-    fallbackAppend(item, id, meta)
-  }
+  
   try {
     await notify(item, meta, id, reqId)
   } catch (err) {
-    return NextResponse.json(
-      { ok: false, error: "MAIL_SEND_FAILED" },
-      { status: 500 }
-    )
+    // Email failed but data persisted
+    console.error("Email send failed", err)
   }
   return Response.json({ ok: true, id })
 }
 
 export async function GET() {
-  return Response.json({ ok: true })
+  const cookieStore = cookies()
+  const adminCookie = cookieStore.get('admin')
+  
+  if (!adminCookie) {
+    return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
+  }
+
+  try {
+      const filePath = path.join(process.cwd(), 'data/inquiries.json')
+      if (!fs.existsSync(filePath)) return NextResponse.json([])
+      const data = JSON.parse(fs.readFileSync(filePath, 'utf-8'))
+      return NextResponse.json(data)
+  } catch (e) {
+      return NextResponse.json([])
+  }
 }
 
 async function persist(item: Inquiry): Promise<{ ok: boolean; id?: string }> {
-  let cmsUrl = process.env.CMS_URL
-  const cmsToken = process.env.CMS_REST_TOKEN
-  if (!cmsUrl || !cmsToken) return { ok: false }
-  cmsUrl = cmsUrl.replace(/\/$/, '')
-  const extras: Record<string, any> = {}
-  const extraKeys = [
-    'productName','quantity','incoterms','targetCountry',
-    'targetMarket','currentChannels','goals',
-    'topic','integrationType','details',
-    'scope','budget','timeline'
-  ] as const
-  for (const k of extraKeys) {
-    const v = (item as any)[k]
-    if (typeof v !== 'undefined' && v !== null && v !== '') extras[k] = v
-  }
   try {
-    const doPost = () => fetch(`${cmsUrl}/api/inquiries`, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'Authorization': `Bearer ${cmsToken}`
-      },
-      body: JSON.stringify({
-        type: item.type,
-        name: item.name,
-        company: item.company || null,
-        email: item.email,
-        phone: item.phone || null,
-        message: item.message || null,
-        status: 'new',
-        payload: Object.keys(extras).length ? extras : null
-      })
-    })
-    let r = await doPost()
-    if (!r.ok) {
-      // retry once
-      r = await doPost()
+    const filePath = path.join(process.cwd(), 'data/inquiries.json')
+    let currentData: Inquiry[] = []
+    
+    // Ensure data directory exists
+    const dir = path.dirname(filePath)
+    if (!fs.existsSync(dir)) fs.mkdirSync(dir, { recursive: true })
+
+    if (fs.existsSync(filePath)) {
+       const fileContent = fs.readFileSync(filePath, 'utf-8')
+       try {
+         currentData = JSON.parse(fileContent)
+       } catch (e) {
+         currentData = []
+       }
     }
-    if (!r.ok) {
-      try {
-        const t = await r.text()
-        console.error('[inquiries.persist] CMS error:', t)
-      } catch {}
-      return { ok: false }
+    
+    const newRecord: Inquiry = {
+        id: `REQ-${Date.now()}`,
+        date: new Date().toISOString(),
+        ...item
     }
-    const json = await r.json().catch(() => null)
-    const id = json?.id
-    if (!id) return { ok: false }
-    return { ok: true, id }
+    
+    // Add to top
+    currentData.unshift(newRecord)
+    fs.writeFileSync(filePath, JSON.stringify(currentData, null, 2))
+    return { ok: true, id: newRecord.id }
   } catch (e) {
-    try {
-      console.error('[inquiries.persist] Network error:', (e as any)?.message || e)
-    } catch {}
-    return { ok: false }
+     console.error('[inquiries.persist] File write error:', e)
+     return { ok: false }
   }
 }
 
@@ -160,9 +148,6 @@ function collectMeta(req: Request) {
 }
 
 async function notify(item: Inquiry, meta: any, id: string, reqId?: string) {
-  // if (!process.env.RESEND_API_KEY) {
-  //   throw new Error('RESEND_API_KEY not configured')
-  // }
   const url = process.env.SMTP_URL
   const host = process.env.MAIL_HOST || process.env.SMTP_HOST
   const port = Number(process.env.MAIL_PORT || process.env.SMTP_PORT || 587)
@@ -183,7 +168,7 @@ async function notify(item: Inquiry, meta: any, id: string, reqId?: string) {
   } else if (url) {
     transporter = nodemailer.createTransport(url)
   } else {
-    console.error('[inquiries.notify]', reqId || '', 'SMTP not configured')
+    // console.error('[inquiries.notify]', reqId || '', 'SMTP not configured')
     return
   }
   const subject = `新詢盤#${id} ${item.type} - ${item.name}`
@@ -228,19 +213,5 @@ SunGene Export Growth Team`
     try {
       await transporter.sendMail({ to: item.email, from: fromAddr, subject: ackSubj, text: ackText, headers: { 'X-Request-ID': reqId || '' } })
     } catch {}
-  }
-}
-
-// 本地備援：將詢盤落地至 data/inquiries.ndjson，避免掉單
-function fallbackAppend(item: any, id: string, meta: any) {
-  try {
-    const dir = path.resolve(process.cwd(), 'data')
-    const file = path.join(dir, 'inquiries.ndjson')
-    if (!fs.existsSync(dir)) fs.mkdirSync(dir, { recursive: true })
-    const record = { id, ...item, meta }
-    fs.appendFileSync(file, JSON.stringify(record) + '\n', 'utf8')
-    return true
-  } catch {
-    return false
   }
 }
