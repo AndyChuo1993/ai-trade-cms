@@ -13,6 +13,7 @@ export default function LoginPage() {
       headers: {
         'Content-Type': 'application/json',
       },
+      credentials: 'same-origin',
       body: JSON.stringify({ password }),
     })
     
