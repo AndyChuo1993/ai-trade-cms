@@ -138,321 +138,258 @@ const articles: Record<string, Article[]> = {
       ]
     },
     {
-      id: 'german-hardware-2026',
-      title: '2026 德國五金市場採購趨勢報告',
-      category: '市場分析',
-      date: '2026-02-15',
-      image: '/articles/market-eu.svg',
-      content: [
-        '德國一直是全球五金產品的重要進口市場之一。對於希望拓展歐洲市場的製造商來說，理解德國採購商的需求與決策流程，是成功進入市場的重要一步。',
-        '本報告整理了近年德國五金市場的採購趨勢與買家行為變化，並分析潛在供應商應該如何調整外貿策略。'
-      ],
-      sections: [
-        {
-          heading: '德國市場需求持續穩定',
-          content: [
-            '德國在工業製造、建築與DIY市場方面長期保持穩定需求。五金產品主要應用於以下產業：',
-            '• 建築工程',
-            '• 工業設備',
-            '• DIY零售市場',
-            '• 汽車維修與配件',
-            '近年來，德國進口商更重視供應商的穩定供貨能力與產品品質，而不再單純以價格作為唯一考量。'
-          ]
-        },
-        {
-          heading: '採購決策流程更專業化',
-          content: [
-            '德國企業的採購流程通常較為嚴謹，一般會經過以下幾個階段：',
-            '1. 供應商初步篩選',
-            '2. 技術與產品評估',
-            '3. 價格與交期討論',
-            '4. 小量測試訂單',
-            '5. 長期合作評估',
-            '因此，在開發德國市場時，建立專業且完整的公司資訊與產品資料非常重要。'
-          ]
-        },
-        {
-          heading: '採購商更重視長期合作',
-          content: [
-            '與部分市場不同，德國採購商通常傾向與穩定供應商建立長期合作關係。',
-            '對供應商而言，這意味著：',
-            '• 穩定的產品品質',
-            '• 清楚的溝通流程',
-            '• 可靠的交期',
-            '• 長期合作能力',
-            '這些因素往往比單次價格更重要。'
-          ]
-        },
-        {
-          heading: '外貿開發策略建議',
-          content: [
-            '如果企業希望進入德國五金市場，可以考慮以下策略：',
-            '• 建立精準的買家名單',
-            '• 針對目標產業開發客戶',
-            '• 提供完整產品資料',
-            '• 建立專業的外貿溝通流程',
-            '透過系統化的客戶開發方式，企業可以更有效率地接觸潛在買家並建立商務關係。'
-          ]
-        }
-      ]
+        id: 'cold-email-writing-tips',
+        title: 'B2B 開發信怎麼寫？提高回覆率的 5 個技巧',
+        category: '外貿開發指南',
+        date: '2026-03-13',
+        image: '/articles/cold-email-structure.svg',
+        content: [
+            '許多外貿企業每天寄出大量開發信，但回覆率卻非常低。常見原因包括：郵件內容過於泛泛、沒有針對買家需求、開場沒有吸引力、郵件過長。',
+            '對 B2B 採購來說，一封陌生郵件通常只會花幾秒鐘掃過。因此開發信需要做到簡短、清楚、有價值。'
+        ],
+        sections: [
+            {
+                heading: '技巧一：用研究過的開場',
+                content: [
+                    '不要使用：「We are a professional manufacturer.」這種開場沒有任何價值。',
+                    '更好的方式是：「We noticed your company distributes industrial fasteners in Germany.」',
+                    '這代表你：了解對方公司、做過基本研究。這樣會大幅提高閱讀機率。'
+                ]
+            },
+            {
+                heading: '技巧二：說明具體價值',
+                content: [
+                    '買家真正關心的是：價格、品質、供應能力、交期。',
+                    '因此開發信應該說明：產品優勢、已合作客戶類型、市場經驗。',
+                    '例如：「Our factory currently supplies several European distributors with DIN standard bolts.」'
+                ]
+            },
+            {
+                heading: '技巧三：保持簡短',
+                content: [
+                    '最佳開發信長度：80–120 字。過長郵件通常會被忽略。',
+                    '建議結構：開場、價值、簡短 CTA。'
+                ]
+            },
+            {
+                heading: '技巧四：加入清楚 CTA',
+                content: [
+                    '不要只寫：「Hope to cooperate with you.」',
+                    '應該提出清楚行動：「Would you be interested in reviewing our product catalogue?」'
+                ]
+            },
+            {
+                heading: '技巧五：持續跟進',
+                content: [
+                    '大多數回覆來自：第 3–5 封郵件。',
+                    '跟進內容可以包括：新產品、案例、市場資訊。'
+                ]
+            },
+            {
+                heading: '結論',
+                content: [
+                    '成功的開發信通常具備：研究過的開場、清楚價值、簡短內容、明確 CTA、持續跟進。'
+                ]
+            }
+        ]
     },
     {
-      id: 'cold-email-structure',
-      title: '開發信高回覆率的 5 個關鍵架構',
-      category: '外貿開發指南',
-      date: '2026-01-20',
-      image: '/articles/cold-email-mistakes.svg',
-      content: [
-        '許多企業在進行外貿開發時，最常遇到的問題就是：開發信寄出去，但幾乎沒有回覆。',
-        '實際上，大多數開發信沒有回覆，並不是因為產品不好，而是因為信件內容沒有抓住買家的注意力。',
-        '以下是提升開發信回覆率的五個關鍵架構。'
-      ],
-      sections: [
-        {
-          heading: '1. 清楚的主旨',
-          content: [
-            '主旨是買家決定是否打開郵件的第一個因素。好的主旨通常具有以下特點：',
-            '• 簡潔明確',
-            '• 與買家需求相關',
-            '• 避免過度銷售語氣',
-            '例如：Hardware Supplier for EU Market 或 Precision CNC Parts Manufacturer'
-          ]
-        },
-        {
-          heading: '2. 簡短的公司介紹',
-          content: [
-            '在開發信開頭，用一兩句話說明公司背景即可。',
-            '例如：我們是一家專注於五金工具製造的工廠，產品主要出口歐洲與北美市場。',
-            '重點是讓買家快速理解你是做什麼的，而不是寫過長的公司歷史。'
-          ]
-        },
-        {
-          heading: '3. 清楚的產品定位',
-          content: [
-            '告訴買家你能提供什麼產品，以及產品的主要優勢。',
-            '例如：產品類型、應用產業、生產能力。',
-            '這可以幫助買家快速判斷是否與其需求相關。'
-          ]
-        },
-        {
-          heading: '4. 提供價值而不是只推銷',
-          content: [
-            '開發信不應該只是單純推銷產品，而是讓買家看到潛在合作價值。',
-            '例如：穩定供應能力、品質控制流程、特定市場經驗。',
-            '這些資訊可以增加買家的信任度。'
-          ]
-        },
-        {
-          heading: '5. 清楚的行動邀請',
-          content: [
-            '最後要讓買家知道下一步可以做什麼。',
-            '例如：是否方便安排簡短介紹？是否需要產品資料？是否有相關需求？',
-            '簡單明確的行動邀請，可以提高回覆機率。'
-          ]
-        }
-      ]
+        id: 'cold-email-common-mistakes',
+        title: '外貿開發信常見錯誤（90% 企業都犯）',
+        category: '外貿開發指南',
+        date: '2026-03-14',
+        image: '/articles/cold-email-mistakes.svg',
+        content: [
+            '外貿開發信為何沒有回覆？本文整理最常見的 5 個錯誤與改善方式。'
+        ],
+        sections: [
+            {
+                heading: '錯誤一：只介紹公司',
+                content: [
+                    '很多開發信內容是：「We are a manufacturer with 20 years experience.」',
+                    '這對買家沒有價值。買家關心的是：能否解決問題。'
+                ]
+            },
+            {
+                heading: '錯誤二：沒有研究買家',
+                content: [
+                    '寄出與對方業務無關的郵件，是最常見問題。例如：向經銷商推銷 OEM。'
+                ]
+            },
+            {
+                heading: '錯誤三：郵件太長',
+                content: [
+                    '許多郵件長達 300–500 字，但採購通常只會閱讀 10 秒。'
+                ]
+            },
+            {
+                heading: '錯誤四：沒有 CTA',
+                content: [
+                    '如果沒有明確行動，買家通常不會回覆。'
+                ]
+            },
+            {
+                heading: '錯誤五：沒有跟進',
+                content: [
+                    '很多企業寄一封信就停止。但實際上：回覆通常來自第 3 封之後。'
+                ]
+            }
+        ]
     },
     {
       id: 'europe-market-guide',
-      title: '歐洲市場開發指南：品質與認證是關鍵',
+      title: '歐洲市場開發指南',
       category: '市場分析',
       date: '2026-03-01',
       image: '/articles/market-eu.svg',
       content: [
-        '歐洲是一個高標準、高要求的市場。對於想進入歐洲的製造商來說，除了價格，更重要的是品質與合規性。',
-        '以下是開發歐洲市場的幾個重點。'
+        '歐洲是全球重要的工業市場。特點包括：品質要求高、法規嚴格、長期合作。'
       ],
       sections: [
         {
-          heading: '嚴格的認證要求',
+          heading: '歐洲主要買家類型',
           content: [
-            'CE 認證是進入歐盟市場的基本門檻。此外，不同產業還有各自的標準，如 RoHS、REACH 等。',
-            '確保你的產品符合相關法規，是贏得歐洲買家信任的第一步。'
+            '進口商、經銷商、品牌商、OEM。'
           ]
         },
         {
-          heading: '重視環保與永續',
+          heading: '歐洲市場開發方法',
           content: [
-            '歐洲買家非常重視供應商的環保意識與社會責任 (ESG)。',
-            '如果你的工廠有相關的環保認證或節能措施，會是一個很大的加分項。'
-          ]
-        },
-        {
-          heading: '溝通風格',
-          content: [
-            '歐洲客戶通常偏好直接、專業的溝通方式。',
-            '回覆郵件要及時，提供的資訊要準確，避免誇大其詞。'
+            '展會：例如 Hannover Messe, Interpack。',
+            'LinkedIn：LinkedIn 在歐洲使用率高。',
+            'Email Outreach：仍然是最有效方式之一。'
           ]
         }
       ]
     },
     {
       id: 'north-america-market-guide',
-      title: '北美市場開發指南：效率與創新',
+      title: '北美市場開發指南',
       category: '市場分析',
       date: '2026-03-02',
       image: '/articles/market-na.svg',
       content: [
-        '北美市場（美國、加拿大）是全球最大的消費市場之一，也是許多企業外貿開發的首選。',
-        '這裡的買家重視效率、創新以及供應鏈的穩定性。'
+        '北美市場特點：市場規模大、品牌競爭激烈、品質與服務要求高。'
       ],
       sections: [
         {
-          heading: '快速的市場節奏',
+          heading: '常見買家',
           content: [
-            '北美買家通常決策速度較快，但也期望供應商能快速回應。',
-            '交期與物流速度是他們非常在意的考量點。'
+            'Distributor, Importer, Retail brand。'
           ]
         },
         {
-          heading: '在地化服務',
+          heading: '開發方法',
           content: [
-            '如果能提供當地發貨或售後服務，會大大增加合作機會。',
-            '許多北美買家傾向與有在地支援能力的供應商合作。'
+            'Google, LinkedIn, Trade shows, Email outreach。'
           ]
         }
       ]
     },
     {
       id: 'japan-market-guide',
-      title: '日本市場開發指南：信任與細節',
+      title: '日本市場開發指南',
       category: '市場分析',
       date: '2026-03-03',
       image: '/articles/market-jp.svg',
       content: [
-        '日本市場以「難進易守」著稱。一旦建立了信任關係，日本客戶通常非常忠誠。',
-        '但在建立關係的初期，你需要展現極致的耐心與對細節的堅持。'
+        '日本市場的特點：品質要求極高、信任建立慢、合作穩定。'
       ],
       sections: [
         {
-          heading: '品質零容忍',
+          heading: '開發重點',
           content: [
-            '日本客戶對產品外觀、包裝甚至標籤的貼法都有極高要求。',
-            '任何微小的瑕疵都可能被視為品質問題。'
-          ]
-        },
-        {
-          heading: '長期的溝通',
-          content: [
-            '與日本客戶建立關係通常需要較長的時間。',
-            '不要期望一兩封郵件就能下單，通常需要多次的樣品確認與訪廠（或視訊會議）。'
+            '產品品質、文件完整、長期關係。'
           ]
         }
       ]
     },
     {
-      id: 'hardware-export-guide',
-      title: '五金工具產業外貿開發策略',
-      category: '案例解析',
-      date: '2026-03-05',
-      image: '/articles/industry-hardware.svg',
-      content: [
-        '台灣的五金工具產業在全球佔有重要地位。面對來自中國與東南亞的競爭，如何突顯價值？',
-        '本篇分析五金產業的外貿開發重點。'
-      ],
-      sections: [
-        {
-          heading: 'OEM vs ODM',
-          content: [
-            '單純的代工 (OEM) 容易陷入價格戰。',
-            '提升設計與研發能力 (ODM)，提供差異化的產品，是留住高價值客戶的關鍵。'
-          ]
-        },
-        {
-          heading: '目標市場選擇',
-          content: [
-            '歐美市場對高品質手工具需求大，適合中高階產品。',
-            '新興市場則對價格較敏感，但需求量大。'
-          ]
-        }
-      ]
-    },
-    {
-      id: 'electronics-export-guide',
-      title: '電子零組件外貿開發：打入全球供應鏈',
-      category: '案例解析',
-      date: '2026-03-06',
-      image: '/articles/industry-electronics.svg',
-      content: [
-        '電子零組件的 B2B 開發，往往需要面對更專業的採購與工程人員。',
-        '如何展現技術實力並通過嚴格的供應商審核？'
-      ],
-      sections: [
-        {
-          heading: '技術規格的精準溝通',
-          content: [
-            '開發信中應包含清晰的規格書 (Datasheet) 連結。',
-            '直接對接工程師或研發人員，往往比對接採購更有效。'
-          ]
-        },
-        {
-          heading: '樣品測試',
-          content: [
-            '電子業的合作幾乎都從樣品測試開始。',
-            '建立快速的樣品寄送流程，可以縮短開發週期。'
-          ]
-        }
-      ]
-    },
-    {
-      id: 'packaging-export-guide',
-      title: '包裝材料外貿趨勢：環保與永續',
-      category: '案例解析',
-      date: '2026-03-07',
-      image: '/articles/industry-packaging.svg',
-      content: [
-        '隨著全球減塑政策的推行，包裝材料產業正面臨巨大的轉型壓力與機會。',
-        '環保材質與可回收設計成為採購商的關注焦點。'
-      ],
-      sections: [
-        {
-          heading: '歐洲市場的環保法規',
-          content: [
-            '歐盟對包裝材料的回收率有嚴格規定。',
-            '供應商若能提供 PCR (消費後再生塑膠) 或生物可分解材質，將極具競爭力。'
-          ]
-        },
-        {
-          heading: '品牌商的 ESG 需求',
-          content: [
-            '許多國際品牌已承諾使用永續包裝。',
-            '主動提供環保認證 (如 FSC) 與碳足跡數據，能增加進入供應鏈的機會。'
-          ]
-        }
-      ]
-    },
-    {
-        id: 'cold-email-mistakes',
-        title: '開發信常見錯誤：為什麼你的信沒人回？',
-        category: '外貿開發指南',
-        date: '2026-02-25',
-        image: '/articles/cold-email-mistakes.svg',
+        id: 'southeast-asia-market-guide',
+        title: '東南亞市場開發指南',
+        category: '市場分析',
+        date: '2026-03-04',
+        image: '/articles/lead-gen-guide.svg',
         content: [
-            '發了幾百封開發信，回覆率卻不到 1%？這可能是因為你犯了幾個常見錯誤。',
-            'B2B 買家每天會收到數十封甚至上百封的推銷郵件，如果你的信件看起來像垃圾郵件或缺乏重點，很容易就被忽略。'
+            '東南亞市場：成長快速、價格敏感、市場多樣。'
         ],
         sections: [
             {
-                heading: '錯誤一：標題太像廣告',
+                heading: '熱門市場',
                 content: [
-                    '避免使用「Best Price」、「Hot Sale」、「High Quality」等過度推銷的字眼。',
-                    '這類標題很容易被郵件過濾器攔截，或者讓買家直接刪除。',
-                    '建議使用更專業、具體的標題，例如提及買家的產業或潛在需求。'
+                    '越南、泰國、印尼、馬來西亞。'
                 ]
-            },
+            }
+        ]
+    },
+    {
+      id: 'hardware-market-analysis',
+      title: '五金工具外貿市場分析',
+      category: '產業分析',
+      date: '2026-03-05',
+      image: '/articles/industry-hardware.svg',
+      content: [
+        '全球五金市場需求主要來自：建築、工業、DIY。'
+      ],
+      sections: [
+        {
+          heading: '主要進口市場',
+          content: [
+            '美國、德國、英國、加拿大。'
+          ]
+        }
+      ]
+    },
+    {
+      id: 'electronics-market-analysis',
+      title: '電子零組件外貿市場',
+      category: '產業分析',
+      date: '2026-03-06',
+      image: '/articles/industry-electronics.svg',
+      content: [
+        '電子零組件市場特點：更新速度快、價格競爭激烈、技術要求高。'
+      ],
+      sections: [
+        {
+          heading: '主要市場',
+          content: [
+            '北美、歐洲、日本、韓國。'
+          ]
+        }
+      ]
+    },
+    {
+      id: 'packaging-market-analysis',
+      title: '包裝材料外貿市場',
+      category: '產業分析',
+      date: '2026-03-07',
+      image: '/articles/industry-packaging.svg',
+      content: [
+        '需求來自：食品、電商、物流。'
+      ],
+      sections: [
+        {
+          heading: '熱門產品',
+          content: [
+            '紙箱、塑膠包裝、環保包材。'
+          ]
+        }
+      ]
+    },
+    {
+        id: 'industrial-materials-market-analysis',
+        title: '工業材料外貿市場',
+        category: '產業分析',
+        date: '2026-03-08',
+        image: '/articles/lead-gen-guide.svg',
+        content: [
+            '主要需求：金屬材料、化工材料、建築材料。'
+        ],
+        sections: [
             {
-                heading: '錯誤二：內容太長且缺乏重點',
+                heading: '主要市場',
                 content: [
-                    '買家時間寶貴，沒人想看長篇大論的公司歷史。',
-                    '開發信應該簡潔明瞭，直接切入重點：你是誰、你能提供什麼價值、為什麼買家應該感興趣。',
-                    '控制在 3-4 段以內，每段不超過 3 行。'
-                ]
-            },
-            {
-                heading: '錯誤三：沒有明確的行動呼籲 (CTA)',
-                content: [
-                    '很多信件結尾只是「Hope to hear from you」，這太被動了。',
-                    '給買家一個明確的下一步，例如：「是否有空進行 10 分鐘的通話？」或「是否需要我們寄送樣品參考？」。'
+                    '歐洲、北美、中東。'
                 ]
             }
         ]
@@ -585,146 +522,260 @@ const articles: Record<string, Article[]> = {
       ]
     },
     {
-      id: 'german-hardware-2026',
-      title: '2026 German Hardware Market Trends',
+        id: 'cold-email-writing-tips',
+        title: 'How to Write B2B Cold Emails: 5 Tips for Higher Reply Rates',
+        category: 'Export Guide',
+        date: '2026-03-13',
+        image: '/articles/cold-email-structure.svg',
+        content: [
+            'Many export companies send mass emails daily but get low reply rates. Common reasons: Generic content, irrelevant to buyer needs, weak opening, too long.',
+            'For B2B buyers, a cold email gets only a few seconds of attention. It must be Short, Clear, and Valuable.'
+        ],
+        sections: [
+            {
+                heading: 'Tip 1: Use a Researched Opening',
+                content: [
+                    'Avoid: "We are a professional manufacturer." This has no value.',
+                    'Better: "We noticed your company distributes industrial fasteners in Germany."',
+                    'This shows you: Know their company, Did research. This increases reading probability.'
+                ]
+            },
+            {
+                heading: 'Tip 2: Explain Specific Value',
+                content: [
+                    'Buyers care about: Price, Quality, Supply Capacity, Lead Time.',
+                    'Your email should state: Product advantages, Current client types, Market experience.',
+                    'Example: "Our factory currently supplies several European distributors with DIN standard bolts."'
+                ]
+            },
+            {
+                heading: 'Tip 3: Keep it Short',
+                content: [
+                    'Optimal length: 80–120 words. Long emails are ignored.',
+                    'Structure: Opening, Value, Short CTA.'
+                ]
+            },
+            {
+                heading: 'Tip 4: Clear CTA',
+                content: [
+                    'Don\'t just say: "Hope to cooperate with you."',
+                    'Ask for action: "Would you be interested in reviewing our product catalogue?"'
+                ]
+            },
+            {
+                heading: 'Tip 5: Follow Up',
+                content: [
+                    'Most replies come from: 3rd–5th email.',
+                    'Follow-up content: New products, Case studies, Market info.'
+                ]
+            },
+            {
+                heading: 'Conclusion',
+                content: [
+                    'Successful cold emails have: Researched opening, Clear value, Brevity, Clear CTA, Consistent follow-up.'
+                ]
+            }
+        ]
+    },
+    {
+        id: 'cold-email-common-mistakes',
+        title: 'Common Cold Email Mistakes (90% Companies Make)',
+        category: 'Export Guide',
+        date: '2026-03-14',
+        image: '/articles/cold-email-mistakes.svg',
+        content: [
+            'Why are your cold emails ignored? Here are the 5 most common mistakes and how to fix them.'
+        ],
+        sections: [
+            {
+                heading: 'Mistake 1: Only Talking About Yourself',
+                content: [
+                    'Many emails say: "We are a manufacturer with 20 years experience."',
+                    'This has no value to the buyer. Buyers care about: Can you solve their problem?'
+                ]
+            },
+            {
+                heading: 'Mistake 2: No Buyer Research',
+                content: [
+                    'Sending irrelevant emails is the most common issue. Example: Pitching OEM to a distributor.'
+                ]
+            },
+            {
+                heading: 'Mistake 3: Too Long',
+                content: [
+                    'Many emails are 300–500 words. Buyers read for 10 seconds.'
+                ]
+            },
+            {
+                heading: 'Mistake 4: No CTA',
+                content: [
+                    'Without a clear action, buyers won\'t reply.'
+                ]
+            },
+            {
+                heading: 'Mistake 5: No Follow-up',
+                content: [
+                    'Many stop after one email. Reality: Replies come after the 3rd email.'
+                ]
+            }
+        ]
+    },
+    {
+      id: 'europe-market-guide',
+      title: 'Europe Market Guide',
       category: 'Market Analysis',
-      date: '2026-02-15',
+      date: '2026-03-01',
       image: '/articles/market-eu.svg',
       content: [
-        'Germany remains one of the most critical import markets for hardware products globally. For manufacturers aiming to expand into Europe, understanding the demands and decision-making processes of German buyers is a crucial first step.',
-        'This report summarizes recent procurement trends and behavioral shifts in the German hardware market and analyzes how potential suppliers should adjust their export strategies.'
+        'Europe is a key global industrial market. Features: High quality standards, Strict regulations, Long-term partnerships.'
       ],
       sections: [
         {
-          heading: 'Stable Market Demand',
+          heading: 'Key Buyer Types',
           content: [
-            'Germany maintains consistent demand in industrial manufacturing, construction, and DIY sectors. Key applications include:',
-            '• Construction Engineering',
-            '• Industrial Equipment',
-            '• DIY Retail Market',
-            '• Automotive Repair & Accessories',
-            'In recent years, German importers have placed greater emphasis on stable supply capabilities and product quality, rather than price alone.'
+            'Importers, Distributors, Brand Owners, OEMs.'
           ]
         },
         {
-          heading: 'Professional Procurement Process',
+          heading: 'Development Methods',
           content: [
-            'The procurement process in German companies is typically rigorous, involving:',
-            '1. Initial Supplier Screening',
-            '2. Technical & Product Evaluation',
-            '3. Price & Delivery Negotiation',
-            '4. Small Test Orders',
-            '5. Long-term Partnership Assessment',
-            'Therefore, establishing professional and complete company and product information is vital when developing the German market.'
-          ]
-        },
-        {
-          heading: 'Focus on Long-term Partnership',
-          content: [
-            'Unlike some markets, German buyers prefer establishing long-term relationships with stable suppliers.',
-            'For suppliers, this means focusing on:',
-            '• Consistent Product Quality',
-            '• Clear Communication Processes',
-            '• Reliable Delivery',
-            '• Long-term Cooperation Capability',
-            'These factors are often more important than a one-time price advantage.'
+            'Trade Shows: Hannover Messe, Interpack.',
+            'LinkedIn: High usage in Europe.',
+            'Email Outreach: Still one of the most effective ways.'
           ]
         }
       ]
     },
     {
-      id: 'cold-email-structure',
-      title: '5 Key Structures for High-Response Cold Emails',
-      category: 'Export Guide',
-      date: '2026-01-20',
-      image: '/articles/cold-email-mistakes.svg',
-      content: ['Many companies face a common issue in export development: sending emails but getting no replies.', 'Here are 5 key structures to improve your cold email response rates.'],
+      id: 'north-america-market-guide',
+      title: 'North America Market Guide',
+      category: 'Market Analysis',
+      date: '2026-03-02',
+      image: '/articles/market-na.svg',
+      content: [
+        'North America Market Features: Large scale, Intense brand competition, High quality & service demands.'
+      ],
       sections: [
-        { heading: '1. Clear Subject Line', content: ['Concise, relevant, and non-salesy.'] },
-        { heading: '2. Brief Intro', content: ['One or two sentences about what you do.'] },
-        { heading: '3. Clear Positioning', content: ['What products and advantages do you offer?'] },
-        { heading: '4. Provide Value', content: ['Focus on value, not just selling.'] },
-        { heading: '5. Clear CTA', content: ['Tell them what to do next.'] }
+        {
+          heading: 'Common Buyers',
+          content: [
+            'Distributor, Importer, Retail brand.'
+          ]
+        },
+        {
+          heading: 'Development Methods',
+          content: [
+            'Google, LinkedIn, Trade shows, Email outreach.'
+          ]
+        }
       ]
     },
     {
-        id: 'cold-email-mistakes',
-        title: 'Common Cold Email Mistakes',
-        category: 'Export Guide',
-        date: '2026-02-25',
-        image: '/articles/cold-email-mistakes.svg',
-        content: ['Why are your emails being ignored? Avoid these common pitfalls.'],
-        sections: [
-            { heading: 'Mistake 1: Salesy Subject Lines', content: ['Avoid "Best Price" or "Hot Sale".'] },
-            { heading: 'Mistake 2: Too Long', content: ['Keep it brief and value-focused.'] }
-        ]
+      id: 'japan-market-guide',
+      title: 'Japan Market Guide',
+      category: 'Market Analysis',
+      date: '2026-03-03',
+      image: '/articles/market-jp.svg',
+      content: [
+        'Japan Market Features: Extreme quality demands, Slow trust building, Stable partnerships.'
+      ],
+      sections: [
+        {
+          heading: 'Development Focus',
+          content: [
+            'Product quality, Complete documentation, Long-term relationships.'
+          ]
+        }
+      ]
     },
     {
-        id: 'europe-market-guide',
-        title: 'Europe Market Guide: Quality & Compliance',
+        id: 'southeast-asia-market-guide',
+        title: 'Southeast Asia Market Guide',
         category: 'Market Analysis',
-        date: '2026-03-01',
-        image: '/articles/market-eu.svg',
-        content: ['Entering the European market requires meeting high standards. Key insights inside.'],
+        date: '2026-03-04',
+        image: '/articles/lead-gen-guide.svg',
+        content: [
+            'Southeast Asia Market: Fast growth, Price sensitive, Diverse markets.'
+        ],
         sections: [
-            { heading: 'Certifications', content: ['CE, RoHS, REACH are essential.'] },
-            { heading: 'Sustainability', content: ['ESG is increasingly important.'] }
+            {
+                heading: 'Key Markets',
+                content: [
+                    'Vietnam, Thailand, Indonesia, Malaysia.'
+                ]
+            }
         ]
     },
     {
-        id: 'north-america-market-guide',
-        title: 'North America Market Guide',
-        category: 'Market Analysis',
-        date: '2026-03-02',
-        image: '/articles/market-na.svg',
-        content: ['Efficiency and innovation drive the North American market.'],
-        sections: [
-            { heading: 'Fast Pace', content: ['Speed of delivery and communication is crucial.'] }
-        ]
+      id: 'hardware-market-analysis',
+      title: 'Hardware Industry Market Analysis',
+      category: 'Industry Analysis',
+      date: '2026-03-05',
+      image: '/articles/industry-hardware.svg',
+      content: [
+        'Global hardware demand comes from: Construction, Industrial, DIY.'
+      ],
+      sections: [
+        {
+          heading: 'Key Import Markets',
+          content: [
+            'USA, Germany, UK, Canada.'
+          ]
+        }
+      ]
     },
     {
-        id: 'japan-market-guide',
-        title: 'Japan Market Guide: Trust & Detail',
-        category: 'Market Analysis',
-        date: '2026-03-03',
-        image: '/articles/market-jp.svg',
-        content: ['Building trust in Japan takes time but yields loyal partners.'],
-        sections: [
-            { heading: 'Quality First', content: ['Zero tolerance for defects.'] }
-        ]
+      id: 'electronics-market-analysis',
+      title: 'Electronics Component Market Analysis',
+      category: 'Industry Analysis',
+      date: '2026-03-06',
+      image: '/articles/industry-electronics.svg',
+      content: [
+        'Electronics Market Features: Fast updates, Intense price competition, High tech requirements.'
+      ],
+      sections: [
+        {
+          heading: 'Key Markets',
+          content: [
+            'North America, Europe, Japan, Korea.'
+          ]
+        }
+      ]
     },
     {
-        id: 'hardware-export-guide',
-        title: 'Hardware Industry Export Strategy',
-        category: 'Case Insights',
-        date: '2026-03-05',
-        image: '/articles/industry-hardware.svg',
-        content: ['Strategies for hardware manufacturers to compete globally.'],
-        sections: [
-            { heading: 'ODM Value', content: ['Move beyond price competition with design.'] }
-        ]
+      id: 'packaging-market-analysis',
+      title: 'Packaging Industry Market Analysis',
+      category: 'Industry Analysis',
+      date: '2026-03-07',
+      image: '/articles/industry-packaging.svg',
+      content: [
+        'Demand sources: Food, E-commerce, Logistics.'
+      ],
+      sections: [
+        {
+          heading: 'Popular Products',
+          content: [
+            'Cartons, Plastic packaging, Eco-friendly materials.'
+          ]
+        }
+      ]
     },
     {
-        id: 'electronics-export-guide',
-        title: 'Electronics Component Export Guide',
-        category: 'Case Insights',
-        date: '2026-03-06',
-        image: '/articles/industry-electronics.svg',
-        content: ['Breaking into the global electronics supply chain.'],
+        id: 'industrial-materials-market-analysis',
+        title: 'Industrial Materials Market Analysis',
+        category: 'Industry Analysis',
+        date: '2026-03-08',
+        image: '/articles/lead-gen-guide.svg',
+        content: [
+            'Key demands: Metals, Chemicals, Construction materials.'
+        ],
         sections: [
-            { heading: 'Technical Communication', content: ['Speak the engineers\' language.'] }
-        ]
-    },
-    {
-        id: 'packaging-export-guide',
-        title: 'Packaging Industry Export Trends',
-        category: 'Case Insights',
-        date: '2026-03-07',
-        image: '/articles/industry-packaging.svg',
-        content: ['Sustainability is reshaping the packaging industry. How to adapt?'],
-        sections: [
-            { heading: 'EU Regulations', content: ['Recyclability is now a mandate.'] },
-            { heading: 'ESG Demand', content: ['Global brands demand sustainable supply chains.'] }
+            {
+                heading: 'Key Markets',
+                content: [
+                    'Europe, North America, Middle East.'
+                ]
+            }
         ]
     }
   ]
