@@ -21,7 +21,7 @@ export default function HeroSection({ lang }: { lang: Lang }) {
               {t(lang, 'hero_title')}
             </h1>
             <p className="text-xl md:text-2xl text-gray-600 leading-relaxed mb-12 max-w-3xl mx-auto">
-              {t(lang, 'hero_subtitle')}
+              {t(lang, 'hero_description')}
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-4">
               <Link 

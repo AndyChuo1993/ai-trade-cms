@@ -1,5 +1,6 @@
 'use client'
 import { useState } from 'react'
+import { useSearchParams, usePathname } from 'next/navigation'
 import { t, Lang } from '@/lib/i18n'
 
 export type FormField = {
@@ -33,6 +34,8 @@ export default function InquiryForm({
 }: InquiryFormProps) {
   const [loading, setLoading] = useState(false)
   const [status, setStatus] = useState<'idle' | 'success' | 'error' | 'email_error'>('idle')
+  const searchParams = useSearchParams()
+  const pathname = usePathname()
 
   const validateEmail = (email: string) => {
     return String(email)
@@ -78,6 +81,11 @@ export default function InquiryForm({
         productName: data.product,
         targetMarket: data.market,
         message: data.message,
+        pageSource: pathname,
+        lang: lang,
+        utm_source: searchParams.get('utm_source') || '',
+        utm_medium: searchParams.get('utm_medium') || '',
+        utm_campaign: searchParams.get('utm_campaign') || '',
         ...data // Spread other fields just in case
       }
 
@@ -112,7 +120,7 @@ export default function InquiryForm({
           onClick={() => setStatus('idle')}
           className="mt-6 text-blue-600 font-medium hover:underline"
         >
-          Submit another request
+          {lang === 'zh' ? '再次提交需求' : 'Submit another request'}
         </button>
       </div>
     )

@@ -24,7 +24,7 @@ export default function Footer({ lang }: { lang: Lang }) {
             </div>
           </div>
           <div>
-            <h4 className="text-lg font-semibold mb-6">Quick Links</h4>
+            <h4 className="text-lg font-semibold mb-6">{lang === 'zh' ? '快速連結' : 'Quick Links'}</h4>
             <ul className="space-y-3 text-gray-400">
               <li><Link href={`/${lang}/services`} className="hover:text-white transition">{t(lang, 'nav_services')}</Link></li>
               <li><Link href={`/${lang}/how-it-works`} className="hover:text-white transition">{t(lang, 'nav_process')}</Link></li>

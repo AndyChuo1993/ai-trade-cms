@@ -91,6 +91,92 @@ export default function Page({ params }: { params: { lang: Lang } }) {
         </div>
       </section>
 
+      {/* Comparison Table */}
+      <section className="py-24 bg-white border-b border-gray-100">
+        <div className="mx-auto max-w-7xl px-6">
+            <div className="text-center mb-16">
+                <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">
+                    {lang === 'zh' ? '選擇適合您的服務模式' : 'Choose the Right Service Model'}
+                </h2>
+                <p className="text-xl text-gray-500 max-w-2xl mx-auto">
+                    {lang === 'zh' ? '我們提供彈性的合作方案，滿足不同階段的企業需求。' : 'Flexible solutions for every stage of your business growth.'}
+                </p>
+            </div>
+
+            <div className="overflow-x-auto">
+                <table className="w-full text-left border-collapse">
+                    <thead>
+                        <tr className="bg-gray-50 border-b-2 border-gray-200">
+                            <th className="p-4 md:p-6 font-bold text-gray-900 w-1/4"></th>
+                            <th className="p-4 md:p-6 font-bold text-blue-900 text-lg w-1/4 text-center border-l border-gray-200 bg-blue-50/50">
+                                {lang === 'zh' ? '客戶名單開發' : 'Lead Generation'}
+                            </th>
+                            <th className="p-4 md:p-6 font-bold text-green-900 text-lg w-1/4 text-center border-l border-gray-200 bg-green-50/50">
+                                {lang === 'zh' ? '海外客戶開發' : 'Cold Outreach'}
+                            </th>
+                            <th className="p-4 md:p-6 font-bold text-indigo-900 text-lg w-1/4 text-center border-l border-gray-200 bg-indigo-50/50">
+                                {lang === 'zh' ? '外貿外包服務' : 'Sales Outsourcing'}
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {[
+                            {
+                                label: lang === 'zh' ? '適合對象' : 'Best For',
+                                c1: lang === 'zh' ? '有業務團隊，缺名單' : 'Has Sales Team, Needs Leads',
+                                c2: lang === 'zh' ? '想主動開發，缺方法' : 'Wants Outreach, Needs Strategy',
+                                c3: lang === 'zh' ? '無外貿團隊，缺人手' : 'No Team, Needs Manpower'
+                            },
+                            {
+                                label: lang === 'zh' ? '核心價值' : 'Core Value',
+                                c1: lang === 'zh' ? '省去 80% 找客戶時間' : 'Save 80% Research Time',
+                                c2: lang === 'zh' ? '建立主動獲客系統' : 'Build Outreach System',
+                                c3: lang === 'zh' ? '立即擁有專業團隊' : 'Instant Pro Team'
+                            },
+                            {
+                                label: lang === 'zh' ? '交付內容' : 'Deliverables',
+                                c1: lang === 'zh' ? '決策人名單 (Excel)' : 'Decision Maker List',
+                                c2: lang === 'zh' ? '開發信與回覆' : 'Emails & Replies',
+                                c3: lang === 'zh' ? '詢盤處理與訂單跟進' : 'Inquiry Handling & Closing'
+                            },
+                            {
+                                label: lang === 'zh' ? '執行週期' : 'Duration',
+                                c1: lang === 'zh' ? '單次交付 (1-2週)' : 'One-time (1-2 Weeks)',
+                                c2: lang === 'zh' ? '專案制 (3-6個月)' : 'Project (3-6 Months)',
+                                c3: lang === 'zh' ? '長期合作 (6個月+)' : 'Long-term (6 Months+)'
+                            }
+                        ].map((row, idx) => (
+                            <tr key={idx} className="border-b border-gray-100 hover:bg-gray-50 transition">
+                                <td className="p-4 md:p-6 font-bold text-gray-900 bg-gray-50/30">{row.label}</td>
+                                <td className="p-4 md:p-6 text-gray-600 text-center border-l border-gray-100 font-medium">{row.c1}</td>
+                                <td className="p-4 md:p-6 text-gray-600 text-center border-l border-gray-100 font-medium">{row.c2}</td>
+                                <td className="p-4 md:p-6 text-gray-600 text-center border-l border-gray-100 font-medium">{row.c3}</td>
+                            </tr>
+                        ))}
+                        <tr>
+                            <td className="p-4 md:p-6 bg-gray-50/30"></td>
+                            <td className="p-4 md:p-6 text-center border-l border-gray-100">
+                                <Link href={`/${lang}/services/lead-generation`} className="text-blue-600 font-bold hover:underline text-sm">
+                                    {lang === 'zh' ? '了解更多' : 'Learn More'} →
+                                </Link>
+                            </td>
+                            <td className="p-4 md:p-6 text-center border-l border-gray-100">
+                                <Link href={`/${lang}/services/cold-outreach`} className="text-green-600 font-bold hover:underline text-sm">
+                                    {lang === 'zh' ? '了解更多' : 'Learn More'} →
+                                </Link>
+                            </td>
+                            <td className="p-4 md:p-6 text-center border-l border-gray-100">
+                                <Link href={`/${lang}/services/sales-outsourcing`} className="text-indigo-600 font-bold hover:underline text-sm">
+                                    {lang === 'zh' ? '了解更多' : 'Learn More'} →
+                                </Link>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+      </section>
+
       {/* Services List */}
       <div className="py-12">
         {services.map((s, idx) => (

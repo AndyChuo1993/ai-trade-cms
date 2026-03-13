@@ -29,6 +29,29 @@ export default function Page({ params }: { params: { lang: Lang } }) {
     <main className="min-h-screen bg-white text-gray-900 font-sans selection:bg-blue-100">
       <HeroSection lang={lang} />
       <ServicesPreview lang={lang} />
+      
+      {/* Mid-page CTA */}
+      <section className="bg-blue-50 py-16 border-y border-blue-100">
+        <div className="mx-auto max-w-7xl px-6 flex flex-col md:flex-row items-center justify-between gap-8">
+            <div className="flex-1 text-center md:text-left">
+                <h3 className="text-2xl font-bold text-gray-900 mb-2">
+                    {lang === 'zh' ? '還在猶豫？先看看我們的實戰案例' : 'Still undecided? Check our case studies'}
+                </h3>
+                <p className="text-gray-600">
+                    {lang === 'zh' ? '下載完整外貿開發案例集，了解我們如何協助台灣製造商成功出海。' : 'Download our full case study collection and see how we help manufacturers go global.'}
+                </p>
+            </div>
+            <div className="flex gap-4">
+                <Link href={`/${lang}/contact`} className="bg-white text-blue-900 border border-blue-200 font-bold py-3 px-6 rounded-sm hover:bg-blue-50 transition">
+                    {lang === 'zh' ? '索取示意案例 PDF' : 'Get Case Study PDF'}
+                </Link>
+                <Link href={`/${lang}/free-market-analysis`} className="bg-blue-600 text-white font-bold py-3 px-6 rounded-sm hover:bg-blue-500 transition shadow-md">
+                    {lang === 'zh' ? '免費市場分析' : 'Free Market Analysis'}
+                </Link>
+            </div>
+        </div>
+      </section>
+
       <WhyUs lang={lang} />
       <ProcessSection lang={lang} />
       <CasePreview lang={lang} />

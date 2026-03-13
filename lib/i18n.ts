@@ -1,6 +1,6 @@
 ﻿export type Lang = 'zh' | 'en'
 
-const dict: Record<Lang, Record<string, string>> = {
+const dict = {
   'zh': {
     // Navigation
     nav_home: '首頁',
@@ -17,6 +17,7 @@ const dict: Record<Lang, Record<string, string>> = {
     // Hero
     hero_title: '幫企業開發海外買家，建立穩定的外貿客戶來源',
     hero_subtitle: '透過市場分析、買家名單與系統化開發流程，協助企業拓展全球市場。',
+    hero_description: '從買家名單建立、開發信撰寫，到詢盤跟進與外貿支援，SunGene 提供可落地的外貿客戶開發服務。',
     hero_cta_start: '開始開發海外客戶',
     hero_cta_analysis: '免費市場分析',
     home_cta_title: '立即開始您的外貿增長',
@@ -83,6 +84,8 @@ const dict: Record<Lang, Record<string, string>> = {
     form_success_desc: '我們已收到您的資訊，將在 48 小時內寄送分析報告至您的信箱。',
     form_error_title: '提交失敗',
     form_error_desc: '請稍後再試，或直接聯繫我們。',
+    success_title: '提交成功',
+    success_message: '我們已收到您的資訊，將在 48 小時內寄送分析報告至您的信箱。',
 
     // About Page
     about_title: '關於 SunGene',
@@ -121,6 +124,7 @@ const dict: Record<Lang, Record<string, string>> = {
     // Hero
     hero_title: 'Develop Overseas Buyers & Build Stable Export Revenue',
     hero_subtitle: 'Expanding global markets through market analysis, buyer lists, and systematic outreach processes.',
+    hero_description: 'From buyer list building and cold outreach to inquiry follow-up and sales support, SunGene provides actionable export development services.',
     hero_cta_start: 'Start Export Growth',
     hero_cta_analysis: 'Get Free Market Analysis',
     home_cta_title: 'Start Your Export Growth Now',
@@ -187,6 +191,8 @@ const dict: Record<Lang, Record<string, string>> = {
     form_success_desc: 'We have received your request. Your market analysis report will be sent to your email within 48 hours.',
     form_error_title: 'Submission Failed',
     form_error_desc: 'Please try again later or contact us directly.',
+    success_title: 'Request Received',
+    success_message: 'We have received your request. Your market analysis report will be sent to your email within 48 hours.',
 
     // About Page
     about_title: 'About SunGene',
@@ -212,5 +218,10 @@ const dict: Record<Lang, Record<string, string>> = {
 }
 
 export function t(lang: Lang, key: string): string {
+  // @ts-ignore
   return dict[lang]?.[key] ?? dict['en'][key] ?? key
 }
+
+export type Dictionary = typeof dict['en']
+
+export const getDictionary = async (lang: Lang): Promise<Dictionary> => dict[lang]

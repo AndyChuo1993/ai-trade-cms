@@ -19,15 +19,16 @@ export type CaseContent = {
 }
 
 const baseCovers: Record<string, string> = {
-  chemie: '/cases/chemie/cover.png',
-  skyworth: '/cases/skyworth/cover.png',
-  dzics: '/cases/dzics/cover.png',
-  erkang: '/cases/erkang/cover.png',
-  // New Taiwan-specific cases placeholders (can be replaced with real images later)
-  hardware: '', // Empty to trigger fallback or use specific generic image
-  electronics: '',
-  packaging: '',
-  industrial: '',
+  hardware: '/cases/hardware-cover.svg',
+  electronics: '/cases/electronics-cover.svg',
+  packaging: '/cases/packaging-cover.svg',
+  industrial: '/cases/industrial-cover.svg',
+  machinery: '/cases/machinery-cover.svg',
+}
+
+const proofImages = {
+  chart: '/cases/kpi-chart.svg',
+  map: '/cases/market-map.svg',
 }
 
 const zh: Record<string, CaseContent> = {
@@ -39,6 +40,7 @@ const zh: Record<string, CaseContent> = {
     serviceType: 'Lead Gen + Cold Email',
     duration: '3個月',
     cover: baseCovers.hardware,
+    proofImages: [proofImages.chart],
     summary: '協助企業建立海外買家名單並進行客戶開發，成功建立多個潛在客戶聯繫與合作機會。',
     result: '詢盤增長、市場拓展',
     highlights: [
@@ -65,6 +67,7 @@ const zh: Record<string, CaseContent> = {
     serviceType: 'LinkedIn + ABM',
     duration: '2個月',
     cover: baseCovers.electronics,
+    proofImages: [proofImages.map],
     summary: '透過海外客戶開發流程，協助企業接觸採購決策者並建立商務對話。',
     result: '供應鏈進入、決策人觸達',
     highlights: [
@@ -91,6 +94,7 @@ const zh: Record<string, CaseContent> = {
     serviceType: 'Localization + Outreach',
     duration: '4個月',
     cover: baseCovers.packaging,
+    proofImages: [proofImages.chart],
     summary: '日本市場開信率 45%、回覆率 8%，成功克服語言與文化壁壘。',
     result: '在地化深耕、高回覆率',
     highlights: [
@@ -117,6 +121,7 @@ const zh: Record<string, CaseContent> = {
     serviceType: 'Technical Sales',
     duration: '6個月',
     cover: baseCovers.industrial,
+    proofImages: [proofImages.map],
     summary: '觸達高層決策者、進入大型客戶評估流程，建立技術銷售渠道。',
     result: '技術銷售、大型專案',
     highlights: [
@@ -135,34 +140,33 @@ const zh: Record<string, CaseContent> = {
       { heading: '關鍵價值', items: ['精準對接技術需求', '縮短冗長的技術審核時間', '建立高門檻的競爭護城河'] },
     ],
   },
-  chemie: {
-    slug: 'chemie',
-    title: 'Chemie 熱載體科技',
-    industry: '石油化工',
-    market: '全球 (Global)',
-    serviceType: 'Full Outsourcing',
-    duration: '12個月',
-    cover: baseCovers.chemie,
-    proofImages: ['/cases/chemie/proof-1.png', '/cases/chemie/proof-2.png'],
-    summary: '每週 10–20 詢盤、總詢盤額 3000 萬人民幣、3 天直達高層',
-    result: '詢盤增長、決策鏈直達',
+  machinery: {
+    slug: 'machinery',
+    title: '自動化設備製造商',
+    industry: '機械設備',
+    market: '東南亞 (Southeast Asia)',
+    serviceType: 'Lead Gen + Appointment',
+    duration: '5個月',
+    cover: baseCovers.machinery,
+    proofImages: [proofImages.chart],
+    summary: '透過精準名單與電話開發，成功安排 15 場經銷商會議，簽約 3 家代理。',
+    result: '通路佈局、代理簽約',
     highlights: [
-      { num: '10–20', label: '每週詢盤' },
-      { num: '¥3000萬+', label: '潛在金額' },
-      { num: '3天', label: '直達決策層' },
+      { num: '15', label: '商務會議' },
+      { num: '3', label: '代理簽約' },
+      { num: '越南/泰國', label: '市場落地' },
     ],
-    before: ['客戶名單分散', '展會轉化率低', '開發週期不可控'],
-    after: ['AI 精準篩選', '每週穩定 20+ 詢盤', '3天直達決策層'],
+    before: ['找不到經銷商', '無當地人脈', '語言不通'],
+    after: ['鎖定進口商', '電話+Email開發', '安排視訊會議'],
     sections: [
-      { heading: '背景', paragraphs: ['Chemie 為專注於高溫熱載體與工業流體解決方案的科技企業，產品主要應用於石油化工與高溫工業製程市場。企業具備技術優勢，但在海外市場拓展初期，缺乏穩定且精準的客戶開發機制。'] },
-      { heading: '市場困境', items: ['高端工業客戶決策層級高，接觸門檻高', '傳統展會與平台流量轉化率低', '客戶名單分散，無法有效篩選潛在決策者', '開發週期長，成本不可控'] },
-      { heading: '我們的策略', paragraphs: ['SunGene 導入 AI 名單分析與精準市場篩選系統，建立三層篩選機制：'], items: ['行業匹配與市場潛力分析', '決策層級識別與名單分級', '自動化開發節奏與跟進管理', '針對石油化工產業的專業溝通結構'] },
-      { heading: '執行方式', items: ['建立目標國家與產業優先順序', 'AI 分析潛在合作企業並標記高匹配度名單', '自動化分批觸達 + 個性化內容生成', '追蹤回應數據並即時優化開發策略'] },
-      { heading: '成果數據', items: ['每週穩定 10–20 筆高質量詢盤', '累計潛在詢盤金額超過 3000 萬人民幣', '3 天內成功直達阿聯酋石油化工企業高層', '成為該企業首個中國合作夥伴'] },
-      { heading: '關鍵價值', items: ['縮短高端客戶觸達時間', '提升決策層溝通成功率', '建立可持續運行的客戶開發結構'] },
+      { heading: '背景', paragraphs: ['客戶為自動化包裝設備製造商，欲拓展越南與泰國市場，尋找當地有售後服務能力的經銷代理商。'] },
+      { heading: '市場困境', items: ['缺乏當地通路名單，難以辨識有實力的經銷商', '語言隔閡，僅靠英文開發信回覆率低', '需要深入溝通才能確認對方的技術服務能力'] },
+      { heading: '我們的策略', paragraphs: ['結合「名單開發」與「會議邀約」：'], items: ['建立越南與泰國前 50 大包裝機械進口商名單', '透過當地語言（越文/泰文）進行電話開發 (Cold Call)', '目標是直接安排視訊會議，而非僅索取報價'] },
+      { heading: '執行方式', items: ['篩選具備維修團隊的經銷商', '發送產品演示影片作為開門磚', '由 SunGene 顧問協助初步篩選意願，再安排雙方會議'] },
+      { heading: '成果數據', items: ['成功安排 15 場與潛在經銷商的視訊會議', '客戶親自飛往當地拜訪其中 5 家', '最終與 3 家簽署代理合約，完成通路佈局'] },
+      { heading: '關鍵價值', items: ['快速篩選優質合作夥伴', '大幅降低差旅與溝通成本', '建立穩固的售後服務網絡'] },
     ],
   },
-  // Keep original cases as reference or additional content if needed
 }
 
 const en: Record<string, CaseContent> = {
@@ -174,6 +178,7 @@ const en: Record<string, CaseContent> = {
     serviceType: 'Lead Gen + Cold Email',
     duration: '3 Months',
     cover: baseCovers.hardware,
+    proofImages: [proofImages.chart],
     summary: 'Built precise buyer lists and executed outreach, successfully establishing multiple potential client connections.',
     result: 'Inquiry Growth, Market Expansion',
     highlights: [
@@ -200,6 +205,7 @@ const en: Record<string, CaseContent> = {
     serviceType: 'LinkedIn + ABM',
     duration: '2 Months',
     cover: baseCovers.electronics,
+    proofImages: [proofImages.map],
     summary: 'Leveraged overseas client development workflows to help the company reach decision-makers and establish business dialogues.',
     result: 'Supply Chain Entry, Decision Maker Access',
     highlights: [
@@ -226,6 +232,7 @@ const en: Record<string, CaseContent> = {
     serviceType: 'Localization + Outreach',
     duration: '4 Months',
     cover: baseCovers.packaging,
+    proofImages: [proofImages.chart],
     summary: 'Achieved 45% open rate and 8% reply rate in Japan, successfully overcoming language and cultural barriers.',
     result: 'Localization, High Engagement',
     highlights: [
@@ -252,6 +259,7 @@ const en: Record<string, CaseContent> = {
     serviceType: 'Technical Sales',
     duration: '6 Months',
     cover: baseCovers.industrial,
+    proofImages: [proofImages.map],
     summary: 'Reached C-level executives and entered evaluation processes at major firms, establishing a technical sales channel.',
     result: 'Technical Sales, Large Contracts',
     highlights: [
@@ -270,39 +278,38 @@ const en: Record<string, CaseContent> = {
       { heading: 'Key Value', items: ['Precise alignment with technical needs', 'Shortened technical review times', 'Built a high-barrier competitive moat'] },
     ],
   },
-  chemie: {
-    slug: 'chemie',
-    title: 'Chemie — Heat Transfer Technology',
-    industry: 'Petrochemical',
-    market: 'Global',
-    serviceType: 'Full Outsourcing',
-    duration: '12 Months',
-    cover: baseCovers.chemie,
-    proofImages: ['/cases/chemie/proof-1.png', '/cases/chemie/proof-2.png'],
-    summary: '10–20 weekly inquiries; RMB 30M+ pipeline; executive access in 3 days',
-    result: 'Scalable acquisition, executive reach',
+  machinery: {
+    slug: 'machinery',
+    title: 'Automation Machinery Manufacturer',
+    industry: 'Machinery & Equipment',
+    market: 'Southeast Asia',
+    serviceType: 'Lead Gen + Appointment',
+    duration: '5 Months',
+    cover: baseCovers.machinery,
+    proofImages: [proofImages.chart],
+    summary: 'Secured 15 meetings with distributors and signed 3 agents via precise targeting and cold calling.',
+    result: 'Channel Expansion, Agent Signing',
     highlights: [
-      { num: '10–20', label: 'weekly inquiries' },
-      { num: '¥30M+', label: 'pipeline' },
-      { num: '3 days', label: 'to executives' },
+      { num: '15', label: 'Business Meetings' },
+      { num: '3', label: 'Agents Signed' },
+      { num: 'VN/TH', label: 'Market Entry' },
     ],
-    before: ['Scattered lead data', 'Low exhibition ROI', 'Long sales cycles'],
-    after: ['AI-filtered precision', 'Stable 20+ leads/wk', 'Executive access in 3 days'],
+    before: ['No distributors', 'No local network', 'Language barrier'],
+    after: ['Targeted importers', 'Phone+Email outreach', 'Video meetings'],
     sections: [
-      { heading: 'Background', paragraphs: ['Chemie is a high‑temperature heat transfer fluid technology company serving the petrochemical and industrial processing markets. Despite strong technical capabilities, the company lacked a structured global client acquisition mechanism.'] },
-      { heading: 'Market Challenges', items: ['Hard to reach decision makers', 'Low conversion from exhibitions/platforms', 'Scattered lists without filtering', 'Long cycles and high cost'] },
-      { heading: 'Our Strategy', items: ['Industry & market‑potential filtering', 'Decision‑maker identification & ranking', 'Automated outreach rhythm with tracking'] },
-      { heading: 'Execution', items: ['Target market prioritization', 'AI‑driven prospect identification', 'Automated yet personalized outreach', 'Optimization from engagement data'] },
-      { heading: 'Results', items: ['10–20 qualified inquiries/week', 'RMB 30M+ pipeline', 'Reached senior executives in 3 days', 'First Chinese partner established'] },
-      { heading: 'Value Created', items: ['Shortened executive access time', 'Higher high‑value response rate', 'Scalable acquisition structure'] },
+      { heading: 'Background', paragraphs: ['An automation packaging machinery manufacturer wanting to expand into Vietnam and Thailand to find distributors with after-sales service capabilities.'] },
+      { heading: 'Challenges', items: ['Lack of local channel lists to identify capable distributors', 'Language barriers led to low response rates from English emails', 'Deep communication needed to verify technical service capabilities'] },
+      { heading: 'Our Strategy', paragraphs: ['Combined "Lead Gen" with "Appointment Setting":'], items: ['Built a list of Top 50 packaging machinery importers in Vietnam and Thailand', 'Conducted cold calling in local languages (Vietnamese/Thai)', 'Goal was to set up video meetings, not just ask for quotes'] },
+      { heading: 'Execution', items: ['Filtered distributors with maintenance teams', 'Sent product demo videos as openers', 'SunGene consultants pre-screened interest before scheduling meetings'] },
+      { heading: 'Results', items: ['Successfully scheduled 15 video meetings with potential distributors', 'Client flew to visit 5 of them', 'Signed agency agreements with 3 partners'] },
+      { heading: 'Key Value', items: ['Quickly filtered quality partners', 'Drastically reduced travel and communication costs', 'Built a solid after-sales service network'] },
     ],
   },
 }
 
 export function getCases(lang: Lang): CaseContent[] {
   const d = lang === 'en' ? en : zh
-  // Return the new Taiwan-specific cases first, then others
-  const order = ['hardware', 'electronics', 'packaging', 'industrial', 'chemie']
+  const order = ['hardware', 'electronics', 'packaging', 'industrial', 'machinery']
   return order.map(slug => d[slug]).filter(Boolean)
 }
 

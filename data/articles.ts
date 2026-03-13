@@ -5,17 +5,144 @@ export type Article = {
   title: string
   category: string
   date: string
-  content: string[] // Array of paragraphs/sections
+  image: string
+  content: string[]
   sections?: { heading: string; content: string[] }[]
 }
 
 const articles: Record<string, Article[]> = {
   zh: [
     {
+      id: 'export-client-development-process-guide',
+      title: '外貿客戶開發完整流程（B2B企業指南）',
+      category: '外貿開發指南',
+      date: '2026-03-10',
+      image: '/articles/lead-gen-guide.svg',
+      content: [
+        '對許多製造企業來說，外貿業務最大的挑戰不是產品，而是客戶開發。',
+        '許多公司嘗試過 Alibaba、展會、Google、LinkedIn，但最後仍然發現詢盤不穩定、客戶品質參差不齊。',
+        '其實成功的外貿開發通常遵循一套清晰流程。本文將介紹 B2B 外貿客戶開發的完整流程。'
+      ],
+      sections: [
+        {
+          heading: '一、市場分析',
+          content: [
+            '第一步不是寄信，而是市場分析。',
+            '需要確認：目標市場、主要買家類型、競爭品牌、價格區間。',
+            '例如：五金工具企業可能鎖定歐洲、北美、中東，並研究當地的經銷商、進口商與品牌商。',
+            '市場分析的目的，是避免盲目開發。'
+          ]
+        },
+        {
+          heading: '二、建立買家名單',
+          content: [
+            '下一步是建立 Buyer List (買家名單)。',
+            '買家來源通常包括：Google、LinkedIn、展會名單、海關資料、產業名錄。',
+            '一份好的買家名單通常包含：公司名稱、國家、網站、採購職位、Email、LinkedIn。',
+            '對 B2B 企業而言，名單品質遠比名單數量重要。'
+          ]
+        },
+        {
+          heading: '三、開發信策略',
+          content: [
+            '許多外貿開發失敗，是因為開發信寫錯。',
+            '錯誤範例：「We are a professional manufacturer. We have 20 years experience. We hope to cooperate with you.」這種內容對買家沒有價值。',
+            '有效的開發信應該：簡短、具體、有價值。',
+            '例如：「We noticed your company distributes industrial fasteners in Germany. Our factory produces DIN standard bolts for European distributors and currently supplies several EU importers. If you are looking for alternative suppliers in Asia, we would be happy to share product specs and pricing.」'
+          ]
+        },
+        {
+          heading: '四、持續跟進',
+          content: [
+            '大部分詢盤來自第 3–5 次跟進。',
+            '跟進方式包括：Email、LinkedIn、電話。',
+            '關鍵原則是：提供新資訊，不要只是追問。',
+            '例如提供：產品案例、價格更新、市場資訊。'
+          ]
+        },
+        {
+          heading: '五、詢盤轉化',
+          content: [
+            '當客戶回覆後，外貿流程才真正開始。',
+            '接下來需要：報價、樣品、談判、訂單。',
+            '這個階段通常需要：快速回覆、清楚文件、專業溝通。'
+          ]
+        },
+        {
+          heading: '結論',
+          content: [
+            '成功的外貿客戶開發並不是隨機寄信，而是一套系統：市場分析 → 買家名單 → 開發信 → 跟進 → 詢盤轉化。',
+            '對許多企業而言，建立這套系統需要時間與資源。如果企業缺乏外貿團隊，也可以考慮外貿開發服務。'
+          ]
+        }
+      ]
+    },
+    {
+      id: 'how-to-build-overseas-buyer-list',
+      title: '如何建立海外買家名單（B2B企業指南）',
+      category: '外貿開發指南',
+      date: '2026-03-12',
+      image: '/articles/lead-gen-guide.svg',
+      content: [
+        '在外貿客戶開發中，最重要的資產之一就是買家名單。沒有精準名單，就無法進行有效開發。',
+        '許多企業常見的問題包括：名單品質低、Email 錯誤、買家不是決策者。',
+        '因此建立高品質 Buyer List 是外貿開發的核心。'
+      ],
+      sections: [
+        {
+          heading: '一、Google 搜尋',
+          content: [
+            'Google 是最常見的買家來源。',
+            '例如搜尋：「industrial fasteners distributor germany」或「packaging materials importer europe」。',
+            '你可以找到：經銷商、進口商、品牌商。'
+          ]
+        },
+        {
+          heading: '二、LinkedIn',
+          content: [
+            'LinkedIn 是 B2B 開發的重要工具。',
+            '可以搜尋：Purchasing manager、Sourcing manager、Procurement manager。',
+            '並篩選：Industry、Location、Company size。',
+            '這可以幫助找到真正的決策者。'
+          ]
+        },
+        {
+          heading: '三、展會名單',
+          content: [
+            '許多國際展會會公開 Exhibitor list 或 Visitor list。',
+            '例如：Hannover Messe、Canton Fair、Interpack。',
+            '這些名單通常包含大量潛在買家。'
+          ]
+        },
+        {
+          heading: '四、海關資料',
+          content: [
+            '海關資料可以看到：進口商、產品類型、交易量。',
+            '這對於找到「真實買家」非常有價值。'
+          ]
+        },
+        {
+          heading: '五、產業名錄',
+          content: [
+            '許多產業協會提供企業名錄，例如：European trade directories、Industry associations、Chamber of commerce。',
+            '這些資料通常比一般搜尋更精準。'
+          ]
+        },
+        {
+          heading: '結論',
+          content: [
+            '建立海外買家名單的主要來源包括：Google、LinkedIn、展會、海關資料、產業名錄。',
+            '透過系統化整理，企業可以建立穩定的客戶開發流程。'
+          ]
+        }
+      ]
+    },
+    {
       id: 'german-hardware-2026',
       title: '2026 德國五金市場採購趨勢報告',
       category: '市場分析',
       date: '2026-02-15',
+      image: '/articles/market-eu.svg',
       content: [
         '德國一直是全球五金產品的重要進口市場之一。對於希望拓展歐洲市場的製造商來說，理解德國採購商的需求與決策流程，是成功進入市場的重要一步。',
         '本報告整理了近年德國五金市場的採購趨勢與買家行為變化，並分析潛在供應商應該如何調整外貿策略。'
@@ -74,6 +201,7 @@ const articles: Record<string, Article[]> = {
       title: '開發信高回覆率的 5 個關鍵架構',
       category: '外貿開發指南',
       date: '2026-01-20',
+      image: '/articles/cold-email-mistakes.svg',
       content: [
         '許多企業在進行外貿開發時，最常遇到的問題就是：開發信寄出去，但幾乎沒有回覆。',
         '實際上，大多數開發信沒有回覆，並不是因為產品不好，而是因為信件內容沒有抓住買家的注意力。',
@@ -125,134 +253,343 @@ const articles: Record<string, Article[]> = {
       ]
     },
     {
-      id: 'finding-buyers',
-      title: '如何找到海外買家：5 種常見方法',
-      category: '外貿開發指南',
-      date: '2026-02-01',
+      id: 'europe-market-guide',
+      title: '歐洲市場開發指南：品質與認證是關鍵',
+      category: '市場分析',
+      date: '2026-03-01',
+      image: '/articles/market-eu.svg',
       content: [
-        '對於許多製造商與供應商來說，最大的挑戰往往不是產品本身，而是：如何找到真正有需求的海外買家。',
-        '在 B2B 外貿市場中，客戶開發需要結合市場研究、資料分析與商務溝通策略。以下是企業常用的五種海外客戶開發方式。'
+        '歐洲是一個高標準、高要求的市場。對於想進入歐洲的製造商來說，除了價格，更重要的是品質與合規性。',
+        '以下是開發歐洲市場的幾個重點。'
       ],
       sections: [
         {
-          heading: '1. 產業展會與商務活動',
+          heading: '嚴格的認證要求',
           content: [
-            '參加國際展會是許多企業開發海外客戶的傳統方式。透過展會，企業可以直接接觸來自不同國家的採購商與代理商，並建立初步的商務關係。',
-            '常見的優勢包括：',
-            '• 能直接面對採購決策者',
-            '• 可以展示產品實體',
-            '• 有機會建立長期合作關係',
-            '但展會的成本較高，也需要較長的準備時間。'
+            'CE 認證是進入歐盟市場的基本門檻。此外，不同產業還有各自的標準，如 RoHS、REACH 等。',
+            '確保你的產品符合相關法規，是贏得歐洲買家信任的第一步。'
           ]
         },
         {
-          heading: '2. B2B 平台',
+          heading: '重視環保與永續',
           content: [
-            '許多企業會透過 B2B 平台尋找潛在客戶，例如 Alibaba、Global Sources、Made-in-China。',
-            '這些平台可以讓企業快速接觸到全球買家。然而，由於競爭激烈，企業通常需要投入較多時間在詢盤回覆與客戶篩選。'
+            '歐洲買家非常重視供應商的環保意識與社會責任 (ESG)。',
+            '如果你的工廠有相關的環保認證或節能措施，會是一個很大的加分項。'
           ]
         },
         {
-          heading: '3. 買家資料庫與市場研究',
+          heading: '溝通風格',
           content: [
-            '另一種方式是透過進口數據與產業資料庫建立潛在買家名單。',
-            '透過市場分析，企業可以識別主要進口商、採購決策者與潛在合作企業。',
-            '這種方式可以更精準地鎖定目標客戶，並提升開發效率。'
-          ]
-        },
-        {
-          heading: '4. 主動客戶開發',
-          content: [
-            '主動客戶開發是許多 B2B 公司常用的方法。企業會透過 Email、LinkedIn 或其他商務管道，主動聯繫潛在買家並介紹產品。',
-            '這種方式的優勢是：',
-            '• 可以直接接觸目標企業',
-            '• 可持續建立新的客戶來源',
-            '• 成本相對較低',
-            '但成功率通常取決於開發信的品質與客戶名單的精準度。'
-          ]
-        },
-        {
-          heading: '5. 外貿開發服務',
-          content: [
-            '部分企業會選擇與專業外貿團隊合作，透過外部服務來進行客戶開發。',
-            '這種方式可以讓企業在沒有完整外貿團隊的情況下，也能持續拓展海外市場。',
-            '常見服務包括：海外買家名單建立、客戶開發流程規劃、外貿開發信策略、商務溝通支援。',
-            '透過專業團隊的協助，企業可以更快建立海外客戶來源。'
+            '歐洲客戶通常偏好直接、專業的溝通方式。',
+            '回覆郵件要及時，提供的資訊要準確，避免誇大其詞。'
           ]
         }
       ]
     },
     {
-      id: 'export-dev-guide-2026',
-      title: '外貿客戶開發完整指南（2026）',
-      category: '外貿開發指南',
-      date: '2026-02-10',
+      id: 'north-america-market-guide',
+      title: '北美市場開發指南：效率與創新',
+      category: '市場分析',
+      date: '2026-03-02',
+      image: '/articles/market-na.svg',
       content: [
-        '對許多製造商與供應商來說，外貿客戶開發並不是沒有機會，而是缺乏一套穩定且可執行的方法。',
-        '很多企業遇到的問題包括：不知道去哪裡找海外買家、開發信寄了沒有回覆、沒有專職外貿團隊、市場做了很久詢盤還是不穩定。',
-        '事實上，外貿客戶開發不是單一動作，而是一個完整流程。從市場選擇、買家名單建立，到客戶開發與詢盤跟進，每個環節都會影響最終成果。'
+        '北美市場（美國、加拿大）是全球最大的消費市場之一，也是許多企業外貿開發的首選。',
+        '這裡的買家重視效率、創新以及供應鏈的穩定性。'
       ],
       sections: [
         {
-          heading: '1. 先確認目標市場',
+          heading: '快速的市場節奏',
           content: [
-            '外貿開發的第一步，不是急著寄信，而是先確認目標市場。',
-            '企業需要先回答幾個問題：',
-            '• 產品適合哪些國家或區域',
-            '• 當地主要買家類型是什麼',
-            '• 市場競爭程度如何',
-            '• 價格與品質要求是否符合自身能力',
-            '先把市場看清楚，後面的客戶開發效率才會高。'
+            '北美買家通常決策速度較快，但也期望供應商能快速回應。',
+            '交期與物流速度是他們非常在意的考量點。'
           ]
         },
         {
-          heading: '2. 建立精準買家名單',
+          heading: '在地化服務',
           content: [
-            '外貿開發最怕的不是沒有努力，而是名單不準。如果潛在客戶名單不精準，即使寄出再多開發信，也很難得到有效回覆。',
-            '建立買家名單時，通常需要整理：公司名稱、國家與市場、採購類型、聯絡方式、決策角色。',
-            '精準名單的目的，不是追求數量，而是提高後續開發的有效性。'
-          ]
-        },
-        {
-          heading: '3. 設計有效的開發方式',
-          content: [
-            '找到買家之後，下一步才是進行客戶開發。常見的開發方式包括：Email 開發、LinkedIn 開發、展會後續跟進、市場名單分批觸達。',
-            '這一步的核心不是大量發送，而是針對不同買家採取適合的溝通方式。'
-          ]
-        },
-        {
-          heading: '4. 持續跟進詢盤與回覆',
-          content: [
-            '很多企業開發停在第一封信寄出後就沒有後續，這是很常見的問題。在 B2B 外貿中，買家通常不會因為一封開發信就立即下單。真正重要的是後續的跟進與商務對話。',
-            '這包括：回覆買家問題、提供產品資料、追蹤回覆進度、安排下一步溝通。',
-            '穩定的跟進流程，往往比第一次觸達更重要。'
-          ]
-        },
-        {
-          heading: '5. 建立可持續的開發系統',
-          content: [
-            '外貿客戶開發不能只靠一次性行動，而是要建立一套可以持續執行的流程。',
-            '這套流程通常包括：市場分析、買家名單更新、開發信優化、回覆管理、詢盤紀錄、成果追蹤。',
-            '當企業能把外貿開發流程系統化，就更容易持續累積海外買家資源。'
-          ]
-        },
-        {
-          heading: '結語',
-          content: [
-            '外貿客戶開發不是單靠運氣，而是靠方法。',
-            '對企業而言，真正有價值的不是短期寄出多少開發信，而是能否建立一套穩定且可複製的外貿開發流程。',
-            '只要市場選擇、買家名單、開發方式與跟進流程做得夠扎實，企業就能更有效率地拓展海外市場。'
+            '如果能提供當地發貨或售後服務，會大大增加合作機會。',
+            '許多北美買家傾向與有在地支援能力的供應商合作。'
           ]
         }
       ]
+    },
+    {
+      id: 'japan-market-guide',
+      title: '日本市場開發指南：信任與細節',
+      category: '市場分析',
+      date: '2026-03-03',
+      image: '/articles/market-jp.svg',
+      content: [
+        '日本市場以「難進易守」著稱。一旦建立了信任關係，日本客戶通常非常忠誠。',
+        '但在建立關係的初期，你需要展現極致的耐心與對細節的堅持。'
+      ],
+      sections: [
+        {
+          heading: '品質零容忍',
+          content: [
+            '日本客戶對產品外觀、包裝甚至標籤的貼法都有極高要求。',
+            '任何微小的瑕疵都可能被視為品質問題。'
+          ]
+        },
+        {
+          heading: '長期的溝通',
+          content: [
+            '與日本客戶建立關係通常需要較長的時間。',
+            '不要期望一兩封郵件就能下單，通常需要多次的樣品確認與訪廠（或視訊會議）。'
+          ]
+        }
+      ]
+    },
+    {
+      id: 'hardware-export-guide',
+      title: '五金工具產業外貿開發策略',
+      category: '案例解析',
+      date: '2026-03-05',
+      image: '/articles/industry-hardware.svg',
+      content: [
+        '台灣的五金工具產業在全球佔有重要地位。面對來自中國與東南亞的競爭，如何突顯價值？',
+        '本篇分析五金產業的外貿開發重點。'
+      ],
+      sections: [
+        {
+          heading: 'OEM vs ODM',
+          content: [
+            '單純的代工 (OEM) 容易陷入價格戰。',
+            '提升設計與研發能力 (ODM)，提供差異化的產品，是留住高價值客戶的關鍵。'
+          ]
+        },
+        {
+          heading: '目標市場選擇',
+          content: [
+            '歐美市場對高品質手工具需求大，適合中高階產品。',
+            '新興市場則對價格較敏感，但需求量大。'
+          ]
+        }
+      ]
+    },
+    {
+      id: 'electronics-export-guide',
+      title: '電子零組件外貿開發：打入全球供應鏈',
+      category: '案例解析',
+      date: '2026-03-06',
+      image: '/articles/industry-electronics.svg',
+      content: [
+        '電子零組件的 B2B 開發，往往需要面對更專業的採購與工程人員。',
+        '如何展現技術實力並通過嚴格的供應商審核？'
+      ],
+      sections: [
+        {
+          heading: '技術規格的精準溝通',
+          content: [
+            '開發信中應包含清晰的規格書 (Datasheet) 連結。',
+            '直接對接工程師或研發人員，往往比對接採購更有效。'
+          ]
+        },
+        {
+          heading: '樣品測試',
+          content: [
+            '電子業的合作幾乎都從樣品測試開始。',
+            '建立快速的樣品寄送流程，可以縮短開發週期。'
+          ]
+        }
+      ]
+    },
+    {
+      id: 'packaging-export-guide',
+      title: '包裝材料外貿趨勢：環保與永續',
+      category: '案例解析',
+      date: '2026-03-07',
+      image: '/articles/industry-packaging.svg',
+      content: [
+        '隨著全球減塑政策的推行，包裝材料產業正面臨巨大的轉型壓力與機會。',
+        '環保材質與可回收設計成為採購商的關注焦點。'
+      ],
+      sections: [
+        {
+          heading: '歐洲市場的環保法規',
+          content: [
+            '歐盟對包裝材料的回收率有嚴格規定。',
+            '供應商若能提供 PCR (消費後再生塑膠) 或生物可分解材質，將極具競爭力。'
+          ]
+        },
+        {
+          heading: '品牌商的 ESG 需求',
+          content: [
+            '許多國際品牌已承諾使用永續包裝。',
+            '主動提供環保認證 (如 FSC) 與碳足跡數據，能增加進入供應鏈的機會。'
+          ]
+        }
+      ]
+    },
+    {
+        id: 'cold-email-mistakes',
+        title: '開發信常見錯誤：為什麼你的信沒人回？',
+        category: '外貿開發指南',
+        date: '2026-02-25',
+        image: '/articles/cold-email-mistakes.svg',
+        content: [
+            '發了幾百封開發信，回覆率卻不到 1%？這可能是因為你犯了幾個常見錯誤。',
+            'B2B 買家每天會收到數十封甚至上百封的推銷郵件，如果你的信件看起來像垃圾郵件或缺乏重點，很容易就被忽略。'
+        ],
+        sections: [
+            {
+                heading: '錯誤一：標題太像廣告',
+                content: [
+                    '避免使用「Best Price」、「Hot Sale」、「High Quality」等過度推銷的字眼。',
+                    '這類標題很容易被郵件過濾器攔截，或者讓買家直接刪除。',
+                    '建議使用更專業、具體的標題，例如提及買家的產業或潛在需求。'
+                ]
+            },
+            {
+                heading: '錯誤二：內容太長且缺乏重點',
+                content: [
+                    '買家時間寶貴，沒人想看長篇大論的公司歷史。',
+                    '開發信應該簡潔明瞭，直接切入重點：你是誰、你能提供什麼價值、為什麼買家應該感興趣。',
+                    '控制在 3-4 段以內，每段不超過 3 行。'
+                ]
+            },
+            {
+                heading: '錯誤三：沒有明確的行動呼籲 (CTA)',
+                content: [
+                    '很多信件結尾只是「Hope to hear from you」，這太被動了。',
+                    '給買家一個明確的下一步，例如：「是否有空進行 10 分鐘的通話？」或「是否需要我們寄送樣品參考？」。'
+                ]
+            }
+        ]
     }
   ],
   en: [
+    {
+      id: 'export-client-development-process-guide',
+      title: 'Foreign Trade Client Development: A Complete Guide (B2B)',
+      category: 'Export Guide',
+      date: '2026-03-10',
+      image: '/articles/lead-gen-guide.svg',
+      content: [
+        'For many manufacturing companies, the biggest challenge is not the product, but client development.',
+        'Many try Alibaba, Trade Shows, Google, LinkedIn, but often find inquiries unstable and quality varying.',
+        'Successful foreign trade development usually follows a clear process. This guide covers the complete B2B client development workflow.'
+      ],
+      sections: [
+        {
+          heading: '1. Market Analysis',
+          content: [
+            'The first step isn\'t sending emails, it\'s market analysis.',
+            'You need to confirm: Target Market, Buyer Types, Competitors, Price Range.',
+            'For example: Hardware companies might target Europe, NA, Middle East, and research local distributors, importers, and brands.',
+            'The goal of market analysis is to avoid blind outreach.'
+          ]
+        },
+        {
+          heading: '2. Building a Buyer List',
+          content: [
+            'The next step is building a Buyer List.',
+            'Sources include: Google, LinkedIn, Trade Shows, Customs Data, Industry Directories.',
+            'A good list includes: Company Name, Country, Website, Procurement Role, Email, LinkedIn.',
+            'For B2B, quality is far more important than quantity.'
+          ]
+        },
+        {
+          heading: '3. Cold Email Strategy',
+          content: [
+            'Many fail because their emails are written poorly.',
+            'Bad Example: "We are a professional manufacturer. We have 20 years experience. We hope to cooperate with you." This offers no value.',
+            'Effective emails should be: Short, Specific, Valuable.',
+            'Example: "We noticed your company distributes industrial fasteners in Germany. Our factory produces DIN standard bolts for European distributors and currently supplies several EU importers. If you are looking for alternative suppliers in Asia, we would be happy to share product specs and pricing."'
+          ]
+        },
+        {
+          heading: '4. Consistent Follow-up',
+          content: [
+            'Most inquiries come from the 3rd to 5th follow-up.',
+            'Channels: Email, LinkedIn, Phone.',
+            'Key Principle: Provide new info, don\'t just ask for updates.',
+            'Provide: Case studies, price updates, market info.'
+          ]
+        },
+        {
+          heading: '5. Inquiry Conversion',
+          content: [
+            'The process truly begins when a client replies.',
+            'Next steps: Quote, Sample, Negotiate, Order.',
+            'This stage needs: Fast response, clear docs, professional communication.'
+          ]
+        },
+        {
+          heading: 'Conclusion',
+          content: [
+            'Successful client development is a system, not luck: Analysis -> List -> Email -> Follow-up -> Conversion.',
+            'For many companies, building this system takes time. If you lack a team, consider outsourcing services.'
+          ]
+        }
+      ]
+    },
+    {
+      id: 'how-to-build-overseas-buyer-list',
+      title: 'How to Build an Overseas Buyer List (B2B Guide)',
+      category: 'Export Guide',
+      date: '2026-03-12',
+      image: '/articles/lead-gen-guide.svg',
+      content: [
+        'One of the most important assets in export development is your Buyer List. Without a precise list, outreach fails.',
+        'Common issues include: Low quality lists, wrong emails, contacting non-decision makers.',
+        'Building a high-quality Buyer List is the core of export development.'
+      ],
+      sections: [
+        {
+          heading: '1. Google Search',
+          content: [
+            'Google is the most common source.',
+            'Search for: "industrial fasteners distributor germany" or "packaging materials importer europe".',
+            'You can find: Distributors, Importers, Brands.'
+          ]
+        },
+        {
+          heading: '2. LinkedIn',
+          content: [
+            'LinkedIn is a key tool for B2B.',
+            'Search for: Purchasing manager, Sourcing manager, Procurement manager.',
+            'Filter by: Industry, Location, Company size.',
+            'This helps find the real decision makers.'
+          ]
+        },
+        {
+          heading: '3. Trade Shows',
+          content: [
+            'Many international shows publish Exhibitor or Visitor lists.',
+            'Examples: Hannover Messe, Canton Fair, Interpack.',
+            'These lists contain a high volume of potential buyers.'
+          ]
+        },
+        {
+          heading: '4. Customs Data',
+          content: [
+            'Customs data reveals: Importers, Product types, Transaction volumes.',
+            'This is invaluable for finding "Real Buyers".'
+          ]
+        },
+        {
+          heading: '5. Industry Directories',
+          content: [
+            'Associations often provide member directories: European trade directories, Industry associations, Chambers of Commerce.',
+            'These are often more precise than general searches.'
+          ]
+        },
+        {
+          heading: 'Conclusion',
+          content: [
+            'Main sources: Google, LinkedIn, Trade Shows, Customs Data, Directories.',
+            'Systematic organization allows for a stable client development process.'
+          ]
+        }
+      ]
+    },
     {
       id: 'german-hardware-2026',
       title: '2026 German Hardware Market Trends',
       category: 'Market Analysis',
       date: '2026-02-15',
+      image: '/articles/market-eu.svg',
       content: [
         'Germany remains one of the most critical import markets for hardware products globally. For manufacturers aiming to expand into Europe, understanding the demands and decision-making processes of German buyers is a crucial first step.',
         'This report summarizes recent procurement trends and behavioral shifts in the German hardware market and analyzes how potential suppliers should adjust their export strategies.'
@@ -295,13 +632,12 @@ const articles: Record<string, Article[]> = {
         }
       ]
     },
-    // Placeholder English versions for other articles if needed, using simplified content or mirroring structure.
-    // For now, mirroring the IDs to avoid errors, but content can be expanded later.
     {
       id: 'cold-email-structure',
       title: '5 Key Structures for High-Response Cold Emails',
       category: 'Export Guide',
       date: '2026-01-20',
+      image: '/articles/cold-email-mistakes.svg',
       content: ['Many companies face a common issue in export development: sending emails but getting no replies.', 'Here are 5 key structures to improve your cold email response rates.'],
       sections: [
         { heading: '1. Clear Subject Line', content: ['Concise, relevant, and non-salesy.'] },
@@ -312,18 +648,84 @@ const articles: Record<string, Article[]> = {
       ]
     },
     {
-      id: 'finding-buyers',
-      title: '5 Common Ways to Find Overseas Buyers',
-      category: 'Export Guide',
-      date: '2026-02-01',
-      content: ['For many manufacturers, the challenge isn\'t the product, but finding the right buyer.', 'Here are 5 common methods for B2B export development.'],
-      sections: [
-        { heading: '1. Trade Shows', content: ['Direct face-to-face interaction but high cost.'] },
-        { heading: '2. B2B Platforms', content: ['Alibaba, etc. High traffic but high competition.'] },
-        { heading: '3. Data & Research', content: ['Using customs data to find precise buyers.'] },
-        { heading: '4. Active Outreach', content: ['Cold Email/LinkedIn. Low cost, scalable.'] },
-        { heading: '5. Outsourcing Services', content: ['Partnering with expert teams like SunGene.'] }
-      ]
+        id: 'cold-email-mistakes',
+        title: 'Common Cold Email Mistakes',
+        category: 'Export Guide',
+        date: '2026-02-25',
+        image: '/articles/cold-email-mistakes.svg',
+        content: ['Why are your emails being ignored? Avoid these common pitfalls.'],
+        sections: [
+            { heading: 'Mistake 1: Salesy Subject Lines', content: ['Avoid "Best Price" or "Hot Sale".'] },
+            { heading: 'Mistake 2: Too Long', content: ['Keep it brief and value-focused.'] }
+        ]
+    },
+    {
+        id: 'europe-market-guide',
+        title: 'Europe Market Guide: Quality & Compliance',
+        category: 'Market Analysis',
+        date: '2026-03-01',
+        image: '/articles/market-eu.svg',
+        content: ['Entering the European market requires meeting high standards. Key insights inside.'],
+        sections: [
+            { heading: 'Certifications', content: ['CE, RoHS, REACH are essential.'] },
+            { heading: 'Sustainability', content: ['ESG is increasingly important.'] }
+        ]
+    },
+    {
+        id: 'north-america-market-guide',
+        title: 'North America Market Guide',
+        category: 'Market Analysis',
+        date: '2026-03-02',
+        image: '/articles/market-na.svg',
+        content: ['Efficiency and innovation drive the North American market.'],
+        sections: [
+            { heading: 'Fast Pace', content: ['Speed of delivery and communication is crucial.'] }
+        ]
+    },
+    {
+        id: 'japan-market-guide',
+        title: 'Japan Market Guide: Trust & Detail',
+        category: 'Market Analysis',
+        date: '2026-03-03',
+        image: '/articles/market-jp.svg',
+        content: ['Building trust in Japan takes time but yields loyal partners.'],
+        sections: [
+            { heading: 'Quality First', content: ['Zero tolerance for defects.'] }
+        ]
+    },
+    {
+        id: 'hardware-export-guide',
+        title: 'Hardware Industry Export Strategy',
+        category: 'Case Insights',
+        date: '2026-03-05',
+        image: '/articles/industry-hardware.svg',
+        content: ['Strategies for hardware manufacturers to compete globally.'],
+        sections: [
+            { heading: 'ODM Value', content: ['Move beyond price competition with design.'] }
+        ]
+    },
+    {
+        id: 'electronics-export-guide',
+        title: 'Electronics Component Export Guide',
+        category: 'Case Insights',
+        date: '2026-03-06',
+        image: '/articles/industry-electronics.svg',
+        content: ['Breaking into the global electronics supply chain.'],
+        sections: [
+            { heading: 'Technical Communication', content: ['Speak the engineers\' language.'] }
+        ]
+    },
+    {
+        id: 'packaging-export-guide',
+        title: 'Packaging Industry Export Trends',
+        category: 'Case Insights',
+        date: '2026-03-07',
+        image: '/articles/industry-packaging.svg',
+        content: ['Sustainability is reshaping the packaging industry. How to adapt?'],
+        sections: [
+            { heading: 'EU Regulations', content: ['Recyclability is now a mandate.'] },
+            { heading: 'ESG Demand', content: ['Global brands demand sustainable supply chains.'] }
+        ]
     }
   ]
 }
