@@ -35,10 +35,10 @@ export default async function Page({ params }: { params: Promise<{ lang: Lang }>
         <div className="mx-auto max-w-7xl px-6 flex flex-col md:flex-row items-center justify-between gap-8">
             <div className="flex-1 text-center md:text-left">
                 <h3 className="text-2xl font-bold text-gray-900 mb-2">
-                    {lang === 'zh' ? '還在猶豫？先看看我們的實戰案例' : 'Still undecided? Check our case studies'}
+                    {lang === 'zh' ? '先看案例，再決定合作方式' : 'Review the proof before choosing a service'}
                 </h3>
                 <p className="text-gray-600">
-                    {lang === 'zh' ? '下載完整外貿開發案例集，了解我們如何協助台灣製造商成功出海。' : 'Download our full case study collection and see how we help manufacturers go global.'}
+                    {lang === 'zh' ? '先從成功案例了解我們怎麼做，再決定你需要買家開發、經銷商開發，還是外貿業務外包。' : 'Start with case studies to see how we work, then decide whether you need lead generation, distributor development, or export sales outsourcing.'}
                 </p>
             </div>
             <div className="flex gap-4">

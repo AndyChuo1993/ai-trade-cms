@@ -1,5 +1,6 @@
 import { Lang } from '@/lib/i18n'
 import Link from 'next/link'
+import Image from 'next/image'
 import { getBlogPosts } from '@/data/blog'
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: Lang }> }) {
@@ -29,18 +30,27 @@ export default async function Page({ params }: { params: Promise<{ lang: Lang }>
           <h1 className="text-4xl font-bold tracking-tight text-gray-900">{lang === 'zh' ? '部落格' : 'Blog'}</h1>
           <p className="mt-4 text-lg text-gray-600">
             {lang === 'zh'
-              ? '提供外銷客戶開發、經銷商開發與外貿外包的定義、框架、步驟與清單。'
-              : 'Definitions, frameworks, steps, and checklists for export lead generation, distributor development, and export sales outsourcing.'}
+              ? '這裡保留給教學、觀點與方法文章。若你要看產業定位頁，去產業；要看地區切入，去市場；要拿可直接用的內容，再去資源中心。'
+              : 'This section is for guides, commentary, and method articles. For industry positioning, go to Industries; for regional entry pages, go to Markets; for reusable assets, go to Resources.'}
           </p>
         </header>
 
-        <section className="grid gap-4 md:grid-cols-2">
+        <section className="grid gap-6 md:grid-cols-2">
           {posts.map((p) => (
-            <Link key={p.slug} href={`/${lang}/blog/${p.slug}`} className="rounded-xl border border-gray-200 bg-white p-6 hover:shadow-md transition">
-              <div className="text-sm text-gray-500">{new Date(p.date).toISOString().slice(0, 10)}</div>
-              <div className="mt-2 text-xl font-bold text-gray-900">{p.title[lang]}</div>
-              <div className="mt-2 text-gray-600 leading-7">{p.description[lang]}</div>
-              <div className="mt-4 text-blue-900 font-medium">{lang === 'zh' ? '閱讀全文 →' : 'Read →'}</div>
+            <Link key={p.slug} href={`/${lang}/blog/${p.slug}`} className="overflow-hidden rounded-xl border border-gray-200 bg-white transition hover:-translate-y-1 hover:shadow-md">
+              <div className="relative h-52 bg-slate-950">
+                <Image src={p.heroImage} alt={p.title[lang]} fill className="object-cover" />
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/70 to-transparent" />
+                <div className="absolute bottom-4 left-4 rounded-full border border-white/20 bg-white/10 px-3 py-1 text-xs font-bold uppercase tracking-wide text-white backdrop-blur">
+                  {lang === 'zh' ? '部落格文章' : 'Blog Article'}
+                </div>
+              </div>
+              <div className="p-6">
+                <div className="text-sm text-gray-500">{new Date(p.date).toISOString().slice(0, 10)}</div>
+                <div className="mt-2 text-xl font-bold text-gray-900">{p.title[lang]}</div>
+                <div className="mt-2 text-gray-600 leading-7">{p.description[lang]}</div>
+                <div className="mt-4 text-blue-900 font-medium">{lang === 'zh' ? '閱讀全文 →' : 'Read →'}</div>
+              </div>
             </Link>
           ))}
         </section>

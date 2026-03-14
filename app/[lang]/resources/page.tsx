@@ -1,7 +1,7 @@
 import { t, Lang } from '@/lib/i18n'
 import Link from 'next/link'
+import Image from 'next/image'
 import { getArticles } from '@/data/articles'
-import { getBlogPosts } from '@/data/blog'
 import { seoIndustries } from '@/data/seoIndustries'
 import { seoMarkets } from '@/data/seoMarkets'
 import Newsletter from '@/components/Newsletter'
@@ -12,8 +12,8 @@ export async function generateMetadata({ params, searchParams }: { params: Promi
   const tab = searchParams.tab || 'articles'
   
   let title = lang === 'zh' ? '外貿資源' : 'Export Resources'
-  if (tab === 'industries') title = lang === 'zh' ? '產業外貿指南' : 'Industry Export Guides'
-  if (tab === 'markets') title = lang === 'zh' ? '市場開發指南' : 'Market Export Guides'
+  if (tab === 'industries') title = lang === 'zh' ? '產業應用頁' : 'Industry Pages'
+  if (tab === 'markets') title = lang === 'zh' ? '市場頁面' : 'Market Pages'
 
   return {
     title: `${title} | SunGene`,
@@ -31,18 +31,8 @@ export default async function Page({
   const { lang } = await params
   const tab = searchParams.tab || 'articles'
   
-  // Data for Articles
+  // Data for Resources only (avoid overlap with blog)
   const resourceArticles = getArticles(lang)
-  const blogPosts = getBlogPosts()
-  const blogItems = blogPosts.map((p) => ({
-    id: `blog-${p.slug}`,
-    href: `/${lang}/blog/${p.slug}`,
-    title: p.title[lang],
-    category: lang === 'zh' ? '指南文章' : 'Guides',
-    date: p.date,
-    excerpt: p.description[lang],
-    image: p.heroImage,
-  }))
   const articleItems = resourceArticles.map((a) => ({
     id: a.id,
     href: `/${lang}/resources/${a.id}`,
@@ -52,7 +42,7 @@ export default async function Page({
     excerpt: a.content[0] || '',
     image: a.image,
   }))
-  const allArticles = [...blogItems, ...articleItems].sort(
+  const allArticles = articleItems.sort(
     (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
   )
 
@@ -72,9 +62,9 @@ export default async function Page({
 
   // Tabs Configuration
   const tabs = [
-    { id: 'articles', label: lang === 'zh' ? '精選文章' : 'Articles', icon: FileText },
-    { id: 'industries', label: lang === 'zh' ? '產業指南' : 'Industries', icon: LayoutGrid },
-    { id: 'markets', label: lang === 'zh' ? '市場指南' : 'Markets', icon: Globe },
+    { id: 'articles', label: lang === 'zh' ? '下載資源' : 'Resources', icon: FileText },
+    { id: 'industries', label: lang === 'zh' ? '產業頁' : 'Industries', icon: LayoutGrid },
+    { id: 'markets', label: lang === 'zh' ? '市場頁' : 'Markets', icon: Globe },
   ]
 
   return (
@@ -83,9 +73,9 @@ export default async function Page({
       <section className="bg-gray-900 text-white py-20 relative overflow-hidden">
         <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-10"></div>
         <div className="mx-auto max-w-7xl px-6 text-center relative z-10">
-          <h1 className="text-4xl md:text-5xl font-bold mb-6">{lang === 'zh' ? '外貿資源' : 'Export Resources'}</h1>
-          <p className="text-xl text-gray-300 max-w-2xl mx-auto">
-            {lang === 'zh' ? '外貿開發知識庫、產業洞察與市場攻略' : 'Export Knowledge Base, Industry Insights, and Market Strategies'}
+          <h1 className="text-4xl md:text-5xl font-bold mb-6">{lang === 'zh' ? '外貿資源中心' : 'Export Resource Center'}</h1>
+          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+            {lang === 'zh' ? '這裡放可下載或可直接使用的外貿資源。產業頁與市場頁請到各自分頁瀏覽，部落格則保留給教學與觀點文章。' : 'This area is for reusable export resources. Industry and market pages are separated into their own tabs, while the blog stays focused on guides and insights.'}
           </p>
         </div>
       </section>
@@ -161,22 +151,16 @@ export default async function Page({
                     filteredArticles.map((post) => (
                       <Link href={post.href} key={post.id} className="block group h-full">
                         <div className="bg-white border border-gray-200 rounded-sm hover:shadow-md transition duration-300 flex flex-col h-full">
-                          <div className="h-48 bg-gray-100 flex items-center justify-center text-gray-400 relative overflow-hidden group">
-                            <div 
-                              className="absolute inset-0 bg-cover bg-center group-hover:scale-105 transition duration-500"
-                              style={{ 
-                                backgroundImage: post.image ? `url(${post.image})` : 'none'
-                              }}
-                            >
-                              <div className="absolute inset-0 bg-blue-900/10 group-hover:bg-blue-900/0 transition"></div>
-                            </div>
-                            {!post.image && (
-                                <div className="absolute inset-0 flex items-center justify-center pointer-events-none opacity-30">
-                                  <div className="text-4xl text-gray-300 font-serif mb-2 font-bold">
-                                      GUIDE
-                                  </div>
-                                </div>
+                          <div className="relative h-48 overflow-hidden bg-slate-950">
+                            {post.image ? (
+                              <Image src={post.image} alt={post.title} fill className="object-cover transition duration-500 group-hover:scale-105" />
+                            ) : (
+                              <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,_rgba(59,130,246,0.38),_transparent_35%),linear-gradient(135deg,_#0f172a,_#1e3a8a_55%,_#0f172a)]" />
                             )}
+                            <div className="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-slate-900/20 to-transparent" />
+                            <div className="absolute bottom-4 left-4 rounded-full border border-white/20 bg-white/10 px-3 py-1 text-xs font-bold uppercase tracking-wide text-white backdrop-blur">
+                              {post.category}
+                            </div>
                           </div>
                           <div className="p-6 flex-grow flex flex-col">
                             <div className="flex items-center gap-3 mb-3 text-xs">
