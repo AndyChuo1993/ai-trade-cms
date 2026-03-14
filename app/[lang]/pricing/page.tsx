@@ -16,7 +16,7 @@ export async function generateMetadata({ params }: { params: { lang: Lang } }): 
     keywords: isZh
       ? '外貿服務價格, 買家名單費用, 外貿業務外包收費, 海外客戶開發'
       : 'pricing, buyer list cost, export lead generation, export sales outsourcing',
-    alternates: { canonical: `/${lang}/pricing`, languages: { zh: '/zh/pricing', en: '/en/pricing' } },
+    alternates: { canonical: `/${lang}/pricing`, languages: { zh: '/zh/pricing', en: '/en/pricing', 'x-default': '/en/pricing' } },
     robots: { index: false, follow: true },
     openGraph: { title, description, type: 'website' },
   }

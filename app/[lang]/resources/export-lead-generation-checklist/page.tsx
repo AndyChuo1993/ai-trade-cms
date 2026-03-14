@@ -13,7 +13,7 @@ export async function generateMetadata({ params }: { params: { lang: 'en' | 'zh'
   return {
     title,
     description,
-    alternates: { canonical: `/${lang}/resources/export-lead-generation-checklist`, languages: { zh: '/zh/resources/export-lead-generation-checklist', en: '/en/resources/export-lead-generation-checklist' } },
+    alternates: { canonical: `/${lang}/resources/export-lead-generation-checklist`, languages: { zh: '/zh/resources/export-lead-generation-checklist', en: '/en/resources/export-lead-generation-checklist', 'x-default': '/en/resources/export-lead-generation-checklist' } },
   }
 }
 

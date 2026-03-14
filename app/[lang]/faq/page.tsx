@@ -16,7 +16,7 @@ export async function generateMetadata({ params }: { params: { lang: Lang } }): 
     keywords: isZh
       ? '外貿常見問題, 海外客戶開發, 服務流程, 收費模式'
       : 'faq, export lead generation, process, pricing, confidentiality',
-    alternates: { canonical: `/${lang}/faq`, languages: { zh: '/zh/faq', en: '/en/faq' } },
+    alternates: { canonical: `/${lang}/faq`, languages: { zh: '/zh/faq', en: '/en/faq', 'x-default': '/en/faq' } },
     openGraph: { title, description, type: 'website' },
   }
 }

@@ -16,7 +16,7 @@ export async function generateMetadata({ params }: { params: { lang: Lang } }): 
     keywords: isZh
       ? '外貿顧問合作, 海外代理合作, 合作夥伴計劃, 市場研究合作'
       : 'partners, referral program, overseas agents, market research partners',
-    alternates: { canonical: `/${lang}/partners`, languages: { zh: '/zh/partners', en: '/en/partners' } },
+    alternates: { canonical: `/${lang}/partners`, languages: { zh: '/zh/partners', en: '/en/partners', 'x-default': '/en/partners' } },
     robots: { index: false, follow: true },
     openGraph: { title, description, type: 'website' },
   }

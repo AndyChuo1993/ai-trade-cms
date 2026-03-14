@@ -96,6 +96,13 @@ export default function Page({ params }: { params: { lang: Lang; slug: string } 
   const caseHref = `/${lang}${post.internalLinks.caseStudyPath}`
   const magnetHref = `/${lang}${post.internalLinks.leadMagnetPath}`
   const marketIndustryHref = `/${lang}${post.internalLinks.marketOrIndustryPath ?? '/industries/machinery'}`
+  const distributorServiceHref = `/${lang}/services/distributor-development`
+  const outsourcingServiceHref = `/${lang}/services/export-sales-outsourcing`
+  const marketsIndexHref = `/${lang}/markets`
+  const industriesIndexHref = `/${lang}/industries`
+
+  const funnelImage = lang === 'zh' ? '/articles/list-to-meeting-funnel-zh.svg' : '/articles/list-to-meeting-funnel-en.svg'
+  const channelsImage = lang === 'zh' ? '/articles/buyer-channels-matrix-zh.svg' : '/articles/buyer-channels-matrix-en.svg'
 
   const combinedText = [post.title[lang], post.description[lang], ...post.sections.flatMap((s) => s.content[lang])].join(' ')
   const readMinutes = estimateReadTime(combinedText)
@@ -163,6 +170,20 @@ export default function Page({ params }: { params: { lang: Lang; slug: string } 
                         <p key={i}>{p}</p>
                       ))}
 
+                      {idx === 2 && (
+                        <div className="rounded-xl border border-gray-200 bg-white p-6">
+                          <div className="text-sm font-bold text-gray-900">{lang === 'zh' ? '圖表：從名單到會議的轉換漏斗（示意）' : 'Diagram: list → outreach → reply → meeting funnel (example)'}</div>
+                          <div className="mt-4 overflow-hidden rounded-lg border border-gray-200 bg-gray-50">
+                            <Image src={funnelImage} alt={lang === 'zh' ? '名單到會議漏斗示意圖' : 'List-to-meeting funnel diagram'} width={1200} height={630} className="h-auto w-full" />
+                          </div>
+                          <div className="mt-3 text-sm text-gray-600">
+                            {lang === 'zh'
+                              ? '這張圖用來幫你抓住最小可行流程：先讓名單可投遞、再用節奏跟進、把回覆分類後推進下一步。'
+                              : 'This visual helps you align the minimum viable workflow: deliverable list → cadence → triage → next step.'}
+                          </div>
+                        </div>
+                      )}
+
                       {idx === 1 && (
                         <p>
                           {lang === 'zh' ? (
@@ -188,6 +209,72 @@ export default function Page({ params }: { params: { lang: Lang; slug: string } 
                               . Also add a market/industry context page (e.g.,{' '}
                               <Link href={marketIndustryHref} className="text-blue-900 font-medium hover:underline">Machinery industry</Link>
                               ) to match buyer intent.
+                            </>
+                          )}
+                        </p>
+                      )}
+
+                      {idx === 3 && (
+                        <p>
+                          {lang === 'zh' ? (
+                            <>
+                              如果你文章裡提到「經銷商／通路」或「市場切入」，建議把閱讀動線接到{' '}
+                              <Link href={distributorServiceHref} className="text-blue-900 font-medium hover:underline">經銷商開發</Link>
+                              ，再回到{' '}
+                              <Link href={marketsIndexHref} className="text-blue-900 font-medium hover:underline">市場頁</Link>
+                              與{' '}
+                              <Link href={industriesIndexHref} className="text-blue-900 font-medium hover:underline">產業頁</Link>
+                              找到更符合你產品的買家語境。
+                            </>
+                          ) : (
+                            <>
+                              If you are considering channels or market entry, connect this guide to{' '}
+                              <Link href={distributorServiceHref} className="text-blue-900 font-medium hover:underline">Distributor Development</Link>
+                              , then browse{' '}
+                              <Link href={marketsIndexHref} className="text-blue-900 font-medium hover:underline">Markets</Link>
+                              and{' '}
+                              <Link href={industriesIndexHref} className="text-blue-900 font-medium hover:underline">Industries</Link>
+                              to match buyer intent by region and vertical.
+                            </>
+                          )}
+                        </p>
+                      )}
+
+                      {idx === 4 && (
+                        <div className="rounded-xl border border-gray-200 bg-white p-6">
+                          <div className="text-sm font-bold text-gray-900">{lang === 'zh' ? '圖表：常見買家來源與適用情境（示意）' : 'Chart: buyer discovery channels and when to use them (example)'}</div>
+                          <div className="mt-4 overflow-hidden rounded-lg border border-gray-200 bg-gray-50">
+                            <Image src={channelsImage} alt={lang === 'zh' ? '買家來源比較圖' : 'Buyer discovery channels comparison'} width={1200} height={630} className="h-auto w-full" />
+                          </div>
+                          <div className="mt-3 text-sm text-gray-600">
+                            {lang === 'zh'
+                              ? '你可以用這張表快速決定：先用哪個來源跑小規模驗證，再把有效的做法放大。'
+                              : 'Use this to pick 1–2 channels for validation first, then scale the ones that work.'}
+                          </div>
+                        </div>
+                      )}
+
+                      {idx === post.sections.length - 2 && (
+                        <p>
+                          {lang === 'zh' ? (
+                            <>
+                              想把內容變成可交付成果，可以對照服務頁的交付與流程：{' '}
+                              <Link href={serviceHref} className="text-blue-900 font-medium hover:underline">核心服務</Link>
+                              ，以及團隊常用的{' '}
+                              <Link href={outsourcingServiceHref} className="text-blue-900 font-medium hover:underline">外貿業務外包</Link>
+                              。若你希望先用低成本驗證，也可以先拿{' '}
+                              <Link href={magnetHref} className="text-blue-900 font-medium hover:underline">免費市場分析</Link>
+                              當起點。
+                            </>
+                          ) : (
+                            <>
+                              To turn this into deliverables, compare the workflow and outputs on the{' '}
+                              <Link href={serviceHref} className="text-blue-900 font-medium hover:underline">core service page</Link>
+                              and{' '}
+                              <Link href={outsourcingServiceHref} className="text-blue-900 font-medium hover:underline">Export Sales Outsourcing</Link>
+                              . For a low-friction starting point, use the{' '}
+                              <Link href={magnetHref} className="text-blue-900 font-medium hover:underline">free market analysis</Link>
+                              as your first validation step.
                             </>
                           )}
                         </p>

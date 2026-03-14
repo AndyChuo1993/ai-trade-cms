@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#F8FAFC"/>
+  <rect x="70" y="60" width="1060" height="510" rx="24" fill="#FFFFFF" stroke="#E5E7EB"/>
+  <text x="110" y="120" font-family="ui-sans-serif, system-ui" font-size="28" font-weight="700" fill="#0F172A">名單 → 開發 → 回覆 → 會議</text>
+  <text x="110" y="155" font-family="ui-sans-serif, system-ui" font-size="16" fill="#475569">用最小漏斗視角對齊交付成果與下一步</text>
+
+  <g font-family="ui-sans-serif, system-ui" font-size="16" fill="#0F172A">
+    <rect x="140" y="215" width="920" height="60" rx="12" fill="#1D4ED8" opacity="0.10" stroke="#1D4ED8"/>
+    <text x="170" y="252" font-weight="700">1）可投遞名單</text>
+    <text x="420" y="252" fill="#334155">角色正確、聯絡方式可用、寄送規範到位</text>
+
+    <rect x="180" y="300" width="840" height="60" rx="12" fill="#1D4ED8" opacity="0.12" stroke="#1D4ED8"/>
+    <text x="210" y="337" font-weight="700">2）節奏式開發</text>
+    <text x="470" y="337" fill="#334155">4–6 次跟進，每封加入不同證據點與單一下一步</text>
+
+    <rect x="220" y="385" width="760" height="60" rx="12" fill="#1D4ED8" opacity="0.14" stroke="#1D4ED8"/>
+    <text x="250" y="422" font-weight="700">3）回覆分類</text>
+    <text x="450" y="422" fill="#334155">合格／培育／不匹配＋需求摘要＋下一步建議</text>
+
+    <rect x="260" y="470" width="680" height="60" rx="12" fill="#1D4ED8" opacity="0.16" stroke="#1D4ED8"/>
+    <text x="290" y="507" font-weight="700">4）會議／樣品／報價</text>
+    <text x="560" y="507" fill="#334155">帶上下文交付，讓業務快速推進</text>
+  </g>
+
+  <g fill="#1D4ED8" opacity="0.55">
+    <path d="M600 282 l14 0 l-14 14 l-14-14 z"/>
+    <path d="M600 367 l14 0 l-14 14 l-14-14 z"/>
+    <path d="M600 452 l14 0 l-14 14 l-14-14 z"/>
+  </g>
+</svg>
+

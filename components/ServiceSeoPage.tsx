@@ -13,10 +13,12 @@ export type ServiceSeo = {
   heroPromise?: Record<Lang, string>
   heroBestFor?: Record<Lang, string>
   heroDeliverablesLine?: Record<Lang, string>
+  heroTrustSignal?: Record<Lang, string>
   whoFor?: Record<Lang, string[]>
   whatYouGet?: Record<Lang, string[]>
   typicalResults?: Record<Lang, { label: string; value: string }[]>
   problem: Record<Lang, string[]>
+  whyItMatters?: Record<Lang, string[]>
   solution: Record<Lang, string[]>
   whatIs: Record<Lang, string[]>
   howWorks: Record<Lang, string[]>
@@ -40,6 +42,7 @@ export type ServiceSeo = {
   ctaDesc: Record<Lang, string>
   ctaButtons?: { primary?: { label: Record<Lang, string>; href: string }; secondary?: { label: Record<Lang, string>; href: string }; tertiary?: { label: Record<Lang, string>; href: string } }
   seoSections?: { id: string; title: Record<Lang, string>; content: Record<Lang, string[]>; bullets?: Record<Lang, string[]> }[]
+  geoGroupTitle?: Record<Lang, string>
   geoSections?: { id: string; title: Record<Lang, string>; items: Record<Lang, string[]>; note?: Record<Lang, string> }[]
   relatedLinks?: { label: Record<Lang, string>; href: string }[]
 }
@@ -106,14 +109,71 @@ function WorkflowViz({ steps }: { steps: string[] }) {
 }
 
 function ArtifactPreview({ title, caption, lines }: { title: string; caption?: string; lines: string[] }) {
+  const maybeTable = lines.length >= 2 && lines[0].includes('\t') && lines.slice(1).every((l) => l.includes('\t'))
+  const tableRows = maybeTable
+    ? lines.map((l) => l.split('\t').filter((x) => x !== ''))
+    : null
+
+  const parseKeyValueBlock = (input: string) => {
+    const rows = input
+      .split('\n')
+      .map((l) => l.trim())
+      .filter(Boolean)
+      .map((l) => {
+        const idx = l.indexOf(':')
+        if (idx === -1) return null
+        return { k: l.slice(0, idx).trim(), v: l.slice(idx + 1).trim() }
+      })
+      .filter(Boolean) as { k: string; v: string }[]
+    return rows
+  }
+
+  const keyValue = lines.length === 1 ? parseKeyValueBlock(lines[0]) : null
+
   return (
     <div className="rounded-xl border border-gray-200 bg-white p-6">
       <div className="text-sm font-semibold text-gray-900">{title}</div>
       {caption && <div className="mt-1 text-sm text-gray-600">{caption}</div>}
-      <div className="mt-4 rounded-lg border border-gray-200 bg-gray-50 p-4 overflow-auto">
-        <pre className="text-xs leading-5 text-gray-800 whitespace-pre">
-          {lines.join('\n')}
-        </pre>
+      <div className="mt-4 rounded-lg border border-gray-200 bg-gray-50 overflow-hidden">
+        {tableRows && tableRows.length >= 2 ? (
+          <div className="overflow-auto">
+            <table className="min-w-full text-left text-xs">
+              <thead className="bg-gray-100 text-gray-700">
+                <tr>
+                  {tableRows[0].map((h, i) => (
+                    <th key={i} className="px-3 py-2 font-semibold whitespace-nowrap">
+                      {h}
+                    </th>
+                  ))}
+                </tr>
+              </thead>
+              <tbody>
+                {tableRows.slice(1).map((r, ri) => (
+                  <tr key={ri} className="border-t border-gray-200">
+                    {tableRows[0].map((_, ci) => (
+                      <td key={ci} className="px-3 py-2 text-gray-800 whitespace-nowrap">
+                        {r[ci] ?? ''}
+                      </td>
+                    ))}
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        ) : keyValue && keyValue.length >= 2 ? (
+          <div className="p-4 space-y-2">
+            {keyValue.map((kv, i) => (
+              <div key={i} className="grid grid-cols-3 gap-3">
+                <div className="text-gray-600 font-medium">{kv.k}</div>
+                <div className="col-span-2 text-gray-900">{kv.v}</div>
+              </div>
+            ))}
+          </div>
+        ) : (
+          <div className="p-4 overflow-auto">
+            <pre className="text-xs leading-5 text-gray-800 whitespace-pre">{lines.join('\n')}</pre>
+          </div>
+        )}
       </div>
     </div>
   )
@@ -132,6 +192,7 @@ export default function ServiceSeoPage({ lang, service }: { lang: Lang; service:
     service.heroPromise?.[lang] ? { k: lang === 'zh' ? '承諾' : 'Promise', v: service.heroPromise[lang] } : null,
     service.heroBestFor?.[lang] ? { k: lang === 'zh' ? '適合誰' : 'Best for', v: service.heroBestFor[lang] } : null,
     service.heroDeliverablesLine?.[lang] ? { k: lang === 'zh' ? '交付' : 'Deliverables', v: service.heroDeliverablesLine[lang] } : null,
+    service.heroTrustSignal?.[lang] ? { k: lang === 'zh' ? '信任訊號' : 'Signal', v: service.heroTrustSignal[lang] } : null,
   ].filter(Boolean) as { k: string; v: string }[]
   const faqSchema = {
     '@context': 'https://schema.org',
@@ -249,7 +310,7 @@ export default function ServiceSeoPage({ lang, service }: { lang: Lang; service:
             <div className="rounded-xl border border-gray-200 bg-white p-6">
               <div className="text-sm font-semibold text-gray-900">{lang === 'zh' ? '影響' : 'Why it matters'}</div>
               <div className="mt-3 space-y-3 text-gray-700 leading-7">
-                {service.solution[lang].slice(0, 2).map((p, i) => (
+                {(service.whyItMatters?.[lang] ?? []).map((p, i) => (
                   <p key={i}>{p}</p>
                 ))}
               </div>
@@ -376,6 +437,11 @@ export default function ServiceSeoPage({ lang, service }: { lang: Lang; service:
               <div className="text-sm font-semibold text-gray-900">{lang === 'zh' ? '範例數據（非保證）' : 'Example metrics (not guaranteed)'}</div>
               <div className="mt-4">
                 <StatGrid items={service.typicalResults[lang]} />
+              </div>
+              <div className="mt-4 text-xs text-gray-500 leading-5">
+                {lang === 'zh'
+                  ? '數據會因市場、產品、資料可得性、客戶配合速度而異，以下僅為常見專案範圍示意，非承諾保證。'
+                  : 'Metrics vary by market, product, data availability, and client response speed. The figures below illustrate typical project ranges, not guarantees.'}
               </div>
             </div>
           </Section>
@@ -518,7 +584,7 @@ export default function ServiceSeoPage({ lang, service }: { lang: Lang; service:
         )}
 
         {service.geoSections && service.geoSections.length > 0 && (
-          <Section title={lang === 'zh' ? 'AI 搜尋友善內容' : 'GEO (AI search) content'}>
+          <Section title={service.geoGroupTitle?.[lang] ?? (lang === 'zh' ? '方法與框架' : 'Methods & frameworks')}>
             <div className="space-y-6">
               {service.geoSections.map((g) => (
                 <div key={g.id} className="rounded-xl border border-gray-200 bg-white p-6">
