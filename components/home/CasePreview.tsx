@@ -16,22 +16,18 @@ export default function CasePreview({ lang }: { lang: Lang }) {
         <div className="grid md:grid-cols-2 gap-12 mb-12">
           {cases.map((item) => (
             <div key={item.slug} className="group bg-white border border-gray-200 rounded-sm hover:border-blue-900 hover:shadow-xl transition duration-300 flex flex-col h-full overflow-hidden">
-              <div className="h-64 bg-gray-100 relative overflow-hidden">
-                 {/* Static Case Image - B2B Professional Style */}
-                 <div 
-                   className="absolute inset-0 bg-cover bg-center group-hover:scale-105 transition duration-500"
-                   style={{ 
-                     backgroundImage: item.slug === 'hardware-germany' 
-                       ? `url(https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=${encodeURIComponent('Industrial hardware components on blueprint, professional manufacturing setting, blue and white corporate style, high quality')}&image_size=landscape_16_9)`
-                       : item.slug === 'electronics-usa'
-                       ? `url(https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=${encodeURIComponent('Electronic circuit boards inspection, clean room environment, high tech manufacturing, blue tone professional')}&image_size=landscape_16_9)`
-                       : 'none'
-                   }}
-                 />
-                 <div className="absolute top-4 left-4 bg-blue-900/90 backdrop-blur px-3 py-1 text-xs font-bold uppercase tracking-wide text-white shadow-sm">
-                    {item.industry}
+              <div className="relative h-64 overflow-hidden bg-slate-950">
+                 <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,_rgba(59,130,246,0.38),_transparent_35%),radial-gradient(circle_at_bottom_right,_rgba(255,255,255,0.12),_transparent_30%),linear-gradient(135deg,_#0f172a,_#1e3a8a_55%,_#0f172a)] transition duration-500 group-hover:scale-105" />
+                 <div className="absolute inset-0 opacity-20 [background-image:linear-gradient(rgba(255,255,255,0.18)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.18)_1px,transparent_1px)] [background-size:22px_22px]" />
+                 <div className="absolute left-6 top-6 max-w-[75%]">
+                    <div className="inline-flex rounded-full border border-white/20 bg-white/10 px-3 py-1 text-xs font-bold uppercase tracking-wide text-white backdrop-blur">
+                      {item.industry}
+                    </div>
+                    <div className="mt-4 text-2xl font-bold leading-tight text-white">
+                      {item.title}
+                    </div>
                  </div>
-                 <div className="absolute bottom-4 left-4 bg-white/90 backdrop-blur px-3 py-1 text-xs font-bold uppercase tracking-wide text-gray-900 shadow-sm border border-gray-100">
+                 <div className="absolute bottom-4 left-4 border border-white/15 bg-white/90 px-3 py-1 text-xs font-bold uppercase tracking-wide text-gray-900 shadow-sm backdrop-blur">
                     {lang === 'zh' ? '目標市場：' : 'Market: '} {item.market}
                  </div>
               </div>

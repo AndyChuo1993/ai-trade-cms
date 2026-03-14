@@ -7,8 +7,8 @@ import ProcessSection from '@/components/home/ProcessSection'
 import CasePreview from '@/components/home/CasePreview'
 import CTASection from '@/components/home/CTASection'
 
-export async function generateMetadata({ params }: { params: { lang: Lang } }) {
-  const lang = params.lang
+export async function generateMetadata({ params }: { params: Promise<{ lang: Lang }> }) {
+  const { lang } = await params
   return {
     title: t(lang, 'meta_home_title'),
     description: t(lang, 'meta_home_desc'),
@@ -22,8 +22,8 @@ export async function generateMetadata({ params }: { params: { lang: Lang } }) {
   }
 }
 
-export default function Page({ params }: { params: { lang: Lang } }) {
-  const lang = params.lang
+export default async function Page({ params }: { params: Promise<{ lang: Lang }> }) {
+  const { lang } = await params
   
   return (
     <main className="min-h-screen bg-white text-gray-900 font-sans selection:bg-blue-100">
@@ -42,8 +42,8 @@ export default function Page({ params }: { params: { lang: Lang } }) {
                 </p>
             </div>
             <div className="flex gap-4">
-                <Link href={`/${lang}/contact`} className="bg-white text-blue-900 border border-blue-200 font-bold py-3 px-6 rounded-sm hover:bg-blue-50 transition">
-                    {lang === 'zh' ? '索取示意案例 PDF' : 'Get Case Study PDF'}
+                <Link href={`/${lang}/case-studies`} className="bg-white text-blue-900 border border-blue-200 font-bold py-3 px-6 rounded-sm hover:bg-blue-50 transition">
+                    {lang === 'zh' ? '查看成功案例' : 'View Case Studies'}
                 </Link>
                 <Link href={`/${lang}/export-market-analysis`} className="bg-blue-600 text-white font-bold py-3 px-6 rounded-sm hover:bg-blue-500 transition shadow-md">
                     {lang === 'zh' ? '免費出口市場分析' : 'Free Export Market Analysis'}

@@ -2,8 +2,8 @@ import { t, Lang } from '@/lib/i18n'
 import Link from 'next/link'
 import ServiceComparison from '@/components/ServiceComparison'
 
-export async function generateMetadata({ params }: { params: { lang: Lang } }) {
-  const lang = params.lang
+export async function generateMetadata({ params }: { params: Promise<{ lang: Lang }> }) {
+  const { lang } = await params
   return {
     title: t(lang, 'service_title') + ' | SunGene',
     description: t(lang, 'meta_home_desc'),
@@ -18,8 +18,8 @@ export async function generateMetadata({ params }: { params: { lang: Lang } }) {
   }
 }
 
-export default function Page({ params }: { params: { lang: Lang } }) {
-  const lang = params.lang
+export default async function Page({ params }: { params: Promise<{ lang: Lang }> }) {
+  const { lang } = await params
 
   type Card = { href: string; title: string; desc: string; tags?: string[] }
 
@@ -55,11 +55,11 @@ export default function Page({ params }: { params: { lang: Lang } }) {
       {/* Hero */}
       <section className="bg-gray-900 text-white py-24">
         <div className="mx-auto max-w-7xl px-6 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold mb-6">{lang === 'zh' ? '三個清晰服務：外銷開發／經銷商開發／外貿外包' : 'Three clear services: lead gen, distributors, and outsourcing'}</h1>
+          <h1 className="text-4xl md:text-5xl font-bold mb-6">{lang === 'zh' ? '三個核心服務，對應三種外貿增長需求' : 'Three core services for three export growth needs'}</h1>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
             {lang === 'zh'
-              ? '我們把容易混淆的概念拆清楚，讓訪客一眼看懂差異，也讓 Google 清楚理解每個頁面主題。'
-              : 'We separate overlapping concepts so users self-select fast and search engines understand each page topic.'}
+              ? '如果你要找海外買家、建立經銷通路，或想在不擴編的前提下持續開發海外市場，這裡可以直接找到對應方案。'
+              : 'Whether you need overseas buyers, channel partners, or a managed export sales workflow without hiring first, you can choose the right service here.'}
           </p>
           <div className="mt-10 flex flex-col sm:flex-row justify-center gap-4">
             <Link href={`/${lang}/contact`} className="bg-white text-blue-900 font-bold py-3 px-8 rounded-sm hover:bg-gray-100 transition">

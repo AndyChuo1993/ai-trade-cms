@@ -39,8 +39,8 @@ export default function WhyUs({ lang }: { lang: Lang }) {
                 </h2>
                 <p className="text-xl text-gray-600 mb-8 leading-relaxed">
                     {lang === 'zh' 
-                        ? 'SunGene 專注於 B2B 外貿開發，我們不賣軟體工具，而是提供真實的訂單機會與市場拓展服務。' 
-                        : 'SunGene focuses on B2B export growth. We don\'t sell software; we deliver real business opportunities and market expansion services.'}
+                        ? 'SunGene 專注於製造業 B2B 外貿開發。我們不主打花俏工具，而是把名單、開發、跟進與詢盤交付做成一套可持續的流程。' 
+                        : 'SunGene focuses on B2B export growth for manufacturers. We do not sell tool hype. We build a repeatable system for list building, outreach, follow-ups, and inquiry delivery.'}
                 </p>
                 <div className="h-1 w-24 bg-blue-600 rounded-full"></div>
             </div>
