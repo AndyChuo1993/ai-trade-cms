@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import { t, Lang } from '@/lib/i18n'
 import InquiryForm, { FormField } from '@/components/InquiryForm'
 
@@ -45,8 +46,8 @@ export default function Page({ params }: { params: { lang: Lang } }) {
              </div>
              <div className="text-center flex flex-col items-center flex-1 md:items-end">
                 <div className="font-bold text-gray-900 mb-2">WhatsApp</div>
-                <div className="w-24 h-24 bg-gray-100 rounded-sm overflow-hidden border border-gray-200 shadow-sm">
-                    <img src="/whatsapp-qr.png" alt="WhatsApp QR Code" className="w-full h-full object-cover" />
+                <div className="h-24 w-24 overflow-hidden rounded-sm border border-gray-200 bg-gray-100 shadow-sm">
+                    <Image src="/whatsapp-qr.png" alt="WhatsApp QR Code" width={96} height={96} className="h-full w-full object-cover" />
                 </div>
              </div>
           </div>

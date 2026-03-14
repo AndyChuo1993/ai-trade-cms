@@ -3,20 +3,23 @@ import nodemailer from 'nodemailer'
 import { rateLimit } from '@/lib/rateLimit'
 import process from 'process'
 
+const allowedTypes = [
+  'Contact',
+  'Free Analysis',
+  'Export Lead Generation',
+  'Distributor Development',
+  'Export Sales Outsourcing',
+  'Partnership Inquiry',
+  'Lead Generation',
+  'Outreach Service',
+  'Sales Outsourcing',
+  'Lead Magnet',
+] as const
+
 type Inquiry = {
   id?: string
   date?: string
-  type:
-    | 'Contact'
-    | 'Free Analysis'
-    | 'Export Lead Generation'
-    | 'Distributor Development'
-    | 'Export Sales Outsourcing'
-    | 'Partnership Inquiry'
-    | 'Lead Generation'
-    | 'Outreach Service'
-    | 'Sales Outsourcing'
-    | 'Lead Magnet'
+  type: (typeof allowedTypes)[number]
   name: string
   company?: string
   email: string
@@ -37,6 +40,53 @@ type Inquiry = {
   timeline?: string
 }
 
+const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+
+function getText(value: unknown, max = 2000) {
+  if (typeof value !== 'string') return undefined
+  const trimmed = value.trim()
+  if (!trimmed) return undefined
+  return trimmed.slice(0, max)
+}
+
+function sanitizeBody(body: Record<string, unknown>) {
+  const type = getText(body.type, 80)
+  const name = getText(body.name, 120)
+  const email = getText(body.email, 200)?.toLowerCase()
+
+  if (!type || !allowedTypes.includes(type as (typeof allowedTypes)[number])) {
+    return { error: 'Invalid inquiry type' as const }
+  }
+
+  if (!name || !email || !emailRegex.test(email)) {
+    return { error: 'Missing or invalid contact fields' as const }
+  }
+
+  const item: Inquiry = {
+    type: type as Inquiry['type'],
+    name,
+    email,
+    company: getText(body.company, 160),
+    phone: getText(body.phone, 60),
+    message: getText(body.message, 5000),
+    productName: getText(body.productName, 240),
+    quantity: getText(body.quantity, 120),
+    incoterms: getText(body.incoterms, 120),
+    targetCountry: getText(body.targetCountry, 160),
+    targetMarket: getText(body.targetMarket, 160),
+    currentChannels: getText(body.currentChannels, 500),
+    goals: getText(body.goals, 1000),
+    topic: getText(body.topic, 240),
+    integrationType: getText(body.integrationType, 240),
+    details: getText(body.details, 3000),
+    scope: getText(body.scope, 1000),
+    budget: getText(body.budget, 120),
+    timeline: getText(body.timeline, 120),
+  }
+
+  return { item }
+}
+
 export async function POST(req: Request) {
   const ip = (req.headers.get('x-forwarded-for') || '').split(',')[0] || 'unknown'
   const rl = rateLimit(ip, 10, 60_000)
@@ -52,45 +102,14 @@ export async function POST(req: Request) {
     if (!vr || !vr.success) return new Response('Captcha Failed', { status: 400 })
   }
   if (body.website) return Response.json({ ok: true })
-  const type = body.type
-  if (![
-    'Contact',
-    'Free Analysis',
-    'Export Lead Generation',
-    'Distributor Development',
-    'Export Sales Outsourcing',
-    'Partnership Inquiry',
-    'Lead Generation',
-    'Outreach Service',
-    'Sales Outsourcing',
-    'Lead Magnet',
-  ].includes(type)) {
-    return new Response('Bad Request', { status: 400 })
+
+  const sanitized = sanitizeBody(body)
+  if ('error' in sanitized) {
+    return Response.json({ ok: false, error: sanitized.error }, { status: 400 })
   }
-  // Phone is optional to maximize conversion
-  if (!body.name || !body.email) return new Response('Bad Request', { status: 400 })
-  const item: Inquiry = {
-    type: body.type,
-    name: body.name,
-    company: body.company,
-    email: body.email,
-    phone: body.phone,
-    message: body.message,
-    productName: body.productName,
-    quantity: body.quantity,
-    incoterms: body.incoterms,
-    targetCountry: body.targetCountry,
-    targetMarket: body.targetMarket,
-    currentChannels: body.currentChannels,
-    goals: body.goals,
-    topic: body.topic,
-    integrationType: body.integrationType,
-    details: body.details,
-    scope: body.scope,
-    budget: body.budget,
-    timeline: body.timeline
-  }
-  
+
+  const item = sanitized.item
+
   const reqId = `REQ-${Date.now().toString(36)}-${Math.random().toString(36).slice(2, 6)}`
   const meta = collectMeta(req)
   const id = `REQ-${Date.now().toString(36)}`
@@ -124,7 +143,7 @@ async function notify(item: Inquiry, rawBody: any, meta: any, id: string, reqId?
 
   const to = process.env.INQUIRY_TO || 'contact@sungenelite.com'
   let transporter: any
-  
+
   if (host && user && pass) {
     transporter = nodemailer.createTransport({
       host,
@@ -178,7 +197,7 @@ IP: ${meta.ip}
     const ackText =
 `您好 ${item.name}：
 
-我們已收到您的詢盤（編號 ${id}），專員將在 1–2 個工作日內與您聯繫。
+我們已收到您的詢盤（編號 ${id}），專員將在 1-2 個工作日內與您聯繫。
 如需補充資訊，歡迎直接回覆此信，或聯繫我們：
 
 Email: ${contactEmail}
@@ -191,8 +210,8 @@ SunGene 服務團隊
 
 Hi ${item.name},
 
-We’ve received your inquiry (Ref: ${id}). Our team will get back to you within 1–2 business days.
-If you’d like to add more information, you can reply to this email or contact us:
+We've received your inquiry (Ref: ${id}). Our team will get back to you within 1-2 business days.
+If you'd like to add more information, you can reply to this email or contact us:
 
 Email: ${contactEmail}
 Tel: ${contactPhone}

@@ -1,6 +1,5 @@
 import '../styles/globals.css'
 import React from 'react'
-import { headers } from 'next/headers'
 
 export const metadata = {
   title: 'SunGene',
@@ -12,11 +11,9 @@ export default async function RootLayout({
 }: {
   children: React.ReactNode
 }) {
-  const h = await headers()
-  const lang = h.get('x-lang') === 'zh' ? 'zh' : 'en'
   return (
-    <html lang={lang === 'zh' ? 'zh-Hant' : 'en'}>
-      <body className="min-h-screen bg-white text-gray-900 antialiased font-sans">{children}</body>
+    <html lang="en" suppressHydrationWarning>
+      <body className="min-h-screen bg-white font-sans text-gray-900 antialiased">{children}</body>
     </html>
   )
 }
