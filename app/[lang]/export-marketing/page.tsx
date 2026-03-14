@@ -11,7 +11,7 @@ const service: ServiceSeo = {
     zh: '用 SEO + GEO 的內容架構，搭配高品質落地頁與內部連結，讓你的網站變成可持續獲客的 inbound 機器。',
     en: 'Turn your site into an inbound machine with SEO + AI-search (GEO) content architecture, landing pages, and internal links.',
   },
-  h1: { zh: '出口行銷服務（SEO + GEO）', en: 'Export Marketing (SEO + GEO) for Manufacturers' },
+  h1: { zh: '出口行銷服務', en: 'Export Marketing (SEO + GEO) for Manufacturers' },
   problem: {
     zh: ['你的服務頁太像銷售頁：缺 framework、lists、guides、data，AI 搜尋難引用。', '關鍵字覆蓋太少：只吃到少數詞，缺乏長尾流量（how to / tools / checklist）。', '內部連結規則不清楚，文章與服務、案例、資源磁鐵之間沒有形成集群。'],
     en: ['Your pages read like sales pages: missing frameworks, lists, guides, and data for AI search to cite.', 'Keyword coverage is too narrow: you miss long-tail “how-to”, tools, and checklist queries.', 'Internal linking is weak: blog, services, cases, and magnets are not clustered.'],

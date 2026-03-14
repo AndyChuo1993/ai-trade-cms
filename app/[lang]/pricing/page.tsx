@@ -59,7 +59,7 @@ export default function Page({ params }: { params: { lang: Lang } }) {
       link: `/${lang}/contact?service=cold-outreach`
     },
     {
-      title: { zh: '外貿外包模式', en: 'Sales Outsourcing' },
+      title: { zh: '外貿業務外包', en: 'Sales Outsourcing' },
       icon: <Briefcase className="w-8 h-8 text-indigo-600" />,
       color: 'indigo',
       description: { zh: '適合無外貿團隊，需要專業人士完整代操海外業務的企業。', en: 'Best for companies needing a full export sales arm without hiring.' },

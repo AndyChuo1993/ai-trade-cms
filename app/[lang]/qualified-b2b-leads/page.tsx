@@ -4,7 +4,7 @@ import ServiceSeoPage, { ServiceSeo } from '@/components/ServiceSeoPage'
 const service: ServiceSeo = {
   slug: 'qualified-b2b-leads',
   title: {
-    zh: '合格詢盤（Qualified B2B Leads）｜可追蹤的海外客戶詢盤交付',
+    zh: '合格詢盤｜可追蹤的海外客戶詢盤交付',
     en: 'Qualified B2B Leads | Trackable Export Inquiries Delivered',
   },
   description: {

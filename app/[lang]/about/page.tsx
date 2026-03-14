@@ -85,7 +85,7 @@ export default function Page({ params }: { params: { lang: Lang } }) {
              </p>
              <p className="text-gray-600 text-lg">
                 {lang === 'zh'
-                  ? '傳統的「參展等待」與「亂槍打鳥」已經失效。我們相信，透過數據驅動的主動開發 (Data-Driven Outreach)，任何有競爭力的製造商都能直接與全球買家建立連結。'
+                  ? '傳統的「參展等待」與「亂槍打鳥」已經失效。我們相信，透過數據驅動的主動開發，任何有競爭力的製造商都能直接與全球買家建立連結。'
                   : 'Traditional "wait-and-see" exhibition strategies are obsolete. We believe that through Data-Driven Outreach, any competitive manufacturer can establish direct connections with global buyers.'}
              </p>
           </div>

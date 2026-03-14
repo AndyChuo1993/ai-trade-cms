@@ -4,7 +4,7 @@ import ServiceSeoPage, { ServiceSeo } from '@/components/ServiceSeoPage'
 const service: ServiceSeo = {
   slug: 'buyer-database-building',
   title: {
-    zh: '買家資料庫建立（Buyer Database Building）｜海外買家名單與決策人資料',
+    zh: '買家資料庫建立｜海外買家名單與決策人資料',
     en: 'Buyer Database Building | Overseas Buyer Lists for Manufacturers',
   },
   description: {

@@ -4,7 +4,7 @@ import ServiceSeoPage, { ServiceSeo } from '@/components/ServiceSeoPage'
 const service: ServiceSeo = {
   slug: 'distributor-network',
   title: {
-    zh: '海外經銷網絡（Distributor Network）｜建立可預期的通路覆蓋',
+    zh: '海外經銷網絡｜建立可預期的通路覆蓋',
     en: 'Distributor Network | Build Predictable Overseas Channel Coverage',
   },
   description: {
