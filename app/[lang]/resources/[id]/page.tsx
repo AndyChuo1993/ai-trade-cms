@@ -1,5 +1,6 @@
 import { t, Lang } from '@/lib/i18n'
 import Link from 'next/link'
+import Image from 'next/image'
 import { getArticle } from '@/data/articles'
 import { notFound } from 'next/navigation'
 
@@ -54,17 +55,20 @@ export default async function Page({ params }: { params: Promise<{ lang: Lang; i
     <main className="min-h-screen bg-white">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
       {/* Article Header */}
-      <section className="bg-gray-50 py-24 border-b border-gray-100">
-        <div className="mx-auto max-w-3xl px-6 text-center">
-          <div className="inline-block bg-blue-100 text-blue-800 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide mb-6">
+      <section className="border-b border-gray-100 bg-gray-50 py-24">
+        <div className="mx-auto max-w-4xl px-6 text-center">
+          <div className="inline-block rounded-full bg-blue-100 px-3 py-1 text-xs font-bold uppercase tracking-wide text-blue-800 mb-6">
             {article.category}
           </div>
-          <h1 className="text-3xl md:text-5xl font-bold mb-6 text-gray-900 leading-tight">
+          <h1 className="mb-6 text-3xl font-bold leading-tight text-gray-900 md:text-5xl">
             {article.title}
           </h1>
-          <div className="text-gray-500 font-medium">
-            {article.date}
-          </div>
+          <div className="text-gray-500 font-medium">{article.date}</div>
+          {article.image && (
+            <div className="relative mx-auto mt-10 aspect-[16/9] max-w-3xl overflow-hidden rounded-xl border border-gray-200 bg-slate-950 shadow-sm">
+              <Image src={article.image} alt={article.title} fill className="object-cover" />
+            </div>
+          )}
         </div>
       </section>
 

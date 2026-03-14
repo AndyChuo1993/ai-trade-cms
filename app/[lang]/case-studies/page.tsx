@@ -1,5 +1,6 @@
 import { t, Lang } from '@/lib/i18n'
 import Link from 'next/link'
+import Image from 'next/image'
 import { getCases } from '@/data/cases'
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: Lang }> }) {

@@ -1,5 +1,6 @@
 import { t, Lang } from '@/lib/i18n'
 import Link from 'next/link'
+import Image from 'next/image'
 import { getCase } from '@/data/cases'
 import { notFound } from 'next/navigation'
 
@@ -23,60 +24,49 @@ export default async function Page({ params }: { params: Promise<{ lang: Lang; s
 
   return (
     <main className="min-h-screen bg-white">
-      {/* Hero */}
-      <section className="bg-gray-900 text-white py-24 relative overflow-hidden">
-        {/* Background Image Overlay if available */}
+      <section className="relative overflow-hidden bg-gray-900 py-24 text-white">
         {item.cover && (
-            <div 
-                className="absolute inset-0 bg-cover bg-center opacity-20 blur-sm"
-                style={{ backgroundImage: `url(${item.cover})` }}
-            ></div>
+          <div className="absolute inset-0 opacity-20 blur-sm">
+            <Image src={item.cover} alt={item.title} fill className="object-cover" />
+          </div>
         )}
-        <div className="mx-auto max-w-4xl px-6 text-center relative z-10">
-          <div className="inline-flex gap-2 mb-6">
-            <span className="bg-blue-600 text-white text-sm font-bold px-3 py-1 rounded-sm uppercase tracking-wide">
-                {item.industry}
-            </span>
-            <span className="bg-gray-700 text-white text-sm font-bold px-3 py-1 rounded-sm uppercase tracking-wide">
-                {item.market}
-            </span>
+        <div className="relative z-10 mx-auto max-w-4xl px-6 text-center">
+          <div className="mb-6 inline-flex gap-2">
+            <span className="rounded-sm bg-blue-600 px-3 py-1 text-sm font-bold uppercase tracking-wide text-white">{item.industry}</span>
+            <span className="rounded-sm bg-gray-700 px-3 py-1 text-sm font-bold uppercase tracking-wide text-white">{item.market}</span>
           </div>
-          <h1 className="text-4xl md:text-6xl font-bold mb-6">{item.title}</h1>
-          <p className="text-xl text-gray-300 max-w-2xl mx-auto">{item.summary}</p>
-          
+          <h1 className="mb-6 text-4xl font-bold md:text-6xl">{item.title}</h1>
+          <p className="mx-auto max-w-2xl text-xl text-gray-300">{item.summary}</p>
+
           <div className="mt-8 flex flex-wrap justify-center gap-4 text-sm font-medium text-gray-400">
-             <div className="flex items-center bg-gray-800/50 px-4 py-2 rounded-full border border-gray-700">
-                <span className="text-blue-400 mr-2">●</span> {lang === 'zh' ? '服務類型' : 'Service'}: {item.serviceType}
-             </div>
-             <div className="flex items-center bg-gray-800/50 px-4 py-2 rounded-full border border-gray-700">
-                <span className="text-green-400 mr-2">●</span> {lang === 'zh' ? '執行週期' : 'Duration'}: {item.duration}
-             </div>
+            <div className="flex items-center rounded-full border border-gray-700 bg-gray-800/50 px-4 py-2">
+              <span className="mr-2 text-blue-400">●</span> {lang === 'zh' ? '服務類型' : 'Service'}: {item.serviceType}
+            </div>
+            <div className="flex items-center rounded-full border border-gray-700 bg-gray-800/50 px-4 py-2">
+              <span className="mr-2 text-green-400">●</span> {lang === 'zh' ? '執行週期' : 'Duration'}: {item.duration}
+            </div>
           </div>
-          
+
           {item.proofImages && item.proofImages.length > 0 && (
-            <div className="mt-12 grid grid-cols-2 gap-4 max-w-2xl mx-auto">
-                {item.proofImages.map((img, idx) => (
-                    <div key={idx} className="relative aspect-video rounded-sm overflow-hidden border border-gray-700/50 shadow-2xl">
-                        <div 
-                            className="absolute inset-0 bg-cover bg-center hover:scale-105 transition duration-500"
-                            style={{ backgroundImage: `url(${img})` }}
-                        />
-                    </div>
-                ))}
+            <div className="mx-auto mt-12 grid max-w-2xl grid-cols-2 gap-4">
+              {item.proofImages.map((img, idx) => (
+                <div key={idx} className="relative aspect-video overflow-hidden rounded-sm border border-gray-700/50 shadow-2xl">
+                  <Image src={img} alt={`${item.title} proof ${idx + 1}`} fill className="object-cover transition duration-500 hover:scale-105" />
+                </div>
+              ))}
             </div>
           )}
         </div>
       </section>
 
-      {/* Highlights */}
       {item.highlights && (
-        <section className="py-12 border-b border-gray-100 bg-gray-50">
+        <section className="border-b border-gray-100 bg-gray-50 py-12">
           <div className="mx-auto max-w-6xl px-6">
             <div className="grid grid-cols-3 gap-8">
               {item.highlights.map((h, idx) => (
                 <div key={idx} className="text-center">
-                  <div className="text-4xl md:text-5xl font-bold text-blue-600 mb-2">{h.num}</div>
-                  <div className="text-gray-500 font-medium uppercase tracking-wide text-sm md:text-base">{h.label}</div>
+                  <div className="mb-2 text-4xl font-bold text-blue-600 md:text-5xl">{h.num}</div>
+                  <div className="text-sm font-medium uppercase tracking-wide text-gray-500 md:text-base">{h.label}</div>
                 </div>
               ))}
             </div>
@@ -84,22 +74,17 @@ export default async function Page({ params }: { params: Promise<{ lang: Lang; s
         </section>
       )}
 
-      {/* Content Sections */}
       <section className="py-24">
-        <div className="mx-auto max-w-3xl px-6 space-y-16">
-          
-          {/* Before/After if available */}
-          {(item.before && item.after) && (
-            <div className="bg-white border border-gray-200 rounded-sm p-8 shadow-sm">
-              <h3 className="text-2xl font-bold mb-8 text-center">{lang === 'zh' ? '合作前後對比' : 'Before & After'}</h3>
-              <div className="grid md:grid-cols-2 gap-12 relative">
-                {/* Vertical Divider */}
-                <div className="hidden md:block absolute left-1/2 top-0 bottom-0 w-px bg-gray-200 -translate-x-1/2"></div>
-                
+        <div className="mx-auto max-w-3xl space-y-16 px-6">
+          {item.before && item.after && (
+            <div className="rounded-sm border border-gray-200 bg-white p-8 shadow-sm">
+              <h3 className="mb-8 text-center text-2xl font-bold">{lang === 'zh' ? '合作前後對比' : 'Before & After'}</h3>
+              <div className="relative grid gap-12 md:grid-cols-2">
+                <div className="absolute bottom-0 left-1/2 top-0 hidden w-px -translate-x-1/2 bg-gray-200 md:block"></div>
                 <div>
-                  <div className="text-red-500 font-bold mb-4 uppercase tracking-wide flex items-center">
-                    <span className="w-2 h-2 bg-red-500 rounded-full mr-2"></span>
-                    {lang === 'zh' ? '合作前 (Before)' : 'Before'}
+                  <div className="mb-4 flex items-center font-bold uppercase tracking-wide text-red-500">
+                    <span className="mr-2 h-2 w-2 rounded-full bg-red-500"></span>
+                    {lang === 'zh' ? '合作前' : 'Before'}
                   </div>
                   <ul className="space-y-3">
                     {item.before.map((point, i) => (
@@ -110,15 +95,14 @@ export default async function Page({ params }: { params: Promise<{ lang: Lang; s
                     ))}
                   </ul>
                 </div>
-                
                 <div>
-                  <div className="text-green-500 font-bold mb-4 uppercase tracking-wide flex items-center">
-                    <span className="w-2 h-2 bg-green-500 rounded-full mr-2"></span>
-                    {lang === 'zh' ? '合作後 (After)' : 'After'}
+                  <div className="mb-4 flex items-center font-bold uppercase tracking-wide text-green-500">
+                    <span className="mr-2 h-2 w-2 rounded-full bg-green-500"></span>
+                    {lang === 'zh' ? '合作後' : 'After'}
                   </div>
                   <ul className="space-y-3">
                     {item.after.map((point, i) => (
-                      <li key={i} className="flex items-start text-gray-900 font-medium">
+                      <li key={i} className="flex items-start font-medium text-gray-900">
                         <span className="mr-3 text-green-500">✓</span>
                         {point}
                       </li>
@@ -129,23 +113,22 @@ export default async function Page({ params }: { params: Promise<{ lang: Lang; s
             </div>
           )}
 
-          {/* Main Content */}
           <div className="space-y-16">
             {item.sections.map((section, idx) => (
               <div key={idx}>
-                <h3 className="text-2xl font-bold mb-6 text-gray-900 border-l-4 border-blue-600 pl-4">{section.heading}</h3>
+                <h3 className="mb-6 border-l-4 border-blue-600 pl-4 text-2xl font-bold text-gray-900">{section.heading}</h3>
                 {section.paragraphs && (
-                  <div className="space-y-4 mb-6">
+                  <div className="mb-6 space-y-4">
                     {section.paragraphs.map((p, pIdx) => (
-                      <p key={pIdx} className="text-lg text-gray-600 leading-relaxed">{p}</p>
+                      <p key={pIdx} className="text-lg leading-relaxed text-gray-600">{p}</p>
                     ))}
                   </div>
                 )}
                 {section.items && (
                   <ul className="space-y-4">
                     {section.items.map((li, liIdx) => (
-                      <li key={liIdx} className="flex items-start text-lg text-gray-700 bg-gray-50 p-4 rounded-sm">
-                        <span className="w-6 h-6 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center mr-4 text-sm font-bold flex-shrink-0 mt-0.5">✓</span>
+                      <li key={liIdx} className="flex items-start rounded-sm bg-gray-50 p-4 text-lg text-gray-700">
+                        <span className="mr-4 mt-0.5 flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-blue-100 text-sm font-bold text-blue-600">✓</span>
                         {li}
                       </li>
                     ))}
@@ -154,20 +137,18 @@ export default async function Page({ params }: { params: Promise<{ lang: Lang; s
               </div>
             ))}
           </div>
-
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="py-24 bg-blue-900 text-white text-center">
+      <section className="bg-blue-900 py-24 text-center text-white">
         <div className="mx-auto max-w-4xl px-6">
-          <h2 className="text-3xl md:text-4xl font-bold mb-8">{t(lang, 'hero_cta_start')}</h2>
-          <div className="flex flex-col sm:flex-row justify-center gap-4">
-            <Link href={`/${lang}/export-market-analysis`} className="inline-block bg-white text-blue-900 font-bold py-4 px-10 rounded-sm hover:bg-gray-100 transition duration-300 shadow-lg text-lg">
-                {t(lang, 'cta_analysis')}
+          <h2 className="mb-8 text-3xl font-bold md:text-4xl">{t(lang, 'hero_cta_start')}</h2>
+          <div className="flex flex-col justify-center gap-4 sm:flex-row">
+            <Link href={`/${lang}/export-market-analysis`} className="inline-block rounded-sm bg-white px-10 py-4 text-lg font-bold text-blue-900 shadow-lg transition duration-300 hover:bg-gray-100">
+              {t(lang, 'cta_analysis')}
             </Link>
-            <Link href={`/${lang}/contact`} className="inline-block bg-transparent border border-white text-white font-bold py-4 px-10 rounded-sm hover:bg-white hover:text-blue-900 transition duration-300 text-lg">
-                {t(lang, 'cta_consult')}
+            <Link href={`/${lang}/contact`} className="inline-block rounded-sm border border-white bg-transparent px-10 py-4 text-lg font-bold text-white transition duration-300 hover:bg-white hover:text-blue-900">
+              {t(lang, 'cta_consult')}
             </Link>
           </div>
         </div>
