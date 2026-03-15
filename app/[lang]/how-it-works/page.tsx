@@ -1,16 +1,16 @@
 import { t, Lang } from '@/lib/i18n'
 import Link from 'next/link'
 
-export async function generateMetadata({ params }: { params: { lang: Lang } }) {
-  const lang = params.lang
+export async function generateMetadata({ params }: { params: Promise<{ lang: Lang }> }) {
+  const { lang } = await params
   return {
     title: t(lang, 'process_title') + ' | SunGene',
     description: t(lang, 'meta_home_desc'),
   }
 }
 
-export default function Page({ params }: { params: { lang: Lang } }) {
-  const lang = params.lang
+export default async function Page({ params }: { params: Promise<{ lang: Lang }> }) {
+  const { lang } = await params
 
   const steps = [
     {

@@ -3,8 +3,8 @@ import Link from 'next/link'
 import { Metadata } from 'next'
 import { Check, Database, Send, Briefcase } from 'lucide-react'
 
-export async function generateMetadata({ params }: { params: { lang: Lang } }): Promise<Metadata> {
-  const lang = params.lang
+export async function generateMetadata({ params }: { params: Promise<{ lang: Lang }> }): Promise<Metadata> {
+  const { lang } = await params
   const isZh = lang === 'zh'
   const title = isZh ? '服務價格｜SunGene' : 'Pricing | SunGene'
   const description = isZh
@@ -22,8 +22,8 @@ export async function generateMetadata({ params }: { params: { lang: Lang } }): 
   }
 }
 
-export default function Page({ params }: { params: { lang: Lang } }) {
-  const lang = params.lang
+export default async function Page({ params }: { params: Promise<{ lang: Lang }> }) {
+  const { lang } = await params
 
   const plans = [
     {

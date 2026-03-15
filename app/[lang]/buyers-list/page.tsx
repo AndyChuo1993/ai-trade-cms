@@ -3,8 +3,8 @@ import { getDictionary, Lang } from '@/lib/i18n'
 import DownloadForm from '@/components/DownloadForm'
 import { CheckCircle } from 'lucide-react'
 
-export async function generateMetadata({ params }: { params: { lang: Lang } }): Promise<Metadata> {
-  const lang = params.lang
+export async function generateMetadata({ params }: { params: Promise<{ lang: Lang }> }): Promise<Metadata> {
+  const { lang } = await params
   return {
     title: lang === 'zh' ? '免費索取 100 位潛在買家名單｜SunGene' : 'Get 100 Potential Buyers List (Free) | SunGene',
     description:
@@ -16,8 +16,8 @@ export async function generateMetadata({ params }: { params: { lang: Lang } }): 
   }
 }
 
-export default async function Page({ params }: { params: { lang: Lang } }) {
-  const lang = params.lang
+export default async function Page({ params }: { params: Promise<{ lang: Lang }> }) {
+  const { lang } = await params
   const dict = await getDictionary(lang)
   const isZh = lang === 'zh'
   return (

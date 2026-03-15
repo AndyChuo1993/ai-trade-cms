@@ -57,19 +57,15 @@ export default function DownloadForm({ dict, lang, resourceId }: DownloadFormPro
         json = null
       }
 
-      if (json?.ok === false) {
-        setErrorCode(String(res.status || 'error'))
-        setStatus('error')
-        return
-      }
-      if (!res.ok && !json) {
+      if (!res.ok || json?.ok === false) {
         setErrorCode(String(res.status || 'error'))
         setStatus('error')
         return
       }
 
       setStatus('success')
-    } catch {
+    } catch (err) {
+      console.error(err)
       setStatus('error')
     }
   }

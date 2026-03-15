@@ -4,7 +4,7 @@ import DownloadForm from '@/components/DownloadForm'
 import { Check, FileText, Target, Shield, HelpCircle } from 'lucide-react'
 
 export async function generateMetadata({ params }: { params: { lang: 'en' | 'zh' } }) {
-  const lang = params.lang
+  const { lang } = await params
   const isZh = lang === 'zh'
   const title = isZh ? '外貿客戶開發檢查表｜2025 版' : 'Export Lead Generation Checklist | 2025 Edition'
   const description = isZh

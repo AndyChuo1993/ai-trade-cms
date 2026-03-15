@@ -183,12 +183,13 @@ function ArtifactPreview({ title, caption, lines }: { title: string; caption?: s
 }
 
 export default function ServiceSeoPage({ lang, service }: { lang: Lang; service: ServiceSeo }) {
-  const serviceIllustration =
-    service.slug === 'export-lead-generation'
-      ? '/illustrations/service-export-leads.svg'
-      : service.slug === 'distributor-development'
-        ? '/illustrations/service-distributor.svg'
-        : '/illustrations/service-outsourcing.svg'
+  const imageMap: Record<string, string> = {
+    'export-marketing': '/illustrations/seo-landing-panel.svg',
+    'export-lead-generation': '/illustrations/service-export-leads.svg',
+    'distributor-development': '/illustrations/service-distributor.svg',
+    'export-sales-outsourcing': '/illustrations/service-outsourcing.svg'
+  }
+  const serviceIllustration = imageMap[service.slug] || '/illustrations/seo-landing-panel.svg'
   const base = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.sungenelite.com'
   const canonicalPath = service.path ? `/${lang}${service.path}` : `/${lang}/${service.slug}`
   const workflow = service.workflow?.[lang] ?? (
