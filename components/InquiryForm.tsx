@@ -60,10 +60,11 @@ export default function InquiryForm({
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
+    const form = e.currentTarget
     setLoading(true)
     setStatus('idle')
 
-    const formData = new FormData(e.currentTarget)
+    const formData = new FormData(form)
     const data: Record<string, string> = {}
     
     fields.forEach(field => {
@@ -129,7 +130,7 @@ export default function InquiryForm({
 
       setStatus('success')
       // Reset form
-      e.currentTarget.reset()
+      form.reset()
     } catch (err: any) {
       console.error(err)
       setErrorMessage(err.message || 'Unknown error')
