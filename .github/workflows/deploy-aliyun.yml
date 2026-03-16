@@ -1,0 +1,57 @@
+name: Deploy to Aliyun
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install deps
+        run: npm ci
+
+      - name: Build Next.js
+        run: npm run build
+
+      - name: Prepare standalone package
+        run: |
+          mkdir -p deploy
+          cp -r .next/standalone deploy/
+          cp -r .next/static deploy/.next
+          cp -r public deploy/
+
+      - name: Copy files to Aliyun
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.ALI_HOST }}
+          username: ${{ secrets.ALI_USER }}
+          key: ${{ secrets.ALI_SSH_KEY }}
+          port: ${{ secrets.ALI_PORT }}
+          source: "deploy/*"
+          target: "${{ secrets.ALI_DEPLOY_PATH }}"
+
+      - name: Restart Node project
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.ALI_HOST }}
+          username: ${{ secrets.ALI_USER }}
+          key: ${{ secrets.ALI_SSH_KEY }}
+          port: ${{ secrets.ALI_PORT }}
+          script: |
+            cd ${{ secrets.ALI_DEPLOY_PATH }}
+            mkdir -p .next/standalone/.next
+            cp -r -f .next/static .next/standalone/.next/
+            cp -r -f public .next/standalone/
+            pkill -f "node ./.next/standalone/server.js" || true
+            nohup sh -c 'HOSTNAME=0.0.0.0 PORT=3000 node ./.next/standalone/server.js' > app.log 2>&1 &
