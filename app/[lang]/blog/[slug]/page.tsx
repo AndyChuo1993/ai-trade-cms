@@ -22,7 +22,8 @@ function estimateReadTime(text: string) {
 }
 
 export async function generateStaticParams() {
-  return getBlogPosts().map((p) => ({ slug: p.slug }))
+  const langs = ['en', 'zh']
+  return getBlogPosts().flatMap((p) => langs.map((lang) => ({ lang, slug: p.slug })))
 }
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: Lang; slug: string }> }) {

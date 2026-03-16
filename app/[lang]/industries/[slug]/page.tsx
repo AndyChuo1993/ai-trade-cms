@@ -5,7 +5,8 @@ import JsonLd from '@/components/JsonLd'
 import { notFound } from 'next/navigation'
 
 export async function generateStaticParams() {
-  return seoIndustries.map(i => ({ slug: i.slug }))
+  const langs = ['en', 'zh']
+  return seoIndustries.flatMap((i) => langs.map((lang) => ({ lang, slug: i.slug })))
 }
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: Lang; slug: string }> }) {

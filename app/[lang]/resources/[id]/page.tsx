@@ -1,8 +1,13 @@
 import { Lang } from '@/lib/i18n'
 import Link from 'next/link'
 import Image from 'next/image'
-import { getArticle } from '@/data/articles'
+import { getArticle, getArticles } from '@/data/articles'
 import { notFound } from 'next/navigation'
+
+export async function generateStaticParams() {
+  const langs = ['en', 'zh'] as const
+  return langs.flatMap((lang) => getArticles(lang).map((a) => ({ lang, id: a.id })))
+}
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: Lang; id: string }> }) {
   const { lang, id } = await params
