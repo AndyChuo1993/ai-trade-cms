@@ -24,15 +24,15 @@ type ArticleRow = {
 }
 
 const imageFallbacks: Record<string, string> = {
-  'export-client-development-process-guide': '/images/resources/export-dev-guide-2026.jpg',
-  'how-to-build-overseas-buyer-list': '/images/resources/how-to-build-buyer-list.jpg',
-  'cold-email-writing-tips': '/images/resources/cold-email-structure.jpg',
-  'cold-email-common-mistakes': '/images/resources/cold-email-mistakes.jpg',
-  'europe-market-guide': '/images/resources/europe-market-guide.jpg',
-  'north-america-market-guide': '/images/resources/north-america-market-guide.jpg',
-  'japan-market-guide': '/images/resources/japan-market-guide.jpg',
-  'hardware-market-analysis': '/images/resources/hardware-export-guide.jpg',
-  'electronics-market-analysis': '/images/resources/electronics-export-guide.jpg',
+  'export-client-development-process-guide': '/images/resources/export-dev-guide-2026.svg',
+  'how-to-build-overseas-buyer-list': '/images/resources/how-to-build-buyer-list.svg',
+  'cold-email-writing-tips': '/images/resources/cold-email-structure.svg',
+  'cold-email-common-mistakes': '/images/resources/cold-email-mistakes.svg',
+  'europe-market-guide': '/images/resources/europe-market-guide.svg',
+  'north-america-market-guide': '/images/resources/north-america-market-guide.svg',
+  'japan-market-guide': '/images/resources/japan-market-guide.svg',
+  'hardware-market-analysis': '/images/resources/hardware-export-guide.svg',
+  'electronics-market-analysis': '/images/resources/electronics-export-guide.svg',
 }
 
 function resolveImage(id: string, image: string) {

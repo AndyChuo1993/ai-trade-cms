@@ -1,14 +1,15 @@
-<svg width="600" height="360" viewBox="0 0 600 360" xmlns="http://www.w3.org/2000/svg">
+
+<svg width="1200" height="630" viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg">
   <defs>
-    <linearGradient id="grad-me" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#0f172a" />
-      <stop offset="100%" stop-color="#7c3aed" />
+    <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#065f46" />
+      <stop offset="100%" stop-color="#10b981" />
     </linearGradient>
   </defs>
-  <rect width="600" height="360" rx="48" fill="url(#grad-me)" />
-  <ellipse cx="320" cy="170" rx="150" ry="80" fill="rgba(255,255,255,0.12)" />
-  <circle cx="120" cy="210" r="70" fill="rgba(248,250,252,0.14)" />
-  <path d="M80 280h440" stroke="rgba(255,255,255,0.35)" stroke-width="4" stroke-linecap="round" />
-  <text x="40" y="140" fill="#f8fafc" font-size="46" font-weight="700" letter-spacing="0.12em">MIDDLE EAST</text>
-  <text x="40" y="200" fill="#c4b5fd" font-size="20" font-weight="500">Agents & Projects</text>
+  <rect width="1200" height="630" rx="20" fill="url(#grad)" />
+  <rect x="0" y="0" width="1200" height="630" fill="rgba(0,0,0,0.2)" rx="20" />
+  <text x="100" y="300" font-family="Arial, sans-serif" font-size="80" font-weight="bold" fill="white">MIDDLE EAST</text>
+  <text x="100" y="380" font-family="Arial, sans-serif" font-size="40" fill="rgba(255,255,255,0.9)">Emerging Opportunities</text>
+  <circle cx="1050" cy="500" r="100" fill="rgba(255,255,255,0.1)" />
+  <circle cx="950" cy="550" r="60" fill="rgba(255,255,255,0.1)" />
 </svg>

@@ -1,48 +1,13 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
-  <rect width="1200" height="630" fill="#F8FAFC"/>
-  <rect x="70" y="60" width="1060" height="510" rx="24" fill="#FFFFFF" stroke="#E5E7EB"/>
-  <text x="110" y="120" font-family="ui-sans-serif, system-ui" font-size="28" font-weight="700" fill="#0F172A">Buyer Discovery Channels (Quick Comparison)</text>
-  <text x="110" y="155" font-family="ui-sans-serif, system-ui" font-size="16" fill="#475569">Pick 1–2 channels to validate first, then scale</text>
 
-  <g font-family="ui-sans-serif, system-ui" font-size="14">
-    <g fill="#0F172A" font-weight="700">
-      <text x="140" y="220">Channel</text>
-      <text x="500" y="220">Best for</text>
-      <text x="860" y="220">Notes</text>
-    </g>
-    <g stroke="#E5E7EB">
-      <line x1="120" y1="235" x2="1080" y2="235"/>
-    </g>
-
-    <g fill="#0F172A">
-      <text x="140" y="275" font-weight="700">Search + directories</text>
-      <text x="500" y="275">seed lists, niche roles</text>
-      <text x="860" y="275">fast, manual verification needed</text>
-
-      <text x="140" y="335" font-weight="700">LinkedIn</text>
-      <text x="500" y="335">decision chains</text>
-      <text x="860" y="335">use for role validation + messaging</text>
-
-      <text x="140" y="395" font-weight="700">Trade shows</text>
-      <text x="500" y="395">high intent lists</text>
-      <text x="860" y="395">pre-invite + post-follow-up matters</text>
-
-      <text x="140" y="455" font-weight="700">Associations</text>
-      <text x="500" y="455">qualified members</text>
-      <text x="860" y="455">good for distributors/importers</text>
-
-      <text x="140" y="515" font-weight="700">Import data</text>
-      <text x="500" y="515">active importers</text>
-      <text x="860" y="515">best when frequency matters</text>
-    </g>
-
-    <g stroke="#F1F5F9">
-      <line x1="120" y1="295" x2="1080" y2="295"/>
-      <line x1="120" y1="355" x2="1080" y2="355"/>
-      <line x1="120" y1="415" x2="1080" y2="415"/>
-      <line x1="120" y1="475" x2="1080" y2="475"/>
-      <line x1="120" y1="535" x2="1080" y2="535"/>
-    </g>
-  </g>
+<svg width="800" height="600" viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+  <rect width="800" height="600" fill="#ffffff" />
+  <text x="400" y="50" font-family="Arial, sans-serif" font-size="24" text-anchor="middle" fill="#333">Buyer Channels Matrix</text>
+  <rect x="100" y="100" width="600" height="400" fill="#f1f5f9" rx="10" />
+  <line x1="150" y1="450" x2="650" y2="450" stroke="#cbd5e1" stroke-width="2" />
+  <line x1="150" y1="450" x2="150" y2="150" stroke="#cbd5e1" stroke-width="2" />
+  <path d="M150 450 L 275 300 L 400 350 L 525 200 L 650 150" stroke="#3b82f6" stroke-width="4" fill="none" />
+  <circle cx="275" cy="300" r="6" fill="#3b82f6" />
+  <circle cx="400" cy="350" r="6" fill="#3b82f6" />
+  <circle cx="525" cy="200" r="6" fill="#3b82f6" />
+  <circle cx="650" cy="150" r="6" fill="#3b82f6" />
 </svg>
-

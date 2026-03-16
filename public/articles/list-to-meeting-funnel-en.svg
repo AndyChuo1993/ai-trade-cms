@@ -1,31 +1,13 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
-  <rect width="1200" height="630" fill="#F8FAFC"/>
-  <rect x="70" y="60" width="1060" height="510" rx="24" fill="#FFFFFF" stroke="#E5E7EB"/>
-  <text x="110" y="120" font-family="ui-sans-serif, system-ui" font-size="28" font-weight="700" fill="#0F172A">List → Outreach → Reply → Meeting</text>
-  <text x="110" y="155" font-family="ui-sans-serif, system-ui" font-size="16" fill="#475569">A simple funnel view to align deliverables and next steps</text>
 
-  <g font-family="ui-sans-serif, system-ui" font-size="16" fill="#0F172A">
-    <rect x="140" y="215" width="920" height="60" rx="12" fill="#1D4ED8" opacity="0.10" stroke="#1D4ED8"/>
-    <text x="170" y="252" font-weight="700">1) Deliverable list</text>
-    <text x="420" y="252" fill="#334155">verified contacts, right roles, clean deliverability</text>
-
-    <rect x="180" y="300" width="840" height="60" rx="12" fill="#1D4ED8" opacity="0.12" stroke="#1D4ED8"/>
-    <text x="210" y="337" font-weight="700">2) Cadence outreach</text>
-    <text x="470" y="337" fill="#334155">4–6 touches with proof points and one replyable CTA</text>
-
-    <rect x="220" y="385" width="760" height="60" rx="12" fill="#1D4ED8" opacity="0.14" stroke="#1D4ED8"/>
-    <text x="250" y="422" font-weight="700">3) Reply triage</text>
-    <text x="450" y="422" fill="#334155">qualified / nurture / no-fit + summary and next step</text>
-
-    <rect x="260" y="470" width="680" height="60" rx="12" fill="#1D4ED8" opacity="0.16" stroke="#1D4ED8"/>
-    <text x="290" y="507" font-weight="700">4) Meeting / sample / quote</text>
-    <text x="560" y="507" fill="#334155">handoff with context to move forward fast</text>
-  </g>
-
-  <g fill="#1D4ED8" opacity="0.55">
-    <path d="M600 282 l14 0 l-14 14 l-14-14 z"/>
-    <path d="M600 367 l14 0 l-14 14 l-14-14 z"/>
-    <path d="M600 452 l14 0 l-14 14 l-14-14 z"/>
-  </g>
+<svg width="800" height="600" viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+  <rect width="800" height="600" fill="#ffffff" />
+  <text x="400" y="50" font-family="Arial, sans-serif" font-size="24" text-anchor="middle" fill="#333">List to Meeting Funnel</text>
+  <rect x="100" y="100" width="600" height="400" fill="#f1f5f9" rx="10" />
+  <line x1="150" y1="450" x2="650" y2="450" stroke="#cbd5e1" stroke-width="2" />
+  <line x1="150" y1="450" x2="150" y2="150" stroke="#cbd5e1" stroke-width="2" />
+  <path d="M150 450 L 275 300 L 400 350 L 525 200 L 650 150" stroke="#3b82f6" stroke-width="4" fill="none" />
+  <circle cx="275" cy="300" r="6" fill="#3b82f6" />
+  <circle cx="400" cy="350" r="6" fill="#3b82f6" />
+  <circle cx="525" cy="200" r="6" fill="#3b82f6" />
+  <circle cx="650" cy="150" r="6" fill="#3b82f6" />
 </svg>
-
