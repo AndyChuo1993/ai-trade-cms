@@ -2,21 +2,21 @@ name: Deploy to Aliyun
 
 on:
   push:
-    branches:
-      - main
+    branches: [main]
 
 jobs:
-  build-and-deploy:
+  deploy:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repo
+      - name: Checkout
         uses: actions/checkout@v4
 
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
           node-version: 20
+          cache: npm
 
       - name: Install deps
         run: npm ci
@@ -26,29 +26,40 @@ jobs:
 
       - name: Prepare standalone package
         run: |
+          rm -rf deploy
           mkdir -p deploy/.next
+
           cp -r .next/standalone/* deploy/
           cp -r .next/static deploy/.next/
           cp -r public deploy/
+
+      - name: Pack deploy files
+        run: tar -czf deploy.tar.gz -C deploy .
 
       - name: Restore SSH key
         run: |
           mkdir -p ~/.ssh
           echo "${{ secrets.ALI_SSH_KEY_B64 }}" | base64 -d > ~/.ssh/aliyun_key
           chmod 600 ~/.ssh/aliyun_key
-          ssh-keyscan -p ${{ secrets.ALI_PORT }} ${{ secrets.ALI_HOST }} >> ~/.ssh/known_hosts
+          ssh-keyscan -p "${{ secrets.ALI_PORT }}" "${{ secrets.ALI_HOST }}" >> ~/.ssh/known_hosts
 
-      - name: Copy files to Aliyun
+      - name: Upload tarball to Aliyun
         run: |
-          scp -P "${{ secrets.ALI_PORT }}" -i ~/.ssh/aliyun_key -r deploy/* "${{ secrets.ALI_USER }}@${{ secrets.ALI_HOST }}:${{ secrets.ALI_DEPLOY_PATH }}/"
+          scp -P "${{ secrets.ALI_PORT }}" \
+            -i ~/.ssh/aliyun_key \
+            deploy.tar.gz \
+            "${{ secrets.ALI_USER }}@${{ secrets.ALI_HOST }}:${{ secrets.ALI_DEPLOY_PATH }}/deploy.tar.gz"
 
-      - name: Restart Node project
+      - name: Extract and restart on Aliyun
         run: |
-          ssh -p "${{ secrets.ALI_PORT }}" -i ~/.ssh/aliyun_key "${{ secrets.ALI_USER }}@${{ secrets.ALI_HOST }}" '
-            cd "${{ secrets.ALI_DEPLOY_PATH }}"
+          ssh -p "${{ secrets.ALI_PORT }}" -i ~/.ssh/aliyun_key "${{ secrets.ALI_USER }}@${{ secrets.ALI_HOST }}" "
+            set -ex
+            cd '${{ secrets.ALI_DEPLOY_PATH }}'
+            tar -xzf deploy.tar.gz -C .
+            rm -f deploy.tar.gz
             mkdir -p .next/standalone/.next
             cp -r -f .next/static .next/standalone/.next/
             cp -r -f public .next/standalone/
-            pkill -f "node ./.next/standalone/server.js" || true
-            nohup sh -c '"'"'HOSTNAME=0.0.0.0 PORT=3000 node ./.next/standalone/server.js'"'"' > app.log 2>&1 &
-          '
+            pkill -f 'node ./.next/standalone/server.js' || true
+            nohup sh -c 'HOSTNAME=0.0.0.0 PORT=3000 node ./.next/standalone/server.js' > app.log 2>&1 &
+          "
