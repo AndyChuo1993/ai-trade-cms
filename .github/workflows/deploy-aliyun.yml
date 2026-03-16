@@ -60,6 +60,6 @@ jobs:
             mkdir -p .next/standalone/.next
             cp -r -f .next/static .next/standalone/.next/
             cp -r -f public .next/standalone/
-            pkill -f 'node ./.next/standalone/server.js' || true
+            fuser -k 3000/tcp || true
             nohup sh -c 'HOSTNAME=0.0.0.0 PORT=3000 node ./.next/standalone/server.js' > app.log 2>&1 &
           "
