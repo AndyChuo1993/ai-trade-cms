@@ -44,6 +44,17 @@ export default async function Page({ params }: { params: Promise<{ lang: Lang }>
                 </div>
               ))}
             </div>
+            <div className="mt-8 rounded-xl border border-gray-200 bg-gray-50 p-5 text-sm leading-7 text-gray-700">
+              <div className="mb-2 font-bold text-gray-900">{isChinese ? '聯絡資訊' : 'Company Information'}</div>
+              <div>上瑾錸有限公司</div>
+              <div>統一編號：94111922</div>
+              <div>台中市中區光復路201號</div>
+              <div>+886 43703 2705</div>
+              <div>LINE帳號：@sungene</div>
+              <div className="pt-1">厦门上瑾铼贸易有限公司</div>
+              <div>厦门市同安区滨海西大道6788-1号银城智谷A1栋1001单元之二</div>
+              <div>电话：18144132078 (微信同號)</div>
+            </div>
           </div>
 
           <div>

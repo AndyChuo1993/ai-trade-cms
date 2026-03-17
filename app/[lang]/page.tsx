@@ -36,6 +36,9 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: Lan
       description: t(lang, 'meta_home_desc'),
       images: ['/og/og.png'],
     },
+    other: {
+      'baidu-site-verification': 'codeva-xxxxxxxx',
+    },
   }
 }
 

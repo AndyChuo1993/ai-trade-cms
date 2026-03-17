@@ -57,13 +57,33 @@ jobs:
           ssh -p "${{ secrets.ALI_PORT }}" -i ~/.ssh/aliyun_key "${{ secrets.ALI_USER }}@${{ secrets.ALI_HOST }}" "
             set -ex
             cd '${{ secrets.ALI_DEPLOY_PATH }}'
+
             rm -rf .next
             rm -rf public
+
             tar -xzf deploy.tar.gz -C .
             rm -f deploy.tar.gz
+
             mkdir -p .next/standalone/.next
             cp -r -f .next/static .next/standalone/.next/
             cp -r -f public .next/standalone/
+
+            # ===== 建立 runtime ENV =====
+            cat > .env.runtime <<'EOF'
+HOSTNAME=0.0.0.0
+PORT=3000
+SMTP_HOST=${{ secrets.SMTP_HOST }}
+SMTP_PORT=${{ secrets.SMTP_PORT }}
+SMTP_USER=${{ secrets.SMTP_USER }}
+SMTP_PASS=${{ secrets.SMTP_PASS }}
+INQUIRY_TO=${{ secrets.INQUIRY_TO }}
+MAIL_FROM=${{ secrets.MAIL_FROM }}
+INQUIRY_REPLY_TO=${{ secrets.INQUIRY_REPLY_TO }}
+EOF
+            # ===========================
+
             fuser -k 3000/tcp || true
-            nohup sh -c 'HOSTNAME=0.0.0.0 PORT=3000 node ./.next/standalone/server.js' > app.log 2>&1 &
+
+            # ===== 啟動時載入 ENV =====
+            nohup sh -c 'set -a; . ./.env.runtime; set +a; node ./.next/standalone/server.js' > app.log 2>&1 &
           "

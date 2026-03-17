@@ -22,11 +22,14 @@ export default function Footer({ lang }: { lang: Lang }) {
               {t(lang, 'about_desc')}
             </p>
             <div className="text-gray-400 text-sm space-y-2">
-               <div>contact@sungenelite.com</div>
-               <div>+886 43703 2705</div>
-               <div>{lang === 'en' ? 'LINE ID: @sungene' : (lang === 'cn' ? '即时通讯账号：@sungene' : '即時通訊帳號：@sungene')}</div>
-               <div>{lang === 'en' ? 'No. 201, Guangfu Rd., Taichung City, Taiwan' : (lang === 'cn' ? '台中市中區光復路201號' : '台中市中區光復路201號')}</div>
-               <div>{lang === 'en' ? 'Tax ID: 94111922' : (lang === 'cn' ? '统一编号：94111922' : '統一編號：94111922')}</div>
+              <div>上瑾錸有限公司</div>
+              <div>統一編號：94111922</div>
+              <div>台中市中區光復路201號</div>
+              <div>+886 43703 2705</div>
+              <div>LINE帳號：@sungene</div>
+              <div className="pt-2">厦门上瑾铼贸易有限公司</div>
+              <div>厦门市同安区滨海西大道6788-1号银城智谷A1栋1001单元之二</div>
+              <div>电话：18144132078 (微信同號)</div>
             </div>
           </div>
           <div>
