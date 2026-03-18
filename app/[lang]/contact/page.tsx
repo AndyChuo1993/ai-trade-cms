@@ -109,14 +109,34 @@ export default async function Page({
             <div>
               <div className="font-bold text-gray-900">{lang === 'en' ? 'Company Information' : (lang === 'cn' ? '公司信息' : '公司資訊')}</div>
               <div className="mt-2 space-y-2 text-gray-700">
-                <div>上瑾錸有限公司</div>
-                <div>統一編號：94111922</div>
-                <div>台中市中區光復路201號</div>
-                <div>+886 43703 2705</div>
-                <div>LINE帳號：@sungene</div>
-                <div className="pt-1">厦门上瑾铼贸易有限公司</div>
-                <div>厦门市同安区滨海西大道6788-1号银城智谷A1栋1001单元之二</div>
-                <div>电话：18144132078 (微信同號)</div>
+              {lang === 'en' ? (
+                <>
+                  <div className="font-bold">SunGene Co., Ltd.</div>
+                  <div>Tax ID: 94111922</div>
+                  <div>No. 201, Guangfu Rd., Central Dist., Taichung City, Taiwan</div>
+                  
+                  <div className="pt-4 font-bold">Xiamen SunGene Trading Co., Ltd.</div>
+                  <div>Unit 1001-2, Building A1, Yincheng Zhigu, No. 6788-1 Binhai West Avenue, Tongan District, Xiamen City</div>
+                </>
+              ) : lang === 'cn' ? (
+                <>
+                  <div className="font-bold">上瑾铼有限公司</div>
+                  <div>统一编号：94111922</div>
+                  <div>台中市中区光复路201号</div>
+                  
+                  <div className="pt-4 font-bold">厦门上瑾铼贸易有限公司</div>
+                  <div>厦门市同安区滨海西大道6788-1号银城智谷A1栋1001单元之二</div>
+                </>
+              ) : (
+                <>
+                  <div className="font-bold">上瑾錸有限公司</div>
+                  <div>統一編號：94111922</div>
+                  <div>台中市中區光復路201號</div>
+                  
+                  <div className="pt-4 font-bold">厦门上瑾铼贸易有限公司</div>
+                  <div>厦门市同安区滨海西大道6788-1号银城智谷A1栋1001单元之二</div>
+                </>
+              )}
               </div>
             </div>
             <div>
