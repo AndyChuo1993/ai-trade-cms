@@ -49,6 +49,12 @@ export function proxy(request: NextRequest) {
   if (pathname.includes('/distributor-network')) {
     return NextResponse.redirect(new URL(`/${currentLang}/services/distributor-development`, request.url), 301)
   }
+  if (pathname.includes('/linkedin-prospecting')) {
+    return NextResponse.redirect(new URL(`/${currentLang}/cold-email-outreach`, request.url), 301)
+  }
+  if (pathname.includes('/market-entry-strategy')) {
+    return NextResponse.redirect(new URL(`/${currentLang}/export-marketing`, request.url), 301)
+  }
 
   const normalizedPathname = pathname.replace(/^\/zh\/cn(?=\/|$)/, '/cn')
   if (normalizedPathname !== pathname) {

@@ -36,8 +36,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     '/cold-email-outreach',
     '/distributor-list',
     '/export-marketing',
-    '/linkedin-prospecting',
-    '/market-entry-strategy',
     '/overseas-buyer-lists',
     '/qualified-b2b-leads',
   ]
