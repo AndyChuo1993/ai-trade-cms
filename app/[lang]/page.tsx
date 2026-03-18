@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import type { Metadata } from 'next'
 import { Lang } from '@/lib/i18n'
 import HeroSection from '@/components/home/HeroSection'
 import ServicesPreview from '@/components/home/ServicesPreview'
@@ -7,104 +8,209 @@ import ProcessSection from '@/components/home/ProcessSection'
 import CasePreview from '@/components/home/CasePreview'
 import CTASection from '@/components/home/CTASection'
 
-export async function generateMetadata({ params }: { params: Promise<{ lang: Lang }> }) {
-  const { lang } = await params
+type PageParams = {
+  params: Promise<{ lang?: string }>
+}
 
-  const data = {
-    en: {
-      title: 'B2B Export Lead Generation for Manufacturers | Buyer & Distributor Development | SunGene',
-      description:
-        'SunGene helps manufacturers grow overseas through export lead generation, buyer development, distributor development, and export sales outsourcing.',
-      keywords:
-        'b2b export lead generation, overseas buyer development, distributor development, export sales outsourcing, manufacturer export growth',
-    },
-    zh: {
-      title: '製造商外銷客戶開發 | 海外買家開發與經銷商開發 | SunGene',
-      description:
-        'SunGene 協助製造商透過外銷客戶開發、海外買家開發、經銷商開發與外銷業務外包，拓展海外市場。',
-      keywords:
-        '外銷客戶開發, 海外買家開發, 經銷商開發, 外銷業務外包, 製造商外銷拓展',
-    },
-    cn: {
-      title: '制造商外贸客户开发 | 海外买家开发与经销商开发 | SunGene',
-      description:
-        'SunGene 协助制造商通过外贸客户开发、海外买家开发、经销商开发与外贸业务外包，拓展海外市场。',
-      keywords:
-        '外贸客户开发, 海外买家开发, 经销商开发, 外贸业务外包, 制造商外贸拓展',
-    },
-  }[lang]
+const HOME_SEO = {
+  en: {
+    title: 'B2B Export Lead Generation for Companies | Buyer & Distributor Development | SunGene',
+    description:
+      'SunGene helps companies grow overseas through B2B export lead generation, buyer development, distributor development, and export sales support.',
+    keywords: [
+      'b2b export lead generation',
+      'buyer development',
+      'distributor development',
+      'export sales support',
+      'overseas market development',
+      'international business development',
+      'export outsourcing',
+      'SunGene',
+    ],
+    h1: 'Build export growth with buyer and distributor development',
+    midTitle: 'Build export opportunities with a clearer process',
+    midDesc:
+      'We help companies identify buyers, develop distributors, and support export execution without building a full in-house export team first.',
+    leadBtn: 'Explore Lead Generation',
+    contactBtn: 'Talk to SunGene',
+  },
+  zh: {
+    title: '企業外銷客戶開發 | 海外買家開發與經銷商開發 | SunGene',
+    description:
+      'SunGene 協助企業透過外銷客戶開發、海外買家開發、經銷商開發與外銷銷售支援，拓展海外市場。',
+    keywords: [
+      '外銷客戶開發',
+      '海外買家開發',
+      '經銷商開發',
+      '外銷銷售支援',
+      '海外市場開發',
+      '國際業務開發',
+      '外銷業務外包',
+      'SunGene',
+    ],
+    h1: '用更有效的方法推動企業外銷成長',
+    midTitle: '用更清晰的流程建立外銷機會',
+    midDesc:
+      '我們協助企業識別海外買家、開發經銷商，並支援外銷執行，不必一開始就建立完整內部外銷團隊。',
+    leadBtn: '查看客戶開發服務',
+    contactBtn: '聯絡 SunGene',
+  },
+  cn: {
+    title: '企业外贸客户开发 | 海外买家开发与经销商开发 | SunGene',
+    description:
+      'SunGene 协助企业通过外贸客户开发、海外买家开发、经销商开发与外贸销售支持，拓展海外市场。',
+    keywords: [
+      '外贸客户开发',
+      '海外买家开发',
+      '经销商开发',
+      '外贸销售支持',
+      '海外市场开发',
+      '国际业务开发',
+      '外贸业务外包',
+      'SunGene',
+    ],
+    h1: '用更有效的方法推动企业外贸增长',
+    midTitle: '用更清晰的流程建立外贸机会',
+    midDesc:
+      '我们协助企业识别海外买家、开发经销商，并支持外贸执行，不必一开始就建立完整内部外贸团队。',
+    leadBtn: '查看客户开发服务',
+    contactBtn: '联系 SunGene',
+  },
+} as const
+
+function normalizeLang(lang?: string): Lang {
+  if (lang === 'en' || lang === 'zh' || lang === 'cn') return lang
+  return 'en'
+}
+
+function getHomeSeo(lang?: string) {
+  return HOME_SEO[normalizeLang(lang)]
+}
+
+export async function generateMetadata({ params }: PageParams): Promise<Metadata> {
+  const { lang } = await params
+  const safeLang = normalizeLang(lang)
+  const data = getHomeSeo(safeLang)
 
   return {
-    title: data?.title || "SunGene Export Services",
-    description: data?.description || "SunGene Export Services",
-    keywords: data?.keywords || "SunGene",
+    title: data.title,
+    description: data.description,
+    keywords: [...data.keywords],
     alternates: {
-      canonical: `https://sungene.net/${lang}`,
+      canonical: `https://sungene.net/${safeLang}`,
       languages: {
-        cn: 'https://sungene.net/cn',
-        zh: 'https://sungene.net/zh',
         en: 'https://sungene.net/en',
+        zh: 'https://sungene.net/zh',
         'zh-CN': 'https://sungene.net/cn',
+        'zh-TW': 'https://sungene.net/zh',
         'x-default': 'https://sungene.net/en',
       },
     },
     openGraph: {
-      title: data?.title || "SunGene Export Services",
-      description: data?.description || "SunGene Export Services",
+      title: data.title,
+      description: data.description,
+      url: `https://sungene.net/${safeLang}`,
+      siteName: 'SunGene',
       type: 'website',
-      images: ['/og/og.png'],
+      locale: safeLang === 'zh' ? 'zh_TW' : safeLang === 'cn' ? 'zh_CN' : 'en_US',
+      images: [
+        {
+          url: '/og/og.png',
+          width: 1200,
+          height: 630,
+          alt: data.title,
+        },
+      ],
     },
     twitter: {
       card: 'summary_large_image',
-      title: data?.title || "SunGene Export Services",
-      description: data?.description || "SunGene Export Services",
+      title: data.title,
+      description: data.description,
       images: ['/og/og.png'],
+    },
+    robots: {
+      index: true,
+      follow: true,
     },
   }
 }
 
-export default async function Page({ params }: { params: Promise<{ lang: Lang }> }) {
+export default async function Page({ params }: PageParams) {
   const { lang } = await params
-  
+  const safeLang = normalizeLang(lang)
+  const data = getHomeSeo(safeLang)
+
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Organization',
+    name: 'SunGene',
+    url: `https://sungene.net/${safeLang}`,
+    logo: 'https://sungene.net/logo.png',
+    description: data.description,
+    sameAs: [],
+  }
+
+  const serviceJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    serviceType:
+      safeLang === 'en'
+        ? 'B2B Export Lead Generation and Distributor Development'
+        : safeLang === 'cn'
+        ? 'B2B外贸客户开发与经销商开发'
+        : 'B2B 外銷客戶開發與經銷商開發',
+    provider: {
+      '@type': 'Organization',
+      name: 'SunGene',
+      url: 'https://sungene.net',
+    },
+    areaServed: 'Global',
+    description: data.description,
+  }
+
   return (
     <main className="min-h-screen bg-white text-gray-900 font-sans selection:bg-blue-100">
-      <HeroSection lang={lang} />
-      <ServicesPreview lang={lang} />
-      
-      {/* Mid-page CTA */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }}
+      />
+
+      <h1 className="sr-only">{data.h1}</h1>
+
+      <HeroSection lang={safeLang} />
+      <ServicesPreview lang={safeLang} />
+
       <section className="bg-blue-50 py-16 border-y border-blue-100">
         <div className="mx-auto max-w-7xl px-6 flex flex-col md:flex-row items-center justify-between gap-8">
           <div className="flex-1 text-center md:text-left">
-            <h3 className="text-2xl font-bold text-gray-900 mb-2">
-              {lang === 'en'
-                ? 'Build export opportunities with a clearer process'
-                : lang === 'cn'
-                ? '用更清晰的流程建立外贸机会'
-                : '用更清晰的流程建立外銷機會'}
-            </h3>
-            <p className="text-gray-600">
-              {lang === 'en'
-                ? 'We help manufacturers identify buyers, develop distributors, and support export sales execution without building a full internal export team first.'
-                : lang === 'cn'
-                ? '我们协助制造商识别海外买家、开发经销商，并支持外贸销售执行，不必一开始就建立完整内部外贸团队。'
-                : '我們協助製造商識別海外買家、開發經銷商，並支援外銷銷售執行，不必一開始就建立完整內部外銷團隊。'}
-            </p>
+            <h2 className="text-2xl font-bold text-gray-900 mb-2">{data.midTitle}</h2>
+            <p className="text-gray-600">{data.midDesc}</p>
           </div>
           <div className="flex gap-4">
-            <Link href={`/${lang}/services/export-lead-generation`} className="bg-white text-blue-900 border border-blue-200 font-bold py-3 px-6 rounded-sm hover:bg-blue-50 transition">
-              {lang === 'en' ? 'Explore Lead Generation' : lang === 'cn' ? '查看客户开发服务' : '查看客戶開發服務'}
+            <Link
+              href={`/${safeLang}/services/export-lead-generation`}
+              className="bg-white text-blue-900 border border-blue-200 font-bold py-3 px-6 rounded-sm hover:bg-blue-50 transition"
+            >
+              {data.leadBtn}
             </Link>
-            <Link href={`/${lang}/contact`} className="bg-blue-600 text-white font-bold py-3 px-6 rounded-sm hover:bg-blue-500 transition shadow-md">
-              {lang === 'en' ? 'Talk to SunGene' : lang === 'cn' ? '联系 SunGene' : '聯絡 SunGene'}
+            <Link
+              href={`/${safeLang}/contact`}
+              className="bg-blue-600 text-white font-bold py-3 px-6 rounded-sm hover:bg-blue-500 transition shadow-md"
+            >
+              {data.contactBtn}
             </Link>
           </div>
         </div>
       </section>
 
-      <WhyUs lang={lang} />
-      <ProcessSection lang={lang} />
-      <CasePreview lang={lang} />
-      <CTASection lang={lang} />
+      <WhyUs lang={safeLang} />
+      <ProcessSection lang={safeLang} />
+      <CasePreview lang={safeLang} />
+      <CTASection lang={safeLang} />
     </main>
   )
 }
