@@ -199,7 +199,7 @@ export default async function Page({ params }: { params: Promise<{ lang: Lang; s
                               ，再搭配{' '}
                               <Link href={caseHref} className="text-blue-900 font-medium hover:underline">成功案例</Link>
                               與{' '}
-                              <Link href={magnetHref} className="text-blue-900 font-medium hover:underline">免費出口市場分析</Link>
+                              <Link href={magnetHref} className="text-blue-900 font-medium hover:underline">取得市場切入建議</Link>
                               {tr('。同時也建議讀一個市場/產業頁，建立買家語境（例如')}{' '}
                               <Link href={marketIndustryHref} className="text-blue-900 font-medium hover:underline">機械產業</Link>
                               {tr('）。')}
@@ -269,7 +269,7 @@ export default async function Page({ params }: { params: Promise<{ lang: Lang; s
                               {tr('，以及團隊常用的')}{' '}
                               <Link href={outsourcingServiceHref} className="text-blue-900 font-medium hover:underline">外銷業務外包服務</Link>
                               {tr('。若你希望先用低成本驗證，也可以先拿')}{' '}
-                              <Link href={magnetHref} className="text-blue-900 font-medium hover:underline">免費市場分析</Link>
+                              <Link href={magnetHref} className="text-blue-900 font-medium hover:underline">取得市場切入建議</Link>
                               {tr('當起點。')}
                             </>
                           ) : (
@@ -383,7 +383,7 @@ export default async function Page({ params }: { params: Promise<{ lang: Lang; s
                   {lang === 'en' ? 'Case studies' : (lang === 'cn' ? '成功案例' : '成功案例')}
                 </Link>
                 <Link href={magnetHref} className="inline-flex items-center justify-center rounded-sm bg-blue-900 px-5 py-2.5 text-white font-medium text-sm hover:bg-blue-800 transition">
-                  {lang === 'en' ? 'Free export market analysis' : (lang === 'cn' ? '免费出口市场分析' : '免費出口市場分析')}
+                  {lang === 'en' ? 'Free export market analysis' : (lang === 'cn' ? '获取市场切入建议' : '取得市場切入建議')}
                 </Link>
               </div>
             </section>
@@ -401,7 +401,7 @@ export default async function Page({ params }: { params: Promise<{ lang: Lang; s
                     {lang === 'en' ? 'Case studies' : (lang === 'cn' ? '成功案例' : '成功案例')}
                   </Link>
                   <Link href={magnetHref} className="block text-blue-900 hover:underline">
-                    {lang === 'en' ? 'Free export market analysis' : (lang === 'cn' ? '免费出口市场分析' : '免費出口市場分析')}
+                    {lang === 'en' ? 'Free export market analysis' : (lang === 'cn' ? '获取市场切入建议' : '取得市場切入建議')}
                   </Link>
                 </div>
               </div>

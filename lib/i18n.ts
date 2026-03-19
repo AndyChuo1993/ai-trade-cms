@@ -12,9 +12,9 @@ const dict = {
     nav_industries: '行业',
     nav_markets: '市场',
     nav_blog: '博客',
-    nav_free_analysis: '免费市场分析',
+    nav_free_analysis: '获取市场切入建议',
     cta_start: '开始开发海外客户',
-    cta_analysis: '免费市场分析',
+    cta_analysis: '获取市场切入建议',
     cta_consult: '预约咨询',
 
     // Hero
@@ -22,7 +22,7 @@ const dict = {
     hero_subtitle: '用可复制的方法，把外贸开发做成稳定的系统。',
     hero_description: 'SunGene 协助企业建立海外买家名单、持续获取合格询盘，并建立海外经销渠道网络。',
     hero_cta_start: '开始开发海外客户',
-    hero_cta_analysis: '免费市场分析',
+    hero_cta_analysis: '获取市场切入建议',
     home_cta_title: '立即开始你的外贸增长',
 
     // Home - Services
@@ -123,9 +123,9 @@ const dict = {
     nav_industries: '產業',
     nav_markets: '市場',
     nav_blog: '部落格',
-    nav_free_analysis: '免費市場分析',
+    nav_free_analysis: '取得市場切入建議',
     cta_start: '開始開發海外客戶',
-    cta_analysis: '免費市場分析',
+    cta_analysis: '取得市場切入建議',
     cta_consult: '預約諮詢',
 
     // Hero
@@ -133,7 +133,7 @@ const dict = {
     hero_subtitle: '用可複製的方法，把外銷開發做成穩定的系統。',
     hero_description: 'SunGene 協助企業建立海外買家名單、持續獲取合格詢價，並建立海外經銷通路網路。',
     hero_cta_start: '開始開發海外客戶',
-    hero_cta_analysis: '免費市場分析',
+    hero_cta_analysis: '取得市場切入建議',
     home_cta_title: '立即開始你的外銷成長',
 
     // Home - Services
@@ -297,7 +297,7 @@ const dict = {
     service_sales_sub3: 'Qualified Inquiry Delivery',
 
     // Free Market Analysis Page
-    analysis_title: 'Free Export Market Analysis',
+    analysis_title: 'Get Market Entry Advice',
     analysis_subtitle: 'Submit your product details to receive a complimentary market analysis report covering potential markets and buyer segments.',
     form_company: 'Company Name',
     form_product: 'Main Products',

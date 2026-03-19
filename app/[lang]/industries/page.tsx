@@ -72,7 +72,7 @@ export default async function Page({ params }: { params: Promise<{ lang: Lang }>
             },
             {
               title: lang === 'en' ? 'Connect to service pages' : (lang === 'cn' ? '對應外贸開發內容' : '對應外銷開發內容'),
-              desc: lang === 'en' ? 'Use these pages as bridges to services and market analysis.' : (lang === 'cn' ? '可直接回到服务頁與免费市场分析做下一步。' : '可直接回到服務頁與免費市場分析做下一步。'),
+              desc: lang === 'en' ? 'Use these pages as bridges to services and market analysis.' : (lang === 'cn' ? '可直接回到服务頁與获取市场切入建议做下一步。' : '可直接回到服務頁與取得市場切入建議做下一步。'),
             },
           ].map((item) => (
             <div key={item.title} className="rounded-2xl border border-gray-200 bg-white p-6 shadow-sm">

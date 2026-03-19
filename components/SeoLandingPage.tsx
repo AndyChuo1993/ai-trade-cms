@@ -57,7 +57,7 @@ export default function SeoLandingPage({ lang, page, basePath }: { lang: Lang; p
                 href={`/${lang}/export-market-analysis`}
                 className="inline-flex items-center justify-center rounded-sm bg-blue-900 px-5 py-2.5 text-sm font-medium text-white transition hover:bg-blue-800"
               >
-                {lang === 'en' ? 'Free Market Analysis' : (lang === 'cn' ? '免费出口市场分析' : '免費出口市場分析')}
+                {lang === 'en' ? 'Free Market Analysis' : (lang === 'cn' ? '获取市场切入建议' : '取得市場切入建議')}
               </Link>
               <Link
                 href={`/${lang}/contact`}

@@ -110,7 +110,7 @@ const service: ServiceSeo = {
     { label: { cn: '核心：外銷客戶開發', zh: '核心：外銷客戶開發', en: 'Core: Export Lead Generation' }, href: '/services/export-lead-generation' },
     { label: { cn: '方法：Cold Email Outreach', zh: '方法：Cold Email Outreach', en: 'Method: Cold Email Outreach' }, href: '/cold-email-outreach' },
     { label: { cn: '方法：LinkedIn Prospecting', zh: '方法：LinkedIn Prospecting', en: 'Method: LinkedIn Prospecting' }, href: '/linkedin-prospecting' },
-    { label: { cn: '免費出口市場分析', zh: '免費出口市場分析', en: 'Free Export Market Analysis' }, href: '/export-market-analysis' },
+    { label: { cn: '取得市場切入建議', zh: '取得市場切入建議', en: 'Get Market Entry Advice' }, href: '/export-market-analysis' },
   ],
 }
 

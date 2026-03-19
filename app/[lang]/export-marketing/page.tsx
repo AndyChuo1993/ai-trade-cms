@@ -119,7 +119,7 @@ const service: ServiceSeo = {
   relatedLinks: [
     { label: { cn: '外銷客戶開發（核心服務）', zh: '外銷客戶開發（核心服務）', en: 'Export Lead Generation (Core)' }, href: '/services/export-lead-generation' },
     { label: { cn: '方法：Outreach System', zh: '方法：Outreach System', en: 'Method: Outreach System' }, href: '/cold-email-outreach' },
-    { label: { cn: '免費出口市場分析（CTA）', zh: '免費出口市場分析（CTA）', en: 'Free Export Market Analysis' }, href: '/export-market-analysis' },
+    { label: { cn: '取得市場切入建議（CTA）', zh: '取得市場切入建議（CTA）', en: 'Get Market Entry Advice' }, href: '/export-market-analysis' },
   ],
 }
 

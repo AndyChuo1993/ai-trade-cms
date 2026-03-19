@@ -14,9 +14,9 @@ type PageParams = {
 
 const HOME_SEO = {
   en: {
-    title: 'Find Overseas Buyers and Channels That Actually Order | SunGene',
+    title: 'Export Lead Generation & Distributor Development | SunGene',
     description:
-      'SunGene helps export companies build a repeatable system that continuously generates orders, from finding leads to closing deals.',
+      'SunGene helps export companies build a repeatable system for overseas buyer development, channel expansion, and deal progression.',
     keywords: [
       'b2b export lead generation',
       'distributor development',
@@ -31,9 +31,9 @@ const HOME_SEO = {
     contactBtn: 'Talk to SunGene',
   },
   zh: {
-    title: '幫外銷企業找到「會下單」的海外客戶與通路 | SunGene',
+    title: '外銷企業海外客戶開發與通路拓展 | SunGene',
     description:
-      'SunGene 協助外銷企業建立一套能持續產生訂單的開發系統，從客戶開發、詢價篩選到報價推進，把外銷開發變成可持續的成交流程。',
+      'SunGene 協助外銷企業透過海外客戶開發、採購對接、經銷商拓展與外銷外包，建立可持續成交的海外開發系統。',
     keywords: [
       '外銷客戶開發',
       '海外買家開發',
@@ -48,9 +48,9 @@ const HOME_SEO = {
     contactBtn: '預約策略通話',
   },
   cn: {
-    title: '帮外贸企业找到「会下单」的海外客户与渠道 | SunGene',
+    title: '外贸企业海外客户开发与渠道拓展 | SunGene',
     description:
-      'SunGene 协助外贸企业建立一套能持续产生订单的开发系统，从客户开发、询价筛选到报价推进，把外贸开发变成可持续的成交流程。',
+      'SunGene 协助外贸企业通过海外客户开发、采购对接、经销商拓展与外贸外包，建立可持续成交的海外开发系统。',
     keywords: [
       '外贸客户开发',
       '海外买家开发',

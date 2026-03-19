@@ -56,7 +56,7 @@ export default function HeroSection({ lang }: { lang: Lang }) {
 
             <div className="mt-8 flex justify-center gap-4 flex-wrap">
               <span className="rounded-full bg-gray-100 px-3 py-1 text-sm font-medium text-gray-700">
-                {lang === 'en' ? 'For Export Companies / Traders / Manufacturers' : lang === 'cn' ? '适合外贸企业 / 贸易商 / 制造商' : '適合外銷企業 / 貿易商 / 製造商'}
+                {lang === 'en' ? 'For Export Companies / Traders / Manufacturers' : lang === 'cn' ? '适合外贸企业 / 贸易商 / 外贸企业' : '適合外銷企業 / 貿易商 / 外銷企業'}
               </span>
               <span className="rounded-full bg-gray-100 px-3 py-1 text-sm font-medium text-gray-700">
                 {lang === 'en' ? 'North America / Europe / Japan' : lang === 'cn' ? '北美 / 欧洲 / 日本市场' : '北美 / 歐洲 / 日本市場'}

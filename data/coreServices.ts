@@ -472,8 +472,8 @@ export const coreServices = {
     zh: '取得100家潛在買家名單', en: 'Get 100 Potential Buyers List' }, href: '/buyers-list' },
       secondary: { label: { cn: '预约咨询',
     zh: '預約諮詢', en: 'Book Consultation' }, href: '/contact' },
-      tertiary: { label: { cn: '免费出口市场分析',
-    zh: '免費出口市場分析', en: 'Free Export Market Analysis' }, href: '/export-market-analysis' },
+      tertiary: { label: { cn: '获取市场切入建议',
+    zh: '取得市場切入建議', en: 'Get Market Entry Advice' }, href: '/export-market-analysis' },
     },
     seoSections: [
       {
@@ -1045,8 +1045,8 @@ export const coreServices = {
     zh: '取得100家潛在經銷商名單', en: 'Get 100 Potential Distributors List' }, href: '/distributor-list' },
       secondary: { label: { cn: '预约咨询',
     zh: '預約諮詢', en: 'Book Consultation' }, href: '/contact' },
-      tertiary: { label: { cn: '免费出口市场分析',
-    zh: '免費出口市場分析', en: 'Free Export Market Analysis' }, href: '/export-market-analysis' },
+      tertiary: { label: { cn: '获取市场切入建议',
+    zh: '取得市場切入建議', en: 'Get Market Entry Advice' }, href: '/export-market-analysis' },
     },
     seoSections: [
       {
@@ -1146,8 +1146,8 @@ export const coreServices = {
     zh: '外銷客戶開發（核心服務）', en: 'Export Lead Generation (Core)' }, href: '/services/export-lead-generation' },
       { label: { cn: '外贸業務外包服务（核心服务）',
     zh: '外銷業務外包服務（核心服務）', en: 'Export Sales Outsourcing (Core)' }, href: '/services/export-sales-outsourcing' },
-      { label: { cn: '免费出口市场分析（CTA）',
-    zh: '免費出口市場分析（CTA）', en: 'Free Export Market Analysis' }, href: '/export-market-analysis' },
+      { label: { cn: '获取市场切入建议（CTA）',
+    zh: '取得市場切入建議（CTA）', en: 'Get Market Entry Advice' }, href: '/export-market-analysis' },
       { label: { cn: '如何找到海外经销商（指南）',
     zh: '如何找到海外經銷商（指南）', en: 'How to find international distributors (Guide)' }, href: '/blog/how-to-find-international-distributors' },
     ],
@@ -1674,8 +1674,8 @@ export const coreServices = {
     zh: '外銷客戶開發（核心服務）', en: 'Export Lead Generation (Core)' }, href: '/services/export-lead-generation' },
       { label: { cn: '经销商開發（核心服务）',
     zh: '經銷商開發（核心服務）', en: 'Distributor Development (Core)' }, href: '/services/distributor-development' },
-      { label: { cn: '免费出口市场分析（CTA）',
-    zh: '免費出口市場分析（CTA）', en: 'Free Export Market Analysis' }, href: '/export-market-analysis' },
+      { label: { cn: '获取市场切入建议（CTA）',
+    zh: '取得市場切入建議（CTA）', en: 'Get Market Entry Advice' }, href: '/export-market-analysis' },
       { label: { cn: '成功案例（证据）',
     zh: '成功案例（證據）', en: 'Case Studies (Proof)' }, href: '/case-studies' },
     ],

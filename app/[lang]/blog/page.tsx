@@ -102,14 +102,14 @@ export default async function Page({ params }: { params: Promise<{ lang: Lang }>
           <h2 className="text-2xl font-bold">{lang === 'en' ? 'Want to turn this into inquiries?' : (lang === 'cn' ? '想把方法落地成询盘？' : '想把方法落地成詢價？')}</h2>
           <p className="mt-2 text-slate-200">
                 {lang === 'cn'
-                  ? '拿走一份免费出口市场分析，我们会回复市场切入、买家角色与可行的开发策略。'
+                  ? '拿走一份获取市场切入建议，我们会回复市场切入、买家角色与可行的开发策略。'
                   : isChinese
-                    ? '拿走一份免費出口市場分析，我們會回覆市場切入、買家角色與可行的開發策略。'
+                    ? '拿走一份取得市場切入建議，我們會回覆市場切入、買家角色與可行的開發策略。'
                     : 'Get a free export market analysis. We’ll reply with entry approach, buyer roles, and a feasible outreach plan.'}
           </p>
           <div className="mt-6 flex flex-wrap gap-3">
             <Link href={`/${lang}/export-market-analysis`} className="inline-flex items-center justify-center rounded-sm bg-blue-500 px-5 py-2.5 text-white font-medium text-sm hover:bg-blue-400 transition">
-              {lang === 'en' ? 'Free Export Market Analysis' : (lang === 'cn' ? '免费出口市场分析' : '免費出口市場分析')}
+              {lang === 'en' ? 'Get Market Entry Advice' : (lang === 'cn' ? '获取市场切入建议' : '取得市場切入建議')}
             </Link>
             <Link href={`/${lang}/contact`} className="inline-flex items-center justify-center rounded-sm border border-white/50 px-5 py-2.5 text-white font-medium text-sm hover:bg-white/10 transition">
               {lang === 'en' ? 'Book Consultation' : (lang === 'cn' ? '预约咨询' : '預約諮詢')}

@@ -182,7 +182,7 @@ export default async function Page({
                     },
                     {
                       title: lang === 'en' ? 'End with action' : (lang === 'cn' ? '最後回到行動' : '最後回到行動'),
-                      desc: lang === 'en' ? 'Guide readers back to analysis requests or contact forms.' : (lang === 'cn' ? '最終可銜接免费市场分析與联系表單。' : '最終可銜接免費市場分析與聯絡表單。'),
+                      desc: lang === 'en' ? 'Guide readers back to analysis requests or contact forms.' : (lang === 'cn' ? '最終可銜接获取市场切入建议與联系表單。' : '最終可銜接取得市場切入建議與聯絡表單。'),
                     },
                   ].map((item) => (
                     <div key={item.title} className="rounded-2xl border border-white bg-white p-5 shadow-sm">

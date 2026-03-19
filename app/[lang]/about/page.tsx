@@ -99,14 +99,14 @@ export default async function Page({ params }: { params: Promise<{ lang: Lang }>
             <h2 className="text-3xl font-bold text-gray-900">{lang === 'en' ? 'Who we work with' : (lang === 'cn' ? '我们服务哪些客户' : '我們服務哪些客戶')}</h2>
             <p className="mt-4 leading-7 text-gray-600">
               {isChinese
-                ? '我們主要服務有產品、有交付能力，但缺少穩定海外開發流程的外銷企業、貿易商與製造商。'
-                : 'We primarily serve export companies, traders, and manufacturers with products and delivery capabilities, but lacking a stable overseas development process.'}
+                ? '我們主要服務有產品、有交付能力，但缺少穩定海外開發流程的外銷企業、貿易商與外銷企業。'
+                : 'We primarily serve export companies, traders, and export companies with products and delivery capabilities, but lacking a stable overseas development process.'}
             </p>
             <div className="mt-8 grid gap-4 sm:grid-cols-2">
               <div className="rounded-lg bg-white p-5 shadow-sm border-t-4 border-t-blue-600">
                 <div className="font-bold text-gray-900 mb-3">{lang === 'en' ? 'Ideal Fit' : (lang === 'cn' ? '适合客户' : '適合客戶')}</div>
                 <ul className="space-y-2 text-gray-600 text-sm">
-                  <li className="flex items-start"><span className="mr-2 mt-1.5 h-1.5 w-1.5 rounded-full bg-blue-500 shrink-0"></span>{lang === 'en' ? 'Export companies / Traders / Manufacturers' : (lang === 'cn' ? '外贸企业 / 贸易商 / 制造商' : '外銷企業 / 貿易商 / 製造商')}</li>
+                  <li className="flex items-start"><span className="mr-2 mt-1.5 h-1.5 w-1.5 rounded-full bg-blue-500 shrink-0"></span>{lang === 'en' ? 'Export companies / Traders / Manufacturers' : (lang === 'cn' ? '外贸企业 / 贸易商 / 外贸企业' : '外銷企業 / 貿易商 / 外銷企業')}</li>
                   <li className="flex items-start"><span className="mr-2 mt-1.5 h-1.5 w-1.5 rounded-full bg-blue-500 shrink-0"></span>{lang === 'en' ? 'Have existing products and supply capacity' : (lang === 'cn' ? '已有产品与供应能力' : '已有產品與供應能力')}</li>
                   <li className="flex items-start"><span className="mr-2 mt-1.5 h-1.5 w-1.5 rounded-full bg-blue-500 shrink-0"></span>{lang === 'en' ? 'Want to expand into overseas markets' : (lang === 'cn' ? '想拓展海外市场' : '想拓展海外市場')}</li>
                   <li className="flex items-start"><span className="mr-2 mt-1.5 h-1.5 w-1.5 rounded-full bg-blue-500 shrink-0"></span>{lang === 'en' ? 'Willing to cooperate with quotes and replies' : (lang === 'cn' ? '愿意配合报价与客户回复' : '願意配合報價與客戶回覆')}</li>

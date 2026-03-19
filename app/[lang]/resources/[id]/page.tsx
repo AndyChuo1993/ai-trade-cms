@@ -112,12 +112,12 @@ export default async function Page({ params }: { params: Promise<{ lang: Lang; i
             <h3 className="mb-4 text-2xl font-bold text-orange-900">{lang === 'en' ? 'Want to apply this to your market?' : (lang === 'cn' ? '想把這個主题用在你的市场？' : '想把這個主旨用在你的市場？')}</h3>
             <p className="mx-auto mb-8 max-w-xl text-orange-800">
               {isChinese
-                ? '如果你想把這份內容延伸到自己的產品、產業與目標市場，可以直接申請免費市場分析。'
+                ? '如果你想把這份內容延伸到自己的產品、產業與目標市場，可以直接申請取得市場切入建議。'
                 : 'If you want to adapt this content to your own product, industry, and target market, start with a free market analysis.'}
             </p>
             <div className="flex flex-col justify-center gap-4 sm:flex-row">
               <Link href={`/${lang}/export-market-analysis`} className="inline-block rounded-sm bg-orange-600 px-8 py-3 font-bold text-white transition duration-300 hover:bg-orange-500">
-                {lang === 'en' ? 'Free Export Market Analysis' : (lang === 'cn' ? '免费出口市场分析' : '免費出口市場分析')}
+                {lang === 'en' ? 'Get Market Entry Advice' : (lang === 'cn' ? '获取市场切入建议' : '取得市場切入建議')}
               </Link>
               <Link href={`/${lang}/resources`} className="inline-block rounded-sm border border-orange-300 px-8 py-3 font-bold text-orange-700 transition duration-300 hover:bg-white">
                 {lang === 'en' ? 'Back to Resources' : (lang === 'cn' ? '返回資源中心' : '返回資源中心')}

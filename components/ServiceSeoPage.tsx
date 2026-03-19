@@ -274,7 +274,7 @@ export default function ServiceSeoPage({ lang, service }: { lang: Lang; service:
               </Link>
             ) : (
               <Link href={`/${lang}/export-market-analysis`} className="inline-flex items-center justify-center rounded-sm border border-blue-900 px-5 py-2.5 text-blue-900 font-medium text-sm hover:bg-blue-50 transition">
-                {lang === 'en' ? 'Free Export Market Analysis' : (lang === 'cn' ? '免费出口市场分析' : '免費出口市場分析')}
+                {lang === 'en' ? 'Get Market Entry Advice' : (lang === 'cn' ? '获取市场切入建议' : '取得市場切入建議')}
               </Link>
             )}
           </div>
@@ -662,7 +662,7 @@ export default function ServiceSeoPage({ lang, service }: { lang: Lang; service:
               </Link>
             ) : (
               <Link href={`/${lang}/export-market-analysis`} className="inline-flex items-center justify-center rounded-sm border border-white/50 px-5 py-2.5 text-white font-medium text-sm hover:bg-white/10 transition">
-                {lang === 'en' ? 'Free Export Market Analysis' : (lang === 'cn' ? '免费出口市场分析' : '免費出口市場分析')}
+                {lang === 'en' ? 'Get Market Entry Advice' : (lang === 'cn' ? '获取市场切入建议' : '取得市場切入建議')}
               </Link>
             )}
             {service.ctaButtons?.tertiary && (

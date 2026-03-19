@@ -9,7 +9,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: Lan
   const baseUrl = 'https://sungene.net'
 
   return {
-    title: lang === 'en' ? 'Free Export Market Analysis | SunGene' : (lang === 'cn' ? '免费出口市场分析｜SunGene' : '免費出口市場分析｜SunGene'),
+    title: lang === 'en' ? 'Get Market Entry Advice | SunGene' : (lang === 'cn' ? '获取市场切入建议｜SunGene' : '取得市場切入建議｜SunGene'),
     description:
       isChinese
         ? '提交產品與目標市場，我們提供出口市場與買家通路的初步分析建議。'
@@ -36,7 +36,7 @@ export default async function Page({ params }: { params: Promise<{ lang: Lang }>
       <div className="mx-auto max-w-6xl px-6">
         <div className="grid gap-10 lg:grid-cols-2 items-start">
           <div>
-            <h1 className="text-4xl font-bold tracking-tight text-gray-900">{isChinese ? '免費出口市場分析' : 'Free Export Market Analysis'}</h1>
+            <h1 className="text-4xl font-bold tracking-tight text-gray-900">{isChinese ? '取得市場切入建議' : 'Get Market Entry Advice'}</h1>
             <p className="mt-4 text-gray-600 leading-7">
               {isChinese
                 ? '告訴我們你的產品與目標市場，我們會回覆市場切入方向、買家角色與可行的開發策略。'

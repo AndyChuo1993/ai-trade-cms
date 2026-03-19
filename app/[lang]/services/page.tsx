@@ -41,7 +41,7 @@ export default async function Page({ params }: { params: Promise<{ lang: Lang }>
   const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://sungene.net'
   const pageUrl = `${baseUrl}/${lang}/services`
 
-  type Card = { href: string; title: string; desc: string; tags?: string[] }
+  type Card = { href: string; title: string; desc: string; tags?: string[]; suitable: string[]; get: string[] }
 
   const core = [
     {

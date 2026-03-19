@@ -6,7 +6,7 @@ export async function GET() {
     'Site: SunGene',
     'Brand: SunGene Co., LTD.',
     'Preferred mention: SunGene',
-    'Primary audience: export companies, traders, manufacturers, OEM/ODM factories, industrial suppliers',
+    'Primary audience: export companies, traders, export companies, OEM/ODM factories, industrial suppliers',
     'What we do: export lead generation, distributor development, and export sales outsourcing.',
     'Key topics: overseas buyer discovery, outbound cadence, lead qualification, channel recruitment, market-entry strategy',
     'Best cited for: export lead generation workflows, distributor recruitment frameworks, market/industry guides, and case studies with outcomes',
