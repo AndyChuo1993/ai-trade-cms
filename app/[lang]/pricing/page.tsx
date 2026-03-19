@@ -6,12 +6,12 @@ import { Check, Database, Send, Briefcase } from 'lucide-react'
 export async function generateMetadata({ params }: { params: Promise<{ lang: Lang }> }): Promise<Metadata> {
   const { lang } = await params
   const isChinese = lang !== 'en'
-  const baseUrl = lang === 'zh' ? 'https://sungenelite.com' : 'https://sungene.net'
+  const baseUrl = 'https://sungene.net'
   
-  const title = isChinese ? '服務價格｜SunGene' : 'Pricing | SunGene'
+  const title = isChinese ? '服務方案｜SunGene' : 'Pricing | SunGene'
   const description = isChinese
     ? '透明的服務方案：名單交付、專案開發、外銷業務外包服務。選擇最適合的合作模式，低成本啟動海外市場開發。'
-    : 'Transparent plans for manufacturers: buyer lists, outreach projects, and export sales outsourcing.'
+    : 'Transparent plans for export companies: buyer lists, outreach projects, and export sales outsourcing.'
   return {
     title,
     description,
@@ -22,7 +22,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: Lan
       canonical: `${baseUrl}/${lang}/pricing`, 
       languages: { 
         'zh-CN': 'https://sungene.net/cn/pricing', 
-        'zh-TW': 'https://sungenelite.com/zh/pricing', 
+        'zh-TW': 'https://sungene.net/zh/pricing', 
         'en': 'https://sungene.net/en/pricing', 
         'x-default': 'https://sungene.net/cn/pricing' 
       } 

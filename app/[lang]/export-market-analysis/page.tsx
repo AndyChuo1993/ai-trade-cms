@@ -6,7 +6,7 @@ import { CheckCircle } from 'lucide-react'
 export async function generateMetadata({ params }: { params: Promise<{ lang: Lang }> }): Promise<Metadata> {
   const { lang } = await params
   const isChinese = lang !== 'en'
-  const baseUrl = lang === 'zh' ? 'https://sungenelite.com' : 'https://sungene.net'
+  const baseUrl = 'https://sungene.net'
 
   return {
     title: lang === 'en' ? 'Free Export Market Analysis | SunGene' : (lang === 'cn' ? '免费出口市场分析｜SunGene' : '免費出口市場分析｜SunGene'),
@@ -18,7 +18,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: Lan
       canonical: `${baseUrl}/${lang}/export-market-analysis`, 
       languages: { 
         'zh-CN': 'https://sungene.net/cn/export-market-analysis', 
-        'zh-TW': 'https://sungenelite.com/zh/export-market-analysis', 
+        'zh-TW': 'https://sungene.net/zh/export-market-analysis', 
         'en': 'https://sungene.net/en/export-market-analysis', 
         'x-default': 'https://sungene.net/cn/export-market-analysis' 
       } 

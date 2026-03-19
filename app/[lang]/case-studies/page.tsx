@@ -5,7 +5,7 @@ import { getCases } from '@/data/cases'
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: Lang }> }) {
   const { lang } = await params
-  const baseUrl = lang === 'zh' ? 'https://sungenelite.com' : 'https://sungene.net'
+  const baseUrl = 'https://sungene.net'
 
   return {
     title: t(lang, 'case_title') + ' | SunGene',
@@ -14,7 +14,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: Lan
       canonical: `${baseUrl}/${lang}/case-studies`,
       languages: {
         'zh-CN': 'https://sungene.net/cn/case-studies',
-        'zh-TW': 'https://sungenelite.com/zh/case-studies',
+        'zh-TW': 'https://sungene.net/zh/case-studies',
         'en': 'https://sungene.net/en/case-studies',
         'x-default': 'https://sungene.net/cn/case-studies',
       },

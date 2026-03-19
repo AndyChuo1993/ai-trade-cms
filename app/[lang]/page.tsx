@@ -14,9 +14,9 @@ type PageParams = {
 
 const HOME_SEO = {
   en: {
-    title: 'B2B Export Lead Generation & Distributor Development | SunGene',
+    title: 'Find Overseas Buyers and Channels That Actually Order | SunGene',
     description:
-      'SunGene helps companies grow overseas through B2B export lead generation, buyer development, distributor development, and export sales support.',
+      'SunGene helps export companies build a repeatable system that continuously generates orders, from finding leads to closing deals.',
     keywords: [
       'b2b export lead generation',
       'distributor development',
@@ -31,9 +31,9 @@ const HOME_SEO = {
     contactBtn: 'Talk to SunGene',
   },
   zh: {
-    title: '外銷客戶開發與海外買家開發服務 | SunGene',
+    title: '幫外銷企業找到「會下單」的海外客戶與通路 | SunGene',
     description:
-      'SunGene 協助企業透過外銷客戶開發、海外買家開發、經銷商開發與外銷銷售支援，拓展海外市場。',
+      'SunGene 協助外銷企業建立一套能持續產生訂單的開發系統，從客戶開發、詢價篩選到報價推進，把外銷開發變成可持續的成交流程。',
     keywords: [
       '外銷客戶開發',
       '海外買家開發',
@@ -48,9 +48,9 @@ const HOME_SEO = {
     contactBtn: '預約策略通話',
   },
   cn: {
-    title: '外贸客户开发与海外买家开发服务 | SunGene',
+    title: '帮外贸企业找到「会下单」的海外客户与渠道 | SunGene',
     description:
-      'SunGene 协助企业通过外贸客户开发、海外买家开发、经销商开发与外贸销售支持，拓展海外市场。',
+      'SunGene 协助外贸企业建立一套能持续产生订单的开发系统，从客户开发、询价筛选到报价推进，把外贸开发变成可持续的成交流程。',
     keywords: [
       '外贸客户开发',
       '海外买家开发',
@@ -83,7 +83,7 @@ export async function generateMetadata({ params }: PageParams): Promise<Metadata
   // 判斷目前的 base url 應該是哪個
   // 由於這是 generateMetadata，無法直接拿到 request header 的 host，
   // 所以我們根據 safeLang 來決定 canonical 應該指去哪裡，確保 self-canonical
-  const baseUrl = safeLang === 'zh' ? 'https://sungenelite.com' : 'https://sungene.net'
+  const baseUrl = 'https://sungene.net'
 
   return {
     title: data.title,
@@ -93,7 +93,7 @@ export async function generateMetadata({ params }: PageParams): Promise<Metadata
       canonical: `${baseUrl}/${safeLang}`,
       languages: {
         'zh-CN': 'https://sungene.net/cn',
-        'zh-TW': 'https://sungenelite.com/zh',
+        'zh-TW': 'https://sungene.net/zh',
         'en': 'https://sungene.net/en',
         'x-default': 'https://sungene.net/cn',
       },
@@ -131,7 +131,7 @@ export default async function Page({ params }: PageParams) {
   const { lang } = await params
   const safeLang = normalizeLang(lang)
   const data = getHomeSeo(safeLang)
-  const baseUrl = safeLang === 'zh' ? 'https://sungenelite.com' : 'https://sungene.net'
+  const baseUrl = 'https://sungene.net'
 
   const jsonLd = {
     '@context': 'https://schema.org',

@@ -8,7 +8,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   const { lang: rawLang } = await params
   const lang = (['en', 'zh', 'cn'].includes(rawLang) ? rawLang : 'zh') as Lang
 
-  const baseUrl = lang === 'zh' ? 'https://sungenelite.com' : 'https://sungene.net'
+  const baseUrl = 'https://sungene.net'
 
   return {
     metadataBase: new URL(baseUrl),
@@ -26,7 +26,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
       canonical: `${baseUrl}/${lang}`,
       languages: {
         'zh-CN': 'https://sungene.net/cn',
-        'zh-TW': 'https://sungenelite.com/zh',
+        'zh-TW': 'https://sungene.net/zh',
         'en': 'https://sungene.net/en',
         'x-default': 'https://sungene.net/cn',
       },
@@ -38,7 +38,7 @@ export default async function RootLayout({ children, params }: { children: React
   const { lang: rawLang } = await params
   const lang = (['en', 'zh', 'cn'].includes(rawLang) ? rawLang : 'zh') as Lang
 
-  const baseUrl = lang === 'zh' ? 'https://sungenelite.com' : 'https://sungene.net'
+  const baseUrl = 'https://sungene.net'
   const logoUrl = `${baseUrl}/logo/sungene.png`
 
   const websiteSchema = {

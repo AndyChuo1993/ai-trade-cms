@@ -69,7 +69,11 @@ export default function ProcessSection({ lang }: { lang: Lang }) {
                 {lang === 'en' ? 'The Progress You Will See' : lang === 'cn' ? '你会看到的实际进展' : '你會看到的實際進展'}
             </h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
-                {lang === 'en' ? 'Standardized export development cycle ensuring clear deliverables at every stage.' : (lang === 'cn' ? '标准化的外贸開發周期，確保每個階段都有明確產出。' : '標準化的外銷開發週期，確保每個階段都有明確產出。')}
+                {lang === 'en'
+                  ? 'Not abstract marketing activity, but clear outputs you can see at each stage.'
+                  : lang === 'cn'
+                  ? '不是抽象的营销执行，而是每个阶段都能看见的实际产出。'
+                  : '不是抽象的行銷執行，而是每一階段都能看見的實際產出。'}
             </p>
         </div>
         

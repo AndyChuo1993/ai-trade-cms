@@ -5,7 +5,7 @@ import InquiryForm, { FormField } from '@/components/InquiryForm'
 export async function generateMetadata({ params }: { params: Promise<{ lang: Lang }> }) {
   const { lang } = await params
   const isChinese = lang !== 'en'
-  const baseUrl = lang === 'zh' ? 'https://sungenelite.com' : 'https://sungene.net'
+  const baseUrl = 'https://sungene.net'
 
   return {
     title: `${lang === 'en' ? 'Contact Us' : (lang === 'cn' ? '联系我们' : '聯絡我們')} | SunGene`,
@@ -17,7 +17,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: Lan
       canonical: `${baseUrl}/${lang}/contact`,
       languages: {
         'zh-CN': 'https://sungene.net/cn/contact',
-        'zh-TW': 'https://sungenelite.com/zh/contact',
+        'zh-TW': 'https://sungene.net/zh/contact',
         'en': 'https://sungene.net/en/contact',
         'x-default': 'https://sungene.net/cn/contact',
       },

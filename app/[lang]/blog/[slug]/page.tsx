@@ -29,7 +29,7 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: Lang; slug: string }> }) {
   const { lang, slug } = await params
-  const baseUrl = lang === 'zh' ? 'https://sungenelite.com' : 'https://sungene.net'
+  const baseUrl = 'https://sungene.net'
   const post = getBlogPost(slug)
   if (!post) return { title: 'Not Found' }
   return {
@@ -39,7 +39,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: Lan
       canonical: `${baseUrl}/${lang}/blog/${slug}`,
       languages: {
         'zh-CN': `https://sungene.net/cn/blog/${slug}`,
-        'zh-TW': `https://sungenelite.com/zh/blog/${slug}`,
+        'zh-TW': `https://sungene.net/zh/blog/${slug}`,
         'en': `https://sungene.net/en/blog/${slug}`,
         'x-default': `https://sungene.net/cn/blog/${slug}`,
       },
@@ -62,7 +62,7 @@ export default async function Page({ params }: { params: Promise<{ lang: Lang; s
   if (!post) return null
   const tr = (value: string) => cnText(lang, value)
 
-  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.sungenelite.com'
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://sungene.net'
   const url = `${baseUrl}/${lang}/blog/${slug}`
   const anchors = post.sections.map((s) => ({ id: s.id, label: tr(s.heading[lang]), anchor: slugifyAnchor(tr(s.heading[lang])) }))
   const related = getBlogPosts().filter((p) => p.slug !== post.slug).slice(0, 3)

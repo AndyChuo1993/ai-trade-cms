@@ -3,7 +3,7 @@ import Link from 'next/link'
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: Lang }> }) {
   const { lang } = await params
-  const baseUrl = lang === 'zh' ? 'https://sungenelite.com' : 'https://sungene.net'
+  const baseUrl = 'https://sungene.net'
 
   return {
     title: t(lang, 'process_title') + ' | SunGene',
@@ -12,7 +12,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: Lan
       canonical: `${baseUrl}/${lang}/how-it-works`,
       languages: {
         'zh-CN': 'https://sungene.net/cn/how-it-works',
-        'zh-TW': 'https://sungenelite.com/zh/how-it-works',
+        'zh-TW': 'https://sungene.net/zh/how-it-works',
         'en': 'https://sungene.net/en/how-it-works',
         'x-default': 'https://sungene.net/cn/how-it-works',
       },

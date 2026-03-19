@@ -5,19 +5,19 @@ import { Lang } from '@/lib/i18n'
 export async function generateMetadata({ params }: { params: Promise<{ lang: Lang }> }) {
   const { lang } = await params
   const isChinese = lang !== 'en'
-  const baseUrl = lang === 'zh' ? 'https://sungenelite.com' : 'https://sungene.net'
+  const baseUrl = 'https://sungene.net'
 
   return {
     title: `${lang === 'en' ? 'About Us' : (lang === 'cn' ? '关于我们' : '關於我們')} | SunGene`,
     description:
       isChinese
-        ? 'SunGene 專注於協助企業建立海外買家名單、主動開發節奏與外銷成交流程。'
-        : 'SunGene helps manufacturers build buyer lists, outbound cadences, and export sales workflows.',
+        ? 'SunGene 協助外銷企業建立一套可持續運作的海外客戶開發、通路拓展與成交推進系統。'
+        : 'SunGene helps export companies build a repeatable system for overseas buyer development, channel expansion, and deal progression.',
     alternates: {
       canonical: `${baseUrl}/${lang}/about`,
       languages: {
         'zh-CN': 'https://sungene.net/cn/about',
-        'zh-TW': 'https://sungenelite.com/zh/about',
+        'zh-TW': 'https://sungene.net/zh/about',
         'en': 'https://sungene.net/en/about',
         'x-default': 'https://sungene.net/cn/about',
       },
@@ -26,8 +26,8 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: Lan
       title: `${lang === 'en' ? 'About Us' : (lang === 'cn' ? '关于我们' : '關於我們')} | SunGene`,
       description:
         isChinese
-          ? 'SunGene 專注於協助企業建立海外買家名單、主動開發節奏與外銷成交流程。'
-          : 'SunGene helps manufacturers build buyer lists, outbound cadences, and export sales workflows.',
+          ? 'SunGene 協助外銷企業建立一套可持續運作的海外客戶開發、通路拓展與成交推進系統。'
+          : 'SunGene helps export companies build a repeatable system for overseas buyer development, channel expansion, and deal progression.',
       url: `${baseUrl}/${lang}/about`,
       images: ['/og/og.png'],
     },
@@ -99,8 +99,8 @@ export default async function Page({ params }: { params: Promise<{ lang: Lang }>
             <h2 className="text-3xl font-bold text-gray-900">{lang === 'en' ? 'Who we work with' : (lang === 'cn' ? '我们服务哪些客户' : '我們服務哪些客戶')}</h2>
             <p className="mt-4 leading-7 text-gray-600">
               {isChinese
-                ? '我們主要服務有產品、有交付能力，但缺少穩定海外開發流程的外銷企業與供應商。'
-                : 'We mainly serve export enterprises and suppliers with products and delivery capabilities, but lacking a stable overseas development process.'}
+                ? '我們主要服務有產品、有交付能力，但缺少穩定海外開發流程的外銷企業、貿易商與製造商。'
+                : 'We primarily serve export companies, traders, and manufacturers with products and delivery capabilities, but lacking a stable overseas development process.'}
             </p>
             <div className="mt-8 grid gap-4 sm:grid-cols-2">
               <div className="rounded-lg bg-white p-5 shadow-sm border-t-4 border-t-blue-600">

@@ -5,7 +5,7 @@ import { cnText } from '@/lib/cnText'
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: Lang }> }) {
   const { lang } = await params
-  const baseUrl = lang === 'zh' ? 'https://sungenelite.com' : 'https://sungene.net'
+  const baseUrl = 'https://sungene.net'
   const service = coreServices.distributorDevelopment
   const path = service.path || '/services/distributor-development'
   return {
@@ -15,7 +15,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: Lan
       canonical: `${baseUrl}/${lang}${path}`,
       languages: {
         'zh-CN': `https://sungene.net/cn${path}`,
-        'zh-TW': `https://sungenelite.com/zh${path}`,
+        'zh-TW': `https://sungene.net/zh${path}`,
         'en': `https://sungene.net/en${path}`,
         'x-default': `https://sungene.net/cn${path}`,
       },

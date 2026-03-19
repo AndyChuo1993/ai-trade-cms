@@ -6,12 +6,12 @@ import { Handshake, Users, PieChart, Briefcase } from 'lucide-react'
 export async function generateMetadata({ params }: { params: Promise<{ lang: Lang }> }): Promise<Metadata> {
   const { lang } = await params
   const isChinese = lang !== 'en'
-  const baseUrl = lang === 'zh' ? 'https://sungenelite.com' : 'https://sungene.net'
+  const baseUrl = 'https://sungene.net'
   
   const title = isChinese ? '合作夥伴計劃｜SunGene' : 'Partners | SunGene'
   const description = isChinese
-    ? '加入 SunGene 合作夥伴生態系：顧問、海外在地代理、與市場研究機構皆可合作，共同為製造業創造價值。'
-    : 'Join SunGene partners: consultants, overseas agents, and research firms collaborating to create value for manufacturers.'
+    ? '加入 SunGene 合作夥伴生態系：顧問、海外在地代理、與市場研究機構皆可合作，共同為外銷企業創造價值。'
+    : 'Join SunGene partners: consultants, overseas agents, and research firms collaborating to create value for export companies.'
   return {
     title,
     description,
@@ -22,7 +22,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: Lan
       canonical: `${baseUrl}/${lang}/partners`, 
       languages: { 
         'zh-CN': 'https://sungene.net/cn/partners', 
-        'zh-TW': 'https://sungenelite.com/zh/partners', 
+        'zh-TW': 'https://sungene.net/zh/partners', 
         'en': 'https://sungene.net/en/partners', 
         'x-default': 'https://sungene.net/cn/partners' 
       } 

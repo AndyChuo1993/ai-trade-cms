@@ -12,7 +12,7 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: Lang; slug: string }> }) {
   const { lang, slug } = await params
-  const baseUrl = lang === 'zh' ? 'https://sungenelite.com' : 'https://sungene.net'
+  const baseUrl = 'https://sungene.net'
   const page = getSeoIndustry(slug)
   if (!page) return { title: 'Not Found' }
   return {
@@ -22,7 +22,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: Lan
       canonical: `${baseUrl}/${lang}/industries/${slug}`,
       languages: {
         'zh-CN': `https://sungene.net/cn/industries/${slug}`,
-        'zh-TW': `https://sungenelite.com/zh/industries/${slug}`,
+        'zh-TW': `https://sungene.net/zh/industries/${slug}`,
         'en': `https://sungene.net/en/industries/${slug}`,
         'x-default': `https://sungene.net/cn/industries/${slug}`,
       },
@@ -41,7 +41,7 @@ export default async function Page({ params }: { params: Promise<{ lang: Lang; s
   const page = getSeoIndustry(slug)
   if (!page) return null
 
-  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.sungenelite.com'
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://sungene.net'
   const url = `${baseUrl}/${lang}/industries/${slug}`
   const breadcrumb = {
     '@context': 'https://schema.org',

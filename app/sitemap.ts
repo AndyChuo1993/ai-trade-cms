@@ -11,9 +11,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const protocol = host.includes('localhost') ? 'http' : 'https'
   const baseUrl = `${protocol}://${host}`
   
-  // 根據 request host 決定輸出哪幾個語系的 sitemap
-  const isZh = host.includes('sungenelite.com')
-  const langs = isZh ? (['zh'] as const) : (['cn', 'en'] as const)
+  // 統一輸出所有語系
+  const langs = ['zh', 'cn', 'en'] as const
   
   const routes = [
     '',

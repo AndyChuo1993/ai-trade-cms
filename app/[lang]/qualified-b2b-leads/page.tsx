@@ -14,7 +14,7 @@ const service: ServiceSeo = {
     zh: '我們持續進行海外客戶開發，將有效回覆整理成可交付詢價（公司/聯絡方式/需求/對話記錄），讓你的團隊專注成交。',
     en: 'We run ongoing outreach and deliver qualified inquiries with contact, needs, and conversation logs so your team can focus on closing.',
   },
-  h1: { cn: '合格詢價交付', zh: '合格詢價交付', en: 'Qualified B2B Leads for Manufacturers' },
+  h1: { cn: '合格詢價交付', zh: '合格詢價交付', en: 'Qualified B2B Leads for Export Companies' },
   problem: {
     cn: ['名單來自單一來源，品質不穩：Email 無效、職位不對、公司不匹配。', '缺少驗證流程，寄信跳退與垃圾信風險增加。', '詢價來源不穩、品質參差，業務時間被無效回覆消耗。', '沒有分類別與摘要，跟進時常常找不到上下文與下一步。'],
     zh: ['名單來自單一來源，品質不穩：Email 無效、職位不對、公司不匹配。', '缺少驗證流程，寄信跳退與垃圾信風險增加。', '詢價來源不穩、品質參差，業務時間被無效回覆消耗。', '沒有分類別與摘要，跟進時常常找不到上下文與下一步。'],
@@ -116,7 +116,7 @@ const service: ServiceSeo = {
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: Lang }> }) {
   const { lang } = await params
-  const baseUrl = lang === 'zh' ? 'https://sungenelite.com' : 'https://sungene.net'
+  const baseUrl = 'https://sungene.net'
   return {
     title: cnText(lang, service.title[lang]),
     description: cnText(lang, service.description[lang]),
@@ -124,7 +124,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: Lan
       canonical: `${baseUrl}/${lang}/qualified-b2b-leads`,
       languages: {
         'zh-CN': `https://sungene.net/cn/qualified-b2b-leads`,
-        'zh-TW': `https://sungenelite.com/zh/qualified-b2b-leads`,
+        'zh-TW': `https://sungene.net/zh/qualified-b2b-leads`,
         'en': `https://sungene.net/en/qualified-b2b-leads`,
         'x-default': `https://sungene.net/cn/qualified-b2b-leads`,
       }

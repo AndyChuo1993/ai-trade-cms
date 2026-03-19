@@ -116,7 +116,7 @@ const service: ServiceSeo = {
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: Lang }> }) {
   const { lang } = await params
-  const baseUrl = lang === 'zh' ? 'https://sungenelite.com' : 'https://sungene.net'
+  const baseUrl = 'https://sungene.net'
   return {
     title: cnText(lang, service.title[lang]),
     description: cnText(lang, service.description[lang]),
@@ -124,7 +124,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: Lan
       canonical: `${baseUrl}/${lang}/overseas-buyer-lists`,
       languages: {
         'zh-CN': `https://sungene.net/cn/overseas-buyer-lists`,
-        'zh-TW': `https://sungenelite.com/zh/overseas-buyer-lists`,
+        'zh-TW': `https://sungene.net/zh/overseas-buyer-lists`,
         'en': `https://sungene.net/en/overseas-buyer-lists`,
         'x-default': `https://sungene.net/cn/overseas-buyer-lists`,
       }

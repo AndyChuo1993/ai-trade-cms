@@ -11,7 +11,7 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: Lang; slug: string }> }) {
   const { lang, slug } = await params
-  const baseUrl = lang === 'zh' ? 'https://sungenelite.com' : 'https://sungene.net'
+  const baseUrl = 'https://sungene.net'
   const item = getCase(lang, slug)
   if (!item) return { title: 'Not Found' }
   return {
@@ -21,7 +21,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: Lan
       canonical: `${baseUrl}/${lang}/case-studies/${slug}`,
       languages: {
         'zh-CN': `https://sungene.net/cn/case-studies/${slug}`,
-        'zh-TW': `https://sungenelite.com/zh/case-studies/${slug}`,
+        'zh-TW': `https://sungene.net/zh/case-studies/${slug}`,
         'en': `https://sungene.net/en/case-studies/${slug}`,
         'x-default': `https://sungene.net/cn/case-studies/${slug}`,
       },

@@ -6,7 +6,7 @@ import ServiceComparison from '@/components/ServiceComparison'
 export async function generateMetadata({ params }: { params: Promise<{ lang: Lang }> }) {
   const { lang } = await params
   const isChinese = lang !== 'en'
-  const baseUrl = lang === 'zh' ? 'https://sungenelite.com' : 'https://sungene.net'
+  const baseUrl = 'https://sungene.net'
 
   return {
     title: t(lang, 'service_title') + ' | SunGene',
@@ -27,7 +27,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: Lan
       canonical: `${baseUrl}/${lang}/services`,
       languages: {
         'zh-CN': 'https://sungene.net/cn/services',
-        'zh-TW': 'https://sungenelite.com/zh/services',
+        'zh-TW': 'https://sungene.net/zh/services',
         'en': 'https://sungene.net/en/services',
         'x-default': 'https://sungene.net/cn/services',
       },
@@ -38,7 +38,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: Lan
 export default async function Page({ params }: { params: Promise<{ lang: Lang }> }) {
   const { lang } = await params
   const isChinese = lang !== 'en'
-  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.sungenelite.com'
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://sungene.net'
   const pageUrl = `${baseUrl}/${lang}/services`
 
   type Card = { href: string; title: string; desc: string; tags?: string[] }
@@ -47,6 +47,11 @@ export default async function Page({ params }: { params: Promise<{ lang: Lang }>
     {
       href: `/${lang}/services/export-lead-generation`,
       title: lang === 'en' ? 'Export Lead Generation' : (lang === 'cn' ? '外销客户开发' : '外銷客戶開發'),
+      desc: lang === 'en' 
+        ? 'Directly connect with overseas procurement and decision-makers.' 
+        : lang === 'cn' 
+        ? '直接对接海外采购与决策人。' 
+        : '直接對接海外採購與決策人。',
       suitable: lang === 'en' 
         ? ['Companies wanting direct orders', 'Ready with products & capacity', 'Faster access to overseas procurement'] 
         : lang === 'cn'
@@ -61,6 +66,11 @@ export default async function Page({ params }: { params: Promise<{ lang: Lang }>
     {
       href: `/${lang}/services/distributor-development`,
       title: lang === 'en' ? 'Distributor Development' : (lang === 'cn' ? '经销商开发' : '經銷商開發'),
+      desc: lang === 'en'
+        ? 'Help you enter local channels and build a cooperative distribution system.'
+        : lang === 'cn'
+        ? '帮你打进当地通路，建立可合作的经销体系。'
+        : '幫你打進當地通路，建立可合作的經銷體系。',
       suitable: lang === 'en'
         ? ['Entering local markets', 'Need channel partners, not single leads', 'Long-term market coverage']
         : lang === 'cn'
@@ -75,6 +85,11 @@ export default async function Page({ params }: { params: Promise<{ lang: Lang }>
     {
       href: `/${lang}/services/export-sales-outsourcing`,
       title: lang === 'en' ? 'Export Sales Outsourcing' : (lang === 'cn' ? '外贸业务外包' : '外銷業務外包'),
+      desc: lang === 'en'
+        ? 'Directly handle export sales for you, with the goal of closing deals.'
+        : lang === 'cn'
+        ? '直接帮你做外销业务，目标是成交。'
+        : '直接幫你做外銷業務，目標是成交。',
       suitable: lang === 'en'
         ? ['No full export team', 'Prefer not to hire immediately', 'Need consistent outreach & follow-ups']
         : lang === 'cn'
@@ -123,10 +138,10 @@ export default async function Page({ params }: { params: Promise<{ lang: Lang }>
           </p>
           <div className="mt-10 flex flex-col justify-center gap-4 sm:flex-row">
             <Link href={`/${lang}/contact`} className="rounded-sm bg-white px-8 py-3 font-bold text-blue-900 transition hover:bg-gray-100">
-              {lang === 'en' ? 'Book Consultation' : (lang === 'cn' ? '预约咨询' : '預約諮詢')}
+              {lang === 'en' ? 'Let us help you decide the best approach' : (lang === 'cn' ? '让我们帮你判断适合哪一种合作' : '讓我們幫你判斷適合哪一種合作')}
             </Link>
             <Link href={`/${lang}/export-market-analysis`} className="rounded-sm border border-white/40 bg-transparent px-8 py-3 font-bold text-white transition hover:bg-white/10">
-              {lang === 'en' ? 'Free Export Market Analysis' : (lang === 'cn' ? '免费出口市场分析' : '免費出口市場分析')}
+              {lang === 'en' ? 'Get Market Entry Advice' : (lang === 'cn' ? '取得市场切入建议' : '取得市場切入建議')}
             </Link>
           </div>
         </div>
@@ -253,7 +268,7 @@ export default async function Page({ params }: { params: Promise<{ lang: Lang }>
 
       <section className="bg-blue-900 py-24 text-center text-white">
         <div className="mx-auto max-w-4xl px-6">
-          <h2 className="mb-4 text-3xl font-bold md:text-4xl">{lang === 'en' ? 'Get a market analysis first, then decide your plan' : (lang === 'cn' ? '先拿一份出口市场分析，再决定怎么做' : '先拿一份出口市場分析，再決定怎麼做')}</h2>
+          <h2 className="mb-4 text-3xl font-bold md:text-4xl">{lang === 'en' ? 'Not sure which one to choose? Let us help you find the best path' : (lang === 'cn' ? '不确定该选哪一种？先让我们帮你判断最适合的合作路径' : '不確定該選哪一種？先讓我們幫你判斷最適合的合作路徑')}</h2>
           <p className="mx-auto mb-10 max-w-2xl text-slate-200">
             {lang === 'cn'
               ? '提交产品与目标市场，我们会回复市场切入方式、买家角色与可行的外贸开发路径。'
@@ -262,7 +277,7 @@ export default async function Page({ params }: { params: Promise<{ lang: Lang }>
                 : 'Submit your product and markets. We’ll reply with entry approach, buyer roles, and a feasible lead-gen path.'}
           </p>
           <Link href={`/${lang}/export-market-analysis`} className="inline-block rounded-sm bg-white px-10 py-4 text-lg font-bold text-blue-900 shadow-lg transition duration-300 hover:bg-gray-100">
-            {t(lang, 'cta_analysis')}
+            {lang === 'en' ? 'Get Market Entry Advice' : (lang === 'cn' ? '取得市场切入建议' : '取得市場切入建議')}
           </Link>
         </div>
       </section>

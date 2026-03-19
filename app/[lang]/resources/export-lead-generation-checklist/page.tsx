@@ -6,7 +6,7 @@ import { Check, FileText, Target, Shield, HelpCircle } from 'lucide-react'
 export async function generateMetadata({ params }: { params: Promise<{ lang: 'en' | 'zh' | 'cn' }> }) {
   const { lang } = await params
   const isChinese = lang !== 'en'
-  const baseUrl = lang === 'zh' ? 'https://sungenelite.com' : 'https://sungene.net'
+  const baseUrl = 'https://sungene.net'
   const title = isChinese ? '外銷客戶開發檢查表｜2025 版' : 'Export Lead Generation Checklist | 2025 Edition'
   const description = isChinese
     ? '下載可落地的外銷客戶開發檢查表：從買家畫像、名單建立、開發信到跟進節奏，讓開發更可追蹤。'
@@ -18,7 +18,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: 'en
       canonical: `${baseUrl}/${lang}/resources/export-lead-generation-checklist`,
       languages: {
         'zh-CN': `https://sungene.net/cn/resources/export-lead-generation-checklist`,
-        'zh-TW': `https://sungenelite.com/zh/resources/export-lead-generation-checklist`,
+        'zh-TW': `https://sungene.net/zh/resources/export-lead-generation-checklist`,
         'en': `https://sungene.net/en/resources/export-lead-generation-checklist`,
         'x-default': `https://sungene.net/cn/resources/export-lead-generation-checklist`,
       }

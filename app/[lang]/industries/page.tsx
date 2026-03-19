@@ -7,7 +7,7 @@ import { cnText } from '@/lib/cnText'
 export async function generateMetadata({ params }: { params: Promise<{ lang: Lang }> }) {
   const { lang } = await params
   const isChinese = lang !== 'en'
-  const baseUrl = lang === 'zh' ? 'https://sungenelite.com' : 'https://sungene.net'
+  const baseUrl = 'https://sungene.net'
 
   return {
     title: `${lang === 'en' ? 'Industry Pages' : (lang === 'cn' ? '行业頁總覽' : '產業頁總覽')} | SunGene`,
@@ -19,7 +19,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: Lan
       canonical: `${baseUrl}/${lang}/industries`,
       languages: {
         'zh-CN': 'https://sungene.net/cn/industries',
-        'zh-TW': 'https://sungenelite.com/zh/industries',
+        'zh-TW': 'https://sungene.net/zh/industries',
         'en': 'https://sungene.net/en/industries',
         'x-default': 'https://sungene.net/cn/industries',
       },

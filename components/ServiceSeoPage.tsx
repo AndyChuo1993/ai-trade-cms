@@ -193,7 +193,7 @@ export default function ServiceSeoPage({ lang, service }: { lang: Lang; service:
     'export-sales-outsourcing': '/illustrations/service-outsourcing.svg'
   }
   const serviceIllustration = imageMap[service.slug] || '/illustrations/seo-landing-panel.svg'
-  const base = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.sungenelite.com'
+  const base = process.env.NEXT_PUBLIC_SITE_URL || 'https://sungene.net'
   const canonicalPath = service.path ? `/${lang}${service.path}` : `/${lang}/${service.slug}`
   const workflow = service.workflow?.[lang] ?? (
     isChinese
@@ -237,7 +237,7 @@ export default function ServiceSeoPage({ lang, service }: { lang: Lang; service:
       url: base,
     },
     areaServed: ['Worldwide'],
-    audience: lang === 'en' ? 'Manufacturers and export teams' : (lang === 'cn' ? '製造業與外贸团队' : '製造業與外銷團隊'),
+    audience: lang === 'en' ? 'Export companies and trade teams' : (lang === 'cn' ? '外贸企业与外贸团队' : '外銷企業與外銷團隊'),
   }
 
   return (
@@ -382,7 +382,7 @@ export default function ServiceSeoPage({ lang, service }: { lang: Lang; service:
               </div>
             </div>
             <div className="rounded-xl border border-gray-200 bg-white p-6">
-              <div className="text-sm font-semibold text-gray-900">{lang === 'en' ? 'How manufacturers find overseas buyers' : (lang === 'cn' ? '製造業如何找到海外买家' : '製造業如何找到海外買家')}</div>
+              <div className="text-sm font-semibold text-gray-900">{lang === 'en' ? 'How export companies find overseas buyers' : (lang === 'cn' ? '外贸企业如何找到海外买家' : '外銷企業如何找到海外買家')}</div>
               <div className="mt-3 space-y-3 text-gray-700 leading-7">
                 {service.howWorks[lang].map((p, i) => (
                   <p key={i}>{tr(p)}</p>

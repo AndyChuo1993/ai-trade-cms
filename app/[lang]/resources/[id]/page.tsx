@@ -11,7 +11,7 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: Lang; id: string }> }) {
   const { lang, id } = await params
-  const baseUrl = lang === 'zh' ? 'https://sungenelite.com' : 'https://sungene.net'
+  const baseUrl = 'https://sungene.net'
   const article = getArticle(lang, id)
   if (!article) return { title: 'Not Found' }
 
@@ -22,7 +22,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: Lan
       canonical: `${baseUrl}/${lang}/resources/${id}`,
       languages: {
         'zh-CN': `https://sungene.net/cn/resources/${id}`,
-        'zh-TW': `https://sungenelite.com/zh/resources/${id}`,
+        'zh-TW': `https://sungene.net/zh/resources/${id}`,
         'en': `https://sungene.net/en/resources/${id}`,
         'x-default': `https://sungene.net/cn/resources/${id}`,
       }

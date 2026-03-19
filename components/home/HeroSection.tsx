@@ -55,14 +55,14 @@ export default function HeroSection({ lang }: { lang: Lang }) {
             </div>
 
             <div className="mt-8 flex justify-center gap-4 flex-wrap">
-              <span className="rounded-full bg-gray-100 px-3 py-1">
-                {lang === 'en' ? 'Overseas Buyer Development' : lang === 'cn' ? '海外买家开发' : '海外買家開發'}
+              <span className="rounded-full bg-gray-100 px-3 py-1 text-sm font-medium text-gray-700">
+                {lang === 'en' ? 'For Export Companies / Traders / Manufacturers' : lang === 'cn' ? '适合外贸企业 / 贸易商 / 制造商' : '適合外銷企業 / 貿易商 / 製造商'}
               </span>
-              <span className="rounded-full bg-gray-100 px-3 py-1">
-                {lang === 'en' ? 'Distributor Development' : lang === 'cn' ? '经销商开发' : '經銷商開發'}
+              <span className="rounded-full bg-gray-100 px-3 py-1 text-sm font-medium text-gray-700">
+                {lang === 'en' ? 'North America / Europe / Japan' : lang === 'cn' ? '北美 / 欧洲 / 日本市场' : '北美 / 歐洲 / 日本市場'}
               </span>
-              <span className="rounded-full bg-gray-100 px-3 py-1">
-                {lang === 'en' ? 'Export Sales Outsourcing' : lang === 'cn' ? '外贸业务外包' : '外銷業務外包'}
+              <span className="rounded-full bg-gray-100 px-3 py-1 text-sm font-medium text-gray-700">
+                {lang === 'en' ? 'Buyer Outreach / Channel Building / Sales Outsourcing' : lang === 'cn' ? '采购开发 / 通路建立 / 外贸外包' : '採購開發 / 通路建立 / 外銷外包'}
               </span>
             </div>
 
@@ -105,9 +105,9 @@ export default function HeroSection({ lang }: { lang: Lang }) {
             <div className="absolute inset-0 rounded-[2rem] bg-blue-100/70 blur-3xl"></div>
             <div className="relative overflow-hidden rounded-[2rem] border border-blue-100 bg-white p-4 shadow-2xl">
               <Image
-                src="/illustrations/hero-export.svg"
+                src="/illustrations/pipeline-mockup.svg"
                 alt={lang === 'en' 
-                  ? 'Export lead generation workflow illustration' 
+                  ? 'Export lead generation pipeline illustration' 
                   : lang === 'cn' 
                   ? '海外买家开发流程示意图' 
                   : '海外買家開發流程示意圖'}

@@ -8,24 +8,24 @@ export default function CasePreview({ lang }: { lang: Lang }) {
     {
       slug: 'hardware',
       title: lang === 'en' ? 'Hardware Tools | European Market' : lang === 'cn' ? '五金工具｜欧洲市场' : '五金工具｜歐洲市場',
-      desc: lang === 'en' ? '8 weeks, 120+ decision-makers, 15 valid replies. Successfully obtained multiple business opportunities that can enter the quotation process.' : lang === 'cn' ? '8 週建立 120+ 決策人，取得 15 個有效回覆。協助企業建立海外買家名單並推進客戶開發，成功取得多個可進入報價流程的商機。' : '8 週建立 120+ 決策人，取得 15 個有效回覆。協助企業建立海外買家名單並推進客戶開發，成功取得多個可進入報價流程的商機。',
+      market: lang === 'en' ? 'Europe' : lang === 'cn' ? '欧洲市场' : '歐洲市場',
+      reach: lang === 'en' ? '120+ Decision Makers' : lang === 'cn' ? '120+ 决策人名单建立' : '120+ 決策人名單建立',
+      replies: lang === 'en' ? '15 Valid Replies' : lang === 'cn' ? '15 个有效回复' : '15 個有效回覆',
+      progress: lang === 'en' ? '3 Quote Opportunities' : lang === 'cn' ? '3 个进入报价流程' : '3 個進入報價流程',
       tags: lang === 'en' ? ['Hardware', 'Europe', 'Lead Gen'] : lang === 'cn' ? ['五金工具', '欧洲市场', '客户开发'] : ['五金工具', '歐洲市場', '客戶開發'],
       cover: '/cases/hardware-cover.svg',
       industry: lang === 'en' ? 'Hardware' : lang === 'cn' ? '五金工具' : '五金工具',
-      market: lang === 'en' ? 'Europe' : lang === 'cn' ? '欧洲市场' : '歐洲市場',
-      result: lang === 'en' ? '15 valid replies, 3 quoting opportunities' : lang === 'cn' ? '8 週建立 120+ 決策人，取得 15 個有效回覆' : '8 週建立 120+ 決策人，取得 15 個有效回覆',
-      summary: lang === 'en' ? '8 weeks, 120+ decision-makers' : lang === 'cn' ? '协助企业建立海外买家名单并推进客户开发，成功取得多个可进入报价流程的商机。' : '協助企業建立海外買家名單並推進客戶開發，成功取得多個可進入報價流程的商機。'
     },
     {
       slug: 'electronics',
       title: lang === 'en' ? 'Electronic Parts | North American Market' : lang === 'cn' ? '电子零件｜北美市场' : '電子零件｜北美市場',
-      desc: lang === 'en' ? 'Penetrated supply chain procurement and established long-term inquiry opportunities through overseas customer development process.' : lang === 'cn' ? '透過海外客戶開發流程，協助企業接觸採購決策者並建立可持續的商務對話。' : '透過海外客戶開發流程，協助企業接觸採購決策者並建立可持續的商務對話。',
+      market: lang === 'en' ? 'North America' : lang === 'cn' ? '北美市场' : '北美市場',
+      reach: lang === 'en' ? 'Supply Chain Procurement' : lang === 'cn' ? '切入供应链采购' : '切入供應鏈採購',
+      replies: lang === 'en' ? 'Continuous Engagement' : lang === 'cn' ? '持续商业对话' : '持續商務對話',
+      progress: lang === 'en' ? 'Long-term Inquiry Opps' : lang === 'cn' ? '建立长期询价机会' : '建立長期詢價機會',
       tags: lang === 'en' ? ['Electronics', 'USA', 'Supply Chain'] : lang === 'cn' ? ['电子零件', '美国市场', '供应链打入'] : ['電子零件', '美國市場', '供應鏈打入'],
       cover: '/cases/electronics-cover.svg',
       industry: lang === 'en' ? 'Electronics' : lang === 'cn' ? '电子零件' : '電子零件',
-      market: lang === 'en' ? 'North America' : lang === 'cn' ? '北美市场' : '北美市場',
-      result: lang === 'en' ? 'Established long-term inquiry opportunities' : lang === 'cn' ? '切入供应链采购，建立长期询价机会' : '切入供應鏈採購，建立長期詢價機會',
-      summary: lang === 'en' ? 'Supply chain penetration' : lang === 'cn' ? '透過海外客户开发流程，协助企业接触采购决策者并建立可持续的商务对话。' : '透過海外客戶開發流程，協助企業接觸採購決策者並建立可持續的商務對話。'
     }
   ]
 
@@ -73,13 +73,23 @@ export default function CasePreview({ lang }: { lang: Lang }) {
               
               <div className="p-8 flex-grow flex flex-col">
                 <h3 className="text-2xl font-bold mb-4 text-gray-900 group-hover:text-blue-600 transition leading-tight">{item.title}</h3>
-                <div className="mb-6 flex-grow">
-                    <p className="text-blue-900 font-bold text-lg bg-blue-50 p-4 rounded-sm border-l-4 border-blue-600">
-                        {item.result}
-                    </p>
-                    <p className="text-gray-500 text-sm mt-4 leading-relaxed line-clamp-2">
-                        {item.summary}
-                    </p>
+                <div className="mb-6 flex-grow space-y-3">
+                  <div className="flex items-start">
+                    <span className="text-blue-600 mr-2">📍</span>
+                    <span className="text-gray-700 font-medium">{item.market}</span>
+                  </div>
+                  <div className="flex items-start">
+                    <span className="text-blue-600 mr-2">🎯</span>
+                    <span className="text-gray-700 font-medium">{item.reach}</span>
+                  </div>
+                  <div className="flex items-start">
+                    <span className="text-blue-600 mr-2">💬</span>
+                    <span className="text-gray-700 font-medium">{item.replies}</span>
+                  </div>
+                  <div className="flex items-start">
+                    <span className="text-blue-600 mr-2">🚀</span>
+                    <span className="text-gray-900 font-bold">{item.progress}</span>
+                  </div>
                 </div>
                 <Link href={`/${lang}/case-studies/${item.slug}`} className="inline-block text-center w-full bg-gray-900 text-white font-bold py-3 px-6 rounded-sm hover:bg-blue-800 transition duration-300">
                   {lang === 'en' ? 'Read Case Study' : (lang === 'cn' ? '阅读完整案例' : '閱讀完整案例')}

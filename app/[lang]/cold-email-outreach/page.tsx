@@ -121,7 +121,7 @@ const service: ServiceSeo = {
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: Lang }> }) {
   const { lang } = await params
-  const baseUrl = lang === 'zh' ? 'https://sungenelite.com' : 'https://sungene.net'
+  const baseUrl = 'https://sungene.net'
   return {
     title: cnText(lang, service.title[lang]),
     description: cnText(lang, service.description[lang]),
@@ -129,7 +129,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: Lan
       canonical: `${baseUrl}/${lang}/cold-email-outreach`,
       languages: {
         'zh-CN': `https://sungene.net/cn/cold-email-outreach`,
-        'zh-TW': `https://sungenelite.com/zh/cold-email-outreach`,
+        'zh-TW': `https://sungene.net/zh/cold-email-outreach`,
         'en': `https://sungene.net/en/cold-email-outreach`,
         'x-default': `https://sungene.net/cn/cold-email-outreach`,
       }
