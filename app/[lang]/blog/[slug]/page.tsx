@@ -94,7 +94,7 @@ export default async function Page({ params }: { params: Promise<{ lang: Lang; s
     itemListElement: [
       { '@type': 'ListItem', position: 1, name: lang === 'en' ? 'Home' : (lang === 'cn' ? '首页' : '首頁'), item: `${baseUrl}/${lang}` },
       { '@type': 'ListItem', position: 2, name: lang === 'en' ? 'Blog' : (lang === 'cn' ? '博客' : '部落格'), item: `${baseUrl}/${lang}/blog` },
-      { '@type': 'ListItem', position: 3, name: cnText(lang, post.title[lang]), item: url },
+      { '@type': 'ListItem', position: 3, name: tr(post.title[lang]), item: url },
     ],
   }
 
