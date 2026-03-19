@@ -8,10 +8,10 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: Lan
   const baseUrl = 'https://sungene.net'
   const isChinese = lang !== 'en'
   return {
-    title: lang === 'en' ? 'Get a Distributor List (Free) | SunGene' : (lang === 'cn' ? '免费索取海外经销商名单｜SunGene' : '免費索取海外經銷商名單｜SunGene'),
+    title: lang === 'en' ? 'Request Channel Evaluation | SunGene' : (lang === 'cn' ? '申请经销通路评估｜SunGene' : '申請經銷通路評估｜SunGene'),
     description:
       isChinese
-        ? '留下你的產品與目標市場，我們提供海外經銷/代理候選名單與切入建議。'
+        ? '留下你的產品與目標市場，我們提供海外經銷/代理候選資料與切入建議。'
         : 'Share your product and market. We’ll send a shortlist of distributors/agents and an entry recommendation.',
     alternates: {
       canonical: `${baseUrl}/${lang}/distributor-list`,
@@ -35,7 +35,7 @@ export default async function Page({ params }: { params: Promise<{ lang: Lang }>
       <div className="mx-auto max-w-6xl px-6">
         <div className="grid gap-10 lg:grid-cols-2 items-start">
           <div>
-            <h1 className="text-4xl font-bold tracking-tight text-gray-900">{isChinese ? '免費索取海外經銷商/代理名單' : 'Get an International Distributor List (Free)'}</h1>
+            <h1 className="text-4xl font-bold tracking-tight text-gray-900">{lang === 'en' ? 'Request Channel Evaluation' : (lang === 'cn' ? '申请经销通路评估' : '申請經銷通路評估')}</h1>
             <p className="mt-4 text-gray-600 leading-7">
               {isChinese
                 ? '經銷開發的關鍵是市場分層與合作條件。我們會先評估你的產品適合的通路型態，再整理候選通路清單。'

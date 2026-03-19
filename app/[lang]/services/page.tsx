@@ -60,8 +60,8 @@ export default async function Page({ params }: { params: Promise<{ lang: Lang }>
       get: lang === 'en'
         ? ['Decision-maker lists', 'Valid inquiries', 'Quoting opportunities', 'Actionable leads']
         : lang === 'cn'
-        ? ['采购决策人名单', '有效询价', '报价机会', '可推进的商机']
-        : ['採購決策人名單', '有效詢價', '報價機會', '可推進的商機'],
+        ? ['采购决策人资料', '有效询价', '报价机会', '可推进的商机']
+        : ['採購決策人資料', '有效詢價', '報價機會', '可推進的商機'],
     },
     {
       href: `/${lang}/services/distributor-development`,
@@ -79,8 +79,8 @@ export default async function Page({ params }: { params: Promise<{ lang: Lang }>
       get: lang === 'en'
         ? ['Channel structure analysis', 'Potential distributor lists', 'Partnership evaluations', 'Samples & negotiation support']
         : lang === 'cn'
-        ? ['通路结构分析', '潜在经销商名单', '合作评估', '推进样品与合作谈判']
-        : ['通路結構分析', '潛在經銷商名單', '合作評估', '推進樣品與合作談判'],
+        ? ['通路结构分析', '潜在经销候选资料', '合作评估', '推进样品与合作谈判']
+        : ['通路結構分析', '潛在經銷候選資料', '合作評估', '推進樣品與合作談判'],
     },
     {
       href: `/${lang}/services/export-sales-outsourcing`,
@@ -105,7 +105,7 @@ export default async function Page({ params }: { params: Promise<{ lang: Lang }>
 
   const searchIntentLabels =
     lang !== 'en'
-      ? ['外銷客戶開發', '如何找到海外買家', '如何找到經銷商', '國際買家名單', '外銷內容行銷']
+      ? ['外銷客戶開發', '如何找到海外買家', '如何找到經銷商', '國際海外採購與決策人資料', '外銷內容行銷']
       : ['export lead generation', 'find overseas buyers', 'find distributors', 'international buyers', 'b2b export marketing']
 
   const servicesSchema = {
@@ -232,7 +232,7 @@ export default async function Page({ params }: { params: Promise<{ lang: Lang }>
               </h2>
               <p className="mt-4 leading-7 text-gray-600">
                 {lang === 'cn'
-                  ? '外贸客户开发解决“海外采购名与询盘交付”；经销商开发解决“渠道伙伴与经销合作”；外贸业务外包服务解决“不扩编也能稳定开发与跟进”。'
+                  ? '外贸客户开发解决“海外采购决策人资料与询盘交付”；经销商开发解决“渠道伙伴与经销合作”；外贸业务外包服务解决“不扩编也能稳定开发与跟进”。'
                   : isChinese
                     ? '外銷客戶開發解決「海外採購與決策人資料建置與詢價交付」；經銷商開發解決「通路夥伴與經銷合作」；外銷業務外包服務解決「不擴編也能穩定開發與跟進」。'
                     : 'Lead gen delivers prospect data and qualified inquiries. Distributor development builds partner pipelines. Sales outsourcing runs end-to-end outreach and follow-ups without hiring.'}

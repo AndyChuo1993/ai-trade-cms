@@ -26,8 +26,8 @@ const service: ServiceSeo = {
     en: ['We build a mixed "Email + LinkedIn" cadence for multi-touch engagement.', 'Design high-reply frameworks using "Pain + Proof + CTA".', 'Execute 4–6 systematic follow-ups to ensure visibility and replies.'],
   },
   whatIs: {
-    cn: ['Outreach System 是主動開發的核心引擎：整合名單、訊息與節奏，將陌生開發轉化為可預測的詢價來源。'],
-    zh: ['Outreach System 是主動開發的核心引擎：整合名單、訊息與節奏，將陌生開發轉化為可預測的詢價來源。'],
+    cn: ['Outreach System 是主動開發的核心引擎：整合決策人資料、訊息與節奏，將陌生開發轉化為可預測的詢價來源。'],
+    zh: ['Outreach System 是主動開發的核心引擎：整合決策人資料、訊息與節奏，將陌生開發轉化為可預測的詢價來源。'],
     en: ['The Outreach System is the engine of outbound: integrating lists, messaging, and cadence to turn cold prospects into predictable inquiries.'],
   },
   howWorks: {
@@ -41,8 +41,8 @@ const service: ServiceSeo = {
     en: ['Prepare assets: Product briefs and proof (cases/certs).', 'Build mixed scripts: Email sequences + LinkedIn connection/messages.', 'Execute multi-touch cadence: 4-6 emails interlaced with LinkedIn steps.', 'Handle replies: Triage intent and book meetings.'],
   },
   tools: {
-    cn: ['自動化開發工具（序列寄送）。', 'LinkedIn Sales Navigator（精準名單）。', 'CRM 追蹤回覆狀態。'],
-    zh: ['自動化開發工具（序列寄送）。', 'LinkedIn Sales Navigator（精準名單）。', 'CRM 追蹤回覆狀態。'],
+    cn: ['自動化開發工具（序列寄送）。', 'LinkedIn Sales Navigator（精準資料）。', 'CRM 追蹤回覆狀態。'],
+    zh: ['自動化開發工具（序列寄送）。', 'LinkedIn Sales Navigator（精準資料）。', 'CRM 追蹤回覆狀態。'],
     en: ['Outreach automation tools (sequencing).', 'LinkedIn Sales Navigator (targeting).', 'CRM for reply tracking.'],
   },
   checklist: {
@@ -69,14 +69,14 @@ const service: ServiceSeo = {
   },
   funnel: {
     cn: [
-      { label: '接觸名單', value: '500' },
+      { label: '接觸資料', value: '500' },
       { label: 'LinkedIn 連結', value: '150' },
       { label: '開信/閱讀', value: '300' },
       { label: '回覆', value: '50' },
       { label: '會議/詢價', value: '12' },
     ],
     zh: [
-      { label: '接觸名單', value: '500' },
+      { label: '接觸資料', value: '500' },
       { label: 'LinkedIn 連結', value: '150' },
       { label: '開信/閱讀', value: '300' },
       { label: '回覆', value: '50' },

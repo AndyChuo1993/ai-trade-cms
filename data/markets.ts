@@ -61,8 +61,8 @@ export const markets: MarketData[] = [
     },
     faq: [
       {
-        question: { cn: '你們有歐洲當地的买家名单嗎？',
-    zh: '你們有歐洲當地的買家名單嗎？', en: 'Do you have local buyer lists in Europe?' },
+        question: { cn: '你们能协助建立欧洲当地的采购与决策人资料吗？',
+    zh: '你們能協助建立歐洲當地的採購與決策人資料嗎？', en: 'Can you help build local buyer and decision-maker data in Europe?' },
         answer: { cn: '有的，我們的数据数据库覆盖全歐洲主要工业國家，套件括德国、法國、義大利、西班牙、波蘭等。',
     zh: '有的，我們的資料函式庫覆蓋全歐洲主要工業國家，套件括德國、法國、義大利、西班牙、波蘭等。', en: 'Yes, our database covers major industrial countries including Germany, France, Italy, Spain, and Poland.' }
       },
@@ -89,7 +89,7 @@ export const markets: MarketData[] = [
     },
     description: {
       cn: '協助外贸企业進軍美国與加拿大市场。針對北美大型采购商與批发商，提供精准名单與高效開發服务。',
-    zh: '協助外銷企業進軍美國與加拿大市場。針對北美大型採購商與批發商，提供精準名單與高效開發服務。',
+    zh: '協助外銷企業進軍美國與加拿大市場。針對北美大型採購商與批發商，提供精準資料與高效開發服務。',
       en: 'Helping companies expand into USA & Canada. Providing precise lists and efficient outreach for North American large-scale buyers and wholesalers.'
     },
     h1: {

@@ -60,7 +60,7 @@ export default async function Page({ params }: { params: Promise<{ lang: Lang }>
           {[
             {
               title: lang === 'en' ? 'Buyer development methods' : (lang === 'cn' ? '买家开发方法' : '買家開發方法'),
-              desc: lang === 'en' ? 'Break down lists, messaging, follow-ups, and conversions.' : (lang === 'cn' ? '拆解名单、信息、跟进与转化流程。' : '拆解名單、訊息、跟進與轉換流程。'),
+              desc: lang === 'en' ? 'Break down lists, messaging, follow-ups, and conversions.' : (lang === 'cn' ? '拆解决策人资料、信息、跟进与转化流程。' : '拆解決策人資料、訊息、跟進與轉換流程。'),
             },
             {
               title: lang === 'en' ? 'Market and industry entry' : (lang === 'cn' ? '市场与行业切入' : '市場與產業切入'),
@@ -112,7 +112,7 @@ export default async function Page({ params }: { params: Promise<{ lang: Lang }>
               {lang === 'en' ? 'Get Market Entry Advice' : (lang === 'cn' ? '获取市场切入建议' : '取得市場切入建議')}
             </Link>
             <Link href={`/${lang}/contact`} className="inline-flex items-center justify-center rounded-sm border border-white/50 px-5 py-2.5 text-white font-medium text-sm hover:bg-white/10 transition">
-              {lang === 'en' ? 'Book Consultation' : (lang === 'cn' ? '预约咨询' : '預約諮詢')}
+              {lang === 'en' ? 'Book Strategy Call' : (lang === 'cn' ? '预约策略通话' : '預約策略通話')}
             </Link>
           </div>
         </section>

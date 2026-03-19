@@ -49,10 +49,10 @@ export const faqs: FAQItem[] = [
   },
   {
     category: 'service',
-    question: { cn: '名单数据的準確度如何？',
-    zh: '名單資料的準確度如何？', en: 'How accurate is the data?' },
-    answer: { cn: '名单會經過系統验证與人工檢查，以降低无效联系数据比例。若项目中發現无效数据比例明顯偏高，我們也會協助补齊與调整。',
-    zh: '名單會經過系統驗證與人工檢查，以降低無效聯絡資料比例。若專案中發現無效資料比例明顯偏高，我們也會協助補齊與調整。', en: 'Our lists undergo machine verification and manual checks, guaranteeing 95%+ email validity. We promise to replace invalid leads for free if the bounce rate is high.' },
+    question: { cn: '资料的准确度如何？',
+    zh: '資料的準確度如何？', en: 'How accurate is the data?' },
+    answer: { cn: '资料会经过系统验证与人工检查，以降低无效联络资料比例。若专案中发现无效资料比例明显偏高，我们也会协助补齐与调整。',
+    zh: '資料會經過系統驗證與人工檢查，以降低無效聯絡資料比例。若專案中發現無效資料比例明顯偏高，我們也會協助補齊與調整。', en: 'Our lists undergo machine verification and manual checks, guaranteeing 95%+ email validity. We promise to replace invalid leads for free if the bounce rate is high.' },
   },
 
   // Process
@@ -60,8 +60,8 @@ export const faqs: FAQItem[] = [
     category: 'process',
     question: { cn: '合作流程是怎樣的？',
     zh: '合作流程是怎樣的？', en: 'What is the process?' },
-    answer: { cn: '通常流程為：先确认需求與目标市场，接著簽署合作文件與保密協定，再進行產品與数据交接、名单建立、流程設定，最後正式启动並定期回報成效。',
-    zh: '通常流程為：先確認需求與目標市場，接著簽署合作文件與保密協定，再進行產品與資料交接、名單建立、流程設定，最後正式啟動並定期回報成效。', en: '1. Consultation & Market Goal 2. Contract & NDA 3. Product/Data Handover 4. System Setup & List Building 5. Launch 6. Regular Reporting.' },
+    answer: { cn: '通常流程為：先确认需求與目标市场，接著簽署合作文件與保密協定，再進行产品與资料交接、决策人资料建置、流程设定，最後正式啟動並定期回報成效。',
+    zh: '通常流程為：先確認需求與目標市場，接著簽署合作文件與保密協定，再進行產品與資料交接、決策人資料建置、流程設定，最後正式啟動並定期回報成效。', en: '1. Consultation & Market Goal 2. Contract & NDA 3. Product/Data Handover 4. System Setup & Data Building 5. Launch 6. Regular Reporting.' },
   },
   {
     category: 'process',
@@ -76,14 +76,14 @@ export const faqs: FAQItem[] = [
     category: 'pricing',
     question: { cn: '你們如何收費？',
     zh: '你們如何收費？', en: 'How do you charge?' },
-    answer: { cn: '目前主要提供三種合作方式：名单项目、開發项目，以及外贸外包服务月費制。實際費用會依服务範圍、目标市场與执行深度而有所不同。',
-    zh: '目前主要提供三種合作方式：名單專案、開發專案，以及外銷外包服務月費制。實際費用會依服務範圍、目標市場與執行深度而有所不同。', en: 'Three models: "List Purchase" per lead; "Project Outreach" per project; "Outsourcing" monthly retainer. See Pricing page for details.' },
+    answer: { cn: '目前主要提供三种合作方式：市场验证方案、客户开发方案，以及外贸外包方案。实际费用会依服务范围、目标市场与执行深度而有所不同。',
+    zh: '目前主要提供三種合作方式：市場驗證方案、客戶開發方案，以及外銷外包方案。實際費用會依服務範圍、目標市場與執行深度而有所不同。', en: 'Three models: Market Validation Plan; Client Development Plan; Outsourcing Plan. See Pricing page for details.' },
   },
   {
     category: 'pricing',
     question: { cn: '是否有最低合作期限？',
     zh: '是否有最低合作期限？', en: 'Minimum contract term?' },
-    answer: { cn: '名单與主动開發通常可依项目规模安排為一次性或短期合作；若是外贸外包服务，通常會建議至少合作 6 個月，較能建立稳定的開發節奏與成果积累。',
-    zh: '名單與主動開發通常可依專案規模安排為一次性或短期合作；若是外銷外包服務，通常會建議至少合作 6 個月，較能建立穩定的開發節奏與成果累積。', en: '"Lead Gen" and "Outreach" are one-time or short-term. "Outsourcing" recommends a 6-month minimum to build a stable sales funnel.' },
+    answer: { cn: '前期开发资料建置与主动开发通常可依专案规模安排为一次性或短期合作；若是外贸外包方案，通常会建议至少合作 6 个月，较能建立稳定的开发节奏与成果积累。',
+    zh: '前期開發資料建置與主動開發通常可依專案規模安排為一次性或短期合作；若是外銷外包方案，通常會建議至少合作 6 個月，較能建立穩定的開發節奏與成果累積。', en: '"Lead Gen" and "Outreach" are one-time or short-term. "Outsourcing" recommends a 6-month minimum to build a stable sales funnel.' },
   },
 ]

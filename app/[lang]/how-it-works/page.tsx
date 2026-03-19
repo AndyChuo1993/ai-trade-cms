@@ -42,7 +42,7 @@ export default async function Page({ params }: { params: Promise<{ lang: Lang }>
     {
       id: 2,
       title: t(lang, 'process_2_title'),
-      desc: lang === 'en' ? 'Using customs data and industry databases to build precise buyer lists including key decision-maker contacts.' : (lang === 'cn' ? '利用海關数据與行业数据数据库，建立包含关键决策人联系方式的精准买家名单。' : '利用海關資料與產業資料函式庫，建立包含關鍵決策人聯絡方式的精準買家名單。'),
+      desc: lang === 'en' ? 'Using customs data and industry databases to build targeted decision-maker data profiles including key contacts.' : (lang === 'cn' ? '利用海关数据与行业数据库，建立包含关键决策人联系方式的精准采购与决策人资料。' : '利用海關資料與產業資料庫，建立包含關鍵決策人聯絡方式的精準採購與決策人資料。'),
       icon: (
         <svg className="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" /></svg>
       )

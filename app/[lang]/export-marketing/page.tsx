@@ -16,8 +16,8 @@ const service: ServiceSeo = {
   },
   h1: { cn: '出口行銷與市場進入策略', zh: '出口行銷與市場進入策略', en: 'Export Marketing & Market Entry Strategy' },
   problem: {
-    cn: ['想做外銷但不知道從哪個市場開始，缺乏數據支持的進入策略。', '網站有流量但沒詢價，內容太像產品型錄，缺乏解決方案與信任感。', '行銷與業務斷鏈：行銷只看流量，業務只想要名單，中間沒有轉換機制。'],
-    zh: ['想做外銷但不知道從哪個市場開始，缺乏數據支持的進入策略。', '網站有流量但沒詢價，內容太像產品型錄，缺乏解決方案與信任感。', '行銷與業務斷鏈：行銷只看流量，業務只想要名單，中間沒有轉換機制。'],
+    cn: ['想做外銷但不知道從哪個市場開始，缺乏數據支持的進入策略。', '網站有流量但沒詢價，內容太像產品型錄，缺乏解決方案與信任感。', '行銷與業務斷鏈：行銷只看流量，業務只想要資料，中間沒有轉換機制。'],
+    zh: ['想做外銷但不知道從哪個市場開始，缺乏數據支持的進入策略。', '網站有流量但沒詢價，內容太像產品型錄，缺乏解決方案與信任感。', '行銷與業務斷鏈：行銷只看流量，業務只想要資料，中間沒有轉換機制。'],
     en: ['Unsure which market to enter first; lacking data-driven entry strategy.', 'Traffic but no inquiries; content is just a catalog, lacking solutions and trust.', 'Marketing/Sales disconnect: Marketing chases traffic, Sales wants leads, with no conversion bridge.'],
   },
   solution: {

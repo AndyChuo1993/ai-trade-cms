@@ -16,8 +16,8 @@ const service: ServiceSeo = {
   },
   h1: { cn: '合格詢價交付', zh: '合格詢價交付', en: 'Qualified B2B Leads for Export Companies' },
   problem: {
-    cn: ['名單來自單一來源，品質不穩：Email 無效、職位不對、公司不匹配。', '缺少驗證流程，寄信跳退與垃圾信風險增加。', '詢價來源不穩、品質參差，業務時間被無效回覆消耗。', '沒有分類別與摘要，跟進時常常找不到上下文與下一步。'],
-    zh: ['名單來自單一來源，品質不穩：Email 無效、職位不對、公司不匹配。', '缺少驗證流程，寄信跳退與垃圾信風險增加。', '詢價來源不穩、品質參差，業務時間被無效回覆消耗。', '沒有分類別與摘要，跟進時常常找不到上下文與下一步。'],
+    cn: ['資料來自單一來源，品質不穩：Email 無效、職位不對、公司不匹配。', '缺少驗證流程，寄信跳退與垃圾信風險增加。', '詢價來源不穩、品質參差，業務時間被無效回覆消耗。', '沒有分類別與摘要，跟進時常常找不到上下文與下一步。'],
+    zh: ['資料來自單一來源，品質不穩：Email 無效、職位不對、公司不匹配。', '缺少驗證流程，寄信跳退與垃圾信風險增加。', '詢價來源不穩、品質參差，業務時間被無效回覆消耗。', '沒有分類別與摘要，跟進時常常找不到上下文與下一步。'],
     en: ['Single-source lists are unreliable: wrong roles, bad emails, poor fit.', 'Without validation, bounces and deliverability risk increase.', 'Inquiry flow is unstable and quality varies; time is wasted on poor-fit leads.', 'Without triage and summaries, follow-ups lose context and next steps.'],
   },
   solution: {
@@ -31,13 +31,13 @@ const service: ServiceSeo = {
     en: ['Qualified B2B leads are inquiries that have been triaged and initially validated—trackable, followable, and close-ready.'],
   },
   howWorks: {
-    cn: ['我們以精準名單與節奏式跟進獲取回覆，並把回覆整理成標準格式交付，降低你團隊的跟進成本。'],
-    zh: ['我們以精準名單與節奏式跟進獲取回覆，並把回覆整理成標準格式交付，降低你團隊的跟進成本。'],
+    cn: ['我們以精準資料與節奏式跟進獲取回覆，並把回覆整理成標準格式交付，降低你團隊的跟進成本。'],
+    zh: ['我們以精準資料與節奏式跟進獲取回覆，並把回覆整理成標準格式交付，降低你團隊的跟進成本。'],
     en: ['We generate replies via verified lists and cadence, then deliver standardized lead packages that reduce follow-up cost.'],
   },
   process: {
-    cn: ['精準名單建立與驗證。', '訊息框架與多觸點跟進。', '回覆分類別：合格/待培育/不匹配。', '初步需求確認：規格/數量/交期/用途。', '詢價交付：摘要 + 對話紀錄 + 下一步建議。'],
-    zh: ['精準名單建立與驗證。', '訊息框架與多觸點跟進。', '回覆分類別：合格/待培育/不匹配。', '初步需求確認：規格/數量/交期/用途。', '詢價交付：摘要 + 對話紀錄 + 下一步建議。'],
+    cn: ['精準資料建立與驗證。', '訊息框架與多觸點跟進。', '回覆分類別：合格/待培育/不匹配。', '初步需求確認：規格/數量/交期/用途。', '詢價交付：摘要 + 對話紀錄 + 下一步建議。'],
+    zh: ['精準資料建立與驗證。', '訊息框架與多觸點跟進。', '回覆分類別：合格/待培育/不匹配。', '初步需求確認：規格/數量/交期/用途。', '詢價交付：摘要 + 對話紀錄 + 下一步建議。'],
     en: ['Build and validate lists.', 'Run message framework and multi-touch cadence.', 'Triage replies: qualified/nurture/no-fit.', 'Confirm initial requirements.', 'Deliver lead package with summary, logs, and next-step suggestion.'],
   },
   tools: {

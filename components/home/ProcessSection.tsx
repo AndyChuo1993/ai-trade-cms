@@ -5,14 +5,14 @@ export default function ProcessSection({ lang }: { lang: Lang }) {
   const steps = [
     {
       id: 1,
-      title: lang === 'en' ? 'Market & Target List' : lang === 'cn' ? '市场分析与首批名单' : '市場分析與首批名單',
+      title: lang === 'en' ? 'Market & Target List' : lang === 'cn' ? '市场分析与首批采购资料' : '市場分析與首批採購資料',
       desc: lang === 'en' ? 'Complete market analysis and build initial procurement list.' : lang === 'cn' ? '锁定目标市场与竞争对手' : '鎖定目標市場與競爭對手',
       week: lang === 'en' ? 'Week 1-2' : (lang === 'cn' ? '第 1-2 週' : '第 1-2 週'),
       details: lang === 'en'
         ? ['Target market & competitor analysis', 'Build initial procurement & decision-maker lists', 'Confirm outreach strategy']
         : lang === 'cn'
-        ? ['锁定目标市场与竞争对手', '建立首批采购与决策人名单', '确认开发切入点与优先顺序']
-        : ['鎖定目標市場與競爭對手', '建立首批採購與決策人名單', '確認開發切入點與優先順序'],
+        ? ['锁定目标市场与竞争对手', '建立首批采购与决策人资料', '确认开发切入点与优先顺序']
+        : ['鎖定目標市場與競爭對手', '建立首批採購與決策人資料', '確認開發切入點與優先順序'],
       icon: (
         <svg className="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7" /></svg>
       )

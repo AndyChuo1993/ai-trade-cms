@@ -89,8 +89,8 @@ export default function HeroSection({ lang }: { lang: Lang }) {
                   desc: lang === 'en'
                     ? 'Everything from lists and replies to inquiries and next steps is fully transparent.'
                     : lang === 'cn'
-                    ? '从名单、回复到询价与下一步全部透明，随时掌握开发节奏。'
-                    : '從名單、回覆到詢價與下一步全部透明，隨時掌握開發節奏。',
+                    ? '从决策人资料、回复到询价与下一步全部透明，随时掌握开发节奏。'
+                    : '從決策人資料、回覆到詢價與下一步全部透明，隨時掌握開發節奏。',
                 },
               ].map((item) => (
                 <div key={item.title} className="rounded-2xl border border-gray-100 bg-white/80 p-5 shadow-sm backdrop-blur">

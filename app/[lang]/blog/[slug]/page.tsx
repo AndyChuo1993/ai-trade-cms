@@ -178,13 +178,13 @@ export default async function Page({ params }: { params: Promise<{ lang: Lang; s
 
                       {idx === 2 && (
                         <div className="rounded-xl border border-gray-200 bg-white p-6">
-                          <div className="text-sm font-bold text-gray-900">{lang === 'en' ? 'Diagram: list → outreach → reply → meeting funnel (example)' : (lang === 'cn' ? '圖表：從名单到会议的轉換漏斗（示意）' : '圖表：從名單到會議的轉換漏斗（示意）')}</div>
+                          <div className="text-sm font-bold text-gray-900">{lang === 'en' ? 'Diagram: list → outreach → reply → meeting funnel (example)' : (lang === 'cn' ? '圖表：從资料到会议的轉換漏斗（示意）' : '圖表：從決策人資料到會議的轉換漏斗（示意）')}</div>
                           <div className="mt-4 overflow-hidden rounded-lg border border-gray-200 bg-gray-50">
-                            <Image src={funnelImage} alt={lang === 'en' ? 'List-to-meeting funnel diagram' : (lang === 'cn' ? '名单到会议漏斗示意圖' : '名單到會議漏斗示意圖')} width={1200} height={630} className="h-auto w-full" />
+                            <Image src={funnelImage} alt={lang === 'en' ? 'List-to-meeting funnel diagram' : (lang === 'cn' ? '资料到会议漏斗示意圖' : '資料到會議漏斗示意圖')} width={1200} height={630} className="h-auto w-full" />
                           </div>
                           <div className="mt-3 text-sm text-gray-600">
                             {isChinese
-                              ? tr('這張圖用來幫你抓住最小可行流程：先讓名單可投遞、再用節奏跟進、把回覆分類別後推進下一步。')
+                              ? tr('這張圖用來幫你抓住最小可行流程：先讓資料可投遞、再用節奏跟進、把回覆分類別後推進下一步。')
                               : 'This visual helps you align the minimum viable workflow: deliverable list → cadence → triage → next step.'}
                           </div>
                         </div>
@@ -211,7 +211,7 @@ export default async function Page({ params }: { params: Promise<{ lang: Lang; s
                               , then review{' '}
                               <Link href={caseHref} className="text-blue-900 font-medium hover:underline">case studies</Link>
                               and use the{' '}
-                              <Link href={magnetHref} className="text-blue-900 font-medium hover:underline">free export market analysis</Link>
+                              <Link href={magnetHref} className="text-blue-900 font-medium hover:underline">market entry advice</Link>
                               . Also add a market/industry context page (for example,{' '}
                               <Link href={marketIndustryHref} className="text-blue-900 font-medium hover:underline">the machinery industry page</Link>
                               ) to match buyer intent.
@@ -288,7 +288,7 @@ export default async function Page({ params }: { params: Promise<{ lang: Lang; s
 
                       {idx % 2 === 1 && (
                         <div className="rounded-xl border border-gray-200 bg-white p-6">
-                          <div className="text-sm font-bold text-gray-900">{lang === 'en' ? 'Example table: minimal list-to-meeting workflow' : (lang === 'cn' ? '示意表：從名单到会议的最小流程' : '示意表：從名單到會議的最小流程')}</div>
+                          <div className="text-sm font-bold text-gray-900">{lang === 'en' ? 'Example table: minimal list-to-meeting workflow' : (lang === 'cn' ? '示意表：從资料到会议的最小流程' : '示意表：從決策人資料到會議的最小流程')}</div>
                           <div className="mt-4 overflow-auto">
                             <table className="w-full text-sm">
                               <thead>
@@ -305,7 +305,7 @@ export default async function Page({ params }: { params: Promise<{ lang: Lang; s
                                   <td className="py-2">{lang === 'en' ? 'buyer profile and filters' : (lang === 'cn' ? '买家畫像與筛选規則' : '買家畫像與篩選規則')}</td>
                                 </tr>
                                 <tr className="border-t">
-                                  <td className="py-2 pr-4 font-semibold">{lang === 'en' ? 'List' : (lang === 'cn' ? '名单' : '名單')}</td>
+                                  <td className="py-2 pr-4 font-semibold">{lang === 'en' ? 'List' : (lang === 'cn' ? '资料' : '資料')}</td>
                                   <td className="py-2 pr-4">{lang === 'en' ? 'multi-source + validation' : (lang === 'cn' ? '多来源搜集 + 验证' : '多來源蒐集 + 驗證')}</td>
                                   <td className="py-2">{lang === 'en' ? 'deliverable contacts' : (lang === 'cn' ? '可投遞联系方式' : '可投遞聯絡方式')}</td>
                                 </tr>

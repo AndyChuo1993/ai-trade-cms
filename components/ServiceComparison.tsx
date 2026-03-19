@@ -17,14 +17,14 @@ const rows: ComparisonRow[] = [
   },
   {
     feature: { zh: '流程', cn: '流程', en: 'Process' },
-    leadGen: { zh: '理想客戶 → 名單 → 訊息 → 跟進節奏 → 回覆分類別', cn: '理想客户 → 名单 → 信息 → 跟进节奏 → 回复分类', en: 'ICP → list → message → cadence → reply triage' },
-    distributor: { zh: '市場分層 → 通路地圖 → 夥伴名單 → 合作方案 → 推進簽約', cn: '市场分层 → 通路地图 → 伙伴名单 → 合作方案 → 推进签约', en: 'Market tiers → channel map → shortlist → offer → agreement' },
-    outsourcing: { zh: '名單＋開發＋跟進＋初步資格審核＋詢價交付', cn: '名单＋开发＋跟进＋初步资格审核＋询价交付', en: 'Lists + outreach + follow-ups + qualification + inquiry hand-off' },
+    leadGen: { zh: '理想客戶 → 資料 → 訊息 → 跟進節奏 → 回覆分類別', cn: '理想客户 → 资料 → 信息 → 跟进节奏 → 回复分类', en: 'ICP → 決策人資料 → 訊息策略 → 多輪跟進 → 商機推進' },
+    distributor: { zh: '市場分層 → 通路地圖 → 潛在合作對象資料 → 合作方案 → 推進簽約', cn: '市场分层 → 通路地图 → 潜在合作对象资料 → 合作方案 → 推进签约', en: 'Market tiers → channel map → shortlist → offer → agreement' },
+    outsourcing: { zh: '研究 → 開發 → 跟進 → 資格判斷 → 報價與合作推進', cn: '研究 → 开发 → 跟进 → 资格判断 → 报价与合作推进', en: 'Lists + outreach + follow-ups + qualification + inquiry hand-off' },
   },
   {
     feature: { zh: '交付內容', cn: '交付内容', en: 'Deliverables' },
-    leadGen: { zh: '可用名單（Excel）＋詢價整理', cn: '可用名单（Excel）＋询价整理', en: 'Usable lists (Excel) + inquiry summaries' },
-    distributor: { zh: '可追蹤通路名單＋合作條件框架＋會議', cn: '可追踪通路名单＋合作条件框架＋会议', en: 'Trackable shortlist + term framework + meetings' },
+    leadGen: { zh: '可用的開發資料＋詢價與需求整理', cn: '可用的开发资料＋询价与需求整理', en: 'Usable lists (Excel) + inquiry summaries' },
+    distributor: { zh: '可追蹤通路資料＋合作條件框架＋會議', cn: '可追踪通路资料＋合作条件框架＋会议', en: 'Trackable shortlist + term framework + meetings' },
     outsourcing: { zh: '合格詢價持續交付＋可追蹤 pipeline', cn: '合格询价持续交付＋可追踪 pipeline', en: 'Ongoing qualified inquiries + trackable pipeline' },
   },
   {

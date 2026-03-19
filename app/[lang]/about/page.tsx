@@ -72,7 +72,7 @@ export default async function Page({ params }: { params: Promise<{ lang: Lang }>
             <div className="mb-4 inline-flex rounded-full border border-white/15 bg-white/10 px-3 py-1 text-xs font-bold uppercase tracking-wide text-white backdrop-blur">
               {lang === 'en' ? 'About SunGene' : (lang === 'cn' ? '關於 SunGene' : '關於 SunGene')}
             </div>
-            <h1 className="mb-6 text-4xl font-bold md:text-6xl">{lang === 'en' ? 'We are not list brokers, nor just an email agency' : (lang === 'cn' ? '我们不是名单商，也不是代发信公司' : '我們不是名單商，也不是代發信公司')}</h1>
+            <h1 className="mb-6 text-4xl font-bold md:text-6xl">{lang === 'en' ? 'We are not list brokers, nor just an email agency' : (lang === 'cn' ? '我们不是资料商，也不是代发信公司' : '我們不是資料商，也不是代發信公司')}</h1>
             <p className="text-xl leading-relaxed text-gray-200">
               {isChinese
                 ? '我們協助外銷企業建立一套可以持續產生海外商機的開發流程。'

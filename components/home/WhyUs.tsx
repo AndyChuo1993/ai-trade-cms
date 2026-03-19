@@ -5,8 +5,8 @@ export default function WhyUs({ lang }: { lang: Lang }) {
   const reasons = [
     {
       id: 1,
-      title: lang === 'en' ? 'Not selling lists' : lang === 'cn' ? '不是卖名单' : '不是賣名單',
-      desc: lang === 'en' ? 'We rebuild procurement and decision-maker data from scratch for every project.' : (lang === 'cn' ? '每个案子重新建立采购与决策人资料，不使用公版旧名单。' : '每個案子重新建立採購與決策人資料，不使用公版舊名單。'),
+      title: lang === 'en' ? 'Not selling lists' : lang === 'cn' ? '不是交一份资料就结束' : '不是交一份資料就結束',
+      desc: lang === 'en' ? 'We rebuild procurement and decision-maker data from scratch for every project.' : (lang === 'cn' ? '每个案子重新建立采购与决策人资料，确保资料与市场、产品、角色真正匹配。' : '每個案子重新建立採購與決策人資料，確保資料與市場、產品、角色真正匹配。'),
       icon: (
         <svg className="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
       )
@@ -42,8 +42,8 @@ export default function WhyUs({ lang }: { lang: Lang }) {
                     {lang === 'en' 
                         ? 'SunGene does not sell generic lists, nor do we just send a few outreach emails. We transform export development into a sustainable, deal-closing process.' 
                         : lang === 'cn' 
-                        ? 'SunGene 不卖公版名单，也不是只帮你寄几封开发信。我们做的是把外贸开发变成一套可持续推进的成交流程。' 
-                        : 'SunGene 不賣公版名單，也不是只幫你寄幾封開發信。我們做的是把外銷開發變成一套可持續推進的成交流程。'}
+                        ? 'SunGene 不卖公版资料，也不是只帮你寄几封开发信。我们做的是把外贸开发变成一套可持续推进的成交流程。' 
+                        : 'SunGene 不賣公版資料，也不是只幫你寄幾封開發信。我們做的是把外銷開發變成一套可持續推進的成交流程。'}
                 </p>
                 <div className="h-1 w-24 bg-blue-600 rounded-full"></div>
             </div>

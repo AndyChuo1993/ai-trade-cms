@@ -9,7 +9,7 @@ export default function CasePreview({ lang }: { lang: Lang }) {
       slug: 'hardware',
       title: lang === 'en' ? 'Hardware Tools | European Market' : lang === 'cn' ? '五金工具｜欧洲市场' : '五金工具｜歐洲市場',
       market: lang === 'en' ? 'Europe' : lang === 'cn' ? '欧洲市场' : '歐洲市場',
-      reach: lang === 'en' ? 'Built 120+ Decision Makers' : lang === 'cn' ? '建立 120+ 决策人名单' : '建立 120+ 決策人名單',
+      reach: lang === 'en' ? 'Built 120+ Decision Makers' : lang === 'cn' ? '建立 120+ 决策人资料' : '建立 120+ 決策人資料',
       replies: lang === 'en' ? 'Got 15 Valid Replies' : lang === 'cn' ? '取得 15 个有效回复' : '取得 15 個有效回覆',
       progress: lang === 'en' ? 'Advanced 3 Quote Opportunities' : lang === 'cn' ? '推进 3 个报价机会' : '推進 3 個報價機會',
       tags: lang === 'en' ? ['Hardware', 'Europe', 'Lead Gen'] : lang === 'cn' ? ['五金工具', '欧洲市场', '客户开发'] : ['五金工具', '歐洲市場', '客戶開發'],

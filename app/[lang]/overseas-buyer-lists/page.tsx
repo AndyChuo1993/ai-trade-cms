@@ -5,8 +5,8 @@ import { cnText } from '@/lib/cnText'
 const service: ServiceSeo = {
   slug: 'overseas-buyer-lists',
   title: {
-    cn: '海外采购名单与决策人资料建置｜SunGene',
-    zh: '海外採購名單與決策人資料建置｜SunGene',
+    cn: '海外采购资料与决策人资料建置｜SunGene',
+    zh: '海外採購資料與決策人資料建置｜SunGene',
     en: 'Buyer Research & Decision-Maker Data Buildout | SunGene',
   },
   description: {
@@ -14,7 +14,7 @@ const service: ServiceSeo = {
     zh: '建立可直接推進的客戶開發資料庫：包含公司、決策人、職位、Email、LinkedIn與公司網站，為主動開發打好基礎。',
     en: 'Build actionable prospect databases including company, decision-maker, title, email, LinkedIn, and website to prepare for outreach.',
   },
-  h1: { cn: '海外采购名单与决策人资料建置', zh: '海外採購名單與決策人資料建置', en: 'Buyer Research & Decision-Maker Data Buildout' },
+  h1: { cn: '海外采购资料与决策人资料建置', zh: '海外採購資料與決策人資料建置', en: 'Buyer Research & Decision-Maker Data Buildout' },
   problem: {
     cn: ['资料不准，寄了没回还跳退。', '没有决策人资料，只能寄到一般信箱。', '资料缺分层与标注，无法支援后续跟进。'],
     zh: ['資料不準，寄了沒回還跳退。', '沒有決策人資料，只能寄到一般信箱。', '資料缺分層與標註，無法支援後續跟進。'],
@@ -73,14 +73,14 @@ const service: ServiceSeo = {
       { label: '符合 ICP', value: '800' },
       { label: '決策人', value: '500' },
       { label: '可投遞', value: '350' },
-      { label: '優先名單', value: '200' },
+      { label: '優先資料', value: '200' },
     ],
     zh: [
       { label: '候選公司', value: '3000' },
       { label: '符合 ICP', value: '800' },
       { label: '決策人', value: '500' },
       { label: '可投遞', value: '350' },
-      { label: '優先名單', value: '200' },
+      { label: '優先資料', value: '200' },
     ],
     en: [
       { label: 'Candidates', value: '3000' },

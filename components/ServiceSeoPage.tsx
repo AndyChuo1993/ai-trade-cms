@@ -452,7 +452,7 @@ export default function ServiceSeoPage({ lang, service }: { lang: Lang; service:
                     <div key={i} className="rounded-lg border border-gray-200 bg-gray-50 p-4">
                       <div className="font-semibold text-gray-900">{tr(x)}</div>
                       <div className="mt-2 text-sm text-gray-600">
-                        {lang === 'en' ? 'Research, lists, outreach, and progression' : (lang === 'cn' ? '市场研究、名单、開發與推進' : '市場研究、名單、開發與推進')}
+                        {lang === 'en' ? 'Research, lists, outreach, and progression' : (lang === 'cn' ? '市场研究、决策人资料、開發與推進' : '市場研究、決策人資料、開發與推進')}
                       </div>
                     </div>
                   ))}

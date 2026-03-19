@@ -1,4 +1,4 @@
-﻿﻿﻿﻿export type Lang = 'zh' | 'en' | 'cn'
+﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿export type Lang = 'zh' | 'en' | 'cn'
 
 const dict = {
   'cn': {
@@ -20,7 +20,7 @@ const dict = {
     // Hero
     hero_title: '为你的产品找到海外买家',
     hero_subtitle: '用可复制的方法，把外贸开发做成稳定的系统。',
-    hero_description: 'SunGene 协助企业建立海外买家名单、持续获取合格询盘，并建立海外经销渠道网络。',
+    hero_description: 'SunGene 协助外贸企业开发海外客户、建立渠道合作，并以可持续推进的方式把商机转成报价与订单。',
     hero_cta_start: '开始开发海外客户',
     hero_cta_analysis: '获取市场切入建议',
     home_cta_title: '立即开始你的外贸增长',
@@ -29,7 +29,7 @@ const dict = {
     home_service_1_title: '外贸客户开发',
     home_service_1_desc: '协助你持续获取海外买家询盘',
     home_service_2_title: '经销商开发',
-    home_service_2_desc: '建立海外渠道伙伴名单并推进合作',
+    home_service_2_desc: '建立海外渠道伙伴资料并推进合作',
     home_service_3_title: '外贸业务外包服务',
     home_service_3_desc: '你只需报价与出货，其余我们承接',
     
@@ -44,7 +44,7 @@ const dict = {
     process_1_title: '市场分析',
     process_1_desc: '市场研究与优先顺序',
     process_2_title: '买家识别',
-    process_2_desc: '建立可投递的买家名单',
+    process_2_desc: '建立可投递的开发准备资料',
     process_3_title: '开发活动',
     process_3_desc: '多触点开发与跟进',
     process_4_title: '询盘交付',
@@ -59,11 +59,11 @@ const dict = {
     service_lead_gen_title: '外贸客户开发',
     service_lead_gen_desc: '为外贸企业找海外买家并交付合格询盘',
     service_lead_gen_sub1: '买家研究与资料验证',
-    service_lead_gen_sub2: '买家资料库与可用名单',
+    service_lead_gen_sub2: '买家资料库与可用资料',
     service_lead_gen_sub3: '节奏式跟进与回复分类',
 
     service_outreach_title: '经销商开发',
-    service_outreach_desc: '建立海外渠道伙伴名单并推进合作',
+    service_outreach_desc: '建立海外渠道伙伴资料并推进合作',
     service_outreach_sub1: '市场分层与渠道地图',
     service_outreach_sub2: '伙伴招募与初步筛选',
     service_outreach_sub3: '合作条件与方案框架',
@@ -92,7 +92,7 @@ const dict = {
 
     // About Page
     about_title: '关于我们',
-    about_desc: 'SunGene 是一家专注于外贸增长的服务公司，我们不卖软件，而是直接帮企业找到买家。通过精准的名单与专业的开发流程，我们协助企业拓展全球市场。',
+    about_desc: 'SunGene 是一家专注于外贸增长的服务公司，我们不卖软件，而是直接帮企业找到买家。通过精准的决策人资料与专业的开发流程，我们协助企业拓展全球市场。',
     about_stats_title: '我们的成绩',
 
     // Contact Page
@@ -106,7 +106,7 @@ const dict = {
 
     // SEO
     meta_home_title: 'SunGene 外贸客户开发与外贸外包服务 | 外贸拓展专家',
-    meta_home_desc: 'SunGene 帮助企业开发海外客户，提供从客户名单建立、开发信撰写到询盘跟进的完整外贸外包服务。',
+    meta_home_desc: 'SunGene 帮助企业开发海外客户，提供从海外采购与决策人资料建置、开发信撰写到询盘跟进的完整外贸外包服务。',
     meta_keywords: '外贸客户开发, 外贸外包服务, 海外客户开发, B2B业务外包',
     
     // Footer
@@ -131,7 +131,7 @@ const dict = {
     // Hero
     hero_title: '為你的產品找到海外買家',
     hero_subtitle: '用可複製的方法，把外銷開發做成穩定的系統。',
-    hero_description: 'SunGene 協助企業建立海外買家名單、持續獲取合格詢價，並建立海外經銷通路網路。',
+    hero_description: 'SunGene 協助外銷企業開發海外客戶、建立通路合作，並以可持續推進的方式把商機轉成報價與訂單。',
     hero_cta_start: '開始開發海外客戶',
     hero_cta_analysis: '取得市場切入建議',
     home_cta_title: '立即開始你的外銷成長',
@@ -140,7 +140,7 @@ const dict = {
     home_service_1_title: '外銷客戶開發',
     home_service_1_desc: '協助你持續獲取海外買家詢價',
     home_service_2_title: '經銷商開發',
-    home_service_2_desc: '建立海外通路夥伴名單並推進合作',
+    home_service_2_desc: '建立海外通路夥伴資料並推進合作',
     home_service_3_title: '外銷業務外包服務',
     home_service_3_desc: '你只需報價與出貨，其餘我們承接',
     
@@ -155,7 +155,7 @@ const dict = {
     process_1_title: '市場分析',
     process_1_desc: '市場研究與優先順序',
     process_2_title: '買家識別',
-    process_2_desc: '建立可投遞的買家名單',
+    process_2_desc: '建立可投遞的開發準備資料',
     process_3_title: '開發活動',
     process_3_desc: '多觸點開發與跟進',
     process_4_title: '詢價交付',
@@ -170,11 +170,11 @@ const dict = {
     service_lead_gen_title: '外銷客戶開發',
     service_lead_gen_desc: '為外銷企業找海外買家並交付合格詢價',
     service_lead_gen_sub1: '買家研究與資料驗證',
-    service_lead_gen_sub2: '買家資料函式庫與可用名單',
+    service_lead_gen_sub2: '採購與決策人資料庫建置',
     service_lead_gen_sub3: '節奏式跟進與回覆分類別',
 
     service_outreach_title: '經銷商開發',
-    service_outreach_desc: '建立海外通路夥伴名單並推進合作',
+    service_outreach_desc: '建立海外通路夥伴資料並推進合作',
     service_outreach_sub1: '市場分層與通路地圖',
     service_outreach_sub2: '夥伴招募與初步篩選',
     service_outreach_sub3: '合作條件與方案框架',
@@ -203,7 +203,7 @@ const dict = {
 
     // About Page
     about_title: '關於我們',
-    about_desc: 'SunGene 是一家專注於外銷增長的服務公司，我們不賣軟體，而是直接幫企業找到買家。透過精準的名單與專業的開發流程，我們協助企業拓展全球市場。',
+    about_desc: 'SunGene 是一家專注於外銷增長的服務公司，我們不賣軟體，而是直接幫企業找到買家。透過精準的決策人資料與專業的開發流程，我們協助企業拓展全球市場。',
     about_stats_title: '我們的成績',
 
     // Contact Page
@@ -217,7 +217,7 @@ const dict = {
 
     // SEO
     meta_home_title: 'SunGene 外銷客戶開發與外銷外包服務 | 外銷拓展專家',
-    meta_home_desc: 'SunGene 幫助企業開發海外客戶，提供從客戶名單建立、開發信撰寫到詢價跟進的完整外銷外包服務。',
+    meta_home_desc: 'SunGene 幫助企業開發海外客戶，提供從海外採購與決策人資料建置、開發信撰寫到詢價跟進的完整外銷外包服務。',
     meta_keywords: '外銷客戶開發, 外銷外包服務, 海外客戶開發, 企業對企業業務外包',
     
     // Footer
@@ -242,7 +242,7 @@ const dict = {
     // Hero
     hero_title: 'Find Overseas Buyers for Your Products',
     hero_subtitle: 'A repeatable system to generate qualified export leads and build distributor networks.',
-    hero_description: 'SunGene helps companies build overseas buyer lists, run outbound cadences, and deliver qualified inquiries—so your team can focus on quoting and shipping.',
+    hero_description: 'SunGene helps export companies develop overseas customers, build channel partnerships, and turn opportunities into quotes and orders through a repeatable system.',
     hero_cta_start: 'Start Export Growth',
     hero_cta_analysis: 'Get Free Market Analysis',
     home_cta_title: 'Start Your Export Growth Now',
