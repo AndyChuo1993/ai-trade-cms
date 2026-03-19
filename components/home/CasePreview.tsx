@@ -7,34 +7,38 @@ export default function CasePreview({ lang }: { lang: Lang }) {
   const cases = [
     {
       slug: 'hardware',
-      title: lang === 'en' ? 'Hardware Products | European Market' : lang === 'cn' ? '五金产品｜欧洲市场' : '五金產品｜歐洲市場',
-      desc: lang === 'en' ? 'Built 120+ decision-makers in 8 weeks. Secured 15 valid replies and advanced 3 quoting opportunities.' : lang === 'cn' ? '8周建立120+决策人，取得15个有效回复，推进3个报价机会。' : '8週建立120+決策人，取得15個有效回覆，推進3個報價機會。',
+      title: lang === 'en' ? 'Hardware Tools | European Market' : lang === 'cn' ? '五金工具｜欧洲市场' : '五金工具｜歐洲市場',
+      desc: lang === 'en' ? '8 weeks, 120+ decision-makers, 15 valid replies. Successfully obtained multiple business opportunities that can enter the quotation process.' : lang === 'cn' ? '8 週建立 120+ 決策人，取得 15 個有效回覆。協助企業建立海外買家名單並推進客戶開發，成功取得多個可進入報價流程的商機。' : '8 週建立 120+ 決策人，取得 15 個有效回覆。協助企業建立海外買家名單並推進客戶開發，成功取得多個可進入報價流程的商機。',
       tags: lang === 'en' ? ['Hardware', 'Europe', 'Lead Gen'] : lang === 'cn' ? ['五金工具', '欧洲市场', '客户开发'] : ['五金工具', '歐洲市場', '客戶開發'],
-      cover: '/cases/hardware.png',
+      cover: '/cases/hardware-cover.svg',
       industry: lang === 'en' ? 'Hardware' : lang === 'cn' ? '五金工具' : '五金工具',
       market: lang === 'en' ? 'Europe' : lang === 'cn' ? '欧洲市场' : '歐洲市場',
-      result: lang === 'en' ? '15 valid replies, 3 quoting opportunities' : lang === 'cn' ? '取得15个有效回复，推进3个报价机会' : '取得15個有效回覆，推進3個報價機會',
-      summary: lang === 'en' ? 'Built 120+ decision-makers in 8 weeks.' : lang === 'cn' ? '8周建立120+决策人' : '8週建立120+決策人'
+      result: lang === 'en' ? '15 valid replies, 3 quoting opportunities' : lang === 'cn' ? '8 週建立 120+ 決策人，取得 15 個有效回覆' : '8 週建立 120+ 決策人，取得 15 個有效回覆',
+      summary: lang === 'en' ? '8 weeks, 120+ decision-makers' : lang === 'cn' ? '协助企业建立海外买家名单并推进客户开发，成功取得多个可进入报价流程的商机。' : '協助企業建立海外買家名單並推進客戶開發，成功取得多個可進入報價流程的商機。'
     },
     {
       slug: 'electronics',
-      title: lang === 'en' ? 'Electronic Products | US Market' : lang === 'cn' ? '电子产品｜美国市场' : '電子產品｜美國市場',
-      desc: lang === 'en' ? 'Penetrated supply chain procurement and established long-term inquiry opportunities.' : lang === 'cn' ? '切入供应链采购，建立长期询价机会。' : '切入供應鏈採購，建立長期詢價機會。',
+      title: lang === 'en' ? 'Electronic Parts | North American Market' : lang === 'cn' ? '电子零件｜北美市场' : '電子零件｜北美市場',
+      desc: lang === 'en' ? 'Penetrated supply chain procurement and established long-term inquiry opportunities through overseas customer development process.' : lang === 'cn' ? '透過海外客戶開發流程，協助企業接觸採購決策者並建立可持續的商務對話。' : '透過海外客戶開發流程，協助企業接觸採購決策者並建立可持續的商務對話。',
       tags: lang === 'en' ? ['Electronics', 'USA', 'Supply Chain'] : lang === 'cn' ? ['电子零件', '美国市场', '供应链打入'] : ['電子零件', '美國市場', '供應鏈打入'],
-      cover: '/cases/electronics.png',
+      cover: '/cases/electronics-cover.svg',
       industry: lang === 'en' ? 'Electronics' : lang === 'cn' ? '电子零件' : '電子零件',
-      market: lang === 'en' ? 'USA' : lang === 'cn' ? '美国市场' : '美國市場',
-      result: lang === 'en' ? 'Established long-term inquiry opportunities' : lang === 'cn' ? '建立长期询价机会' : '建立長期詢價機會',
-      summary: lang === 'en' ? 'Penetrated supply chain procurement' : lang === 'cn' ? '切入供应链采购' : '切入供應鏈採購'
+      market: lang === 'en' ? 'North America' : lang === 'cn' ? '北美市场' : '北美市場',
+      result: lang === 'en' ? 'Established long-term inquiry opportunities' : lang === 'cn' ? '切入供应链采购，建立长期询价机会' : '切入供應鏈採購，建立長期詢價機會',
+      summary: lang === 'en' ? 'Supply chain penetration' : lang === 'cn' ? '透過海外客户开发流程，协助企业接触采购决策者并建立可持续的商务对话。' : '透過海外客戶開發流程，協助企業接觸採購決策者並建立可持續的商務對話。'
     }
   ]
 
   return (
     <section className="py-24 bg-white">
       <div className="mx-auto max-w-7xl px-6">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">{lang === 'en' ? 'Success Stories' : (lang === 'cn' ? '成功案例' : '成功案例')}</h2>
-          <p className="text-xl text-gray-500 max-w-2xl mx-auto">{lang === 'en' ? 'See how we help enterprises go global' : (lang === 'cn' ? '看看我们如何帮助企业走向世界' : '看看我們如何幫助企業走向世界')}</p>
+        <div className="mb-16">
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            {lang === 'en' ? 'Success Cases' : (lang === 'cn' ? '成功案例' : '成功案例')}
+          </h2>
+          <p className="text-gray-600 max-w-2xl text-lg">
+            {lang === 'en' ? 'See how we help export companies go global.' : (lang === 'cn' ? '看看我们如何帮外贸企业走向世界' : '看看我們幫外銷企業走向世界')}
+          </p>
         </div>
         
         <div className="grid md:grid-cols-2 gap-12 mb-12">

@@ -39,9 +39,11 @@ export default function WhyUs({ lang }: { lang: Lang }) {
                     {lang === 'en' ? 'How we differ from typical lead gen agencies' : lang === 'cn' ? '我们和一般外贸开发最大的不同' : '我們和一般外貿開發最大的不同'}
                 </h2>
                 <p className="text-xl text-gray-600 mb-8 leading-relaxed">
-                    {isChinese 
-                        ? 'SunGene 專注於企業外銷開發。我們重視的是可執行的流程：從名單、開發、跟進到詢問交付，建立一套可持續運作的系統。' 
-                        : 'SunGene focuses on B2B export growth for companies. We do not sell tool hype. We build a repeatable system for list building, outreach, follow-ups, and inquiry delivery.'}
+                    {lang === 'en' 
+                        ? 'SunGene does not sell generic lists, nor do we just send a few outreach emails. We transform export development into a sustainable, deal-closing process.' 
+                        : lang === 'cn' 
+                        ? 'SunGene 不卖公版名单，也不是只帮你寄几封开发信。我们做的是把外贸开发变成一套可持续推进的成交流程。' 
+                        : 'SunGene 不賣公版名單，也不是只幫你寄幾封開發信。我們做的是把外銷開發變成一套可持續推進的成交流程。'}
                 </p>
                 <div className="h-1 w-24 bg-blue-600 rounded-full"></div>
             </div>

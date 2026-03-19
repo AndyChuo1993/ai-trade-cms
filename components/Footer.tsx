@@ -20,50 +20,68 @@ export default function Footer({ lang }: { lang: Lang }) {
             </h3>
             <p className="text-gray-400 max-w-sm leading-relaxed mb-6">
               {lang === 'en' 
-                ? 'SunGene is the export service brand of SunGene Co., Ltd. Our teams in Taiwan and overseas jointly support your market development.' 
+                ? 'SunGene is the export service brand of SunGene Co., Ltd. Our teams in Taiwan and overseas jointly support market development and client progression.' 
                 : (lang === 'cn' 
-                  ? 'SunGene 为上瑾铼有限公司之外贸服务品牌。台湾与海外团队共同支持您的市场开发。' 
-                  : 'SunGene 為上瑾錸有限公司之外銷服務品牌。台灣與海外團隊共同支援市場開發。')}
+                  ? 'SunGene 为上瑾铼有限公司之外贸服务品牌，台湾与海外团队共同支持市场开发与客户推进。' 
+                  : 'SunGene 為上瑾錸有限公司之外銷服務品牌，台灣與海外團隊共同支援市場開發與客戶推進。')}
             </p>
-            <div className="text-gray-400 text-sm space-y-2">
+            <div className="text-gray-400 text-sm space-y-6">
               {lang === 'en' ? (
                 <>
-                  <div className="font-bold text-white">SunGene Co., Ltd.</div>
-                  <div>Tax ID: 94111922</div>
-                  <div>No. 201, Guangfu Rd., Central Dist., Taichung City, Taiwan</div>
-                  <div>Phone: +886 43703 2705</div>
-                  <div>LINE: @sungene</div>
-                  <div>Email: contact@sungenelite.com</div>
+                  <div>
+                    <div className="font-bold text-white mb-2 pb-1 border-b border-gray-800">Taiwan Office</div>
+                    <div className="font-bold text-white/90">SunGene Co., Ltd.</div>
+                    <div>Tax ID: 94111922</div>
+                    <div>No. 201, Guangfu Rd., Central Dist., Taichung City, Taiwan</div>
+                    <div>Phone: +886 43703 2705</div>
+                    <div>LINE: @sungene</div>
+                    <div>Email: contact@sungenelite.com</div>
+                  </div>
                   
-                  <div className="pt-2 font-bold text-white">Xiamen SunGene Trading Co., Ltd.</div>
-                  <div>Unit 1001-2, Building A1, Yincheng Zhigu, No. 6788-1 Binhai West Avenue, Tongan District, Xiamen City</div>
-                  <div>Phone: 18144132078 (WeChat included)</div>
+                  <div>
+                    <div className="font-bold text-white mb-2 pb-1 border-b border-gray-800">Overseas Office</div>
+                    <div className="font-bold text-white/90">Xiamen SunGene Trading Co., Ltd.</div>
+                    <div>Unit 1001-2, Building A1, Yincheng Zhigu, No. 6788-1 Binhai West Avenue, Tongan District, Xiamen City</div>
+                    <div>Phone: 18144132078 (WeChat included)</div>
+                  </div>
                 </>
               ) : lang === 'cn' ? (
                 <>
-                  <div className="font-bold text-white">上瑾铼有限公司</div>
-                  <div>统一编号：94111922</div>
-                  <div>台中市中区光复路201号</div>
-                  <div>+886 43703 2705</div>
-                  <div>LINE账号：@sungene</div>
-                  <div>电子邮箱：contact@sungenelite.com</div>
+                  <div>
+                    <div className="font-bold text-white mb-2 pb-1 border-b border-gray-800">台湾据点</div>
+                    <div className="font-bold text-white/90">上瑾铼有限公司</div>
+                    <div>统一编号：94111922</div>
+                    <div>台中市中区光复路201号</div>
+                    <div>+886 43703 2705</div>
+                    <div>LINE账号：@sungene</div>
+                    <div>电子邮箱：contact@sungenelite.com</div>
+                  </div>
                   
-                  <div className="pt-2 font-bold text-white">厦门上瑾铼贸易有限公司</div>
-                  <div>厦门市同安区滨海西大道6788-1号银城智谷A1栋1001单元之二</div>
-                  <div>电话：18144132078 (微信同号)</div>
+                  <div>
+                    <div className="font-bold text-white mb-2 pb-1 border-b border-gray-800">海外据点</div>
+                    <div className="font-bold text-white/90">厦门上瑾铼贸易有限公司</div>
+                    <div>厦门市同安区滨海西大道6788-1号银城智谷A1栋1001单元之二</div>
+                    <div>电话：18144132078 (微信同号)</div>
+                  </div>
                 </>
               ) : (
                 <>
-                  <div className="font-bold text-white">上瑾錸有限公司</div>
-                  <div>統一編號：94111922</div>
-                  <div>台中市中區光復路201號</div>
-                  <div>+886 43703 2705</div>
-                  <div>LINE帳號：@sungene</div>
-                  <div>電子信箱：contact@sungenelite.com</div>
+                  <div>
+                    <div className="font-bold text-white mb-2 pb-1 border-b border-gray-800">台灣據點</div>
+                    <div className="font-bold text-white/90">上瑾錸有限公司</div>
+                    <div>統一編號：94111922</div>
+                    <div>台中市中區光復路201號</div>
+                    <div>+886 43703 2705</div>
+                    <div>LINE帳號：@sungene</div>
+                    <div>電子信箱：contact@sungenelite.com</div>
+                  </div>
                   
-                  <div className="pt-2 font-bold text-white">厦门上瑾铼贸易有限公司</div>
-                  <div>厦门市同安区滨海西大道6788-1号银城智谷A1栋1001单元之二</div>
-                  <div>电话：18144132078 (微信同號)</div>
+                  <div>
+                    <div className="font-bold text-white mb-2 pb-1 border-b border-gray-800">海外據點</div>
+                    <div className="font-bold text-white/90">厦门上瑾铼贸易有限公司</div>
+                    <div>厦门市同安区滨海西大道6788-1号银城智谷A1栋1001单元之二</div>
+                    <div>電話：18144132078 (微信同號)</div>
+                  </div>
                 </>
               )}
             </div>

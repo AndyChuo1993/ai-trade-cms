@@ -25,15 +25,15 @@ export default function HeroSection({ lang }: { lang: Lang }) {
 
             <h1 className="mb-8 text-5xl font-bold leading-[1.1] tracking-tight text-gray-900 md:text-7xl">
               {lang === 'en'
-                ? 'Find overseas buyers and channels that actually order'
+                ? 'Find "Ordering" Overseas Buyers & Channels'
                 : lang === 'cn'
-                ? '帮外贸企业找到「会下单」的海外客户与渠道'
+                ? '帮外贸企业找到「会下单」的海外客户与通路'
                 : '幫外銷企業找到「會下單」的海外客戶與通路'}
             </h1>
 
             <p className="mx-auto mb-10 max-w-3xl text-xl leading-relaxed text-gray-600 md:text-2xl lg:mx-0">
               {lang === 'en'
-                ? 'From prospecting and procurement matchmaking to inquiry triage and quoting. We build an export development system that continuously generates orders.'
+                ? 'From prospecting and procurement matchmaking to inquiry triage and quoting. Build an export system that continuously generates orders.'
                 : lang === 'cn'
                 ? '从客户开发、采购对接、询价筛选到报价推进，建立一套能持续产生订单的外贸开发系统。'
                 : '從客戶開發、採購對接、詢價篩選到報價推進，建立一套能持續產生訂單的外銷開發系統。'}
@@ -47,7 +47,7 @@ export default function HeroSection({ lang }: { lang: Lang }) {
                 {lang === 'en' ? 'Get Market Entry Advice' : lang === 'cn' ? '取得市场切入建议' : '取得市場切入建議'}
               </Link>
               <Link
-                href={`/${lang}/services/export-lead-generation`}
+                href={`/${lang}/services`}
                 className="inline-flex items-center justify-center rounded-sm border-2 border-gray-200 bg-white px-8 py-4 text-lg font-bold text-gray-900 transition duration-300 hover:border-blue-900 hover:text-blue-900"
               >
                 {lang === 'en' ? 'See How We Find Clients' : lang === 'cn' ? '看看我们怎么帮你找到客户' : '看看我們怎麼幫你找到客戶'}
@@ -69,20 +69,20 @@ export default function HeroSection({ lang }: { lang: Lang }) {
             <div className="mt-14 grid gap-4 border-t border-gray-100 pt-8 text-left md:grid-cols-3">
               {[
                 {
-                  title: lang === 'en' ? 'Continuous Overseas Opportunities' : lang === 'cn' ? '持续拿到海外商机' : '持續拿到海外商機',
+                  title: lang === 'en' ? 'Consistent Overseas Opportunities' : lang === 'cn' ? '不靠运气，也能持续拿到海外商机' : '不靠運氣，也能持續拿到海外商機',
                   desc: lang === 'en'
                     ? 'Proactively develop overseas procurement and decision-makers instead of waiting for inquiries.'
                     : lang === 'cn'
-                    ? '主动开发海外采购与决策人，而不是等待询盘，不靠运气也能成交。'
-                    : '主動開發海外採購與決策人，而不是等待詢盤，不靠運氣也能成交。',
+                    ? '主动开发海外采购与决策人，而不是被动等待询盘。'
+                    : '主動開發海外採購與決策人，而不是被動等待詢盤。',
                 },
                 {
-                  title: lang === 'en' ? 'No Need for a Full Team' : lang === 'cn' ? '不用养整个外贸团队' : '不用養整個外銷團隊',
+                  title: lang === 'en' ? 'No Need for a Full Team' : lang === 'cn' ? '不用自己养整个外贸团队' : '不用自己養整個外銷團隊',
                   desc: lang === 'en'
                     ? 'Activate an external team immediately to start market development and follow-up.'
                     : lang === 'cn'
-                    ? '直接启动外部团队，开始市场开发与跟进，大幅降低人事成本。'
-                    : '直接啟動外部團隊，開始市場開發與跟進，大幅降低人事成本。',
+                    ? '直接启动外部团队，开始市场开发与跟进，降低人事与试错成本。'
+                    : '直接啟動外部團隊，開始市場開發與跟進，降低人事與試錯成本。',
                 },
                 {
                   title: lang === 'en' ? 'Weekly Visible Progress' : lang === 'cn' ? '每周看得到实际进展' : '每週看得到實際進展',

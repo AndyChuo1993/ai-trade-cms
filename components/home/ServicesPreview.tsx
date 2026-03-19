@@ -9,12 +9,12 @@ export default function ServicesPreview({ lang }: { lang: Lang }) {
   const services = [
     {
       id: 1,
-      title: isEn ? 'Export Lead Generation' : isCn ? '外贸客户开发' : '外銷客戶開發',
+      title: isEn ? 'Export Lead Generation' : isCn ? '直接对接海外采购与决策人' : '直接對接海外採購與決策人',
       desc: isEn
-        ? 'Find buyers who will order, not just lists. Direct to overseas procurement.'
+        ? 'Find buyers with actual procurement needs and advance to quotation and cooperation.'
         : isCn
-        ? '找到「会下单」的海外客户，协助你直接对接海外采购'
-        : '找到「會下單」的海外客戶，協助你直接對接海外採購',
+        ? '帮您找到有实际采购需求的客户，并推进到报价与合作阶段'
+        : '幫您找到有實際採購需求的客戶，並推進到報價與合作階段',
       items: isEn
         ? ['Target procurement decision-makers', 'Develop buyers with active needs', 'Filter qualified inquiries for quoting', 'Push to actual business negotiation']
         : isCn
@@ -29,17 +29,17 @@ export default function ServicesPreview({ lang }: { lang: Lang }) {
     },
     {
       id: 2,
-      title: isEn ? 'Distributor Development' : isCn ? '经销商开发' : '經銷商開發',
+      title: isEn ? 'Distributor Development' : isCn ? '帮您打进当地通路，建立经销体系' : '幫您打進當地通路，建立經銷體系',
       desc: isEn
-        ? 'Penetrate local channels, build actionable distributor networks.'
+        ? 'Not just a list of agents, but helping you find partners who can truly sell.'
         : isCn
-        ? '帮你打进当地通路，建立可合作的海外经销体系'
-        : '幫你打進當地通路，建立可合作的海外經銷體系',
+        ? '不只是给你一份代理名单，而是协助你找到真正能卖货的合作伙伴'
+        : '不只是給你一份代理名單，而是協助你找到真正能賣貨的合作夥伴',
       items: isEn
         ? ['Analyze local channel structures', 'Filter capable distributors', 'Establish partnership dialogues', 'Advance to evaluation and sampling']
         : isCn
-        ? ['分析目标市场通路结构', '精准筛选有销售能力的经销商', '协助建立合作对话（不是丢名单）', '推进至合作评估与样品阶段']
-        : ['分析目標市場通路結構', '精準篩選有銷售能力的經銷商', '協助建立合作對話（不是丟名單）', '推進至合作評估與樣品階段'],
+        ? ['分析目标市场通路结构', '精准筛选有销售能力的经销商', '协助建立合作对话', '推进至合作评估与样品阶段']
+        : ['分析目標市場通路結構', '精準篩選有銷售能力的經銷商', '協助建立合作對話', '推進至合作評估與樣品階段'],
       link: `/${lang}/services/distributor-development`,
       icon: (
         <svg className="h-10 w-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -49,12 +49,12 @@ export default function ServicesPreview({ lang }: { lang: Lang }) {
     },
     {
       id: 3,
-      title: isEn ? 'Export Sales Outsourcing' : isCn ? '外贸业务外包' : '外銷業務外包',
+      title: isEn ? 'Export Sales Outsourcing' : isCn ? '直接帮您做外销业务，目标是成交' : '直接幫您做外銷業務，目標是成交',
       desc: isEn
-        ? 'Direct export sales execution. The goal is closing, not just prospecting.'
+        ? 'Direct export sales execution from development to follow-up, all the way to orders.'
         : isCn
-        ? '直接帮你做外贸业务，全程推进到订单成交'
-        : '直接幫你做外銷業務，全程推進到訂單成交',
+        ? '从开发到跟进，全程推进到订单'
+        : '從開發到跟進，全程推進到訂單',
       items: isEn
         ? ['Continuous overseas prospecting', 'Inquiry follow-up and requirement gathering', 'Assist with quoting and negotiation', 'Push through to order closing']
         : isCn

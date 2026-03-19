@@ -9,7 +9,11 @@ export default function CTASection({ lang }: { lang: Lang }) {
           {lang === 'en' ? 'Which export path fits your product?' : lang === 'cn' ? '先确认你的产品适合哪种外销路径' : '先確認你的產品適合哪種外銷路徑'}
         </h2>
         <p className="mb-10 text-xl text-blue-100">
-          {lang === 'en' ? 'Get a market assessment or book a strategy call to explore your opportunities.' : lang === 'cn' ? '取得市场评估或预约策略通话，找出最有效的开发方式。' : '取得市場評估或預約策略通話，找出最有效的開發方式。'}
+          {lang === 'en' 
+            ? 'Not sure whether to look for buyers directly, find distributors, or have an external team push it through? Let us help you determine the most suitable entry point.' 
+            : lang === 'cn' 
+            ? '不确定该直接找买家、找经销商，还是交给外部团队推进？先让我们帮您判断最适合的切入方式。' 
+            : '不確定該直接找買家、找經銷商，還是交給外部團隊推進？先讓我們幫您判斷最適合的切入方式。'}
         </p>
         <div className="flex flex-col justify-center gap-4 sm:flex-row">
           <Link

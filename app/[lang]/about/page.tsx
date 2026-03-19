@@ -106,17 +106,19 @@ export default async function Page({ params }: { params: Promise<{ lang: Lang }>
               <div className="rounded-lg bg-white p-5 shadow-sm border-t-4 border-t-blue-600">
                 <div className="font-bold text-gray-900 mb-3">{lang === 'en' ? 'Ideal Fit' : (lang === 'cn' ? '适合客户' : '適合客戶')}</div>
                 <ul className="space-y-2 text-gray-600 text-sm">
-                  <li className="flex items-center"><span className="mr-2 h-1.5 w-1.5 rounded-full bg-blue-500"></span>{lang === 'en' ? 'Export companies / Traders / Manufacturers' : (lang === 'cn' ? '外贸企业 / 贸易商 / 制造商' : '外銷企業 / 貿易商 / 製造商')}</li>
-                  <li className="flex items-center"><span className="mr-2 h-1.5 w-1.5 rounded-full bg-blue-500"></span>{lang === 'en' ? 'Have existing products and supply capacity' : (lang === 'cn' ? '已有产品与供应能力' : '已有產品與供應能力')}</li>
-                  <li className="flex items-center"><span className="mr-2 h-1.5 w-1.5 rounded-full bg-blue-500"></span>{lang === 'en' ? 'Want to expand into overseas markets' : (lang === 'cn' ? '想拓展海外市场' : '想拓展海外市場')}</li>
+                  <li className="flex items-start"><span className="mr-2 mt-1.5 h-1.5 w-1.5 rounded-full bg-blue-500 shrink-0"></span>{lang === 'en' ? 'Export companies / Traders / Manufacturers' : (lang === 'cn' ? '外贸企业 / 贸易商 / 制造商' : '外銷企業 / 貿易商 / 製造商')}</li>
+                  <li className="flex items-start"><span className="mr-2 mt-1.5 h-1.5 w-1.5 rounded-full bg-blue-500 shrink-0"></span>{lang === 'en' ? 'Have existing products and supply capacity' : (lang === 'cn' ? '已有产品与供应能力' : '已有產品與供應能力')}</li>
+                  <li className="flex items-start"><span className="mr-2 mt-1.5 h-1.5 w-1.5 rounded-full bg-blue-500 shrink-0"></span>{lang === 'en' ? 'Want to expand into overseas markets' : (lang === 'cn' ? '想拓展海外市场' : '想拓展海外市場')}</li>
+                  <li className="flex items-start"><span className="mr-2 mt-1.5 h-1.5 w-1.5 rounded-full bg-blue-500 shrink-0"></span>{lang === 'en' ? 'Willing to cooperate with quotes and replies' : (lang === 'cn' ? '愿意配合报价与客户回复' : '願意配合報價與客戶回覆')}</li>
                 </ul>
               </div>
               <div className="rounded-lg bg-white p-5 shadow-sm border-t-4 border-t-gray-300">
                 <div className="font-bold text-gray-900 mb-3">{lang === 'en' ? 'Not a Fit' : (lang === 'cn' ? '不适合' : '不適合')}</div>
                 <ul className="space-y-2 text-gray-600 text-sm">
-                  <li className="flex items-center"><span className="mr-2 h-1.5 w-1.5 rounded-full bg-gray-400"></span>{lang === 'en' ? 'Just want to buy a list' : (lang === 'cn' ? '只想买名单' : '只想買名單')}</li>
-                  <li className="flex items-center"><span className="mr-2 h-1.5 w-1.5 rounded-full bg-gray-400"></span>{lang === 'en' ? 'Lack quoting capabilities' : (lang === 'cn' ? '没有报价能力' : '沒有報價能力')}</li>
-                  <li className="flex items-center"><span className="mr-2 h-1.5 w-1.5 rounded-full bg-gray-400"></span>{lang === 'en' ? 'Unable to reply to clients' : (lang === 'cn' ? '无法回复客户' : '無法回覆客戶')}</li>
+                  <li className="flex items-start"><span className="mr-2 mt-1.5 h-1.5 w-1.5 rounded-full bg-gray-400 shrink-0"></span>{lang === 'en' ? 'Just want to buy a list' : (lang === 'cn' ? '只想买名单' : '只想買名單')}</li>
+                  <li className="flex items-start"><span className="mr-2 mt-1.5 h-1.5 w-1.5 rounded-full bg-gray-400 shrink-0"></span>{lang === 'en' ? 'Lack quoting capabilities' : (lang === 'cn' ? '没有报价能力' : '沒有報價能力')}</li>
+                  <li className="flex items-start"><span className="mr-2 mt-1.5 h-1.5 w-1.5 rounded-full bg-gray-400 shrink-0"></span>{lang === 'en' ? 'Unable to reply to clients' : (lang === 'cn' ? '无法回复客户' : '無法回覆客戶')}</li>
+                  <li className="flex items-start"><span className="mr-2 mt-1.5 h-1.5 w-1.5 rounded-full bg-gray-400 shrink-0"></span>{lang === 'en' ? 'Unwilling to invest in samples, quotes, and follow-ups' : (lang === 'cn' ? '不愿意投入样品、报价、后续推进' : '不願意投入樣品、報價、後續推進')}</li>
                 </ul>
               </div>
             </div>

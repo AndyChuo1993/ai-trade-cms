@@ -43,33 +43,48 @@ export default async function Page({ params }: { params: Promise<{ lang: Lang }>
 
   type Card = { href: string; title: string; desc: string; tags?: string[] }
 
-  const core: Card[] = [
+  const core = [
     {
       href: `/${lang}/services/export-lead-generation`,
-      title: lang === 'en' ? 'Export Lead Generation' : (lang === 'cn' ? '外贸客户开发' : '外銷客戶開發'),
-      desc:
-        isChinese
-          ? '適合想直接取得訂單的外銷企業。你會得到：採購決策人名單、有效詢價與報價機會。'
-          : 'For companies wanting direct orders. You get: decision-makers, valid inquiries, and quoting opportunities.',
-      tags: isChinese ? ['採購決策人', '有效詢價', '報價機會'] : ['Decision-makers', 'Valid inquiries', 'Quoting ops'],
+      title: lang === 'en' ? 'Export Lead Generation' : (lang === 'cn' ? '外销客户开发' : '外銷客戶開發'),
+      suitable: lang === 'en' 
+        ? ['Companies wanting direct orders', 'Ready with products & capacity', 'Faster access to overseas procurement'] 
+        : lang === 'cn'
+        ? ['想直接拿订单的外贸企业', '已有产品与供应能力', '希望更快接触海外采购']
+        : ['想直接拿訂單的外銷企業', '已有產品與供應能力', '希望更快接觸海外採購'],
+      get: lang === 'en'
+        ? ['Decision-maker lists', 'Valid inquiries', 'Quoting opportunities', 'Actionable leads']
+        : lang === 'cn'
+        ? ['采购决策人名单', '有效询价', '报价机会', '可推进的商机']
+        : ['採購決策人名單', '有效詢價', '報價機會', '可推進的商機'],
     },
     {
       href: `/${lang}/services/distributor-development`,
       title: lang === 'en' ? 'Distributor Development' : (lang === 'cn' ? '经销商开发' : '經銷商開發'),
-      desc:
-        isChinese
-          ? '適合想建立當地通路的企業。你會得到：通路結構分析、經銷商名單與合作推進。'
-          : 'For companies building local channels. You get: channel analysis, distributor lists, and partnership advancement.',
-      tags: isChinese ? ['通路結構', '經銷商名單', '合作推進'] : ['Channel structure', 'Distributor lists', 'Partnerships'],
+      suitable: lang === 'en'
+        ? ['Entering local markets', 'Need channel partners, not single leads', 'Long-term market coverage']
+        : lang === 'cn'
+        ? ['想进入当地市场的企业', '需要通路合作而非单点客户', '希望建立长期市场覆盖']
+        : ['想進入當地市場的企業', '需要通路合作而非單點客戶', '希望建立長期市場覆蓋'],
+      get: lang === 'en'
+        ? ['Channel structure analysis', 'Potential distributor lists', 'Partnership evaluations', 'Samples & negotiation support']
+        : lang === 'cn'
+        ? ['通路结构分析', '潜在经销商名单', '合作评估', '推进样品与合作谈判']
+        : ['通路結構分析', '潛在經銷商名單', '合作評估', '推進樣品與合作談判'],
     },
     {
       href: `/${lang}/services/export-sales-outsourcing`,
       title: lang === 'en' ? 'Export Sales Outsourcing' : (lang === 'cn' ? '外贸业务外包' : '外銷業務外包'),
-      desc:
-        isChinese
-          ? '適合沒有完整外銷團隊的企業。你會得到：持續開發、詢價跟進與成交推進。'
-          : 'For companies without a full export team. You get: continuous outreach, inquiry follow-up, and deal closing.',
-      tags: isChinese ? ['持續開發', '詢價跟進', '成交推進'] : ['Continuous outreach', 'Follow-ups', 'Closing'],
+      suitable: lang === 'en'
+        ? ['No full export team', 'Prefer not to hire immediately', 'Need consistent outreach & follow-ups']
+        : lang === 'cn'
+        ? ['没有完整外贸团队', '不想先养太多人', '需要有人持续推进客户开发与跟进']
+        : ['沒有完整外銷團隊', '不想先養太多人', '需要有人持續推進客戶開發與跟進'],
+      get: lang === 'en'
+        ? ['Continuous prospecting', 'Inquiry follow-ups', 'Quoting & requirement triage', 'Closing support']
+        : lang === 'cn'
+        ? ['持续开发', '询价跟进', '报价与需求整理', '成交推进支援']
+        : ['持續開發', '詢價跟進', '報價與需求整理', '成交推進支援'],
     },
   ]
 
@@ -119,22 +134,45 @@ export default async function Page({ params }: { params: Promise<{ lang: Lang }>
 
       <section className="border-b border-gray-100 bg-white py-20">
         <div className="mx-auto max-w-7xl px-6">
-          <div className="grid gap-6 lg:grid-cols-3">
+          <div className="grid gap-8 lg:grid-cols-3">
             {core.map((x, i) => (
-              <Link key={i} href={x.href} className="block rounded-xl border border-gray-200 bg-white p-6 transition hover:shadow-md">
-                <div className="text-lg font-bold text-gray-900">{x.title}</div>
-                <div className="mt-2 leading-7 text-gray-600">{x.desc}</div>
-                {x.tags && (
-                  <div className="mt-4 flex flex-wrap gap-2">
-                    {x.tags.map((tag, j) => (
-                      <span key={j} className="rounded-full bg-slate-100 px-3 py-1 text-sm text-slate-700">
-                        {tag}
-                      </span>
-                    ))}
+              <div key={i} className="flex flex-col rounded-xl border border-gray-200 bg-white p-8 transition hover:shadow-lg">
+                <div className="text-2xl font-bold text-gray-900 mb-6">{x.title}</div>
+                
+                <div className="mb-6">
+                  <div className="text-sm font-bold text-blue-900 uppercase tracking-wider mb-3">
+                    {lang === 'en' ? 'Who is it for' : (lang === 'cn' ? '适合谁' : '適合誰')}
                   </div>
-                )}
-                <div className="mt-6 font-medium text-blue-900">{lang === 'en' ? 'Learn more →' : (lang === 'cn' ? '了解更多 →' : '了解更多 →')}</div>
-              </Link>
+                  <ul className="space-y-2">
+                    {x.suitable.map((item, idx) => (
+                      <li key={idx} className="flex items-start text-gray-600 text-sm">
+                        <span className="mr-2 mt-1.5 h-1 w-1 rounded-full bg-blue-400 shrink-0" />
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                <div className="mb-8 flex-grow">
+                  <div className="text-sm font-bold text-blue-900 uppercase tracking-wider mb-3">
+                    {lang === 'en' ? 'What you get' : (lang === 'cn' ? '你会得到' : '你會得到')}
+                  </div>
+                  <ul className="space-y-2">
+                    {x.get.map((item, idx) => (
+                      <li key={idx} className="flex items-start text-gray-700 font-medium">
+                        <svg className="mr-2 mt-0.5 h-5 w-5 text-blue-600 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                        </svg>
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                <Link href={x.href} className="inline-block text-center w-full bg-gray-900 text-white font-bold py-3 px-6 rounded-sm hover:bg-blue-800 transition">
+                  {lang === 'en' ? 'View Service Details →' : (lang === 'cn' ? '查看服务内容 →' : '查看服務內容 →')}
+                </Link>
+              </div>
             ))}
           </div>
         </div>
