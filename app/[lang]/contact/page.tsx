@@ -12,7 +12,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: Lan
     description:
       isChinese
         ? '與 SunGene 討論海外買家開發、經銷商開發、外銷業務外包服務與合作夥伴申請。'
-        : 'Talk to SunGene about export lead generation, distributor development, sales outsourcing, or partnership applications.',
+        : 'Book Strategy Call about export lead generation, distributor development, sales outsourcing, or partnership applications.',
     alternates: {
       canonical: `${baseUrl}/${lang}/contact`,
       languages: {
@@ -27,7 +27,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: Lan
       description:
         isChinese
           ? '與 SunGene 討論海外買家開發、經銷商開發、外銷業務外包服務與合作夥伴申請。'
-          : 'Talk to SunGene about export lead generation, distributor development, sales outsourcing, or partnership applications.',
+          : 'Book Strategy Call about export lead generation, distributor development, sales outsourcing, or partnership applications.',
       url: `${baseUrl}/${lang}/contact`,
       images: ['/og/og.png'],
     },

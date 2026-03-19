@@ -9,9 +9,9 @@ export default function CasePreview({ lang }: { lang: Lang }) {
       slug: 'hardware',
       title: lang === 'en' ? 'Hardware Tools | European Market' : lang === 'cn' ? '五金工具｜欧洲市场' : '五金工具｜歐洲市場',
       market: lang === 'en' ? 'Europe' : lang === 'cn' ? '欧洲市场' : '歐洲市場',
-      reach: lang === 'en' ? 'Built 120+ Decision Makers' : lang === 'cn' ? '建立 120+ 决策人资料' : '建立 120+ 決策人資料',
-      replies: lang === 'en' ? 'Got 15 Valid Replies' : lang === 'cn' ? '取得 15 个有效回复' : '取得 15 個有效回覆',
-      progress: lang === 'en' ? 'Advanced 3 Quote Opportunities' : lang === 'cn' ? '推进 3 个报价机会' : '推進 3 個報價機會',
+      reach: lang === 'en' ? '120+ Decision Makers Data Built' : lang === 'cn' ? '120+ 决策人资料建立' : '120+ 決策人資料建立',
+      replies: lang === 'en' ? '15 Valid Replies' : lang === 'cn' ? '15 个有效回复' : '15 個有效回覆',
+      progress: lang === 'en' ? '3 Quote Opportunities Entered' : lang === 'cn' ? '3 个进入报价流程' : '3 個進入報價流程',
       tags: lang === 'en' ? ['Hardware', 'Europe', 'Lead Gen'] : lang === 'cn' ? ['五金工具', '欧洲市场', '客户开发'] : ['五金工具', '歐洲市場', '客戶開發'],
       cover: '/cases/hardware-cover.svg',
       industry: lang === 'en' ? 'Hardware' : lang === 'cn' ? '五金工具' : '五金工具',
@@ -20,9 +20,9 @@ export default function CasePreview({ lang }: { lang: Lang }) {
       slug: 'electronics',
       title: lang === 'en' ? 'Electronic Parts | North American Market' : lang === 'cn' ? '电子零件｜北美市场' : '電子零件｜北美市場',
       market: lang === 'en' ? 'North America' : lang === 'cn' ? '北美市场' : '北美市場',
-      reach: lang === 'en' ? 'Connected Supply Chain Contacts' : lang === 'cn' ? '接触供应链采购窗口' : '接觸供應鏈採購窗口',
-      replies: lang === 'en' ? 'Established Long-term Inquiry Opps' : lang === 'cn' ? '建立长期询价机会' : '建立長期詢價機會',
-      progress: lang === 'en' ? 'Entered Sample/Quote Process' : lang === 'cn' ? '进入样品/报价流程' : '進入樣品/報價流程',
+      reach: lang === 'en' ? 'Supply Chain Procurement Reached' : lang === 'cn' ? '切入供应链采购窗口' : '切入供應鏈採購窗口',
+      replies: lang === 'en' ? 'Long-term Inquiry Opps Established' : lang === 'cn' ? '建立长期询价机会' : '建立長期詢價機會',
+      progress: lang === 'en' ? 'Entered Sample & Quote Process' : lang === 'cn' ? '进入样品与报价流程' : '進入樣品與報價流程',
       tags: lang === 'en' ? ['Electronics', 'USA', 'Supply Chain'] : lang === 'cn' ? ['电子零件', '美国市场', '供应链打入'] : ['電子零件', '美國市場', '供應鏈打入'],
       cover: '/cases/electronics-cover.svg',
       industry: lang === 'en' ? 'Electronics' : lang === 'cn' ? '电子零件' : '電子零件',
@@ -74,10 +74,6 @@ export default function CasePreview({ lang }: { lang: Lang }) {
               <div className="p-8 flex-grow flex flex-col">
                 <h3 className="text-2xl font-bold mb-4 text-gray-900 group-hover:text-blue-600 transition leading-tight">{item.title}</h3>
                 <div className="mb-6 flex-grow space-y-3">
-                  <div className="flex items-start">
-                    <span className="text-blue-600 mr-2">📍</span>
-                    <span className="text-gray-700 font-medium">{item.market}</span>
-                  </div>
                   <div className="flex items-start">
                     <span className="text-blue-600 mr-2">🎯</span>
                     <span className="text-gray-700 font-medium">{item.reach}</span>

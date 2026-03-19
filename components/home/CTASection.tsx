@@ -20,7 +20,7 @@ export default function CTASection({ lang }: { lang: Lang }) {
             href={`/${lang}/export-market-analysis`}
             className="inline-flex items-center justify-center rounded-sm bg-white px-8 py-4 text-lg font-bold text-blue-900 shadow-lg transition duration-300 hover:-translate-y-0.5 hover:bg-gray-50"
           >
-            {lang === 'en' ? 'Get Market Assessment' : lang === 'cn' ? '取得市场评估' : '取得市場評估'}
+            {lang === 'en' ? 'Get Market Entry Advice' : lang === 'cn' ? '取得市场切入建议' : '取得市場切入建議'}
           </Link>
           <Link
             href={`/${lang}/contact`}

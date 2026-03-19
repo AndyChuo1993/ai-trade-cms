@@ -104,7 +104,7 @@ const service: ServiceSeo = {
     { q: { cn: '你們交付的詢價包含什麼？', zh: '你們交付的詢價包含什麼？', en: 'What is included in delivered leads?' }, a: { cn: '公司、聯絡方式、需求資訊、對話紀錄與下一步建議。', zh: '公司、聯絡方式、需求資訊、對話紀錄與下一步建議。', en: 'Company, contacts, requirements, conversation logs, and next-step suggestion.' } },
     { q: { cn: '你們會不會影響我們的報價與出貨？', zh: '你們會不會影響我們的報價與出貨？', en: 'Do you handle quoting and shipping?' }, a: { cn: '不會。你只需負責報價與出貨；其餘外銷開發與跟進流程由我們完成。', zh: '不會。你只需負責報價與出貨；其餘外銷開發與跟進流程由我們完成。', en: 'No. You handle quoting and shipping; we handle outreach and follow-up workflows.' } },
   ],
-  ctaTitle: { cn: '想獲得更穩定的合格詢價？', zh: '想獲得更穩定的合格詢價？', en: 'Want more qualified export inquiries?' },
+  ctaTitle: { cn: '取得市場切入建議', zh: '取得市場切入建議', en: 'Get Market Entry Advice' },
   ctaDesc: { cn: '提交產品與市場，我們回覆可行的開發策略與交付方式。', zh: '提交產品與市場，我們回覆可行的開發策略與交付方式。', en: 'Submit your product and markets. We’ll reply with a feasible plan and delivery approach.' },
   relatedLinks: [
     { label: { cn: '核心：外銷客戶開發', zh: '核心：外銷客戶開發', en: 'Core: Export Lead Generation' }, href: '/services/export-lead-generation' },

@@ -110,7 +110,7 @@ const service: ServiceSeo = {
       a: { cn: '建議 4–6 次，間隔 3–7 天，並逐封加入不同證據（案例/規格/應用）。', zh: '建議 4–6 次，間隔 3–7 天，並逐封加入不同證據（案例/規格/應用）。', en: '4–6 follow-ups, 3–7 days apart, adding different proof points each time.' },
     },
   ],
-  ctaTitle: { cn: '取得你的開發信框架與節奏', zh: '取得你的開發信框架與節奏', en: 'Get Your Outreach Framework' },
+  ctaTitle: { cn: '取得市場切入建議', zh: '取得市場切入建議', en: 'Get Market Entry Advice' },
   ctaDesc: { cn: '提交產品與市場，我們回覆可行的訊息框架與跟進節奏建議。', zh: '提交產品與市場，我們回覆可行的訊息框架與跟進節奏建議。', en: 'Submit your product and markets. We’ll reply with a feasible messaging and cadence plan.' },
   relatedLinks: [
     { label: { cn: '方法：Buyer Database Building', zh: '方法：Buyer Database Building', en: 'Method: Buyer Database Building' }, href: '/buyer-database-building' },

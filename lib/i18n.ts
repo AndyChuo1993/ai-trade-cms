@@ -1,4 +1,4 @@
-﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿export type Lang = 'zh' | 'en' | 'cn'
+﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿export type Lang = 'zh' | 'en' | 'cn'
 
 const dict = {
   'cn': {
@@ -13,17 +13,17 @@ const dict = {
     nav_markets: '市场',
     nav_blog: '博客',
     nav_free_analysis: '获取市场切入建议',
-    cta_start: '开始开发海外客户',
+    cta_start: '申请合作评估',
     cta_analysis: '获取市场切入建议',
-    cta_consult: '预约咨询',
+    cta_consult: '预约策略通话',
 
     // Hero
     hero_title: '为你的产品找到海外买家',
     hero_subtitle: '用可复制的方法，把外贸开发做成稳定的系统。',
     hero_description: 'SunGene 协助外贸企业开发海外客户、建立渠道合作，并以可持续推进的方式把商机转成报价与订单。',
-    hero_cta_start: '开始开发海外客户',
+    hero_cta_start: '申请合作评估',
     hero_cta_analysis: '获取市场切入建议',
-    home_cta_title: '立即开始你的外贸增长',
+    home_cta_title: '取得市场切入建议',
 
     // Home - Services
     home_service_1_title: '外贸客户开发',
@@ -74,7 +74,7 @@ const dict = {
     service_sales_sub2: '回复分类与需求确认',
     service_sales_sub3: '合格询盘交付',
 
-    // Free Market Analysis Page
+    // Get Market Entry Advice Page
     analysis_title: '免费海外市场分析',
     analysis_subtitle: '提交产品信息，我们将分析海外市场、潜在买家与市场机会。此服务适合初次接触 SunGene 的企业。',
     form_company: '公司名称',
@@ -124,17 +124,17 @@ const dict = {
     nav_markets: '市場',
     nav_blog: '部落格',
     nav_free_analysis: '取得市場切入建議',
-    cta_start: '開始開發海外客戶',
+    cta_start: '申請合作評估',
     cta_analysis: '取得市場切入建議',
-    cta_consult: '預約諮詢',
+    cta_consult: '預約策略通話',
 
     // Hero
     hero_title: '為你的產品找到海外買家',
     hero_subtitle: '用可複製的方法，把外銷開發做成穩定的系統。',
     hero_description: 'SunGene 協助外銷企業開發海外客戶、建立通路合作，並以可持續推進的方式把商機轉成報價與訂單。',
-    hero_cta_start: '開始開發海外客戶',
+    hero_cta_start: '申請合作評估',
     hero_cta_analysis: '取得市場切入建議',
-    home_cta_title: '立即開始你的外銷成長',
+    home_cta_title: '取得市場切入建議',
 
     // Home - Services
     home_service_1_title: '外銷客戶開發',
@@ -185,7 +185,7 @@ const dict = {
     service_sales_sub2: '回覆分類別與需求確認',
     service_sales_sub3: '合格詢價交付',
 
-    // Free Market Analysis Page
+    // Get Market Entry Advice Page
     analysis_title: '免費海外市場分析',
     analysis_subtitle: '提交產品資訊，我們將分析海外市場、潛在買家與市場機會。此服務適合初次接觸 SunGene 的企業。',
     form_company: '公司名稱',
@@ -234,18 +234,18 @@ const dict = {
     nav_industries: 'Industries',
     nav_markets: 'Markets',
     nav_blog: 'Blog',
-    nav_free_analysis: 'Free Market Analysis',
-    cta_start: 'Start Export Growth',
-    cta_analysis: 'Get Free Market Analysis',
-    cta_consult: 'Book Consultation',
+    nav_free_analysis: 'Get Market Entry Advice',
+    cta_start: 'Request Partnership Evaluation',
+    cta_analysis: 'Get Market Entry Advice',
+    cta_consult: 'Book Strategy Call',
 
     // Hero
     hero_title: 'Find Overseas Buyers for Your Products',
     hero_subtitle: 'A repeatable system to generate qualified export leads and build distributor networks.',
     hero_description: 'SunGene helps export companies develop overseas customers, build channel partnerships, and turn opportunities into quotes and orders through a repeatable system.',
-    hero_cta_start: 'Start Export Growth',
-    hero_cta_analysis: 'Get Free Market Analysis',
-    home_cta_title: 'Start Your Export Growth Now',
+    hero_cta_start: 'Request Partnership Evaluation',
+    hero_cta_analysis: 'Get Market Entry Advice',
+    home_cta_title: 'Get Market Entry Advice',
 
     // Home - Services
     home_service_1_title: 'Export Lead Generation',
@@ -296,7 +296,7 @@ const dict = {
     service_sales_sub2: 'Reply Triage & Qualification',
     service_sales_sub3: 'Qualified Inquiry Delivery',
 
-    // Free Market Analysis Page
+    // Get Market Entry Advice Page
     analysis_title: 'Get Market Entry Advice',
     analysis_subtitle: 'Submit your product details to receive a complimentary market analysis report covering potential markets and buyer segments.',
     form_company: 'Company Name',

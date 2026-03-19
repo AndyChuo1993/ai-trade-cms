@@ -31,13 +31,24 @@ export default function HeroSection({ lang }: { lang: Lang }) {
                 : '幫外銷企業找到「會下單」的海外客戶與通路'}
             </h1>
 
-            <p className="mx-auto mb-10 max-w-3xl text-xl leading-relaxed text-gray-600 md:text-2xl lg:mx-0">
+            <p className="mx-auto mb-6 max-w-3xl text-xl leading-relaxed text-gray-600 md:text-2xl lg:mx-0">
               {lang === 'en'
                 ? 'From prospecting and procurement matchmaking to inquiry triage and quoting. Build an export system that continuously generates orders.'
                 : lang === 'cn'
                 ? '从客户开发、采购对接、询价筛选到报价推进，建立一套能持续产生订单的外贸开发系统。'
                 : '從客戶開發、採購對接、詢價篩選到報價推進，建立一套能持續產生訂單的外銷開發系統。'}
             </p>
+
+            <div className="mb-10 inline-flex items-center rounded-md bg-blue-50/80 px-4 py-2 text-blue-900 border border-blue-100">
+              <svg className="mr-2 h-5 w-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+              <span className="font-medium">
+                {lang === 'en' 
+                  ? 'Typically see valid replies and inquiry opportunities in 4-6 weeks.' 
+                  : lang === 'cn' 
+                  ? '最快 4–6 周开始出现有效回复与询价机会' 
+                  : '最快 4–6 週開始出現有效回覆與詢價機會'}
+              </span>
+            </div>
 
             <div className="flex flex-col justify-center gap-4 sm:flex-row lg:justify-start">
               <Link
@@ -50,7 +61,7 @@ export default function HeroSection({ lang }: { lang: Lang }) {
                 href={`/${lang}/services`}
                 className="inline-flex items-center justify-center rounded-sm border-2 border-gray-200 bg-white px-8 py-4 text-lg font-bold text-gray-900 transition duration-300 hover:border-blue-900 hover:text-blue-900"
               >
-                {lang === 'en' ? 'See How We Find Clients' : lang === 'cn' ? '看看我们怎么帮你找到客户' : '看看我們怎麼幫你找到客戶'}
+                {lang === 'en' ? 'Request Partnership Evaluation' : lang === 'cn' ? '申请合作评估' : '申請合作評估'}
               </Link>
             </div>
 

@@ -114,12 +114,12 @@ const service: ServiceSeo = {
       a: { cn: '策略定義約 2-4 週；內容發酵通常需 3-6 個月。但正確的策略能避免你走錯方向浪費的一兩年。', zh: '策略定義約 2-4 週；內容發酵通常需 3-6 個月。但正確的策略能避免你走錯方向浪費的一兩年。', en: 'Strategy takes 2-4 weeks; content traction 3-6 months. But the right strategy saves years of wrong turns.' },
     },
   ],
-  ctaTitle: { cn: '規劃你的出口行銷策略', zh: '規劃你的出口行銷策略', en: 'Plan Your Export Strategy' },
+  ctaTitle: { cn: '取得市場切入建議', zh: '取得市場切入建議', en: 'Get Market Entry Advice' },
   ctaDesc: { cn: '告訴我們你的產品與現況，我們協助評估適合的市場進入點與行銷切角。', zh: '告訴我們你的產品與現況，我們協助評估適合的市場進入點與行銷切角。', en: 'Share your product and status. We’ll help assess the right market entry points and angles.' },
   relatedLinks: [
     { label: { cn: '外銷客戶開發（核心服務）', zh: '外銷客戶開發（核心服務）', en: 'Export Lead Generation (Core)' }, href: '/services/export-lead-generation' },
     { label: { cn: '方法：Outreach System', zh: '方法：Outreach System', en: 'Method: Outreach System' }, href: '/cold-email-outreach' },
-    { label: { cn: '取得市場切入建議（CTA）', zh: '取得市場切入建議（CTA）', en: 'Get Market Entry Advice' }, href: '/export-market-analysis' },
+    { label: { cn: '取得市場切入建議', zh: '取得市場切入建議', en: 'Get Market Entry Advice' }, href: '/export-market-analysis' },
   ],
 }
 

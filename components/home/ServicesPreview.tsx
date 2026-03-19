@@ -16,10 +16,10 @@ export default function ServicesPreview({ lang }: { lang: Lang }) {
         ? '帮您找到有实际采购需求的客户，并推进到报价与合作阶段'
         : '幫您找到有實際採購需求的客戶，並推進到報價與合作階段',
       items: isEn
-        ? ['Target procurement decision-makers', 'Develop buyers with active needs', 'Filter qualified inquiries for quoting', 'Push to actual business negotiation']
+        ? ['Build actionable decision-maker data and push toward replies, inquiries, and quotes', 'Develop buyers with active needs', 'Filter qualified inquiries for quoting', 'Push to actual business negotiation']
         : isCn
-        ? ['精准锁定海外采购决策人（非随机名单）', '直接开发有采购需求的客户', '筛选有效询盘（可进入报价阶段）', '协助推进至实际商务沟通']
-        : ['精準鎖定海外採購決策人（非隨機名單）', '直接開發有採購需求的客戶', '篩選有效詢盤（可進入報價階段）', '協助推進至實際商務溝通'],
+        ? ['建立可用的采购与决策人资料，并持续推进到回复、询价与报价', '直接开发有采购需求的客户', '筛选有效询盘（可进入报价阶段）', '协助推进至实际商务沟通']
+        : ['建立可用的採購與決策人資料，並持續推進到回覆、詢價與報價', '直接開發有採購需求的客戶', '篩選有效詢盤（可進入報價階段）', '協助推進至實際商務溝通'],
       link: `/${lang}/services/export-lead-generation`,
       icon: (
         <svg className="h-10 w-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">

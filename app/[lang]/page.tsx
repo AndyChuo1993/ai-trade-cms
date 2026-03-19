@@ -27,8 +27,8 @@ const HOME_SEO = {
     midTitle: 'Our goal is actual orders, not just inquiries',
     midDesc:
       'We drive the entire process from finding leads to closing deals.',
-    leadBtn: 'Explore Lead Generation',
-    contactBtn: 'Talk to SunGene',
+    leadBtn: 'Get Market Entry Advice',
+    contactBtn: 'Book Strategy Call',
   },
   zh: {
     title: '外銷企業海外客戶開發與通路拓展 | SunGene',
@@ -44,7 +44,7 @@ const HOME_SEO = {
     midTitle: '我們的合作目標不是詢盤，而是實際訂單',
     midDesc:
       '我們致力於推動從開發到成交的完整流程，而不是只停留在線索交付。',
-    leadBtn: '取得市場評估',
+    leadBtn: '取得市場切入建議',
     contactBtn: '預約策略通話',
   },
   cn: {
@@ -61,7 +61,7 @@ const HOME_SEO = {
     midTitle: '我们的合作目标不是询盘，而是实际订单',
     midDesc:
       '我们致力于推动从开发到成交的完整流程，而不是只停留在线索交付。',
-    leadBtn: '取得市场评估',
+    leadBtn: '取得市场切入建议',
     contactBtn: '预约策略通话',
   },
 } as const
@@ -194,6 +194,69 @@ export default async function Page({ params }: PageParams) {
             >
               {data.contactBtn}
             </Link>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-24 bg-white">
+        <div className="mx-auto max-w-7xl px-6">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            <div>
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-8 leading-tight">
+                {safeLang === 'en' ? 'You don\'t just see reports, you see progress' : safeLang === 'cn' ? '你看到的不是报表，而是进展' : '你會看到的不是報表，而是進展'}
+              </h2>
+              <ul className="space-y-5 text-lg text-gray-700">
+                <li className="flex items-start">
+                  <svg className="w-6 h-6 text-blue-600 mr-3 mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
+                  {safeLang === 'en' ? 'We tell you exactly who replied' : safeLang === 'cn' ? '我们会告诉你谁回复了' : '我們會告訴你誰回覆了'}
+                </li>
+                <li className="flex items-start">
+                  <svg className="w-6 h-6 text-blue-600 mr-3 mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
+                  {safeLang === 'en' ? 'Which clients are worth quoting' : safeLang === 'cn' ? '哪些客户值得报价' : '哪些客戶值得報價'}
+                </li>
+                <li className="flex items-start">
+                  <svg className="w-6 h-6 text-blue-600 mr-3 mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
+                  {safeLang === 'en' ? 'Who is entering sampling and testing' : safeLang === 'cn' ? '哪些正在进入样品与测试' : '哪些正在進入樣品與測試'}
+                </li>
+                <li className="flex items-start">
+                  <svg className="w-6 h-6 text-blue-600 mr-3 mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
+                  {safeLang === 'en' ? 'How to advance the next steps' : safeLang === 'cn' ? '下一步该怎么推进' : '下一步該怎麼推進'}
+                </li>
+              </ul>
+            </div>
+            <div className="bg-slate-50 p-8 rounded-2xl border border-slate-200 shadow-sm relative">
+              <div className="absolute top-0 right-8 -translate-y-1/2 bg-blue-100 text-blue-800 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">
+                {safeLang === 'en' ? 'Weekly Update' : safeLang === 'cn' ? '每周进度更新' : '每週進度更新'}
+              </div>
+              <div className="space-y-5">
+                 <div className="bg-white p-5 rounded-xl shadow-sm border border-slate-100 flex gap-4">
+                   <div className="w-2 h-full bg-green-400 rounded-full shrink-0"></div>
+                   <div>
+                     <div className="text-sm font-bold text-gray-500 mb-1">{safeLang === 'en' ? 'Status: Quoting' : safeLang === 'cn' ? '进度：报价中' : '進度：報價中'}</div>
+                     <div className="text-gray-900 font-medium">
+                       {safeLang === 'en' 
+                         ? 'TechCorp requested a quote for 5,000 units. Ready for technical review call next Tuesday.' 
+                         : safeLang === 'cn' 
+                         ? 'TechCorp 提出 5,000 件报价需求，已安排下周二进行技术规格确认会议。' 
+                         : 'TechCorp 提出 5,000 件報價需求，已安排下週二進行技術規格確認會議。'}
+                     </div>
+                   </div>
+                 </div>
+                 <div className="bg-white p-5 rounded-xl shadow-sm border border-slate-100 flex gap-4">
+                   <div className="w-2 h-full bg-blue-400 rounded-full shrink-0"></div>
+                   <div>
+                     <div className="text-sm font-bold text-gray-500 mb-1">{safeLang === 'en' ? 'Status: Sampling' : safeLang === 'cn' ? '进度：样品测试' : '進度：樣品測試'}</div>
+                     <div className="text-gray-900 font-medium">
+                       {safeLang === 'en' 
+                         ? 'EuroMach sample testing passed. Moving to annual vendor contract negotiation.' 
+                         : safeLang === 'cn' 
+                         ? 'EuroMach 样品测试已通过，本周推进年度供应商合约条件讨论。' 
+                         : 'EuroMach 樣品測試已通過，本週推進年度供應商合約條件討論。'}
+                     </div>
+                   </div>
+                 </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
