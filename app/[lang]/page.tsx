@@ -202,58 +202,6 @@ export default async function Page({ params }: PageParams) {
       <ProcessSection lang={safeLang} />
       <CasePreview lang={safeLang} />
       <CTASection lang={safeLang} />
-
-      <section className="bg-gray-50 py-24 border-t border-gray-200">
-        <div className="mx-auto max-w-7xl px-6">
-          <h2 className="text-3xl font-bold text-center mb-16 text-gray-900">
-            {safeLang === 'en' ? 'Service Comparison' : safeLang === 'cn' ? '服务比较' : '服務比較'}
-          </h2>
-          <div className="overflow-x-auto">
-            <table className="w-full min-w-[800px] border-collapse bg-white shadow-sm rounded-lg overflow-hidden">
-              <thead>
-                <tr className="bg-gray-900 text-white">
-                  <th className="p-4 text-left w-1/6">{safeLang === 'en' ? 'Feature' : safeLang === 'cn' ? '比较项目' : '比較專案'}</th>
-                  <th className="p-4 text-left w-1/4">{safeLang === 'en' ? 'Export Lead Generation' : safeLang === 'cn' ? '外贸客户开发' : '外銷客戶開發'}</th>
-                  <th className="p-4 text-left w-1/4">{safeLang === 'en' ? 'Distributor Development' : safeLang === 'cn' ? '经销商开发' : '經銷商開發'}</th>
-                  <th className="p-4 text-left w-1/4">{safeLang === 'en' ? 'Export Sales Outsourcing' : safeLang === 'cn' ? '外贸业务外包' : '外銷業務外包'}</th>
-                </tr>
-              </thead>
-              <tbody className="text-sm">
-                <tr className="border-b border-gray-100 hover:bg-gray-50">
-                  <td className="p-4 font-bold text-gray-900">{safeLang === 'en' ? 'Goal' : safeLang === 'cn' ? '目标' : '目標'}</td>
-                  <td className="p-4 text-gray-700">{safeLang === 'en' ? 'Find buyers & generate qualified inquiries' : safeLang === 'cn' ? '找到海外买家并产出合格询价' : '找到海外買家並產出合格詢價'}</td>
-                  <td className="p-4 text-gray-700">{safeLang === 'en' ? 'Sign partners & build coverage' : safeLang === 'cn' ? '找到并签下通路伙伴，建立覆盖' : '找到並簽下通路夥伴，建立覆蓋'}</td>
-                  <td className="p-4 text-gray-700">{safeLang === 'en' ? 'Systematize export sales & follow-up' : safeLang === 'cn' ? '把外贸开发与跟进做成可交付系统' : '把外銷開發與跟進做成可交付系統'}</td>
-                </tr>
-                <tr className="border-b border-gray-100 hover:bg-gray-50">
-                  <td className="p-4 font-bold text-gray-900">{safeLang === 'en' ? 'Process' : safeLang === 'cn' ? '流程' : '流程'}</td>
-                  <td className="p-4 text-gray-700">{safeLang === 'en' ? 'ICP → List → Outreach → Cadence → Triage' : safeLang === 'cn' ? '理想客户 → 名单 → 信息 → 跟进节奏 → 回复分类' : '理想客戶 → 名單 → 訊息 → 跟進節奏 → 回覆分類'}</td>
-                  <td className="p-4 text-gray-700">{safeLang === 'en' ? 'Map → Channels → Partners → Terms → Sign' : safeLang === 'cn' ? '市场分层 → 通路地图 → 伙伴名单 → 合作方案 → 推进签约' : '市場分層 → 通路地圖 → 夥伴名單 → 合作方案 → 推進簽約'}</td>
-                  <td className="p-4 text-gray-700">{safeLang === 'en' ? 'List + Outreach + Follow-up + Qualification + Handover' : safeLang === 'cn' ? '名单＋开发＋跟进＋初步资格审核＋询价交付' : '名單＋開發＋跟進＋初步資格審核＋詢價交付'}</td>
-                </tr>
-                <tr className="border-b border-gray-100 hover:bg-gray-50">
-                  <td className="p-4 font-bold text-gray-900">{safeLang === 'en' ? 'Deliverables' : safeLang === 'cn' ? '交付内容' : '交付內容'}</td>
-                  <td className="p-4 text-gray-700">{safeLang === 'en' ? 'Verified List (Excel) + Inquiry Summaries' : safeLang === 'cn' ? '可用名单（Excel）＋询价整理' : '可用名單（Excel）＋詢價整理'}</td>
-                  <td className="p-4 text-gray-700">{safeLang === 'en' ? 'Trackable List + Terms Framework + Meetings' : safeLang === 'cn' ? '可追踪通路名单＋合作条件框架＋会议' : '可追蹤通路名單＋合作條件框架＋會議'}</td>
-                  <td className="p-4 text-gray-700">{safeLang === 'en' ? 'Continuous Qualified Inquiries + Pipeline' : safeLang === 'cn' ? '合格询价持续交付＋可追踪 pipeline' : '合格詢價持續交付＋可追蹤 pipeline'}</td>
-                </tr>
-                <tr className="border-b border-gray-100 hover:bg-gray-50">
-                  <td className="p-4 font-bold text-gray-900">{safeLang === 'en' ? 'Contract Term' : safeLang === 'cn' ? '合约期' : '合約期'}</td>
-                  <td className="p-4 text-gray-700">{safeLang === 'en' ? '1 Year' : safeLang === 'cn' ? '1 年' : '1 年'}</td>
-                  <td className="p-4 text-gray-700">{safeLang === 'en' ? '1 Year' : safeLang === 'cn' ? '1 年' : '1 年'}</td>
-                  <td className="p-4 text-gray-700">{safeLang === 'en' ? '1 Year' : safeLang === 'cn' ? '1 年' : '1 年'}</td>
-                </tr>
-                <tr className="hover:bg-gray-50">
-                  <td className="p-4 font-bold text-gray-900">{safeLang === 'en' ? 'Timeline' : safeLang === 'cn' ? '交付时程' : '交付時程'}</td>
-                  <td className="p-4 text-gray-700">{safeLang === 'en' ? '4–8 Weeks (varies by market)' : safeLang === 'cn' ? '4–8 周（视市场/产业）' : '4–8 週（視市場/產業）'}</td>
-                  <td className="p-4 text-gray-700">{safeLang === 'en' ? '12–18 Weeks (sourcing + negotiation)' : safeLang === 'cn' ? '12-18 周（找人＋谈条件）' : '12-18 週（找人＋談條件）'}</td>
-                  <td className="p-4 text-gray-700">{safeLang === 'en' ? 'Monthly Delivery Reviews' : safeLang === 'cn' ? '每月交付讨论（同步所有开发进度）' : '每月交付討論（同步所有開發進度）'}</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </section>
     </main>
   )
 }
