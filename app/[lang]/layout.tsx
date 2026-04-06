@@ -3,12 +3,13 @@ import { headers } from 'next/headers'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import { t, Lang } from '@/lib/i18n'
+import { getAlternates, getLocalizedUrl, getSiteUrl } from '@/lib/seo'
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
   const { lang: rawLang } = await params
   const lang = (['en', 'zh', 'cn'].includes(rawLang) ? rawLang : 'zh') as Lang
 
-  const baseUrl = 'https://sungenelite.com'
+  const baseUrl = getSiteUrl()
 
   return {
     metadataBase: new URL(baseUrl),
@@ -25,20 +26,12 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
         : lang === 'cn'
         ? 'SunGene 协助外贸企业开发海外客户、建立渠道合作，并把外贸开发流程做得更稳定、更可持续、更能推进成交。'
         : 'SunGene 協助外銷企業開發海外客戶、建立通路合作，並把外銷開發流程做得更穩定、更可持續、更能推進成交。',
-      url: `${baseUrl}/${lang}`,
+      url: getLocalizedUrl(lang),
       type: 'website',
     },
     twitter: { card: 'summary_large_image' },
     icons: { icon: '/logo/sungene.png' },
-    alternates: {
-      canonical: `${baseUrl}/${lang}`,
-      languages: {
-        'zh-CN': 'https://sungenelite.com/cn',
-        'zh-TW': 'https://sungenelite.com/zh',
-        'en': 'https://sungenelite.com/en',
-        'x-default': 'https://sungenelite.com/cn',
-      },
-    },
+    alternates: getAlternates(lang),
   }
 }
 
@@ -46,7 +39,7 @@ export default async function RootLayout({ children, params }: { children: React
   const { lang: rawLang } = await params
   const lang = (['en', 'zh', 'cn'].includes(rawLang) ? rawLang : 'zh') as Lang
 
-  const baseUrl = 'https://sungenelite.com'
+  const baseUrl = getSiteUrl()
   const logoUrl = `${baseUrl}/logo/sungene.png`
 
   const websiteSchema = {

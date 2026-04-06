@@ -131,7 +131,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: Lan
         'zh-CN': `https://sungenelite.com/cn/cold-email-outreach`,
         'zh-TW': `https://sungenelite.com/zh/cold-email-outreach`,
         'en': `https://sungenelite.com/en/cold-email-outreach`,
-        'x-default': `https://sungenelite.com/cn/cold-email-outreach`,
+        'x-default': `https://sungenelite.com/zh/cold-email-outreach`,
       }
     },
     

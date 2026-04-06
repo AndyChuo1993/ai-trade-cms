@@ -135,7 +135,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: Lan
         'zh-CN': `https://sungenelite.com/cn/export-marketing`,
         'zh-TW': `https://sungenelite.com/zh/export-marketing`,
         'en': `https://sungenelite.com/en/export-marketing`,
-        'x-default': `https://sungenelite.com/cn/export-marketing`,
+        'x-default': `https://sungenelite.com/zh/export-marketing`,
       }
     },
     

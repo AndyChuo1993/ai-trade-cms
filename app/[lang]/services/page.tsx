@@ -29,7 +29,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: Lan
         'zh-CN': 'https://sungenelite.com/cn/services',
         'zh-TW': 'https://sungenelite.com/zh/services',
         'en': 'https://sungenelite.com/en/services',
-        'x-default': 'https://sungenelite.com/cn/services',
+        'x-default': 'https://sungenelite.com/zh/services',
       },
     },
   }

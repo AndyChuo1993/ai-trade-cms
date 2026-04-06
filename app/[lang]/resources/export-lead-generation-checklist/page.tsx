@@ -20,7 +20,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: 'en
         'zh-CN': `https://sungenelite.com/cn/resources/export-lead-generation-checklist`,
         'zh-TW': `https://sungenelite.com/zh/resources/export-lead-generation-checklist`,
         'en': `https://sungenelite.com/en/resources/export-lead-generation-checklist`,
-        'x-default': `https://sungenelite.com/cn/resources/export-lead-generation-checklist`,
+        'x-default': `https://sungenelite.com/zh/resources/export-lead-generation-checklist`,
       }
     },
   }

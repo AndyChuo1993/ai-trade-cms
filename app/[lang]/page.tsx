@@ -7,6 +7,7 @@ import WhyUs from '@/components/home/WhyUs'
 import ProcessSection from '@/components/home/ProcessSection'
 import CasePreview from '@/components/home/CasePreview'
 import CTASection from '@/components/home/CTASection'
+import { getAlternates, getLocalizedUrl, getSiteUrl } from '@/lib/seo'
 
 type PageParams = {
   params: Promise<{ lang?: string }>
@@ -80,10 +81,7 @@ export async function generateMetadata({ params }: PageParams): Promise<Metadata
   const safeLang = normalizeLang(lang)
   const data = getHomeSeo(safeLang)
 
-  // 判斷目前的 base url 應該是哪個
-  // 由於這是 generateMetadata，無法直接拿到 request header 的 host，
-  // 所以我們根據 safeLang 來決定 canonical 應該指去哪裡，確保 self-canonical
-  const baseUrl = 'https://sungenelite.com'
+  const baseUrl = getSiteUrl()
 
   return {
     title: data.title,
@@ -93,19 +91,11 @@ export async function generateMetadata({ params }: PageParams): Promise<Metadata
       ? 'SunGene 协助外贸企业开发海外客户、建立渠道合作，并把外贸开发流程做得更稳定、更可持续、更能推进成交。'
       : 'SunGene 協助外銷企業開發海外客戶、建立通路合作，並把外銷開發流程做得更穩定、更可持續、更能推進成交。',
     keywords: [...data.keywords],
-    alternates: {
-      canonical: `${baseUrl}/${safeLang}`,
-      languages: {
-        'zh-CN': 'https://sungenelite.com/cn',
-        'zh-TW': 'https://sungenelite.com/zh',
-        'en': 'https://sungenelite.com/en',
-        'x-default': 'https://sungenelite.com/cn',
-      },
-    },
+    alternates: getAlternates(safeLang),
     openGraph: {
       title: data.title,
       description: data.description,
-      url: `${baseUrl}/${safeLang}`,
+      url: getLocalizedUrl(safeLang),
       siteName: 'SunGene',
       type: 'website',
       locale: safeLang === 'zh' ? 'zh_TW' : safeLang === 'cn' ? 'zh_CN' : 'en_US',
@@ -131,13 +121,13 @@ export default async function Page({ params }: PageParams) {
   const { lang } = await params
   const safeLang = normalizeLang(lang)
   const data = getHomeSeo(safeLang)
-  const baseUrl = 'https://sungenelite.com'
+  const baseUrl = getSiteUrl()
 
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'Organization',
     name: 'SunGene',
-    url: `${baseUrl}/${safeLang}`,
+    url: getLocalizedUrl(safeLang),
     logo: `${baseUrl}/logo/sungene.png`,
     description: data.description,
     sameAs: [],

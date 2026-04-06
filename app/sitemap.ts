@@ -5,8 +5,7 @@ import { seoMarkets } from '@/data/seoMarkets'
 import { seoIndustries } from '@/data/seoIndustries'
 import { getBlogPosts } from '@/data/blog'
 import { SUPPORTED_LANGS } from '@/lib/i18n'
-
-const baseUrl = 'https://sungenelite.com'
+import { getLocalizedUrl } from '@/lib/seo'
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const langs = SUPPORTED_LANGS
@@ -47,7 +46,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   routes.forEach(route => {
     langs.forEach(lang => {
       sitemap.push({
-        url: `${baseUrl}/${lang}${route}`,
+        url: getLocalizedUrl(lang, route),
         lastModified: staticLastMod,
         changeFrequency: 'weekly',
         priority: route === '' ? 1 : 0.8,
@@ -59,7 +58,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   seoMarkets.forEach(m => {
     langs.forEach(lang => {
       sitemap.push({
-        url: `${baseUrl}/${lang}/markets/${m.slug}`,
+        url: getLocalizedUrl(lang, `/markets/${m.slug}`),
         lastModified: staticLastMod,
         changeFrequency: 'weekly',
         priority: 0.8,
@@ -71,7 +70,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   seoIndustries.forEach(i => {
     langs.forEach(lang => {
       sitemap.push({
-        url: `${baseUrl}/${lang}/industries/${i.slug}`,
+        url: getLocalizedUrl(lang, `/industries/${i.slug}`),
         lastModified: staticLastMod,
         changeFrequency: 'weekly',
         priority: 0.8,
@@ -84,7 +83,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     const articles = getArticles(lang)
     articles.forEach(a => {
       sitemap.push({
-        url: `${baseUrl}/${lang}/resources/${a.id}`,
+        url: getLocalizedUrl(lang, `/resources/${a.id}`),
         lastModified: new Date(a.date),
         changeFrequency: 'monthly',
         priority: 0.7,
@@ -97,7 +96,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   langs.forEach(lang => {
     posts.forEach(p => {
       sitemap.push({
-        url: `${baseUrl}/${lang}/blog/${p.slug}`,
+        url: getLocalizedUrl(lang, `/blog/${p.slug}`),
         lastModified: new Date(p.date),
         changeFrequency: 'monthly',
         priority: 0.7,
@@ -110,7 +109,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     const cases = getCases(lang)
     cases.forEach(c => {
       sitemap.push({
-        url: `${baseUrl}/${lang}/case-studies/${c.slug}`,
+        url: getLocalizedUrl(lang, `/case-studies/${c.slug}`),
         lastModified: staticLastMod, // Case data doesn't have a date field
         changeFrequency: 'monthly',
         priority: 0.7,

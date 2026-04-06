@@ -1,8 +1,9 @@
 import type { MetadataRoute } from 'next'
-
-const baseUrl = 'https://sungenelite.com'
+import { getSiteUrl } from '@/lib/seo'
 
 export default function robots(): MetadataRoute.Robots {
+  const baseUrl = getSiteUrl()
+
   return {
     rules: {
       userAgent: '*',

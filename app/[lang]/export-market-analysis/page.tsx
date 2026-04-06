@@ -22,7 +22,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: Lan
         'zh-CN': 'https://sungenelite.com/cn/export-market-analysis', 
         'zh-TW': 'https://sungenelite.com/zh/export-market-analysis', 
         'en': 'https://sungenelite.com/en/export-market-analysis', 
-        'x-default': 'https://sungenelite.com/cn/export-market-analysis' 
+        'x-default': 'https://sungenelite.com/zh/export-market-analysis' 
       } 
     },
   }

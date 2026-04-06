@@ -19,7 +19,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: Lan
         'zh-CN': `https://sungenelite.com/cn/distributor-list`,
         'zh-TW': `https://sungenelite.com/zh/distributor-list`,
         'en': `https://sungenelite.com/en/distributor-list`,
-        'x-default': `https://sungenelite.com/cn/distributor-list`,
+        'x-default': `https://sungenelite.com/zh/distributor-list`,
       }
     },
     

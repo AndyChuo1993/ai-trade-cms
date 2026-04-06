@@ -16,7 +16,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: Lan
         'zh-CN': 'https://sungenelite.com/cn/case-studies',
         'zh-TW': 'https://sungenelite.com/zh/case-studies',
         'en': 'https://sungenelite.com/en/case-studies',
-        'x-default': 'https://sungenelite.com/cn/case-studies',
+        'x-default': 'https://sungenelite.com/zh/case-studies',
       },
     },
     openGraph: {

@@ -19,7 +19,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: Lan
         'zh-CN': 'https://sungenelite.com/cn/contact',
         'zh-TW': 'https://sungenelite.com/zh/contact',
         'en': 'https://sungenelite.com/en/contact',
-        'x-default': 'https://sungenelite.com/cn/contact',
+        'x-default': 'https://sungenelite.com/zh/contact',
       },
     },
     openGraph: {

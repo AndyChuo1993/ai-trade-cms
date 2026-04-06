@@ -67,7 +67,7 @@ export function middleware(request: NextRequest) {
 
   const normalizedPathname = pathname.replace(/^\/zh\/cn(?=\/|$)/, '/cn')
   if (normalizedPathname !== pathname) {
-    return NextResponse.redirect(new URL(normalizedPathname, request.url))
+    return NextResponse.redirect(new URL(normalizedPathname, request.url), 308)
   }
 
   if (
@@ -85,11 +85,12 @@ export function middleware(request: NextRequest) {
 
   if (pathnameIsMissingLocale) {
     if (pathname === '/') {
-      return NextResponse.redirect(new URL(`/${defaultLocale}`, request.url))
+      return NextResponse.redirect(new URL(`/${defaultLocale}`, request.url), 308)
     }
 
     return NextResponse.redirect(
-      new URL(`/${defaultLocale}${pathname.startsWith('/') ? '' : '/'}${pathname}`, request.url)
+      new URL(`/${defaultLocale}${pathname.startsWith('/') ? '' : '/'}${pathname}`, request.url),
+      308
     )
   }
 

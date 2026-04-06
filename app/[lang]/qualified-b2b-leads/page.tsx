@@ -126,7 +126,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: Lan
         'zh-CN': `https://sungenelite.com/cn/qualified-b2b-leads`,
         'zh-TW': `https://sungenelite.com/zh/qualified-b2b-leads`,
         'en': `https://sungenelite.com/en/qualified-b2b-leads`,
-        'x-default': `https://sungenelite.com/cn/qualified-b2b-leads`,
+        'x-default': `https://sungenelite.com/zh/qualified-b2b-leads`,
       }
     },
     
