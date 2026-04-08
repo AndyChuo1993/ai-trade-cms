@@ -7,33 +7,29 @@ import { seoIndustries } from '@/data/seoIndustries'
 import { seoMarkets } from '@/data/seoMarkets'
 import Newsletter from '@/components/Newsletter'
 import { LayoutGrid, Globe, FileText } from 'lucide-react'
+import { getAlternates, getLocalizedUrl } from '@/lib/seo'
 
-export async function generateMetadata({ params, searchParams }: { params: Promise<{ lang: Lang }>; searchParams: Promise<{ tab?: string }> }) {
+export async function generateMetadata({ params, searchParams }: { params: Promise<{ lang: Lang }>; searchParams: Promise<{ tab?: string; category?: string }> }) {
   const { lang } = await params
   const resolved = await searchParams
   const tab = resolved.tab || 'articles'
-  const baseUrl = 'https://sungenelite.com'
+  const path = '/resources'
 
   let title = lang === 'en' ? 'Export Resource Center' : (lang === 'cn' ? '外贸資源中心' : '外銷資源中心')
   if (tab === 'industries') title = lang === 'en' ? 'Industry Highlights' : (lang === 'cn' ? '行业頁精選' : '產業頁精選')
   if (tab === 'markets') title = lang === 'en' ? 'Market Highlights' : (lang === 'cn' ? '市场頁精選' : '市場頁精選')
+  const description = lang === 'en' ? 'A unified content hub for export articles, industry pages, market pages, and reusable resources.' : (lang === 'cn' ? '整合文章、行业頁、市场頁與可下載素材，方便快速找到外贸開發所需內容。' : '整合文章、產業頁、市場頁與可下載素材，方便快速找到外銷開發所需內容。')
+  const hasFilteredView = tab !== 'articles' || Boolean(resolved.category)
 
   return {
     title: `${title} | SunGene`,
-    description: lang === 'en' ? 'A unified content hub for export articles, industry pages, market pages, and reusable resources.' : (lang === 'cn' ? '整合文章、行业頁、市场頁與可下載素材，方便快速找到外贸開發所需內容。' : '整合文章、產業頁、市場頁與可下載素材，方便快速找到外銷開發所需內容。'),
-    alternates: {
-      canonical: `${baseUrl}/${lang}/resources`,
-      languages: {
-        'zh-CN': 'https://sungenelite.com/cn/resources',
-        'zh-TW': 'https://sungenelite.com/zh/resources',
-        'en': 'https://sungenelite.com/en/resources',
-        'x-default': 'https://sungenelite.com/zh/resources',
-      },
-    },
+    description,
+    alternates: getAlternates(lang, path),
+    robots: hasFilteredView ? { index: false, follow: true } : undefined,
     openGraph: {
       title: `${title} | SunGene`,
-      description: lang === 'en' ? 'A unified content hub for export articles, industry pages, market pages, and reusable resources.' : (lang === 'cn' ? '整合文章、行业頁、市场頁與可下載素材，方便快速找到外贸開發所需內容。' : '整合文章、產業頁、市場頁與可下載素材，方便快速找到外銷開發所需內容。'),
-      url: `${baseUrl}/${lang}/resources`,
+      description,
+      url: getLocalizedUrl(lang, path),
       images: ['/og/og.png'],
     },
   }

@@ -1,34 +1,26 @@
 import Image from 'next/image'
 import { Lang } from '@/lib/i18n'
 import InquiryForm, { FormField } from '@/components/InquiryForm'
+import { getAlternates, getLocalizedUrl } from '@/lib/seo'
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: Lang }> }) {
   const { lang } = await params
   const isChinese = lang !== 'en'
-  const baseUrl = 'https://sungenelite.com'
+  const path = '/contact'
+  const title = `${lang === 'en' ? 'Contact Us' : (lang === 'cn' ? '联系我们' : '聯絡我們')} | SunGene`
+  const description =
+    isChinese
+      ? '與 SunGene 討論海外客戶開發、經銷商開發、外銷業務外包服務與合作夥伴申請。'
+      : 'Book Strategy Call about export customer development, distributor development, sales outsourcing, or partnership applications.'
 
   return {
-    title: `${lang === 'en' ? 'Contact Us' : (lang === 'cn' ? '联系我们' : '聯絡我們')} | SunGene`,
-    description:
-      isChinese
-        ? '與 SunGene 討論海外客戶開發、經銷商開發、外銷業務外包服務與合作夥伴申請。'
-        : 'Book Strategy Call about export customer development, distributor development, sales outsourcing, or partnership applications.',
-    alternates: {
-      canonical: `${baseUrl}/${lang}/contact`,
-      languages: {
-        'zh-CN': 'https://sungenelite.com/cn/contact',
-        'zh-TW': 'https://sungenelite.com/zh/contact',
-        'en': 'https://sungenelite.com/en/contact',
-        'x-default': 'https://sungenelite.com/zh/contact',
-      },
-    },
+    title,
+    description,
+    alternates: getAlternates(lang, path),
     openGraph: {
-      title: `${lang === 'en' ? 'Contact Us' : (lang === 'cn' ? '联系我们' : '聯絡我們')} | SunGene`,
-      description:
-        isChinese
-          ? '與 SunGene 討論海外客戶開發、經銷商開發、外銷業務外包服務與合作夥伴申請。'
-          : 'Book Strategy Call about export customer development, distributor development, sales outsourcing, or partnership applications.',
-      url: `${baseUrl}/${lang}/contact`,
+      title,
+      description,
+      url: getLocalizedUrl(lang, path),
       images: ['/og/og.png'],
     },
   }

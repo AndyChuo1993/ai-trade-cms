@@ -2,15 +2,18 @@ import { t, Lang } from '@/lib/i18n'
 import Link from 'next/link'
 import JsonLd from '@/components/JsonLd'
 import ServiceComparison from '@/components/ServiceComparison'
+import { getAlternates, getLocalizedUrl } from '@/lib/seo'
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: Lang }> }) {
   const { lang } = await params
   const isChinese = lang !== 'en'
-  const baseUrl = 'https://sungenelite.com'
+  const path = '/services'
+  const title = t(lang, 'service_title') + ' | SunGene'
+  const description = t(lang, 'meta_home_desc')
 
   return {
-    title: t(lang, 'service_title') + ' | SunGene',
-    description: t(lang, 'meta_home_desc'),
+    title,
+    description,
     keywords:
       lang === 'cn'
         ? ['外贸客户开发', '经销商开发', '外贸业务外包', '采购资料建置', '外贸市场切入']
@@ -18,20 +21,12 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: Lan
           ? ['外銷客戶開發', '經銷商開發', '外銷業務外包', '採購資料建置', '外銷市場切入']
           : ['export lead generation', 'distributor development', 'export sales outsourcing', 'prospect data buildout', 'market entry'],
     openGraph: {
-      title: t(lang, 'service_title') + ' | SunGene',
-      description: t(lang, 'meta_home_desc'),
-      url: `${baseUrl}/${lang}/services`,
+      title,
+      description,
+      url: getLocalizedUrl(lang, path),
       images: ['/og/og.png'],
     },
-    alternates: {
-      canonical: `${baseUrl}/${lang}/services`,
-      languages: {
-        'zh-CN': 'https://sungenelite.com/cn/services',
-        'zh-TW': 'https://sungenelite.com/zh/services',
-        'en': 'https://sungenelite.com/en/services',
-        'x-default': 'https://sungenelite.com/zh/services',
-      },
-    },
+    alternates: getAlternates(lang, path),
   }
 }
 

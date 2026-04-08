@@ -4,6 +4,7 @@ import { getSeoMarket, seoMarkets } from '@/data/seoMarkets'
 import JsonLd from '@/components/JsonLd'
 import { notFound } from 'next/navigation'
 import { cnText } from '@/lib/cnText'
+import { getAlternates, getLocalizedUrl } from '@/lib/seo'
 
 export async function generateStaticParams() {
   const langs = ['en', 'zh', 'cn']
@@ -12,25 +13,19 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: Lang; slug: string }> }) {
   const { lang, slug } = await params
-  const baseUrl = 'https://sungenelite.com'
   const page = getSeoMarket(slug)
   if (!page) notFound()
+  const path = `/markets/${slug}`
+  const title = cnText(lang, page.title[lang])
+  const description = cnText(lang, page.description[lang])
   return {
-    title: cnText(lang, page.title[lang]),
-    description: cnText(lang, page.description[lang]),
-    alternates: {
-      canonical: `${baseUrl}/${lang}/markets/${slug}`,
-      languages: {
-        'zh-CN': `https://sungenelite.com/cn/markets/${slug}`,
-        'zh-TW': `https://sungenelite.com/zh/markets/${slug}`,
-        'en': `https://sungenelite.com/en/markets/${slug}`,
-        'x-default': `https://sungenelite.com/zh/markets/${slug}`,
-      },
-    },
+    title,
+    description,
+    alternates: getAlternates(lang, path),
     openGraph: { 
-      title: cnText(lang, page.title[lang]), 
-      description: cnText(lang, page.description[lang]), 
-      url: `${baseUrl}/${lang}/markets/${slug}`,
+      title,
+      description,
+      url: getLocalizedUrl(lang, path),
       type: 'article' 
     },
   }

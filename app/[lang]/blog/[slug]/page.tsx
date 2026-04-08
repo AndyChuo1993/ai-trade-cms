@@ -5,6 +5,7 @@ import { getBlogPost, getBlogPosts } from '@/data/blog'
 import JsonLd from '@/components/JsonLd'
 import { cnText } from '@/lib/cnText'
 import { notFound } from 'next/navigation'
+import { getAlternates, getLocalizedUrl } from '@/lib/seo'
 
 function slugifyAnchor(s: string) {
   return String(s)
@@ -30,26 +31,20 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: Lang; slug: string }> }) {
   const { lang, slug } = await params
-  const baseUrl = 'https://sungenelite.com'
   const post = getBlogPost(slug)
   if (!post) notFound()
+  const path = `/blog/${slug}`
+  const title = `${cnText(lang, post.title[lang])} | SunGene`
+  const description = cnText(lang, post.description[lang])
   return {
-    title: `${cnText(lang, post.title[lang])} | SunGene`,
-    description: cnText(lang, post.description[lang]),
-    alternates: {
-      canonical: `${baseUrl}/${lang}/blog/${slug}`,
-      languages: {
-        'zh-CN': `https://sungenelite.com/cn/blog/${slug}`,
-        'zh-TW': `https://sungenelite.com/zh/blog/${slug}`,
-        'en': `https://sungenelite.com/en/blog/${slug}`,
-        'x-default': `https://sungenelite.com/zh/blog/${slug}`,
-      },
-    },
+    title,
+    description,
+    alternates: getAlternates(lang, path),
     openGraph: {
-      title: cnText(lang, post.title[lang]),
-      description: cnText(lang, post.description[lang]),
+      title,
+      description,
       type: 'article',
-      url: `${baseUrl}/${lang}/blog/${slug}`,
+      url: getLocalizedUrl(lang, path),
       images: [{ url: post.heroImage, width: 1200, height: 630, alt: cnText(lang, post.title[lang]) }],
     },
     twitter: { card: 'summary_large_image', title: cnText(lang, post.title[lang]), description: cnText(lang, post.description[lang]), images: [post.heroImage] },
